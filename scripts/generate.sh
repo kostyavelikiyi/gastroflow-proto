@@ -210,7 +210,7 @@ post_process_typescript() {
   },
   "devDependencies": {
     "typescript": "^5.7.2",
-    "@types/node": "^22.10.2"
+    "@types/node": "^18.19.67"
   },
   "files": [
     "lib/**/*"
