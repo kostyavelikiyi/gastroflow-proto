@@ -204,13 +204,13 @@ post_process_typescript() {
   "author": "GastroFlow Team",
   "license": "MIT",
   "dependencies": {
-    "@grpc/grpc-js": "^1.9.0",
-    "@types/google-protobuf": "^3.15.0",
-    "google-protobuf": "^3.21.0"
+    "@grpc/grpc-js": "^1.12.4",
+    "@types/google-protobuf": "^3.15.12",
+    "google-protobuf": "^3.21.4"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "@types/node": "^20.0.0"
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.2"
   },
   "files": [
     "lib/**/*"
