@@ -1,33 +1,3 @@
 version: v1
-# Buf configuration for GastroFlow Protocol Buffers
-# Обеспечивает проверку обратной совместимости и качества proto файлов
+# Main buf configuration - delegates to buf.work.yaml for workspace management
 
-deps:
-  - buf.build/googleapis/googleapis
-  - buf.build/envoyproxy/protoc-gen-validate
-
-breaking:
-  use:
-    - FILE
-  except:
-    - FIELD_SAME_LABEL
-    - FIELD_WIRE_JSON_CAMEL_CASE
-    - RPC_SAME_CLIENT_STREAMING
-    - RPC_SAME_SERVER_STREAMING
-
-lint:
-  use:
-    - DEFAULT
-    - COMMENTS
-    - FILE_LOWER_SNAKE_CASE
-  except:
-    - PACKAGE_VERSION_SUFFIX
-  enum_zero_value_suffix: _UNSPECIFIED
-  rpc_allow_same_request_response: false
-  rpc_allow_google_protobuf_empty_requests: false
-  rpc_allow_google_protobuf_empty_responses: false
-  service_suffix: Service
-
-build:
-  roots:
-    - proto

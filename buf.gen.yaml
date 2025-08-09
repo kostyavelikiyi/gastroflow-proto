@@ -2,6 +2,12 @@ version: v1
 # Buf code generation configuration
 # Настройка генерации кода для всех поддерживаемых языков
 
+managed:
+  enabled: true
+
+inputs:
+  - directory: proto
+
 plugins:
   # Go generation
   - plugin: buf.build/protocolbuffers/go
