@@ -2,11 +2,11 @@ syntax = "proto3";
 
 package com.gastroflow.orders;
 
-import "orders/models.proto";
-import "common/types.proto";
 import "common/enums.proto";
-import "google/protobuf/timestamp.proto";
+import "common/types.proto";
 import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "orders/models.proto";
 import "validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/orders";
@@ -15,37 +15,37 @@ option go_package = "github.com/gastroflow/proto-go/orders";
 service OrderService {
   // Создать новый заказ
   rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
-  
+
   // Получить заказ по ID
   rpc GetOrder(GetOrderRequest) returns (GetOrderResponse);
-  
+
   // Обновить заказ
   rpc UpdateOrder(UpdateOrderRequest) returns (UpdateOrderResponse);
-  
+
   // Удалить заказ (мягкое удаление)
   rpc DeleteOrder(DeleteOrderRequest) returns (google.protobuf.Empty);
-  
+
   // Получить список заказов с фильтрацией и пагинацией
   rpc ListOrders(ListOrdersRequest) returns (ListOrdersResponse);
-  
+
   // Изменить статус заказа
   rpc UpdateOrderStatus(UpdateOrderStatusRequest) returns (UpdateOrderStatusResponse);
-  
+
   // Отметить позицию как готовую
   rpc MarkPositionReady(MarkPositionReadyRequest) returns (MarkPositionReadyResponse);
-  
+
   // Отметить весь заказ как готовый
   rpc MarkOrderReady(MarkOrderReadyRequest) returns (MarkOrderReadyResponse);
-  
+
   // Отменить заказ
   rpc CancelOrder(CancelOrderRequest) returns (CancelOrderResponse);
-  
+
   // Получить историю изменений заказа
   rpc GetOrderHistory(GetOrderHistoryRequest) returns (GetOrderHistoryResponse);
-  
+
   // Подписка на изменения статуса заказа (Server Streaming)
   rpc SubscribeToOrderUpdates(SubscribeToOrderUpdatesRequest) returns (stream OrderUpdate);
-  
+
   // Получить аналитику по заказам
   rpc GetOrdersAnalytics(GetOrdersAnalyticsRequest) returns (GetOrdersAnalyticsResponse);
 }
@@ -55,46 +55,46 @@ service OrderService {
 message CreateOrderRequest {
   // Имя клиента
   string name = 1 [(validate.rules).string = {
-    min_len: 1,
+    min_len: 1
     max_len: 100
   }];
-  
+
   // Способ получения заказа
   com.gastroflow.common.PackingMode packing_mode = 2 [(validate.rules).enum = {
     not_in: [0]
   }];
-  
+
   // Позиции в заказе
   repeated CreatePositionRequest positions = 3 [(validate.rules).repeated = {
-    min_items: 1,
+    min_items: 1
     max_items: 100
   }];
-  
+
   // Контактная информация клиента
   com.gastroflow.common.ContactInfo contact_info = 4 [(validate.rules).message.required = true];
-  
+
   // Адрес доставки (обязательно для доставки)
   com.gastroflow.common.Address address = 5;
-  
+
   // Способ оплаты
   com.gastroflow.common.PaymentMethod payment_method = 6 [(validate.rules).enum = {
     not_in: [0]
   }];
-  
+
   // Режим времени приготовления
   com.gastroflow.common.PreparingTimeMode preparing_time_mode = 7 [(validate.rules).enum = {
     not_in: [0]
   }];
-  
+
   // Желаемое время готовности
   google.protobuf.Timestamp desired_ready_time = 8;
-  
+
   // Идентификатор ресторана
   com.gastroflow.common.UUID restaurant_id = 9 [(validate.rules).message.required = true];
-  
+
   // Комментарий к заказу
   string comment = 10 [(validate.rules).string.max_len = 1000];
-  
+
   // Промокод
   string promo_code = 11 [(validate.rules).string.max_len = 50];
 }
@@ -102,26 +102,26 @@ message CreateOrderRequest {
 message CreatePositionRequest {
   // Идентификатор позиции в меню
   com.gastroflow.common.UUID menu_item_id = 1 [(validate.rules).message.required = true];
-  
+
   // Количество
   int32 quantity = 2 [(validate.rules).int32 = {
-    gte: 1,
+    gte: 1
     lte: 100
   }];
-  
+
   // Выбранные варианты
   repeated com.gastroflow.common.UUID selected_variant_ids = 3 [(validate.rules).repeated.max_items = 50];
-  
+
   // Комментарий к позиции
   string comment = 4 [(validate.rules).string.max_len = 500];
-  
+
   // Специальные инструкции для кухни
   string cooking_instructions = 5 [(validate.rules).string.max_len = 300];
 }
 
 message CreateOrderResponse {
   Order order = 1 [(validate.rules).message.required = true];
-  
+
   // Расчетное время готовности
   google.protobuf.Timestamp estimated_ready_time = 2;
 }
@@ -152,22 +152,22 @@ message DeleteOrderRequest {
 message ListOrdersRequest {
   // Идентификатор ресторана
   com.gastroflow.common.UUID restaurant_id = 1 [(validate.rules).message.required = true];
-  
+
   // Пагинация
   com.gastroflow.common.PaginationRequest pagination = 2 [(validate.rules).message.required = true];
-  
+
   // Фильтр по статусу
   repeated com.gastroflow.common.OrderStatus status_filter = 3 [(validate.rules).repeated.max_items = 10];
-  
+
   // Фильтр по способу получения
   repeated com.gastroflow.common.PackingMode packing_mode_filter = 4 [(validate.rules).repeated.max_items = 10];
-  
+
   // Фильтр по дате создания (от)
   google.protobuf.Timestamp date_from = 5;
-  
+
   // Фильтр по дате создания (до)
   google.protobuf.Timestamp date_to = 6;
-  
+
   // Поиск по имени клиента или номеру телефона
   string search_query = 7 [(validate.rules).string.max_len = 100];
 }
@@ -215,7 +215,7 @@ message CancelOrderRequest {
   com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
   com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
   string reason = 3 [(validate.rules).string = {
-    min_len: 1,
+    min_len: 1
     max_len: 500
   }];
 }

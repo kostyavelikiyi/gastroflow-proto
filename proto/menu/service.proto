@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package com.gastroflow.menu;
 
-import "menu/models.proto";
-import "common/types.proto";
 import "common/enums.proto";
+import "common/types.proto";
 import "google/protobuf/empty.proto";
+import "menu/models.proto";
 import "validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/menu";
@@ -14,19 +14,19 @@ option go_package = "github.com/gastroflow/proto-go/menu";
 service MenuService {
   // Создать новое меню
   rpc CreateMenu(CreateMenuRequest) returns (CreateMenuResponse);
-  
+
   // Получить меню по ID
   rpc GetMenu(GetMenuRequest) returns (GetMenuResponse);
-  
+
   // Обновить меню
   rpc UpdateMenu(UpdateMenuRequest) returns (UpdateMenuResponse);
-  
+
   // Удалить меню (мягкое удаление)
   rpc DeleteMenu(DeleteMenuRequest) returns (google.protobuf.Empty);
-  
+
   // Получить список меню ресторана
   rpc ListMenus(ListMenusRequest) returns (ListMenusResponse);
-  
+
   // Получить активное меню ресторана
   rpc GetActiveMenu(GetActiveMenuRequest) returns (GetActiveMenuResponse);
 }
@@ -35,19 +35,19 @@ service MenuService {
 service CategoryService {
   // Создать новую категорию
   rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse);
-  
+
   // Получить категорию по ID
   rpc GetCategory(GetCategoryRequest) returns (GetCategoryResponse);
-  
+
   // Обновить категорию
   rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse);
-  
+
   // Удалить категорию (мягкое удаление)
   rpc DeleteCategory(DeleteCategoryRequest) returns (google.protobuf.Empty);
-  
+
   // Получить список категорий меню
   rpc ListCategories(ListCategoriesRequest) returns (ListCategoriesResponse);
-  
+
   // Изменить порядок категорий
   rpc ReorderCategories(ReorderCategoriesRequest) returns (ReorderCategoriesResponse);
 }
@@ -56,28 +56,28 @@ service CategoryService {
 service MenuItemService {
   // Создать новую позицию меню
   rpc CreateMenuItem(CreateMenuItemRequest) returns (CreateMenuItemResponse);
-  
+
   // Получить позицию меню по ID
   rpc GetMenuItem(GetMenuItemRequest) returns (GetMenuItemResponse);
-  
+
   // Обновить позицию меню
   rpc UpdateMenuItem(UpdateMenuItemRequest) returns (UpdateMenuItemResponse);
-  
+
   // Удалить позицию меню (мягкое удаление)
   rpc DeleteMenuItem(DeleteMenuItemRequest) returns (google.protobuf.Empty);
-  
+
   // Получить список позиций категории
   rpc ListMenuItems(ListMenuItemsRequest) returns (ListMenuItemsResponse);
-  
+
   // Поиск позиций меню
   rpc SearchMenuItems(SearchMenuItemsRequest) returns (SearchMenuItemsResponse);
-  
+
   // Изменить статус позиции меню
   rpc UpdateMenuItemStatus(UpdateMenuItemStatusRequest) returns (UpdateMenuItemStatusResponse);
-  
+
   // Изменить порядок позиций в категории
   rpc ReorderMenuItems(ReorderMenuItemsRequest) returns (ReorderMenuItemsResponse);
-  
+
   // Получить популярные позиции
   rpc GetPopularMenuItems(GetPopularMenuItemsRequest) returns (GetPopularMenuItemsResponse);
 }
@@ -86,7 +86,7 @@ service MenuItemService {
 
 message CreateMenuRequest {
   string name = 1 [(validate.rules).string = {
-    min_len: 1,
+    min_len: 1
     max_len: 200
   }];
   string description = 2 [(validate.rules).string.max_len = 1000];
@@ -150,7 +150,7 @@ message GetActiveMenuResponse {
 
 message CreateCategoryRequest {
   string name = 1 [(validate.rules).string = {
-    min_len: 1,
+    min_len: 1
     max_len: 100
   }];
   string description = 2 [(validate.rules).string.max_len = 500];
@@ -204,7 +204,7 @@ message ReorderCategoriesRequest {
   com.gastroflow.common.UUID menu_id = 1 [(validate.rules).message.required = true];
   com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
   repeated CategoryOrder category_orders = 3 [(validate.rules).repeated = {
-    min_items: 1,
+    min_items: 1
     max_items: 100
   }];
 }
@@ -222,35 +222,39 @@ message ReorderCategoriesResponse {
 
 message CreateMenuItemRequest {
   string name = 1 [(validate.rules).string = {
-    min_len: 1,
+    min_len: 1
     max_len: 200
   }];
   string description = 2 [(validate.rules).string.max_len = 1000];
   com.gastroflow.common.Money price = 3 [(validate.rules).message.required = true];
   com.gastroflow.common.UUID category_id = 4 [(validate.rules).message.required = true];
   int32 cooking_time = 5 [(validate.rules).int32 = {
-    gte: 1,
+    gte: 1
     lte: 120
   }];
   NutritionInfo nutrition_info = 6;
   repeated Allergen allergens = 7 [(validate.rules).repeated.max_items = 50];
   string image_url = 8 [(validate.rules).string.max_len = 500];
   repeated string additional_images = 9 [(validate.rules).repeated = {
-    max_items: 10,
-    items: {string: {max_len: 500}}
+    max_items: 10
+    items: {
+      string: {max_len: 500}
+    }
   }];
   string portion_size = 10 [(validate.rules).string.max_len = 50];
   repeated DietaryProperty dietary_properties = 11 [(validate.rules).repeated.max_items = 20];
   repeated string ingredients = 12 [(validate.rules).repeated = {
-    max_items: 100,
-    items: {string: {max_len: 100}}
+    max_items: 100
+    items: {
+      string: {max_len: 100}
+    }
   }];
   repeated CreateMenuItemVariantRequest variants = 13 [(validate.rules).repeated.max_items = 100];
 }
 
 message CreateMenuItemVariantRequest {
   string name = 1 [(validate.rules).string = {
-    min_len: 1,
+    min_len: 1
     max_len: 100
   }];
   com.gastroflow.common.Money price_modifier = 2 [(validate.rules).message.required = true];
@@ -260,7 +264,7 @@ message CreateMenuItemVariantRequest {
   string group_name = 4 [(validate.rules).string.max_len = 50];
   bool is_required = 5;
   int32 max_selections = 6 [(validate.rules).int32 = {
-    gte: 1,
+    gte: 1
     lte: 20
   }];
   int32 sort_order = 7 [(validate.rules).int32.gte = 0];
@@ -310,7 +314,7 @@ message ListMenuItemsResponse {
 message SearchMenuItemsRequest {
   com.gastroflow.common.UUID restaurant_id = 1 [(validate.rules).message.required = true];
   string query = 2 [(validate.rules).string = {
-    min_len: 1,
+    min_len: 1
     max_len: 100
   }];
   com.gastroflow.common.PaginationRequest pagination = 3 [(validate.rules).message.required = true];
@@ -339,7 +343,7 @@ message ReorderMenuItemsRequest {
   com.gastroflow.common.UUID category_id = 1 [(validate.rules).message.required = true];
   com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
   repeated MenuItemOrder menu_item_orders = 3 [(validate.rules).repeated = {
-    min_items: 1,
+    min_items: 1
     max_items: 200
   }];
 }
@@ -356,7 +360,7 @@ message ReorderMenuItemsResponse {
 message GetPopularMenuItemsRequest {
   com.gastroflow.common.UUID restaurant_id = 1 [(validate.rules).message.required = true];
   int32 limit = 2 [(validate.rules).int32 = {
-    gte: 1,
+    gte: 1
     lte: 50
   }];
   com.gastroflow.common.UUID category_id = 3;

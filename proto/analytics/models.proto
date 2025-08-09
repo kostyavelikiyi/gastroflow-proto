@@ -2,9 +2,9 @@ syntax = "proto3";
 
 package com.gastroflow.analytics;
 
-import "google/protobuf/timestamp.proto";
-import "common/types.proto";
 import "common/enums.proto";
+import "common/types.proto";
+import "google/protobuf/timestamp.proto";
 import "validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/analytics";
@@ -13,39 +13,39 @@ option go_package = "github.com/gastroflow/proto-go/analytics";
 message AnalyticsEvent {
   // Уникальный идентификатор события
   com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
-  
+
   // Тип события
   com.gastroflow.common.AnalyticsEventType event_type = 2 [(validate.rules).enum = {
     not_in: [0]
   }];
-  
+
   // Время события
   google.protobuf.Timestamp timestamp = 3 [(validate.rules).timestamp.required = true];
-  
+
   // Идентификатор ресторана
   com.gastroflow.common.UUID restaurant_id = 4 [(validate.rules).message.required = true];
-  
+
   // Идентификатор пользователя (если применимо)
   com.gastroflow.common.UUID user_id = 5;
-  
+
   // Идентификатор заказа (если применимо)
   com.gastroflow.common.UUID order_id = 6;
-  
-  // Идентификатор позиции меню (если применимо)  
+
+  // Идентификатор позиции меню (если применимо)
   com.gastroflow.common.UUID menu_item_id = 7;
-  
+
   // Дополнительные свойства события
   map<string, string> properties = 8;
-  
+
   // Сессия пользователя
   string session_id = 9 [(validate.rules).string.max_len = 128];
-  
+
   // Информация об устройстве
   string device_type = 10 [(validate.rules).string.max_len = 50];
-  
+
   // IP адрес
   string ip_address = 11 [(validate.rules).string.max_len = 45];
-  
+
   // User Agent
   string user_agent = 12 [(validate.rules).string.max_len = 500];
 }
@@ -54,25 +54,25 @@ message AnalyticsEvent {
 message OrderAnalytics {
   // Период анализа
   AnalyticsPeriod period = 1 [(validate.rules).message.required = true];
-  
+
   // Идентификатор ресторана
   com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
-  
+
   // Общая статистика
   OrderStats overall_stats = 3 [(validate.rules).message.required = true];
-  
+
   // Статистика по дням
   repeated DailyOrderStats daily_stats = 4;
-  
+
   // Статистика по часам
   repeated HourlyOrderStats hourly_stats = 5;
-  
+
   // Популярные позиции меню
   repeated PopularMenuItem popular_items = 6;
-  
+
   // Статистика по способам получения
   repeated PackingModeStats packing_mode_stats = 7;
-  
+
   // Статистика по способам оплаты
   repeated PaymentMethodStats payment_method_stats = 8;
 }
@@ -81,10 +81,10 @@ message OrderAnalytics {
 message AnalyticsPeriod {
   // Начало периода
   google.protobuf.Timestamp start_date = 1 [(validate.rules).timestamp.required = true];
-  
+
   // Конец периода
   google.protobuf.Timestamp end_date = 2 [(validate.rules).timestamp.required = true];
-  
+
   // Тип периода
   PeriodType type = 3 [(validate.rules).enum = {
     not_in: [0]
@@ -95,25 +95,25 @@ message AnalyticsPeriod {
 message OrderStats {
   // Общее количество заказов
   int64 total_orders = 1;
-  
+
   // Общая выручка
   com.gastroflow.common.Money total_revenue = 2 [(validate.rules).message.required = true];
-  
+
   // Средний чек
   com.gastroflow.common.Money average_order_value = 3 [(validate.rules).message.required = true];
-  
+
   // Завершенные заказы
   int64 completed_orders = 4;
-  
+
   // Отмененные заказы
   int64 cancelled_orders = 5;
-  
+
   // Процент отмен
   double cancellation_rate = 6;
-  
+
   // Среднее время приготовления (минуты)
   double average_preparation_time = 7;
-  
+
   // Общее количество позиций
   int64 total_items_ordered = 8;
 }
@@ -121,13 +121,11 @@ message OrderStats {
 // DailyOrderStats - статистика по дням
 message DailyOrderStats {
   // Дата
-  string date = 1 [(validate.rules).string = {
-    pattern: "^\\d{4}-\\d{2}-\\d{2}$"
-  }];
-  
+  string date = 1 [(validate.rules).string = {pattern: "^\\d{4}-\\d{2}-\\d{2}$"}];
+
   // Статистика за день
   OrderStats stats = 2 [(validate.rules).message.required = true];
-  
+
   // День недели
   com.gastroflow.common.WeekDay day_of_week = 3;
 }
@@ -136,10 +134,10 @@ message DailyOrderStats {
 message HourlyOrderStats {
   // Час (0-23)
   int32 hour = 1 [(validate.rules).int32 = {
-    gte: 0,
+    gte: 0
     lte: 23
   }];
-  
+
   // Статистика за час
   OrderStats stats = 2 [(validate.rules).message.required = true];
 }
@@ -148,16 +146,16 @@ message HourlyOrderStats {
 message PopularMenuItem {
   // Идентификатор позиции меню
   com.gastroflow.common.UUID menu_item_id = 1 [(validate.rules).message.required = true];
-  
+
   // Название позиции
   string name = 2 [(validate.rules).string.max_len = 200];
-  
+
   // Количество заказов
   int64 order_count = 3;
-  
+
   // Общая выручка от позиции
   com.gastroflow.common.Money total_revenue = 4 [(validate.rules).message.required = true];
-  
+
   // Процент от общих заказов
   double percentage_of_orders = 5;
 }
@@ -168,13 +166,13 @@ message PackingModeStats {
   com.gastroflow.common.PackingMode packing_mode = 1 [(validate.rules).enum = {
     not_in: [0]
   }];
-  
+
   // Количество заказов
   int64 order_count = 2;
-  
+
   // Выручка
   com.gastroflow.common.Money revenue = 3 [(validate.rules).message.required = true];
-  
+
   // Процент от общих заказов
   double percentage = 4;
 }
@@ -185,13 +183,13 @@ message PaymentMethodStats {
   com.gastroflow.common.PaymentMethod payment_method = 1 [(validate.rules).enum = {
     not_in: [0]
   }];
-  
+
   // Количество заказов
   int64 order_count = 2;
-  
+
   // Выручка
   com.gastroflow.common.Money revenue = 3 [(validate.rules).message.required = true];
-  
+
   // Процент от общих заказов
   double percentage = 4;
 }
@@ -200,16 +198,16 @@ message PaymentMethodStats {
 message CustomerAnalytics {
   // Период анализа
   AnalyticsPeriod period = 1 [(validate.rules).message.required = true];
-  
+
   // Идентификатор ресторана
   com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
-  
+
   // Общая статистика по клиентам
   CustomerStats overall_stats = 3 [(validate.rules).message.required = true];
-  
+
   // Новые клиенты по дням
   repeated DailyCustomerStats daily_stats = 4;
-  
+
   // Топ клиенты
   repeated TopCustomer top_customers = 5;
 }
@@ -218,19 +216,19 @@ message CustomerAnalytics {
 message CustomerStats {
   // Общее количество клиентов
   int64 total_customers = 1;
-  
+
   // Новые клиенты за период
   int64 new_customers = 2;
-  
+
   // Возвратившиеся клиенты
   int64 returning_customers = 3;
-  
+
   // Процент возврата
   double retention_rate = 4;
-  
+
   // Средняя сумма заказа на клиента
   com.gastroflow.common.Money average_customer_value = 5;
-  
+
   // Средняя частота заказов
   double average_order_frequency = 6;
 }
@@ -238,13 +236,11 @@ message CustomerStats {
 // DailyCustomerStats - статистика по клиентам по дням
 message DailyCustomerStats {
   // Дата
-  string date = 1 [(validate.rules).string = {
-    pattern: "^\\d{4}-\\d{2}-\\d{2}$"
-  }];
-  
+  string date = 1 [(validate.rules).string = {pattern: "^\\d{4}-\\d{2}-\\d{2}$"}];
+
   // Новые клиенты за день
   int64 new_customers = 2;
-  
+
   // Активные клиенты за день
   int64 active_customers = 3;
 }
@@ -253,16 +249,16 @@ message DailyCustomerStats {
 message TopCustomer {
   // Идентификатор клиента
   com.gastroflow.common.UUID customer_id = 1 [(validate.rules).message.required = true];
-  
+
   // Имя клиента
   string customer_name = 2 [(validate.rules).string.max_len = 100];
-  
+
   // Количество заказов
   int64 order_count = 3;
-  
+
   // Общая потраченная сумма
   com.gastroflow.common.Money total_spent = 4 [(validate.rules).message.required = true];
-  
+
   // Дата последнего заказа
   google.protobuf.Timestamp last_order_date = 5;
 }
@@ -271,16 +267,16 @@ message TopCustomer {
 message RevenueAnalytics {
   // Период анализа
   AnalyticsPeriod period = 1 [(validate.rules).message.required = true];
-  
+
   // Идентификатор ресторана
   com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
-  
+
   // Выручка по дням
   repeated DailyRevenue daily_revenue = 3;
-  
+
   // Выручка по часам
   repeated HourlyRevenue hourly_revenue = 4;
-  
+
   // Прогноз выручки
   repeated RevenueForecast forecast = 5;
 }
@@ -288,16 +284,14 @@ message RevenueAnalytics {
 // DailyRevenue - выручка по дням
 message DailyRevenue {
   // Дата
-  string date = 1 [(validate.rules).string = {
-    pattern: "^\\d{4}-\\d{2}-\\d{2}$"
-  }];
-  
+  string date = 1 [(validate.rules).string = {pattern: "^\\d{4}-\\d{2}-\\d{2}$"}];
+
   // Выручка за день
   com.gastroflow.common.Money revenue = 2 [(validate.rules).message.required = true];
-  
+
   // Количество заказов
   int64 order_count = 3;
-  
+
   // Рост по сравнению с предыдущим днем
   double growth_percentage = 4;
 }
@@ -306,13 +300,13 @@ message DailyRevenue {
 message HourlyRevenue {
   // Час (0-23)
   int32 hour = 1 [(validate.rules).int32 = {
-    gte: 0,
+    gte: 0
     lte: 23
   }];
-  
+
   // Выручка за час
   com.gastroflow.common.Money revenue = 2 [(validate.rules).message.required = true];
-  
+
   // Количество заказов
   int64 order_count = 3;
 }
@@ -320,13 +314,11 @@ message HourlyRevenue {
 // RevenueForecast - прогноз выручки
 message RevenueForecast {
   // Дата прогноза
-  string date = 1 [(validate.rules).string = {
-    pattern: "^\\d{4}-\\d{2}-\\d{2}$"
-  }];
-  
+  string date = 1 [(validate.rules).string = {pattern: "^\\d{4}-\\d{2}-\\d{2}$"}];
+
   // Прогнозируемая выручка
   com.gastroflow.common.Money predicted_revenue = 2 [(validate.rules).message.required = true];
-  
+
   // Доверительный интервал (%)
   double confidence_level = 3;
 }
@@ -336,10 +328,10 @@ message RevenueForecast {
 // PeriodType - тип периода для аналитики
 enum PeriodType {
   PERIOD_TYPE_UNSPECIFIED = 0;
-  PERIOD_TYPE_DAY = 1;           // День
-  PERIOD_TYPE_WEEK = 2;          // Неделя  
-  PERIOD_TYPE_MONTH = 3;         // Месяц
-  PERIOD_TYPE_QUARTER = 4;       // Квартал
-  PERIOD_TYPE_YEAR = 5;          // Год
-  PERIOD_TYPE_CUSTOM = 6;        // Произвольный период
+  PERIOD_TYPE_DAY = 1; // День
+  PERIOD_TYPE_WEEK = 2; // Неделя
+  PERIOD_TYPE_MONTH = 3; // Месяц
+  PERIOD_TYPE_QUARTER = 4; // Квартал
+  PERIOD_TYPE_YEAR = 5; // Год
+  PERIOD_TYPE_CUSTOM = 6; // Произвольный период
 }

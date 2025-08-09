@@ -7,90 +7,90 @@ option go_package = "github.com/gastroflow/proto-go/common";
 // PackingMode - способ получения заказа клиентом
 enum PackingMode {
   PACKING_MODE_UNSPECIFIED = 0;
-  PACKING_MODE_HERE = 1;         // В зале ресторана
-  PACKING_MODE_TAKEAWAY = 2;     // На вынос
-  PACKING_MODE_DELIVERY = 3;     // Доставка
-  PACKING_MODE_YAEAT = 4;        // Через Яндекс.Еду
+  PACKING_MODE_HERE = 1; // В зале ресторана
+  PACKING_MODE_TAKEAWAY = 2; // На вынос
+  PACKING_MODE_DELIVERY = 3; // Доставка
+  PACKING_MODE_YAEAT = 4; // Через Яндекс.Еду
 }
 
 // PaymentMethod - способ оплаты заказа
 enum PaymentMethod {
   PAYMENT_METHOD_UNSPECIFIED = 0;
-  PAYMENT_METHOD_CARD = 1;       // Банковская карта
-  PAYMENT_METHOD_CASH = 2;       // Наличные
-  PAYMENT_METHOD_TRANSFER = 3;   // Банковский перевод
-  PAYMENT_METHOD_DEPOSIT = 4;    // Депозит/предоплата
-  PAYMENT_METHOD_LATER = 5;      // Оплата потом
+  PAYMENT_METHOD_CARD = 1; // Банковская карта
+  PAYMENT_METHOD_CASH = 2; // Наличные
+  PAYMENT_METHOD_TRANSFER = 3; // Банковский перевод
+  PAYMENT_METHOD_DEPOSIT = 4; // Депозит/предоплата
+  PAYMENT_METHOD_LATER = 5; // Оплата потом
 }
 
 // OrderStatus - статус заказа в системе
 enum OrderStatus {
   ORDER_STATUS_UNSPECIFIED = 0;
-  ORDER_STATUS_DRAFT = 1;        // Черновик (корзина)
-  ORDER_STATUS_PENDING = 2;      // Ожидает подтверждения
-  ORDER_STATUS_CONFIRMED = 3;    // Подтвержден
-  ORDER_STATUS_PREPARING = 4;    // Готовится
-  ORDER_STATUS_READY = 5;        // Готов к выдаче
-  ORDER_STATUS_IN_DELIVERY = 6;  // В доставке
-  ORDER_STATUS_COMPLETED = 7;    // Выполнен
-  ORDER_STATUS_CANCELLED = 8;    // Отменен
-  ORDER_STATUS_REFUNDED = 9;     // Возвращен
+  ORDER_STATUS_DRAFT = 1; // Черновик (корзина)
+  ORDER_STATUS_PENDING = 2; // Ожидает подтверждения
+  ORDER_STATUS_CONFIRMED = 3; // Подтвержден
+  ORDER_STATUS_PREPARING = 4; // Готовится
+  ORDER_STATUS_READY = 5; // Готов к выдаче
+  ORDER_STATUS_IN_DELIVERY = 6; // В доставке
+  ORDER_STATUS_COMPLETED = 7; // Выполнен
+  ORDER_STATUS_CANCELLED = 8; // Отменен
+  ORDER_STATUS_REFUNDED = 9; // Возвращен
 }
 
 // PreparingTimeMode - режим времени приготовления
 enum PreparingTimeMode {
   PREPARING_TIME_MODE_UNSPECIFIED = 0;
-  PREPARING_TIME_MODE_NOW = 1;           // Сейчас (как можно скорее)
-  PREPARING_TIME_MODE_SCHEDULED = 2;     // К определенному времени
+  PREPARING_TIME_MODE_NOW = 1; // Сейчас (как можно скорее)
+  PREPARING_TIME_MODE_SCHEDULED = 2; // К определенному времени
 }
 
 // UserRole - роль пользователя в системе
 enum UserRole {
   USER_ROLE_UNSPECIFIED = 0;
-  USER_ROLE_CUSTOMER = 1;        // Клиент
-  USER_ROLE_STAFF = 2;           // Сотрудник ресторана
-  USER_ROLE_MANAGER = 3;         // Менеджер ресторана
-  USER_ROLE_ADMIN = 4;           // Администратор системы
-  USER_ROLE_OWNER = 5;           // Владелец ресторана
+  USER_ROLE_CUSTOMER = 1; // Клиент
+  USER_ROLE_STAFF = 2; // Сотрудник ресторана
+  USER_ROLE_MANAGER = 3; // Менеджер ресторана
+  USER_ROLE_ADMIN = 4; // Администратор системы
+  USER_ROLE_OWNER = 5; // Владелец ресторана
 }
 
 // MenuItemStatus - статус позиции меню
 enum MenuItemStatus {
   MENU_ITEM_STATUS_UNSPECIFIED = 0;
-  MENU_ITEM_STATUS_AVAILABLE = 1;    // Доступно
-  MENU_ITEM_STATUS_UNAVAILABLE = 2;  // Недоступно
+  MENU_ITEM_STATUS_AVAILABLE = 1; // Доступно
+  MENU_ITEM_STATUS_UNAVAILABLE = 2; // Недоступно
   MENU_ITEM_STATUS_OUT_OF_STOCK = 3; // Нет в наличии
-  MENU_ITEM_STATUS_SEASONAL = 4;     // Сезонное
+  MENU_ITEM_STATUS_SEASONAL = 4; // Сезонное
 }
 
 // RestaurantStatus - статус работы ресторана
 enum RestaurantStatus {
   RESTAURANT_STATUS_UNSPECIFIED = 0;
-  RESTAURANT_STATUS_OPEN = 1;           // Открыт
-  RESTAURANT_STATUS_CLOSED = 2;         // Закрыт
-  RESTAURANT_STATUS_BUSY = 3;           // Занят (не принимает заказы)
-  RESTAURANT_STATUS_MAINTENANCE = 4;    // На обслуживании
+  RESTAURANT_STATUS_OPEN = 1; // Открыт
+  RESTAURANT_STATUS_CLOSED = 2; // Закрыт
+  RESTAURANT_STATUS_BUSY = 3; // Занят (не принимает заказы)
+  RESTAURANT_STATUS_MAINTENANCE = 4; // На обслуживании
 }
 
 // NotificationType - тип уведомления
 enum NotificationType {
   NOTIFICATION_TYPE_UNSPECIFIED = 0;
-  NOTIFICATION_TYPE_ORDER_CREATED = 1;      // Создан новый заказ
-  NOTIFICATION_TYPE_ORDER_CONFIRMED = 2;    // Заказ подтвержден
-  NOTIFICATION_TYPE_ORDER_READY = 3;        // Заказ готов
-  NOTIFICATION_TYPE_ORDER_CANCELLED = 4;    // Заказ отменен
-  NOTIFICATION_TYPE_PAYMENT_SUCCESS = 5;    // Успешная оплата
-  NOTIFICATION_TYPE_PAYMENT_FAILED = 6;     // Ошибка оплаты
-  NOTIFICATION_TYPE_SYSTEM_ALERT = 7;       // Системное уведомление
+  NOTIFICATION_TYPE_ORDER_CREATED = 1; // Создан новый заказ
+  NOTIFICATION_TYPE_ORDER_CONFIRMED = 2; // Заказ подтвержден
+  NOTIFICATION_TYPE_ORDER_READY = 3; // Заказ готов
+  NOTIFICATION_TYPE_ORDER_CANCELLED = 4; // Заказ отменен
+  NOTIFICATION_TYPE_PAYMENT_SUCCESS = 5; // Успешная оплата
+  NOTIFICATION_TYPE_PAYMENT_FAILED = 6; // Ошибка оплаты
+  NOTIFICATION_TYPE_SYSTEM_ALERT = 7; // Системное уведомление
 }
 
 // Priority - приоритет (для уведомлений, задач и т.д.)
 enum Priority {
   PRIORITY_UNSPECIFIED = 0;
-  PRIORITY_LOW = 1;      // Низкий
-  PRIORITY_MEDIUM = 2;   // Средний
-  PRIORITY_HIGH = 3;     // Высокий
-  PRIORITY_URGENT = 4;   // Срочный
+  PRIORITY_LOW = 1; // Низкий
+  PRIORITY_MEDIUM = 2; // Средний
+  PRIORITY_HIGH = 3; // Высокий
+  PRIORITY_URGENT = 4; // Срочный
 }
 
 // WeekDay - день недели
@@ -108,9 +108,9 @@ enum WeekDay {
 // Language - поддерживаемые языки системы
 enum Language {
   LANGUAGE_UNSPECIFIED = 0;
-  LANGUAGE_RU = 1;    // Русский
-  LANGUAGE_EN = 2;    // Английский
-  LANGUAGE_KK = 3;    // Казахский
+  LANGUAGE_RU = 1; // Русский
+  LANGUAGE_EN = 2; // Английский
+  LANGUAGE_KK = 3; // Казахский
 }
 
 // AnalyticsEventType - типы аналитических событий
