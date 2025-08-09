@@ -108,13 +108,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  protobuf: ^4.1.1
-  grpc: ^4.1.0
+  protobuf: ^3.1.0
+  grpc: ^3.2.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0
+  flutter_lints: ^3.0.0
 
 flutter:
 EOF
