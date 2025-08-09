@@ -7,7 +7,7 @@
 package users
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -1391,36 +1391,36 @@ var File_users_models_proto protoreflect.FileDescriptor
 
 const file_users_models_proto_rawDesc = "" +
 	"\n" +
-	"\x12users/models.proto\x12\x14com.gastroflow.users\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\x95\a\n" +
-	"\x04User\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12(\n" +
+	"\x12users/models.proto\x12\x14com.gastroflow.users\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\x8f\a\n" +
+	"\x04User\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12(\n" +
 	"\n" +
-	"first_name\x18\x02 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x182R\tfirstName\x12$\n" +
-	"\tlast_name\x18\x03 \x01(\tB\a\xfaB\x04r\x02\x182R\blastName\x12O\n" +
-	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\vcontactInfo\x12=\n" +
-	"\x04role\x18\x05 \x01(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xfaB\x05\x82\x01\x02 \x00R\x04role\x12B\n" +
-	"\x06status\x18\x06 \x01(\x0e2 .com.gastroflow.users.UserStatusB\b\xfaB\x05\x82\x01\x02 \x00R\x06status\x12X\n" +
-	"\x12preferred_language\x18\a \x01(\x0e2\x1f.com.gastroflow.common.LanguageB\b\xfaB\x05\x82\x01\x02 \x00R\x11preferredLanguage\x12I\n" +
-	"\taddresses\x18\b \x03(\v2!.com.gastroflow.users.UserAddressB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"first_name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182R\tfirstName\x12$\n" +
+	"\tlast_name\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x182R\blastName\x12M\n" +
+	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoB\x06\xbaH\x03\xc8\x01\x01R\vcontactInfo\x12=\n" +
+	"\x04role\x18\x05 \x01(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xbaH\x05\x82\x01\x02 \x00R\x04role\x12B\n" +
+	"\x06status\x18\x06 \x01(\x0e2 .com.gastroflow.users.UserStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12X\n" +
+	"\x12preferred_language\x18\a \x01(\x0e2\x1f.com.gastroflow.common.LanguageB\b\xbaH\x05\x82\x01\x02 \x00R\x11preferredLanguage\x12I\n" +
+	"\taddresses\x18\b \x03(\v2!.com.gastroflow.users.UserAddressB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\taddresses\x12>\n" +
 	"\bsettings\x18\t \x01(\v2\".com.gastroflow.users.UserSettingsR\bsettings\x12;\n" +
 	"\aprofile\x18\n" +
 	" \x01(\v2!.com.gastroflow.users.UserProfileR\aprofile\x12b\n" +
-	"\x13restaurant_bindings\x18\v \x03(\v2'.com.gastroflow.users.RestaurantBindingB\b\xfaB\x05\x92\x01\x02\x102R\x12restaurantBindings\x12D\n" +
+	"\x13restaurant_bindings\x18\v \x03(\v2'.com.gastroflow.users.RestaurantBindingB\b\xbaH\x05\x92\x01\x02\x102R\x12restaurantBindings\x12D\n" +
 	"\x10last_activity_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\x0elastActivityAt\x12\x1b\n" +
-	"\tis_active\x18\r \x01(\bR\bisActive\x12I\n" +
+	"\tis_active\x18\r \x01(\bR\bisActive\x12G\n" +
 	"\n" +
-	"audit_info\x18\x0e \x01(\v2 .com.gastroflow.common.AuditInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tauditInfo\"\xef\x02\n" +
-	"\vUserAddress\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12B\n" +
-	"\aaddress\x18\x02 \x01(\v2\x1e.com.gastroflow.common.AddressB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aaddress\x12?\n" +
-	"\x04type\x18\x03 \x01(\x0e2!.com.gastroflow.users.AddressTypeB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\x12\x1d\n" +
-	"\x05label\x18\x04 \x01(\tB\a\xfaB\x04r\x02\x182R\x05label\x12\x1d\n" +
+	"audit_info\x18\x0e \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\xe9\x02\n" +
+	"\vUserAddress\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12@\n" +
+	"\aaddress\x18\x02 \x01(\v2\x1e.com.gastroflow.common.AddressB\x06\xbaH\x03\xc8\x01\x01R\aaddress\x12?\n" +
+	"\x04type\x18\x03 \x01(\x0e2!.com.gastroflow.users.AddressTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12\x1d\n" +
+	"\x05label\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\x05label\x12\x1d\n" +
 	"\n" +
 	"is_default\x18\x05 \x01(\bR\tisDefault\x12\x1b\n" +
-	"\tis_active\x18\x06 \x01(\bR\bisActive\x12I\n" +
+	"\tis_active\x18\x06 \x01(\bR\bisActive\x12G\n" +
 	"\n" +
-	"audit_info\x18\a \x01(\v2 .com.gastroflow.common.AuditInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tauditInfo\"\xd4\x04\n" +
+	"audit_info\x18\a \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\xd4\x04\n" +
 	"\fUserSettings\x12<\n" +
 	"\x1anotifications_order_status\x18\x01 \x01(\bR\x18notificationsOrderStatus\x129\n" +
 	"\x18notifications_promotions\x18\x02 \x01(\bR\x17notificationsPromotions\x126\n" +
@@ -1434,64 +1434,64 @@ const file_users_models_proto_rawDesc = "" +
 	"\x17remember_payment_method\x18\t \x01(\bR\x15rememberPaymentMethod\x12Z\n" +
 	"\x16default_payment_method\x18\n" +
 	" \x01(\x0e2$.com.gastroflow.common.PaymentMethodR\x14defaultPaymentMethod\x12#\n" +
-	"\btimezone\x18\v \x01(\tB\a\xfaB\x04r\x02\x182R\btimezone\"\x9f\x04\n" +
+	"\btimezone\x18\v \x01(\tB\a\xbaH\x04r\x02\x182R\btimezone\"\x9f\x04\n" +
 	"\vUserProfile\x12'\n" +
 	"\n" +
-	"avatar_url\x18\x01 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\tavatarUrl\x129\n" +
+	"avatar_url\x18\x01 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\tavatarUrl\x129\n" +
 	"\n" +
 	"birth_date\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tbirthDate\x124\n" +
 	"\x06gender\x18\x03 \x01(\x0e2\x1c.com.gastroflow.users.GenderR\x06gender\x12\x1a\n" +
-	"\x03bio\x18\x04 \x01(\tB\b\xfaB\x05r\x03\x18\xe8\aR\x03bio\x12b\n" +
-	"\x13dietary_preferences\x18\x05 \x03(\x0e2'.com.gastroflow.users.DietaryPreferenceB\b\xfaB\x05\x92\x01\x02\x10\x14R\x12dietaryPreferences\x12X\n" +
-	"\x14favorite_restaurants\x18\x06 \x03(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x92\x01\x02\x10dR\x13favoriteRestaurants\x12V\n" +
-	"\x13favorite_menu_items\x18\a \x03(\v2\x1b.com.gastroflow.common.UUIDB\t\xfaB\x06\x92\x01\x03\x10\xc8\x01R\x11favoriteMenuItems\x12D\n" +
-	"\floyalty_info\x18\b \x01(\v2!.com.gastroflow.users.LoyaltyInfoR\vloyaltyInfo\"\xbf\x03\n" +
-	"\x11RestaurantBinding\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12=\n" +
-	"\x04role\x18\x02 \x01(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xfaB\x05\x82\x01\x02 \x00R\x04role\x128\n" +
+	"\x03bio\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xe8\aR\x03bio\x12b\n" +
+	"\x13dietary_preferences\x18\x05 \x03(\x0e2'.com.gastroflow.users.DietaryPreferenceB\b\xbaH\x05\x92\x01\x02\x10\x14R\x12dietaryPreferences\x12X\n" +
+	"\x14favorite_restaurants\x18\x06 \x03(\v2\x1b.com.gastroflow.common.UUIDB\b\xbaH\x05\x92\x01\x02\x10dR\x13favoriteRestaurants\x12V\n" +
+	"\x13favorite_menu_items\x18\a \x03(\v2\x1b.com.gastroflow.common.UUIDB\t\xbaH\x06\x92\x01\x03\x10\xc8\x01R\x11favoriteMenuItems\x12D\n" +
+	"\floyalty_info\x18\b \x01(\v2!.com.gastroflow.users.LoyaltyInfoR\vloyaltyInfo\"\xbb\x03\n" +
+	"\x11RestaurantBinding\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12=\n" +
+	"\x04role\x18\x02 \x01(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xbaH\x05\x82\x01\x02 \x00R\x04role\x128\n" +
 	"\tbranch_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDR\bbranchId\x12\x1b\n" +
-	"\tis_active\x18\x04 \x01(\bR\bisActive\x12C\n" +
+	"\tis_active\x18\x04 \x01(\bR\bisActive\x12A\n" +
 	"\n" +
-	"start_date\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\tstartDate\x125\n" +
+	"start_date\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tstartDate\x125\n" +
 	"\bend_date\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\aendDate\x12L\n" +
-	"\vpermissions\x18\a \x03(\x0e2 .com.gastroflow.users.PermissionB\b\xfaB\x05\x92\x01\x02\x102R\vpermissions\"\xa7\x03\n" +
+	"\vpermissions\x18\a \x03(\x0e2 .com.gastroflow.users.PermissionB\b\xbaH\x05\x92\x01\x02\x102R\vpermissions\"\xa5\x03\n" +
 	"\vLoyaltyInfo\x12B\n" +
-	"\x05level\x18\x01 \x01(\x0e2\".com.gastroflow.users.LoyaltyLevelB\b\xfaB\x05\x82\x01\x02 \x00R\x05level\x12.\n" +
-	"\x0ecurrent_points\x18\x02 \x01(\x03B\a\xfaB\x04\"\x02(\x00R\rcurrentPoints\x127\n" +
-	"\x13total_earned_points\x18\x03 \x01(\x03B\a\xfaB\x04\"\x02(\x00R\x11totalEarnedPoints\x125\n" +
-	"\x12total_spent_points\x18\x04 \x01(\x03B\a\xfaB\x04\"\x02(\x00R\x10totalSpentPoints\x12*\n" +
-	"\ftotal_orders\x18\x05 \x01(\x05B\a\xfaB\x04\x1a\x02(\x00R\vtotalOrders\x12=\n" +
+	"\x05level\x18\x01 \x01(\x0e2\".com.gastroflow.users.LoyaltyLevelB\b\xbaH\x05\x82\x01\x02 \x00R\x05level\x12.\n" +
+	"\x0ecurrent_points\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02(\x00R\rcurrentPoints\x127\n" +
+	"\x13total_earned_points\x18\x03 \x01(\x03B\a\xbaH\x04\"\x02(\x00R\x11totalEarnedPoints\x125\n" +
+	"\x12total_spent_points\x18\x04 \x01(\x03B\a\xbaH\x04\"\x02(\x00R\x10totalSpentPoints\x12*\n" +
+	"\ftotal_orders\x18\x05 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\vtotalOrders\x12=\n" +
 	"\vtotal_spent\x18\x06 \x01(\v2\x1c.com.gastroflow.common.MoneyR\n" +
-	"totalSpent\x12I\n" +
-	"\rregistered_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\fregisteredAt\"\x8a\x04\n" +
+	"totalSpent\x12G\n" +
+	"\rregistered_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\fregisteredAt\"\x82\x04\n" +
 	"\aSession\x12)\n" +
 	"\n" +
 	"session_id\x18\x01 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\x80\x01R\tsessionId\x12>\n" +
-	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12C\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x01R\tsessionId\x12<\n" +
+	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12A\n" +
 	"\n" +
-	"created_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\tcreatedAt\x12C\n" +
+	"created_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tcreatedAt\x12A\n" +
 	"\n" +
-	"expires_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\texpiresAt\x12N\n" +
-	"\x10last_activity_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\x0elastActivityAt\x12$\n" +
-	"\tclient_ip\x18\x06 \x01(\tB\a\xfaB\x04r\x02\x18-R\bclientIp\x124\n" +
-	"\x11client_user_agent\x18\a \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\x0fclientUserAgent\x12A\n" +
+	"expires_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\texpiresAt\x12L\n" +
+	"\x10last_activity_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\x0elastActivityAt\x12$\n" +
+	"\tclient_ip\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x18-R\bclientIp\x124\n" +
+	"\x11client_user_agent\x18\a \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\x0fclientUserAgent\x12A\n" +
 	"\vdevice_info\x18\b \x01(\v2 .com.gastroflow.users.DeviceInfoR\n" +
 	"deviceInfo\x12\x1b\n" +
 	"\tis_active\x18\t \x01(\bR\bisActive\"\xc2\x02\n" +
 	"\n" +
 	"DeviceInfo\x12K\n" +
-	"\vdevice_type\x18\x01 \x01(\x0e2 .com.gastroflow.users.DeviceTypeB\b\xfaB\x05\x82\x01\x02 \x00R\n" +
+	"\vdevice_type\x18\x01 \x01(\x0e2 .com.gastroflow.users.DeviceTypeB\b\xbaH\x05\x82\x01\x02 \x00R\n" +
 	"deviceType\x12\x17\n" +
-	"\x02os\x18\x02 \x01(\tB\a\xfaB\x04r\x02\x182R\x02os\x12&\n" +
+	"\x02os\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x182R\x02os\x12&\n" +
 	"\n" +
-	"os_version\x18\x03 \x01(\tB\a\xfaB\x04r\x02\x182R\tosVersion\x12!\n" +
-	"\abrowser\x18\x04 \x01(\tB\a\xfaB\x04r\x02\x182R\abrowser\x120\n" +
-	"\x0fbrowser_version\x18\x05 \x01(\tB\a\xfaB\x04r\x02\x182R\x0ebrowserVersion\x12(\n" +
-	"\vapp_version\x18\x06 \x01(\tB\a\xfaB\x04r\x02\x182R\n" +
+	"os_version\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x182R\tosVersion\x12!\n" +
+	"\abrowser\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\abrowser\x120\n" +
+	"\x0fbrowser_version\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x182R\x0ebrowserVersion\x12(\n" +
+	"\vapp_version\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x182R\n" +
 	"appVersion\x12'\n" +
 	"\n" +
-	"push_token\x18\a \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\tpushToken*\xa8\x01\n" +
+	"push_token\x18\a \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\tpushToken*\xa8\x01\n" +
 	"\n" +
 	"UserStatus\x12\x1b\n" +
 	"\x17USER_STATUS_UNSPECIFIED\x10\x00\x12\x16\n" +

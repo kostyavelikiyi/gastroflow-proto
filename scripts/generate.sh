@@ -133,20 +133,12 @@ post_process_go() {
     cat > "$PACKAGES_DIR/go_module/go.mod" << EOF
 module github.com/gastroflow/proto-go
 
-go 1.21
+go 1.24
 
 require (
-	github.com/envoyproxy/protoc-gen-validate v1.0.2
-	google.golang.org/grpc v1.58.3
-	google.golang.org/protobuf v1.31.0
-)
-
-require (
-	github.com/golang/protobuf v1.5.3 // indirect
-	golang.org/x/net v0.15.0 // indirect
-	golang.org/x/sys v0.12.0 // indirect
-	golang.org/x/text v0.13.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20230920204549-e6e6cdab5c13 // indirect
+	github.com/bufbuild/protovalidate-go v0.8.0
+	google.golang.org/grpc v1.74.2
+	google.golang.org/protobuf v1.36.7
 )
 EOF
 

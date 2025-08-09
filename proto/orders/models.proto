@@ -5,46 +5,46 @@ package com.gastroflow.orders;
 import "common/enums.proto";
 import "common/types.proto";
 import "google/protobuf/timestamp.proto";
-import "validate/validate.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/orders";
 
 // Order - основная сущность заказа в системе GastroFlow
 message Order {
   // Уникальный идентификатор заказа
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Имя клиента
-  string name = 2 [(validate.rules).string = {
+  string name = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 100
   }];
 
   // Дата и время создания заказа
-  google.protobuf.Timestamp date_time = 3 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp date_time = 3 [(buf.validate.field).required = true];
 
   // Способ получения заказа
-  com.gastroflow.common.PackingMode packing_mode = 4 [(validate.rules).enum = {
+  com.gastroflow.common.PackingMode packing_mode = 4 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Позиции в заказе
-  repeated Position positions = 5 [(validate.rules).repeated = {
+  repeated Position positions = 5 [(buf.validate.field).repeated = {
     min_items: 1
     max_items: 100
   }];
 
   // Общая сумма заказа
-  com.gastroflow.common.Money total = 6 [(validate.rules).message.required = true];
+  com.gastroflow.common.Money total = 6 [(buf.validate.field).required = true];
 
   // Готовность всего заказа
   bool is_ready = 7;
 
   // Контактная информация клиента
-  com.gastroflow.common.ContactInfo contact_info = 8 [(validate.rules).message.required = true];
+  com.gastroflow.common.ContactInfo contact_info = 8 [(buf.validate.field).required = true];
 
   // Время приготовления в минутах (расчетное)
-  int32 duration = 9 [(validate.rules).int32 = {
+  int32 duration = 9 [(buf.validate.field).int32 = {
     gte: 1
     lte: 480
   }];
@@ -53,23 +53,23 @@ message Order {
   com.gastroflow.common.Address address = 10;
 
   // Внешний номер заказа (для интеграций)
-  string external_order_number = 11 [(validate.rules).string.max_len = 100];
+  string external_order_number = 11 [(buf.validate.field).string.max_len = 100];
 
   // Идентификатор примененного промокода
   com.gastroflow.common.UUID promo_code_id = 12;
 
   // Способ оплаты
-  com.gastroflow.common.PaymentMethod payment_method = 13 [(validate.rules).enum = {
+  com.gastroflow.common.PaymentMethod payment_method = 13 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Текущий статус заказа
-  com.gastroflow.common.OrderStatus status = 14 [(validate.rules).enum = {
+  com.gastroflow.common.OrderStatus status = 14 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Режим времени приготовления
-  com.gastroflow.common.PreparingTimeMode preparing_time_mode = 15 [(validate.rules).enum = {
+  com.gastroflow.common.PreparingTimeMode preparing_time_mode = 15 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
@@ -77,43 +77,43 @@ message Order {
   google.protobuf.Timestamp desired_ready_time = 16;
 
   // Идентификатор ресторана (мультитенантность)
-  com.gastroflow.common.UUID restaurant_id = 17 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID restaurant_id = 17 [(buf.validate.field).required = true];
 
   // Комментарий к заказу
-  string comment = 18 [(validate.rules).string.max_len = 1000];
+  string comment = 18 [(buf.validate.field).string.max_len = 1000];
 
   // Информация о скидке
   DiscountInfo discount = 19;
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 20 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 20 [(buf.validate.field).required = true];
 }
 
 // Position - позиция в заказе
 message Position {
   // Уникальный идентификатор позиции
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Название позиции
-  string name = 2 [(validate.rules).string = {
+  string name = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 200
   }];
 
   // Базовая цена позиции
-  com.gastroflow.common.Money price = 3 [(validate.rules).message.required = true];
+  com.gastroflow.common.Money price = 3 [(buf.validate.field).required = true];
 
   // Количество единиц данной позиции
-  int32 quantity = 4 [(validate.rules).int32 = {
+  int32 quantity = 4 [(buf.validate.field).int32 = {
     gte: 1
     lte: 100
   }];
 
   // Выбранные варианты для позиции
-  repeated Variant selected_variants = 5 [(validate.rules).repeated.max_items = 50];
+  repeated Variant selected_variants = 5 [(buf.validate.field).repeated.max_items = 50];
 
   // Комментарий к позиции от клиента
-  string comment = 6 [(validate.rules).string.max_len = 500];
+  string comment = 6 [(buf.validate.field).string.max_len = 500];
 
   // Готовность позиции
   bool is_ready = 7;
@@ -122,57 +122,57 @@ message Position {
   com.gastroflow.common.UUID parent_id = 8;
 
   // Идентификатор позиции в меню (для связи с каталогом)
-  com.gastroflow.common.UUID menu_item_id = 9 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID menu_item_id = 9 [(buf.validate.field).required = true];
 
   // Время приготовления позиции в минутах
-  int32 cooking_time = 10 [(validate.rules).int32 = {
+  int32 cooking_time = 10 [(buf.validate.field).int32 = {
     gte: 1
     lte: 120
   }];
 
   // Специальные инструкции для кухни
-  string cooking_instructions = 11 [(validate.rules).string.max_len = 300];
+  string cooking_instructions = 11 [(buf.validate.field).string.max_len = 300];
 }
 
 // Variant - вариант позиции (размер, добавка и т.д.)
 message Variant {
   // Название варианта (например, "Большая порция", "Без лука")
-  string name = 1 [(validate.rules).string = {
+  string name = 1 [(buf.validate.field).string = {
     min_len: 1
     max_len: 100
   }];
 
   // Дополнительная цена за вариант (может быть отрицательной для скидок)
-  com.gastroflow.common.Money price = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.Money price = 2 [(buf.validate.field).required = true];
 
   // Идентификатор варианта в меню
-  com.gastroflow.common.UUID variant_id = 3 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID variant_id = 3 [(buf.validate.field).required = true];
 
   // Категория варианта (размер, добавка, исключение и т.д.)
-  string category = 4 [(validate.rules).string.max_len = 50];
+  string category = 4 [(buf.validate.field).string.max_len = 50];
 }
 
 // DiscountInfo - информация о скидке на заказ
 message DiscountInfo {
   // Размер скидки
-  com.gastroflow.common.Money amount = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.Money amount = 1 [(buf.validate.field).required = true];
 
   // Процент скидки (если применимо)
-  double percentage = 2 [(validate.rules).double = {
+  double percentage = 2 [(buf.validate.field).double = {
     gte: 0.0
     lte: 100.0
   }];
 
   // Тип скидки
-  DiscountType type = 3 [(validate.rules).enum = {
+  DiscountType type = 3 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Описание скидки
-  string description = 4 [(validate.rules).string.max_len = 200];
+  string description = 4 [(buf.validate.field).string.max_len = 200];
 
   // Код промокода (если скидка по промокоду)
-  string promo_code = 5 [(validate.rules).string.max_len = 50];
+  string promo_code = 5 [(buf.validate.field).string.max_len = 50];
 }
 
 // DiscountType - тип скидки

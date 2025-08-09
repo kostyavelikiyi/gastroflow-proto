@@ -7,7 +7,7 @@
 package common
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -623,51 +623,51 @@ var File_common_types_proto protoreflect.FileDescriptor
 
 const file_common_types_proto_rawDesc = "" +
 	"\n" +
-	"\x12common/types.proto\x12\x15com.gastroflow.common\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"r\n" +
+	"\x12common/types.proto\x12\x15com.gastroflow.common\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"r\n" +
 	"\x04UUID\x12j\n" +
-	"\x05value\x18\x01 \x01(\tBT\xfaBQrO2M^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$R\x05value\"W\n" +
+	"\x05value\x18\x01 \x01(\tBT\xbaHQrO2M^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$R\x05value\"W\n" +
 	"\x05Money\x12\x1f\n" +
-	"\x06amount\x18\x01 \x01(\x03B\a\xfaB\x04\"\x02(\x00R\x06amount\x12-\n" +
-	"\bcurrency\x18\x02 \x01(\tB\x11\xfaB\x0er\f2\n" +
+	"\x06amount\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02(\x00R\x06amount\x12-\n" +
+	"\bcurrency\x18\x02 \x01(\tB\x11\xbaH\x0er\f2\n" +
 	"^[A-Z]{3}$R\bcurrency\"\xa4\x03\n" +
 	"\aAddress\x12-\n" +
 	"\ffull_address\x18\x01 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x05\x18\xf4\x03R\vfullAddress\x12\x1d\n" +
-	"\x04city\x18\x02 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x18dR\x04city\x12\"\n" +
+	"\xbaH\ar\x05\x10\x05\x18\xf4\x03R\vfullAddress\x12\x1d\n" +
+	"\x04city\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04city\x12\"\n" +
 	"\x06street\x18\x03 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\xc8\x01R\x06street\x12,\n" +
-	"\fhouse_number\x18\x04 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x18\x14R\vhouseNumber\x12%\n" +
-	"\tapartment\x18\x05 \x01(\tB\a\xfaB\x04r\x02\x18\x14R\tapartment\x12#\n" +
-	"\bentrance\x18\x06 \x01(\tB\a\xfaB\x04r\x02\x18\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x06street\x12,\n" +
+	"\fhouse_number\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18\x14R\vhouseNumber\x12%\n" +
+	"\tapartment\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x18\x14R\tapartment\x12#\n" +
+	"\bentrance\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x18\n" +
 	"R\bentrance\x12\x1d\n" +
-	"\x05floor\x18\a \x01(\tB\a\xfaB\x04r\x02\x18\n" +
+	"\x05floor\x18\a \x01(\tB\a\xbaH\x04r\x02\x18\n" +
 	"R\x05floor\x12\"\n" +
-	"\acomment\x18\b \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\acomment\x123\n" +
-	"\blatitude\x18\t \x01(\x01B\x17\xfaB\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x125\n" +
+	"\acomment\x18\b \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\acomment\x123\n" +
+	"\blatitude\x18\t \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x125\n" +
 	"\tlongitude\x18\n" +
-	" \x01(\x01B\x17\xfaB\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\"\x8d\x01\n" +
+	" \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\"\x8d\x01\n" +
 	"\vContactInfo\x12/\n" +
-	"\x05phone\x18\x01 \x01(\tB\x19\xfaB\x16r\x142\x12^\\+[1-9]\\d{10,14}$R\x05phone\x12M\n" +
-	"\x05email\x18\x02 \x01(\tB7\xfaB4r220^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$R\x05email\"\xbb\x03\n" +
-	"\tAuditInfo\x12C\n" +
+	"\x05phone\x18\x01 \x01(\tB\x19\xbaH\x16r\x142\x12^\\+[1-9]\\d{10,14}$R\x05phone\x12M\n" +
+	"\x05email\x18\x02 \x01(\tB7\xbaH4r220^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$R\x05email\"\xb3\x03\n" +
+	"\tAuditInfo\x12A\n" +
 	"\n" +
-	"created_at\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\tcreatedAt\x12C\n" +
+	"created_at\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tcreatedAt\x12A\n" +
 	"\n" +
-	"updated_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\tupdatedAt\x12D\n" +
+	"updated_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tupdatedAt\x12B\n" +
 	"\n" +
-	"created_by\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tcreatedBy\x12D\n" +
+	"created_by\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\tcreatedBy\x12B\n" +
 	"\n" +
-	"updated_by\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tupdatedBy\x129\n" +
+	"updated_by\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\tupdatedBy\x129\n" +
 	"\n" +
 	"deleted_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\x12:\n" +
 	"\n" +
 	"deleted_by\x18\x06 \x01(\v2\x1b.com.gastroflow.common.UUIDR\tdeletedBy\x12!\n" +
-	"\aversion\x18\a \x01(\x03B\a\xfaB\x04\"\x02(\x01R\aversion\"\xbe\x01\n" +
+	"\aversion\x18\a \x01(\x03B\a\xbaH\x04\"\x02(\x01R\aversion\"\xbe\x01\n" +
 	"\x11PaginationRequest\x12\x1e\n" +
 	"\x04page\x18\x01 \x01(\x05B\n" +
-	"\xfaB\a\x1a\x05\x18\x90N(\x01R\x04page\x12&\n" +
-	"\tpage_size\x18\x02 \x01(\x05B\t\xfaB\x06\x1a\x04\x18d(\x01R\bpageSize\x12 \n" +
-	"\asort_by\x18\x03 \x01(\tB\a\xfaB\x04r\x02\x182R\x06sortBy\x12?\n" +
+	"\xbaH\a\x1a\x05\x18\x90N(\x01R\x04page\x12&\n" +
+	"\tpage_size\x18\x02 \x01(\x05B\t\xbaH\x06\x1a\x04\x18d(\x01R\bpageSize\x12 \n" +
+	"\asort_by\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x182R\x06sortBy\x12?\n" +
 	"\n" +
 	"sort_order\x18\x04 \x01(\x0e2 .com.gastroflow.common.SortOrderR\tsortOrder\"\xcc\x01\n" +
 	"\x12PaginationResponse\x12!\n" +

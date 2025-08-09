@@ -7,7 +7,7 @@
 package orders
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -1665,116 +1665,116 @@ var File_orders_service_proto protoreflect.FileDescriptor
 
 const file_orders_service_proto_rawDesc = "" +
 	"\n" +
-	"\x14orders/service.proto\x12\x15com.gastroflow.orders\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x13orders/models.proto\x1a\x17validate/validate.proto\"\x84\x06\n" +
+	"\x14orders/service.proto\x12\x15com.gastroflow.orders\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x13orders/models.proto\x1a\x1bbuf/validate/validate.proto\"\x80\x06\n" +
 	"\x12CreateOrderRequest\x12\x1d\n" +
-	"\x04name\x18\x01 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x18dR\x04name\x12O\n" +
-	"\fpacking_mode\x18\x02 \x01(\x0e2\".com.gastroflow.common.PackingModeB\b\xfaB\x05\x82\x01\x02 \x00R\vpackingMode\x12V\n" +
+	"\x04name\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12O\n" +
+	"\fpacking_mode\x18\x02 \x01(\x0e2\".com.gastroflow.common.PackingModeB\b\xbaH\x05\x82\x01\x02 \x00R\vpackingMode\x12V\n" +
 	"\tpositions\x18\x03 \x03(\v2,.com.gastroflow.orders.CreatePositionRequestB\n" +
-	"\xfaB\a\x92\x01\x04\b\x01\x10dR\tpositions\x12O\n" +
-	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\vcontactInfo\x128\n" +
+	"\xbaH\a\x92\x01\x04\b\x01\x10dR\tpositions\x12M\n" +
+	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoB\x06\xbaH\x03\xc8\x01\x01R\vcontactInfo\x128\n" +
 	"\aaddress\x18\x05 \x01(\v2\x1e.com.gastroflow.common.AddressR\aaddress\x12U\n" +
-	"\x0epayment_method\x18\x06 \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xfaB\x05\x82\x01\x02 \x00R\rpaymentMethod\x12b\n" +
-	"\x13preparing_time_mode\x18\a \x01(\x0e2(.com.gastroflow.common.PreparingTimeModeB\b\xfaB\x05\x82\x01\x02 \x00R\x11preparingTimeMode\x12H\n" +
-	"\x12desired_ready_time\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\x10desiredReadyTime\x12J\n" +
-	"\rrestaurant_id\x18\t \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12\"\n" +
+	"\x0epayment_method\x18\x06 \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xbaH\x05\x82\x01\x02 \x00R\rpaymentMethod\x12b\n" +
+	"\x13preparing_time_mode\x18\a \x01(\x0e2(.com.gastroflow.common.PreparingTimeModeB\b\xbaH\x05\x82\x01\x02 \x00R\x11preparingTimeMode\x12H\n" +
+	"\x12desired_ready_time\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\x10desiredReadyTime\x12H\n" +
+	"\rrestaurant_id\x18\t \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12\"\n" +
 	"\acomment\x18\n" +
-	" \x01(\tB\b\xfaB\x05r\x03\x18\xe8\aR\acomment\x12&\n" +
+	" \x01(\tB\b\xbaH\x05r\x03\x18\xe8\aR\acomment\x12&\n" +
 	"\n" +
-	"promo_code\x18\v \x01(\tB\a\xfaB\x04r\x02\x182R\tpromoCode\"\xc1\x02\n" +
-	"\x15CreatePositionRequest\x12G\n" +
-	"\fmenu_item_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"promo_code\x18\v \x01(\tB\a\xbaH\x04r\x02\x182R\tpromoCode\"\xbf\x02\n" +
+	"\x15CreatePositionRequest\x12E\n" +
+	"\fmenu_item_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"menuItemId\x12%\n" +
-	"\bquantity\x18\x02 \x01(\x05B\t\xfaB\x06\x1a\x04\x18d(\x01R\bquantity\x12W\n" +
-	"\x14selected_variant_ids\x18\x03 \x03(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x92\x01\x02\x102R\x12selectedVariantIds\x12\"\n" +
-	"\acomment\x18\x04 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\acomment\x12;\n" +
-	"\x14cooking_instructions\x18\x05 \x01(\tB\b\xfaB\x05r\x03\x18\xac\x02R\x13cookingInstructions\"\xa1\x01\n" +
-	"\x13CreateOrderResponse\x12<\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05order\x12L\n" +
-	"\x14estimated_ready_time\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x12estimatedReadyTime\"\x94\x01\n" +
-	"\x0fGetOrderRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\"P\n" +
-	"\x10GetOrderResponse\x12<\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05order\"\x89\x01\n" +
-	"\x12UpdateOrderRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12<\n" +
-	"\x05order\x18\x02 \x01(\v2\x1c.com.gastroflow.orders.OrderB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05order\"S\n" +
-	"\x13UpdateOrderResponse\x12<\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05order\"\x97\x01\n" +
-	"\x12DeleteOrderRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\"\xfe\x03\n" +
-	"\x11ListOrdersRequest\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12R\n" +
+	"\bquantity\x18\x02 \x01(\x05B\t\xbaH\x06\x1a\x04\x18d(\x01R\bquantity\x12W\n" +
+	"\x14selected_variant_ids\x18\x03 \x03(\v2\x1b.com.gastroflow.common.UUIDB\b\xbaH\x05\x92\x01\x02\x102R\x12selectedVariantIds\x12\"\n" +
+	"\acomment\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\acomment\x12;\n" +
+	"\x14cooking_instructions\x18\x05 \x01(\tB\b\xbaH\x05r\x03\x18\xac\x02R\x13cookingInstructions\"\x9f\x01\n" +
+	"\x13CreateOrderResponse\x12:\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\x12L\n" +
+	"\x14estimated_ready_time\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x12estimatedReadyTime\"\x90\x01\n" +
+	"\x0fGetOrderRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"N\n" +
+	"\x10GetOrderResponse\x12:\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\"\x85\x01\n" +
+	"\x12UpdateOrderRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12:\n" +
+	"\x05order\x18\x02 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\"Q\n" +
+	"\x13UpdateOrderResponse\x12:\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\"\x93\x01\n" +
+	"\x12DeleteOrderRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"\xfa\x03\n" +
+	"\x11ListOrdersRequest\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12P\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"pagination\x12Q\n" +
-	"\rstatus_filter\x18\x03 \x03(\x0e2\".com.gastroflow.common.OrderStatusB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\rstatus_filter\x18\x03 \x03(\x0e2\".com.gastroflow.common.OrderStatusB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\fstatusFilter\x12\\\n" +
-	"\x13packing_mode_filter\x18\x04 \x03(\x0e2\".com.gastroflow.common.PackingModeB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\x13packing_mode_filter\x18\x04 \x03(\x0e2\".com.gastroflow.common.PackingModeB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\x11packingModeFilter\x127\n" +
 	"\tdate_from\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\bdateFrom\x123\n" +
 	"\adate_to\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\x06dateTo\x12*\n" +
-	"\fsearch_query\x18\a \x01(\tB\a\xfaB\x04r\x02\x18dR\vsearchQuery\"\x9f\x01\n" +
+	"\fsearch_query\x18\a \x01(\tB\a\xbaH\x04r\x02\x18dR\vsearchQuery\"\x9d\x01\n" +
 	"\x12ListOrdersResponse\x124\n" +
-	"\x06orders\x18\x01 \x03(\v2\x1c.com.gastroflow.orders.OrderR\x06orders\x12S\n" +
+	"\x06orders\x18\x01 \x03(\v2\x1c.com.gastroflow.orders.OrderR\x06orders\x12Q\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"pagination\"\x87\x02\n" +
-	"\x18UpdateOrderStatusRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12D\n" +
-	"\x06status\x18\x03 \x01(\x0e2\".com.gastroflow.common.OrderStatusB\b\xfaB\x05\x82\x01\x02 \x00R\x06status\x12\"\n" +
-	"\acomment\x18\x04 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\acomment\"Y\n" +
-	"\x19UpdateOrderStatusResponse\x12<\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05order\"\xf0\x01\n" +
-	"\x18MarkPositionReadyRequest\x12@\n" +
-	"\border_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aorderId\x12F\n" +
-	"\vposition_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"positionId\x12J\n" +
-	"\rrestaurant_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\"\x8e\x01\n" +
-	"\x19MarkPositionReadyResponse\x12E\n" +
-	"\bposition\x18\x01 \x01(\v2\x1f.com.gastroflow.orders.PositionB\b\xfaB\x05\x8a\x01\x02\x10\x01R\bposition\x12*\n" +
-	"\x11order_fully_ready\x18\x02 \x01(\bR\x0forderFullyReady\"\x9a\x01\n" +
-	"\x15MarkOrderReadyRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\"\x91\x01\n" +
-	"\x16MarkOrderReadyResponse\x12<\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05order\x129\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"pagination\"\x83\x02\n" +
+	"\x18UpdateOrderStatusRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12D\n" +
+	"\x06status\x18\x03 \x01(\x0e2\".com.gastroflow.common.OrderStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12\"\n" +
+	"\acomment\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\acomment\"W\n" +
+	"\x19UpdateOrderStatusResponse\x12:\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\"\xea\x01\n" +
+	"\x18MarkPositionReadyRequest\x12>\n" +
+	"\border_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\aorderId\x12D\n" +
+	"\vposition_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"positionId\x12H\n" +
+	"\rrestaurant_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"\x8c\x01\n" +
+	"\x19MarkPositionReadyResponse\x12C\n" +
+	"\bposition\x18\x01 \x01(\v2\x1f.com.gastroflow.orders.PositionB\x06\xbaH\x03\xc8\x01\x01R\bposition\x12*\n" +
+	"\x11order_fully_ready\x18\x02 \x01(\bR\x0forderFullyReady\"\x96\x01\n" +
+	"\x15MarkOrderReadyRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"\x8f\x01\n" +
+	"\x16MarkOrderReadyResponse\x12:\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\x129\n" +
 	"\n" +
-	"ready_time\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\treadyTime\"\xbb\x01\n" +
-	"\x12CancelOrderRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12\"\n" +
+	"ready_time\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\treadyTime\"\xb7\x01\n" +
+	"\x12CancelOrderRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12\"\n" +
 	"\x06reason\x18\x03 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\xf4\x03R\x06reason\"S\n" +
-	"\x13CancelOrderResponse\x12<\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05order\"\x9b\x01\n" +
-	"\x16GetOrderHistoryRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\"[\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xf4\x03R\x06reason\"Q\n" +
+	"\x13CancelOrderResponse\x12:\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\"\x97\x01\n" +
+	"\x16GetOrderHistoryRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"[\n" +
 	"\x17GetOrderHistoryResponse\x12@\n" +
-	"\x06events\x18\x01 \x03(\v2(.com.gastroflow.orders.OrderHistoryEventR\x06events\"\xca\x02\n" +
-	"\x11OrderHistoryEvent\x12B\n" +
-	"\ttimestamp\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\ttimestamp\x12C\n" +
+	"\x06events\x18\x01 \x03(\v2(.com.gastroflow.orders.OrderHistoryEventR\x06events\"\xc8\x02\n" +
+	"\x11OrderHistoryEvent\x12@\n" +
+	"\ttimestamp\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\ttimestamp\x12C\n" +
 	"\vfrom_status\x18\x02 \x01(\x0e2\".com.gastroflow.common.OrderStatusR\n" +
 	"fromStatus\x12?\n" +
 	"\tto_status\x18\x03 \x01(\x0e2\".com.gastroflow.common.OrderStatusR\btoStatus\x12\x18\n" +
 	"\acomment\x18\x04 \x01(\tR\acomment\x124\n" +
 	"\auser_id\x18\x05 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x06userId\x12\x1b\n" +
-	"\tuser_name\x18\x06 \x01(\tR\buserName\"\xb5\x01\n" +
-	"\x1eSubscribeToOrderUpdatesRequest\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12G\n" +
-	"\rstatus_filter\x18\x02 \x03(\x0e2\".com.gastroflow.common.OrderStatusR\fstatusFilter\"\xdf\x01\n" +
-	"\vOrderUpdate\x12<\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05order\x12K\n" +
-	"\x0fprevious_status\x18\x02 \x01(\x0e2\".com.gastroflow.common.OrderStatusR\x0epreviousStatus\x12E\n" +
-	"\vupdate_time\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\n" +
-	"updateTime\"\xe9\x01\n" +
-	"\x19GetOrdersAnalyticsRequest\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12A\n" +
-	"\tdate_from\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\bdateFrom\x12=\n" +
-	"\adate_to\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\x06dateTo\"\x9f\x03\n" +
+	"\tuser_name\x18\x06 \x01(\tR\buserName\"\xb3\x01\n" +
+	"\x1eSubscribeToOrderUpdatesRequest\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12G\n" +
+	"\rstatus_filter\x18\x02 \x03(\x0e2\".com.gastroflow.common.OrderStatusR\fstatusFilter\"\xdb\x01\n" +
+	"\vOrderUpdate\x12:\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\x12K\n" +
+	"\x0fprevious_status\x18\x02 \x01(\x0e2\".com.gastroflow.common.OrderStatusR\x0epreviousStatus\x12C\n" +
+	"\vupdate_time\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"updateTime\"\xe3\x01\n" +
+	"\x19GetOrdersAnalyticsRequest\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12?\n" +
+	"\tdate_from\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\bdateFrom\x12;\n" +
+	"\adate_to\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\x06dateTo\"\x9f\x03\n" +
 	"\x1aGetOrdersAnalyticsResponse\x12!\n" +
 	"\ftotal_orders\x18\x01 \x01(\x03R\vtotalOrders\x12A\n" +
 	"\rtotal_revenue\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyR\ftotalRevenue\x12.\n" +

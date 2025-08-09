@@ -7,7 +7,7 @@
 package users
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -2804,192 +2804,192 @@ var File_users_service_proto protoreflect.FileDescriptor
 
 const file_users_service_proto_rawDesc = "" +
 	"\n" +
-	"\x13users/service.proto\x12\x14com.gastroflow.users\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x12users/models.proto\x1a\x17validate/validate.proto\"\xca\x03\n" +
+	"\x13users/service.proto\x12\x14com.gastroflow.users\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x12users/models.proto\x1a\x1bbuf/validate/validate.proto\"\xc8\x03\n" +
 	"\x11CreateUserRequest\x12(\n" +
 	"\n" +
-	"first_name\x18\x01 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x182R\tfirstName\x12$\n" +
-	"\tlast_name\x18\x02 \x01(\tB\a\xfaB\x04r\x02\x182R\blastName\x12O\n" +
-	"\fcontact_info\x18\x03 \x01(\v2\".com.gastroflow.common.ContactInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\vcontactInfo\x12=\n" +
-	"\x04role\x18\x04 \x01(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xfaB\x05\x82\x01\x02 \x00R\x04role\x12X\n" +
-	"\x12preferred_language\x18\x05 \x01(\x0e2\x1f.com.gastroflow.common.LanguageB\b\xfaB\x05\x82\x01\x02 \x00R\x11preferredLanguage\x12>\n" +
+	"first_name\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182R\tfirstName\x12$\n" +
+	"\tlast_name\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x182R\blastName\x12M\n" +
+	"\fcontact_info\x18\x03 \x01(\v2\".com.gastroflow.common.ContactInfoB\x06\xbaH\x03\xc8\x01\x01R\vcontactInfo\x12=\n" +
+	"\x04role\x18\x04 \x01(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xbaH\x05\x82\x01\x02 \x00R\x04role\x12X\n" +
+	"\x12preferred_language\x18\x05 \x01(\x0e2\x1f.com.gastroflow.common.LanguageB\b\xbaH\x05\x82\x01\x02 \x00R\x11preferredLanguage\x12>\n" +
 	"\bsettings\x18\x06 \x01(\v2\".com.gastroflow.users.UserSettingsR\bsettings\x12;\n" +
-	"\aprofile\x18\a \x01(\v2!.com.gastroflow.users.UserProfileR\aprofile\"N\n" +
-	"\x12CreateUserResponse\x128\n" +
-	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x04user\"G\n" +
-	"\x0eGetUserRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\"K\n" +
-	"\x0fGetUserResponse\x128\n" +
-	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x04user\"H\n" +
+	"\aprofile\x18\a \x01(\v2!.com.gastroflow.users.UserProfileR\aprofile\"L\n" +
+	"\x12CreateUserResponse\x126\n" +
+	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\x06\xbaH\x03\xc8\x01\x01R\x04user\"E\n" +
+	"\x0eGetUserRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\"I\n" +
+	"\x0fGetUserResponse\x126\n" +
+	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\x06\xbaH\x03\xc8\x01\x01R\x04user\"H\n" +
 	"\x15GetUserByPhoneRequest\x12/\n" +
-	"\x05phone\x18\x01 \x01(\tB\x19\xfaB\x16r\x142\x12^\\+[1-9]\\d{10,14}$R\x05phone\"R\n" +
-	"\x16GetUserByPhoneResponse\x128\n" +
-	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x04user\"\x84\x01\n" +
-	"\x11UpdateUserRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x128\n" +
-	"\x04user\x18\x02 \x01(\v2\x1a.com.gastroflow.users.UserB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x04user\"N\n" +
-	"\x12UpdateUserResponse\x128\n" +
-	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x04user\"J\n" +
-	"\x11DeleteUserRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\"\xe6\x02\n" +
-	"\x10ListUsersRequest\x12R\n" +
+	"\x05phone\x18\x01 \x01(\tB\x19\xbaH\x16r\x142\x12^\\+[1-9]\\d{10,14}$R\x05phone\"P\n" +
+	"\x16GetUserByPhoneResponse\x126\n" +
+	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\x06\xbaH\x03\xc8\x01\x01R\x04user\"\x80\x01\n" +
+	"\x11UpdateUserRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x126\n" +
+	"\x04user\x18\x02 \x01(\v2\x1a.com.gastroflow.users.UserB\x06\xbaH\x03\xc8\x01\x01R\x04user\"L\n" +
+	"\x12UpdateUserResponse\x126\n" +
+	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\x06\xbaH\x03\xc8\x01\x01R\x04user\"H\n" +
+	"\x11DeleteUserRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\"\xe4\x02\n" +
+	"\x10ListUsersRequest\x12P\n" +
 	"\n" +
-	"pagination\x18\x01 \x01(\v2(.com.gastroflow.common.PaginationRequestB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"pagination\x18\x01 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"pagination\x12J\n" +
-	"\vrole_filter\x18\x02 \x03(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\vrole_filter\x18\x02 \x03(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\n" +
 	"roleFilter\x12O\n" +
-	"\rstatus_filter\x18\x03 \x03(\x0e2 .com.gastroflow.users.UserStatusB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\rstatus_filter\x18\x03 \x03(\x0e2 .com.gastroflow.users.UserStatusB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\fstatusFilter\x12@\n" +
 	"\rrestaurant_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12\x1f\n" +
 	"\vactive_only\x18\x05 \x01(\bR\n" +
-	"activeOnly\"\x9a\x01\n" +
+	"activeOnly\"\x98\x01\n" +
 	"\x11ListUsersResponse\x120\n" +
-	"\x05users\x18\x01 \x03(\v2\x1a.com.gastroflow.users.UserR\x05users\x12S\n" +
+	"\x05users\x18\x01 \x03(\v2\x1a.com.gastroflow.users.UserR\x05users\x12Q\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"pagination\"\x97\x02\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"pagination\"\x95\x02\n" +
 	"\x12SearchUsersRequest\x12\x1f\n" +
-	"\x05query\x18\x01 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x18dR\x05query\x12R\n" +
+	"\x05query\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x05query\x12P\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"pagination\x12J\n" +
-	"\vrole_filter\x18\x03 \x03(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\vrole_filter\x18\x03 \x03(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\n" +
 	"roleFilter\x12@\n" +
-	"\rrestaurant_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"\x9c\x01\n" +
+	"\rrestaurant_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"\x9a\x01\n" +
 	"\x13SearchUsersResponse\x120\n" +
-	"\x05users\x18\x01 \x03(\v2\x1a.com.gastroflow.users.UserR\x05users\x12S\n" +
+	"\x05users\x18\x01 \x03(\v2\x1a.com.gastroflow.users.UserR\x05users\x12Q\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"pagination\"\xb6\x01\n" +
-	"\x17UpdateUserStatusRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12B\n" +
-	"\x06status\x18\x02 \x01(\x0e2 .com.gastroflow.users.UserStatusB\b\xfaB\x05\x82\x01\x02 \x00R\x06status\x12 \n" +
-	"\x06reason\x18\x03 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\x06reason\"T\n" +
-	"\x18UpdateUserStatusResponse\x128\n" +
-	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x04user\"\x9d\x02\n" +
-	"\x15UpdateUserRoleRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12=\n" +
-	"\x04role\x18\x02 \x01(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xfaB\x05\x82\x01\x02 \x00R\x04role\x12@\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"pagination\"\xb4\x01\n" +
+	"\x17UpdateUserStatusRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12B\n" +
+	"\x06status\x18\x02 \x01(\x0e2 .com.gastroflow.users.UserStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12 \n" +
+	"\x06reason\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\x06reason\"R\n" +
+	"\x18UpdateUserStatusResponse\x126\n" +
+	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\x06\xbaH\x03\xc8\x01\x01R\x04user\"\x9b\x02\n" +
+	"\x15UpdateUserRoleRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12=\n" +
+	"\x04role\x18\x02 \x01(\x0e2\x1f.com.gastroflow.common.UserRoleB\b\xbaH\x05\x82\x01\x02 \x00R\x04role\x12@\n" +
 	"\rrestaurant_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12L\n" +
-	"\vpermissions\x18\x04 \x03(\x0e2 .com.gastroflow.users.PermissionB\b\xfaB\x05\x92\x01\x02\x102R\vpermissions\"R\n" +
-	"\x16UpdateUserRoleResponse\x128\n" +
-	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x04user\"\x9a\x02\n" +
-	"\x15AddUserAddressRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12B\n" +
-	"\aaddress\x18\x02 \x01(\v2\x1e.com.gastroflow.common.AddressB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aaddress\x12?\n" +
-	"\x04type\x18\x03 \x01(\x0e2!.com.gastroflow.users.AddressTypeB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\x12\x1d\n" +
-	"\x05label\x18\x04 \x01(\tB\a\xfaB\x04r\x02\x182R\x05label\x12\x1d\n" +
+	"\vpermissions\x18\x04 \x03(\x0e2 .com.gastroflow.users.PermissionB\b\xbaH\x05\x92\x01\x02\x102R\vpermissions\"P\n" +
+	"\x16UpdateUserRoleResponse\x126\n" +
+	"\x04user\x18\x01 \x01(\v2\x1a.com.gastroflow.users.UserB\x06\xbaH\x03\xc8\x01\x01R\x04user\"\x96\x02\n" +
+	"\x15AddUserAddressRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12@\n" +
+	"\aaddress\x18\x02 \x01(\v2\x1e.com.gastroflow.common.AddressB\x06\xbaH\x03\xc8\x01\x01R\aaddress\x12?\n" +
+	"\x04type\x18\x03 \x01(\x0e2!.com.gastroflow.users.AddressTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12\x1d\n" +
+	"\x05label\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\x05label\x12\x1d\n" +
 	"\n" +
-	"is_default\x18\x05 \x01(\bR\tisDefault\"_\n" +
-	"\x16AddUserAddressResponse\x12E\n" +
-	"\aaddress\x18\x01 \x01(\v2!.com.gastroflow.users.UserAddressB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aaddress\"\x8e\x01\n" +
-	"\x15GetUserAddressRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12>\n" +
-	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\"_\n" +
-	"\x16GetUserAddressResponse\x12E\n" +
-	"\aaddress\x18\x01 \x01(\v2!.com.gastroflow.users.UserAddressB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aaddress\"\x98\x01\n" +
-	"\x18UpdateUserAddressRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12E\n" +
-	"\aaddress\x18\x02 \x01(\v2!.com.gastroflow.users.UserAddressB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aaddress\"b\n" +
-	"\x19UpdateUserAddressResponse\x12E\n" +
-	"\aaddress\x18\x01 \x01(\v2!.com.gastroflow.users.UserAddressB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aaddress\"\x91\x01\n" +
-	"\x18DeleteUserAddressRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12>\n" +
-	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\"{\n" +
-	"\x18ListUserAddressesRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12\x1f\n" +
+	"is_default\x18\x05 \x01(\bR\tisDefault\"]\n" +
+	"\x16AddUserAddressResponse\x12C\n" +
+	"\aaddress\x18\x01 \x01(\v2!.com.gastroflow.users.UserAddressB\x06\xbaH\x03\xc8\x01\x01R\aaddress\"\x8a\x01\n" +
+	"\x15GetUserAddressRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12<\n" +
+	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\"]\n" +
+	"\x16GetUserAddressResponse\x12C\n" +
+	"\aaddress\x18\x01 \x01(\v2!.com.gastroflow.users.UserAddressB\x06\xbaH\x03\xc8\x01\x01R\aaddress\"\x94\x01\n" +
+	"\x18UpdateUserAddressRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12C\n" +
+	"\aaddress\x18\x02 \x01(\v2!.com.gastroflow.users.UserAddressB\x06\xbaH\x03\xc8\x01\x01R\aaddress\"`\n" +
+	"\x19UpdateUserAddressResponse\x12C\n" +
+	"\aaddress\x18\x01 \x01(\v2!.com.gastroflow.users.UserAddressB\x06\xbaH\x03\xc8\x01\x01R\aaddress\"\x8d\x01\n" +
+	"\x18DeleteUserAddressRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12<\n" +
+	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\"y\n" +
+	"\x18ListUserAddressesRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12\x1f\n" +
 	"\vactive_only\x18\x02 \x01(\bR\n" +
 	"activeOnly\"\\\n" +
 	"\x19ListUserAddressesResponse\x12?\n" +
-	"\taddresses\x18\x01 \x03(\v2!.com.gastroflow.users.UserAddressR\taddresses\"\x91\x01\n" +
-	"\x18SetDefaultAddressRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12>\n" +
-	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\"b\n" +
-	"\x19SetDefaultAddressResponse\x12E\n" +
-	"\aaddress\x18\x01 \x01(\v2!.com.gastroflow.users.UserAddressB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aaddress\"\xb2\x02\n" +
-	"\x14CreateSessionRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12$\n" +
-	"\tclient_ip\x18\x02 \x01(\tB\a\xfaB\x04r\x02\x18-R\bclientIp\x124\n" +
-	"\x11client_user_agent\x18\x03 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\x0fclientUserAgent\x12A\n" +
+	"\taddresses\x18\x01 \x03(\v2!.com.gastroflow.users.UserAddressR\taddresses\"\x8d\x01\n" +
+	"\x18SetDefaultAddressRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12<\n" +
+	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\"`\n" +
+	"\x19SetDefaultAddressResponse\x12C\n" +
+	"\aaddress\x18\x01 \x01(\v2!.com.gastroflow.users.UserAddressB\x06\xbaH\x03\xc8\x01\x01R\aaddress\"\xb0\x02\n" +
+	"\x14CreateSessionRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12$\n" +
+	"\tclient_ip\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x18-R\bclientIp\x124\n" +
+	"\x11client_user_agent\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\x0fclientUserAgent\x12A\n" +
 	"\vdevice_info\x18\x04 \x01(\v2 .com.gastroflow.users.DeviceInfoR\n" +
 	"deviceInfo\x12;\n" +
-	"\x12expires_in_seconds\x18\x05 \x01(\x05B\r\xfaB\n" +
-	"\x1a\b\x18\x80\xe7\x84\x0f(\xac\x02R\x10expiresInSeconds\"\x86\x01\n" +
-	"\x15CreateSessionResponse\x12A\n" +
-	"\asession\x18\x01 \x01(\v2\x1d.com.gastroflow.users.SessionB\b\xfaB\x05\x8a\x01\x02\x10\x01R\asession\x12*\n" +
-	"\faccess_token\x18\x02 \x01(\tB\a\xfaB\x04r\x02\x10\x01R\vaccessToken\";\n" +
+	"\x12expires_in_seconds\x18\x05 \x01(\x05B\r\xbaH\n" +
+	"\x1a\b\x18\x80\xe7\x84\x0f(\xac\x02R\x10expiresInSeconds\"\x84\x01\n" +
+	"\x15CreateSessionResponse\x12?\n" +
+	"\asession\x18\x01 \x01(\v2\x1d.com.gastroflow.users.SessionB\x06\xbaH\x03\xc8\x01\x01R\asession\x12*\n" +
+	"\faccess_token\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\vaccessToken\";\n" +
 	"\x11GetSessionRequest\x12&\n" +
 	"\n" +
-	"session_id\x18\x01 \x01(\tB\a\xfaB\x04r\x02\x10\x01R\tsessionId\"\x91\x01\n" +
-	"\x12GetSessionResponse\x12A\n" +
-	"\asession\x18\x01 \x01(\v2\x1d.com.gastroflow.users.SessionB\b\xfaB\x05\x8a\x01\x02\x10\x01R\asession\x128\n" +
-	"\x04user\x18\x02 \x01(\v2\x1a.com.gastroflow.users.UserB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x04user\"|\n" +
+	"session_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\tsessionId\"\x8d\x01\n" +
+	"\x12GetSessionResponse\x12?\n" +
+	"\asession\x18\x01 \x01(\v2\x1d.com.gastroflow.users.SessionB\x06\xbaH\x03\xc8\x01\x01R\asession\x126\n" +
+	"\x04user\x18\x02 \x01(\v2\x1a.com.gastroflow.users.UserB\x06\xbaH\x03\xc8\x01\x01R\x04user\"|\n" +
 	"\x15RefreshSessionRequest\x12&\n" +
 	"\n" +
-	"session_id\x18\x01 \x01(\tB\a\xfaB\x04r\x02\x10\x01R\tsessionId\x12;\n" +
-	"\x12extends_by_seconds\x18\x02 \x01(\x05B\r\xfaB\n" +
-	"\x1a\b\x18\x80\xe7\x84\x0f(\xac\x02R\x10extendsBySeconds\"\x87\x01\n" +
-	"\x16RefreshSessionResponse\x12A\n" +
-	"\asession\x18\x01 \x01(\v2\x1d.com.gastroflow.users.SessionB\b\xfaB\x05\x8a\x01\x02\x10\x01R\asession\x12*\n" +
-	"\faccess_token\x18\x02 \x01(\tB\a\xfaB\x04r\x02\x10\x01R\vaccessToken\">\n" +
+	"session_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\tsessionId\x12;\n" +
+	"\x12extends_by_seconds\x18\x02 \x01(\x05B\r\xbaH\n" +
+	"\x1a\b\x18\x80\xe7\x84\x0f(\xac\x02R\x10extendsBySeconds\"\x85\x01\n" +
+	"\x16RefreshSessionResponse\x12?\n" +
+	"\asession\x18\x01 \x01(\v2\x1d.com.gastroflow.users.SessionB\x06\xbaH\x03\xc8\x01\x01R\asession\x12*\n" +
+	"\faccess_token\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\vaccessToken\">\n" +
 	"\x14DeleteSessionRequest\x12&\n" +
 	"\n" +
-	"session_id\x18\x01 \x01(\tB\a\xfaB\x04r\x02\x10\x01R\tsessionId\"z\n" +
-	"\x17ListUserSessionsRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12\x1f\n" +
+	"session_id\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x10\x01R\tsessionId\"x\n" +
+	"\x17ListUserSessionsRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12\x1f\n" +
 	"\vactive_only\x18\x02 \x01(\bR\n" +
 	"activeOnly\"U\n" +
 	"\x18ListUserSessionsResponse\x129\n" +
-	"\bsessions\x18\x01 \x03(\v2\x1d.com.gastroflow.users.SessionR\bsessions\"^\n" +
-	"\x1cDeleteAllUserSessionsRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\"\xfc\x01\n" +
-	"\x17CheckPermissionsRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12@\n" +
+	"\bsessions\x18\x01 \x03(\v2\x1d.com.gastroflow.users.SessionR\bsessions\"\\\n" +
+	"\x1cDeleteAllUserSessionsRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\"\xfa\x01\n" +
+	"\x17CheckPermissionsRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12@\n" +
 	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12_\n" +
 	"\x14required_permissions\x18\x03 \x03(\x0e2 .com.gastroflow.users.PermissionB\n" +
-	"\xfaB\a\x92\x01\x04\b\x01\x102R\x13requiredPermissions\"\xe7\x01\n" +
+	"\xbaH\a\x92\x01\x04\b\x01\x102R\x13requiredPermissions\"\xe7\x01\n" +
 	"\x18CheckPermissionsResponse\x12'\n" +
 	"\x0fhas_permissions\x18\x01 \x01(\bR\x0ehasPermissions\x12Q\n" +
 	"\x13granted_permissions\x18\x02 \x03(\x0e2 .com.gastroflow.users.PermissionR\x12grantedPermissions\x12O\n" +
-	"\x12denied_permissions\x18\x03 \x03(\x0e2 .com.gastroflow.users.PermissionR\x11deniedPermissions\"S\n" +
-	"\x11GetProfileRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\"[\n" +
-	"\x12GetProfileResponse\x12E\n" +
-	"\aprofile\x18\x01 \x01(\v2!.com.gastroflow.users.UserProfileB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aprofile\"\x9d\x01\n" +
-	"\x14UpdateProfileRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12E\n" +
-	"\aprofile\x18\x02 \x01(\v2!.com.gastroflow.users.UserProfileB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aprofile\"^\n" +
-	"\x15UpdateProfileResponse\x12E\n" +
-	"\aprofile\x18\x01 \x01(\v2!.com.gastroflow.users.UserProfileB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aprofile\"\xa1\x01\n" +
-	"\x15UpdateSettingsRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12H\n" +
-	"\bsettings\x18\x02 \x01(\v2\".com.gastroflow.users.UserSettingsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\bsettings\"b\n" +
-	"\x16UpdateSettingsResponse\x12H\n" +
-	"\bsettings\x18\x01 \x01(\v2\".com.gastroflow.users.UserSettingsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\bsettings\"\xaa\x01\n" +
-	"\x1cAddFavoriteRestaurantRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\"o\n" +
+	"\x12denied_permissions\x18\x03 \x03(\x0e2 .com.gastroflow.users.PermissionR\x11deniedPermissions\"Q\n" +
+	"\x11GetProfileRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\"Y\n" +
+	"\x12GetProfileResponse\x12C\n" +
+	"\aprofile\x18\x01 \x01(\v2!.com.gastroflow.users.UserProfileB\x06\xbaH\x03\xc8\x01\x01R\aprofile\"\x99\x01\n" +
+	"\x14UpdateProfileRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12C\n" +
+	"\aprofile\x18\x02 \x01(\v2!.com.gastroflow.users.UserProfileB\x06\xbaH\x03\xc8\x01\x01R\aprofile\"\\\n" +
+	"\x15UpdateProfileResponse\x12C\n" +
+	"\aprofile\x18\x01 \x01(\v2!.com.gastroflow.users.UserProfileB\x06\xbaH\x03\xc8\x01\x01R\aprofile\"\x9d\x01\n" +
+	"\x15UpdateSettingsRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12F\n" +
+	"\bsettings\x18\x02 \x01(\v2\".com.gastroflow.users.UserSettingsB\x06\xbaH\x03\xc8\x01\x01R\bsettings\"`\n" +
+	"\x16UpdateSettingsResponse\x12F\n" +
+	"\bsettings\x18\x01 \x01(\v2\".com.gastroflow.users.UserSettingsB\x06\xbaH\x03\xc8\x01\x01R\bsettings\"\xa6\x01\n" +
+	"\x1cAddFavoriteRestaurantRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"o\n" +
 	"\x1dAddFavoriteRestaurantResponse\x12N\n" +
-	"\x14favorite_restaurants\x18\x01 \x03(\v2\x1b.com.gastroflow.common.UUIDR\x13favoriteRestaurants\"\xad\x01\n" +
-	"\x1fRemoveFavoriteRestaurantRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\"\xa5\x01\n" +
-	"\x1aAddFavoriteMenuItemRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12G\n" +
-	"\fmenu_item_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"\x14favorite_restaurants\x18\x01 \x03(\v2\x1b.com.gastroflow.common.UUIDR\x13favoriteRestaurants\"\xa9\x01\n" +
+	"\x1fRemoveFavoriteRestaurantRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"\xa1\x01\n" +
+	"\x1aAddFavoriteMenuItemRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12E\n" +
+	"\fmenu_item_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"menuItemId\"j\n" +
 	"\x1bAddFavoriteMenuItemResponse\x12K\n" +
-	"\x13favorite_menu_items\x18\x01 \x03(\v2\x1b.com.gastroflow.common.UUIDR\x11favoriteMenuItems\"\xa8\x01\n" +
-	"\x1dRemoveFavoriteMenuItemRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12G\n" +
-	"\fmenu_item_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"menuItemId\"\xaa\x01\n" +
-	"\x18UpdateLoyaltyInfoRequest\x12>\n" +
-	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12N\n" +
-	"\floyalty_info\x18\x02 \x01(\v2!.com.gastroflow.users.LoyaltyInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\vloyaltyInfo\"k\n" +
-	"\x19UpdateLoyaltyInfoResponse\x12N\n" +
-	"\floyalty_info\x18\x01 \x01(\v2!.com.gastroflow.users.LoyaltyInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\vloyaltyInfo2\x85\a\n" +
+	"\x13favorite_menu_items\x18\x01 \x03(\v2\x1b.com.gastroflow.common.UUIDR\x11favoriteMenuItems\"\xa4\x01\n" +
+	"\x1dRemoveFavoriteMenuItemRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12E\n" +
+	"\fmenu_item_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"menuItemId\"\xa6\x01\n" +
+	"\x18UpdateLoyaltyInfoRequest\x12<\n" +
+	"\auser_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12L\n" +
+	"\floyalty_info\x18\x02 \x01(\v2!.com.gastroflow.users.LoyaltyInfoB\x06\xbaH\x03\xc8\x01\x01R\vloyaltyInfo\"i\n" +
+	"\x19UpdateLoyaltyInfoResponse\x12L\n" +
+	"\floyalty_info\x18\x01 \x01(\v2!.com.gastroflow.users.LoyaltyInfoB\x06\xbaH\x03\xc8\x01\x01R\vloyaltyInfo2\x85\a\n" +
 	"\vUserService\x12_\n" +
 	"\n" +
 	"CreateUser\x12'.com.gastroflow.users.CreateUserRequest\x1a(.com.gastroflow.users.CreateUserResponse\x12V\n" +

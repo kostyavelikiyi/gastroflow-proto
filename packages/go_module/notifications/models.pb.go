@@ -7,7 +7,7 @@
 package notifications
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -1465,36 +1465,36 @@ var File_notifications_models_proto protoreflect.FileDescriptor
 
 const file_notifications_models_proto_rawDesc = "" +
 	"\n" +
-	"\x1anotifications/models.proto\x12\x1ccom.gastroflow.notifications\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\x98\n" +
+	"\x1anotifications/models.proto\x12\x1ccom.gastroflow.notifications\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\x92\n" +
 	"\n" +
-	"\fNotification\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12E\n" +
-	"\x04type\x18\x02 \x01(\x0e2'.com.gastroflow.common.NotificationTypeB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\x12 \n" +
+	"\fNotification\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12E\n" +
+	"\x04type\x18\x02 \x01(\x0e2'.com.gastroflow.common.NotificationTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12 \n" +
 	"\x05title\x18\x03 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\xc8\x01R\x05title\x12$\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x05title\x12$\n" +
 	"\amessage\x18\x04 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\xe8\aR\amessage\x12H\n" +
-	"\frecipient_id\x18\x05 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\vrecipientId\x128\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xe8\aR\amessage\x12F\n" +
+	"\frecipient_id\x18\x05 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\vrecipientId\x128\n" +
 	"\tsender_id\x18\x06 \x01(\v2\x1b.com.gastroflow.common.UUIDR\bsenderId\x12@\n" +
 	"\rrestaurant_id\x18\a \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12X\n" +
 	"\x10related_entities\x18\b \x01(\v2-.com.gastroflow.notifications.RelatedEntitiesR\x0frelatedEntities\x12S\n" +
-	"\bchannels\x18\t \x03(\v2-.com.gastroflow.notifications.DeliveryChannelB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\bchannels\x18\t \x03(\v2-.com.gastroflow.notifications.DeliveryChannelB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\bchannels\x12E\n" +
 	"\bpriority\x18\n" +
-	" \x01(\x0e2\x1f.com.gastroflow.common.PriorityB\b\xfaB\x05\x82\x01\x02 \x00R\bpriority\x12R\n" +
-	"\x06status\x18\v \x01(\x0e20.com.gastroflow.notifications.NotificationStatusB\b\xfaB\x05\x82\x01\x02 \x00R\x06status\x12C\n" +
+	" \x01(\x0e2\x1f.com.gastroflow.common.PriorityB\b\xbaH\x05\x82\x01\x02 \x00R\bpriority\x12R\n" +
+	"\x06status\x18\v \x01(\x0e20.com.gastroflow.notifications.NotificationStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12A\n" +
 	"\n" +
-	"created_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\tcreatedAt\x12=\n" +
+	"created_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tcreatedAt\x12=\n" +
 	"\fscheduled_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\vscheduledAt\x123\n" +
 	"\asent_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\x06sentAt\x123\n" +
 	"\aread_at\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampR\x06readAt\x12B\n" +
 	"\x04data\x18\x10 \x01(\v2..com.gastroflow.notifications.NotificationDataR\x04data\x12T\n" +
-	"\aactions\x18\x11 \x03(\v20.com.gastroflow.notifications.NotificationActionB\b\xfaB\x05\x92\x01\x02\x10\x05R\aactions\x12(\n" +
-	"\vretry_count\x18\x12 \x01(\x05B\a\xfaB\x04\x1a\x02(\x00R\n" +
+	"\aactions\x18\x11 \x03(\v20.com.gastroflow.notifications.NotificationActionB\b\xbaH\x05\x92\x01\x02\x10\x05R\aactions\x12(\n" +
+	"\vretry_count\x18\x12 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\n" +
 	"retryCount\x129\n" +
 	"\n" +
 	"expires_at\x18\x13 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x12E\n" +
-	"\blanguage\x18\x14 \x01(\x0e2\x1f.com.gastroflow.common.LanguageB\b\xfaB\x05\x82\x01\x02 \x00R\blanguage\"\xa5\x03\n" +
+	"\blanguage\x18\x14 \x01(\x0e2\x1f.com.gastroflow.common.LanguageB\b\xbaH\x05\x82\x01\x02 \x00R\blanguage\"\xa5\x03\n" +
 	"\x0fRelatedEntities\x126\n" +
 	"\border_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\aorderId\x124\n" +
 	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x06userId\x12=\n" +
@@ -1507,91 +1507,91 @@ const file_notifications_models_proto_rawDesc = "" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x84\x04\n" +
 	"\x0fDeliveryChannel\x12G\n" +
-	"\x04type\x18\x01 \x01(\x0e2).com.gastroflow.notifications.ChannelTypeB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\x12$\n" +
+	"\x04type\x18\x01 \x01(\x0e2).com.gastroflow.notifications.ChannelTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12$\n" +
 	"\aaddress\x18\x02 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\xf4\x03R\aaddress\x12N\n" +
-	"\x06status\x18\x03 \x01(\x0e2,.com.gastroflow.notifications.DeliveryStatusB\b\xfaB\x05\x82\x01\x02 \x00R\x06status\x12=\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xf4\x03R\aaddress\x12N\n" +
+	"\x06status\x18\x03 \x01(\x0e2,.com.gastroflow.notifications.DeliveryStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12=\n" +
 	"\fdelivered_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\vdeliveredAt\x12/\n" +
-	"\x0edelivery_error\x18\x05 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\rdeliveryError\x124\n" +
-	"\x11delivery_attempts\x18\x06 \x01(\x05B\a\xfaB\x04\x1a\x02(\x00R\x10deliveryAttempts\x12Q\n" +
+	"\x0edelivery_error\x18\x05 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\rdeliveryError\x124\n" +
+	"\x11delivery_attempts\x18\x06 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x10deliveryAttempts\x12Q\n" +
 	"\x06config\x18\a \x03(\v29.com.gastroflow.notifications.DeliveryChannel.ConfigEntryR\x06config\x1a9\n" +
 	"\vConfigEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xb5\x03\n" +
 	"\x10NotificationData\x12#\n" +
-	"\bicon_url\x18\x01 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\aiconUrl\x12%\n" +
-	"\timage_url\x18\x02 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\bimageUrl\x12.\n" +
-	"\x05color\x18\x03 \x01(\tB\x18\xfaB\x15r\x132\x11^#[0-9A-Fa-f]{6}$R\x05color\x12%\n" +
-	"\tclick_url\x18\x04 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\bclickUrl\x12_\n" +
+	"\bicon_url\x18\x01 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\aiconUrl\x12%\n" +
+	"\timage_url\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\bimageUrl\x12.\n" +
+	"\x05color\x18\x03 \x01(\tB\x18\xbaH\x15r\x132\x11^#[0-9A-Fa-f]{6}$R\x05color\x12%\n" +
+	"\tclick_url\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\bclickUrl\x12_\n" +
 	"\vcustom_data\x18\x05 \x03(\v2>.com.gastroflow.notifications.NotificationData.CustomDataEntryR\n" +
 	"customData\x12\x1d\n" +
-	"\x05sound\x18\x06 \x01(\tB\a\xfaB\x04r\x02\x18dR\x05sound\x12$\n" +
-	"\tgroup_key\x18\a \x01(\tB\a\xfaB\x04r\x02\x18dR\bgroupKey\x12\x19\n" +
-	"\x03tag\x18\b \x01(\tB\a\xfaB\x04r\x02\x18dR\x03tag\x1a=\n" +
+	"\x05sound\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x18dR\x05sound\x12$\n" +
+	"\tgroup_key\x18\a \x01(\tB\a\xbaH\x04r\x02\x18dR\bgroupKey\x12\x19\n" +
+	"\x03tag\x18\b \x01(\tB\a\xbaH\x04r\x02\x18dR\x03tag\x1a=\n" +
 	"\x0fCustomDataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xf6\x01\n" +
 	"\x12NotificationAction\x12&\n" +
-	"\taction_id\x18\x01 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x182R\bactionId\x12\x1f\n" +
-	"\x05title\x18\x02 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x18dR\x05title\x12\x1a\n" +
-	"\x03url\x18\x03 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\x03url\x12F\n" +
-	"\x04type\x18\x04 \x01(\x0e2(.com.gastroflow.notifications.ActionTypeB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\x123\n" +
-	"\x15requires_confirmation\x18\x05 \x01(\bR\x14requiresConfirmation\"\xa1\x06\n" +
-	"\x14NotificationTemplate\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x18dR\x04name\x12E\n" +
-	"\x04type\x18\x03 \x01(\x0e2'.com.gastroflow.common.NotificationTypeB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\x121\n" +
+	"\taction_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182R\bactionId\x12\x1f\n" +
+	"\x05title\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x05title\x12\x1a\n" +
+	"\x03url\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\x03url\x12F\n" +
+	"\x04type\x18\x04 \x01(\x0e2(.com.gastroflow.notifications.ActionTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x123\n" +
+	"\x15requires_confirmation\x18\x05 \x01(\bR\x14requiresConfirmation\"\x9d\x06\n" +
+	"\x14NotificationTemplate\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12E\n" +
+	"\x04type\x18\x03 \x01(\x0e2'.com.gastroflow.common.NotificationTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x121\n" +
 	"\x0etitle_template\x18\x04 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\xc8\x01R\rtitleTemplate\x125\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\rtitleTemplate\x125\n" +
 	"\x10message_template\x18\x05 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\xe8\aR\x0fmessageTemplate\x12E\n" +
-	"\blanguage\x18\x06 \x01(\x0e2\x1f.com.gastroflow.common.LanguageB\b\xfaB\x05\x82\x01\x02 \x00R\blanguage\x12@\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xe8\aR\x0fmessageTemplate\x12E\n" +
+	"\blanguage\x18\x06 \x01(\x0e2\x1f.com.gastroflow.common.LanguageB\b\xbaH\x05\x82\x01\x02 \x00R\blanguage\x12@\n" +
 	"\rrestaurant_id\x18\a \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12V\n" +
-	"\tvariables\x18\b \x03(\v2..com.gastroflow.notifications.TemplateVariableB\b\xfaB\x05\x92\x01\x02\x102R\tvariables\x12Y\n" +
+	"\tvariables\x18\b \x03(\v2..com.gastroflow.notifications.TemplateVariableB\b\xbaH\x05\x92\x01\x02\x102R\tvariables\x12Y\n" +
 	"\x10display_settings\x18\t \x01(\v2..com.gastroflow.notifications.NotificationDataR\x0fdisplaySettings\x12^\n" +
 	"\x10default_channels\x18\n" +
-	" \x03(\x0e2).com.gastroflow.notifications.ChannelTypeB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	" \x03(\x0e2).com.gastroflow.notifications.ChannelTypeB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\x0fdefaultChannels\x12\x1b\n" +
-	"\tis_active\x18\v \x01(\bR\bisActive\x12I\n" +
+	"\tis_active\x18\v \x01(\bR\bisActive\x12G\n" +
 	"\n" +
-	"audit_info\x18\f \x01(\v2 .com.gastroflow.common.AuditInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tauditInfo\"\xf6\x01\n" +
+	"audit_info\x18\f \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\xf6\x01\n" +
 	"\x10TemplateVariable\x12\x1d\n" +
-	"\x04name\x18\x01 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x182R\x04name\x12*\n" +
-	"\vdescription\x18\x02 \x01(\tB\b\xfaB\x05r\x03\x18\xc8\x01R\vdescription\x12H\n" +
-	"\x04type\x18\x03 \x01(\x0e2*.com.gastroflow.notifications.VariableTypeB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\x12\x1f\n" +
+	"\x04name\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182R\x04name\x12*\n" +
+	"\vdescription\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\vdescription\x12H\n" +
+	"\x04type\x18\x03 \x01(\x0e2*.com.gastroflow.notifications.VariableTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12\x1f\n" +
 	"\vis_required\x18\x04 \x01(\bR\n" +
 	"isRequired\x12,\n" +
-	"\rdefault_value\x18\x05 \x01(\tB\a\xfaB\x04r\x02\x18dR\fdefaultValue\"\xec\x02\n" +
-	"\x14NotificationSettings\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12Y\n" +
-	"\rtype_settings\x18\x02 \x03(\v2*.com.gastroflow.notifications.TypeSettingsB\b\xfaB\x05\x92\x01\x02\x102R\ftypeSettings\x12b\n" +
-	"\x10general_settings\x18\x03 \x01(\v2-.com.gastroflow.notifications.GeneralSettingsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x0fgeneralSettings\x12I\n" +
+	"\rdefault_value\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x18dR\fdefaultValue\"\xe6\x02\n" +
+	"\x14NotificationSettings\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12Y\n" +
+	"\rtype_settings\x18\x02 \x03(\v2*.com.gastroflow.notifications.TypeSettingsB\b\xbaH\x05\x92\x01\x02\x102R\ftypeSettings\x12`\n" +
+	"\x10general_settings\x18\x03 \x01(\v2-.com.gastroflow.notifications.GeneralSettingsB\x06\xbaH\x03\xc8\x01\x01R\x0fgeneralSettings\x12G\n" +
 	"\n" +
-	"audit_info\x18\x04 \x01(\v2 .com.gastroflow.common.AuditInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tauditInfo\"\x91\x03\n" +
+	"audit_info\x18\x04 \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\x91\x03\n" +
 	"\fTypeSettings\x12E\n" +
-	"\x04type\x18\x01 \x01(\x0e2'.com.gastroflow.common.NotificationTypeB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\x12\x18\n" +
+	"\x04type\x18\x01 \x01(\x0e2'.com.gastroflow.common.NotificationTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12\x18\n" +
 	"\aenabled\x18\x02 \x01(\bR\aenabled\x12O\n" +
-	"\bchannels\x18\x03 \x03(\x0e2).com.gastroflow.notifications.ChannelTypeB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\bchannels\x18\x03 \x03(\x0e2).com.gastroflow.notifications.ChannelTypeB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\bchannels\x12,\n" +
-	"\rdelay_seconds\x18\x04 \x01(\x05B\a\xfaB\x04\x1a\x02(\x00R\fdelaySeconds\x12T\n" +
-	"\x10default_priority\x18\x05 \x01(\x0e2\x1f.com.gastroflow.common.PriorityB\b\xfaB\x05\x82\x01\x02 \x00R\x0fdefaultPriority\x12K\n" +
+	"\rdelay_seconds\x18\x04 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\fdelaySeconds\x12T\n" +
+	"\x10default_priority\x18\x05 \x01(\x0e2\x1f.com.gastroflow.common.PriorityB\b\xbaH\x05\x82\x01\x02 \x00R\x0fdefaultPriority\x12K\n" +
 	"\x13default_template_id\x18\x06 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x11defaultTemplateId\"\xbe\x02\n" +
 	"\x0fGeneralSettings\x12#\n" +
-	"\btimezone\x18\x01 \x01(\tB\a\xfaB\x04r\x02\x182R\btimezone\x12I\n" +
+	"\btimezone\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x182R\btimezone\x12I\n" +
 	"\vquiet_hours\x18\x02 \x01(\v2(.com.gastroflow.notifications.QuietHoursR\n" +
 	"quietHours\x127\n" +
-	"\x12max_retry_attempts\x18\x03 \x01(\x05B\t\xfaB\x06\x1a\x04\x18\n" +
+	"\x12max_retry_attempts\x18\x03 \x01(\x05B\t\xbaH\x06\x1a\x04\x18\n" +
 	"(\x01R\x10maxRetryAttempts\x12@\n" +
 	"\x16retry_interval_seconds\x18\x04 \x01(\x05B\n" +
-	"\xfaB\a\x1a\x05\x18\x90\x1c(<R\x14retryIntervalSeconds\x12@\n" +
+	"\xbaH\a\x1a\x05\x18\x90\x1c(<R\x14retryIntervalSeconds\x12@\n" +
 	"\x16notification_ttl_hours\x18\x05 \x01(\x05B\n" +
-	"\xfaB\a\x1a\x05\x18\xd0\x05(\x01R\x14notificationTtlHours\"\xd6\x01\n" +
+	"\xbaH\a\x1a\x05\x18\xd0\x05(\x01R\x14notificationTtlHours\"\xd6\x01\n" +
 	"\n" +
 	"QuietHours\x12F\n" +
 	"\n" +
-	"start_time\x18\x01 \x01(\tB'\xfaB$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\tstartTime\x12B\n" +
-	"\bend_time\x18\x02 \x01(\tB'\xfaB$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\aendTime\x12<\n" +
-	"\x04days\x18\x03 \x03(\x0e2\x1e.com.gastroflow.common.WeekDayB\b\xfaB\x05\x92\x01\x02\x10\aR\x04days*\xdf\x02\n" +
+	"start_time\x18\x01 \x01(\tB'\xbaH$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\tstartTime\x12B\n" +
+	"\bend_time\x18\x02 \x01(\tB'\xbaH$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\aendTime\x12<\n" +
+	"\x04days\x18\x03 \x03(\x0e2\x1e.com.gastroflow.common.WeekDayB\b\xbaH\x05\x92\x01\x02\x10\aR\x04days*\xdf\x02\n" +
 	"\x12NotificationStatus\x12#\n" +
 	"\x1fNOTIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1d\n" +
 	"\x19NOTIFICATION_STATUS_DRAFT\x10\x01\x12!\n" +

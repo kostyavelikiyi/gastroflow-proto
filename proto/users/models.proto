@@ -5,44 +5,44 @@ package com.gastroflow.users;
 import "common/enums.proto";
 import "common/types.proto";
 import "google/protobuf/timestamp.proto";
-import "validate/validate.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/users";
 
 // User - основная сущность пользователя системы
 message User {
   // Уникальный идентификатор пользователя
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Имя пользователя
-  string first_name = 2 [(validate.rules).string = {
+  string first_name = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 50
   }];
 
   // Фамилия пользователя
-  string last_name = 3 [(validate.rules).string.max_len = 50];
+  string last_name = 3 [(buf.validate.field).string.max_len = 50];
 
   // Контактная информация
-  com.gastroflow.common.ContactInfo contact_info = 4 [(validate.rules).message.required = true];
+  com.gastroflow.common.ContactInfo contact_info = 4 [(buf.validate.field).required = true];
 
   // Роль пользователя в системе
-  com.gastroflow.common.UserRole role = 5 [(validate.rules).enum = {
+  com.gastroflow.common.UserRole role = 5 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Статус пользователя
-  UserStatus status = 6 [(validate.rules).enum = {
+  UserStatus status = 6 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Предпочтительный язык
-  com.gastroflow.common.Language preferred_language = 7 [(validate.rules).enum = {
+  com.gastroflow.common.Language preferred_language = 7 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Адреса пользователя
-  repeated UserAddress addresses = 8 [(validate.rules).repeated.max_items = 10];
+  repeated UserAddress addresses = 8 [(buf.validate.field).repeated.max_items = 10];
 
   // Настройки пользователя
   UserSettings settings = 9;
@@ -51,7 +51,7 @@ message User {
   UserProfile profile = 10;
 
   // Привязки к ресторанам (для сотрудников)
-  repeated RestaurantBinding restaurant_bindings = 11 [(validate.rules).repeated.max_items = 50];
+  repeated RestaurantBinding restaurant_bindings = 11 [(buf.validate.field).repeated.max_items = 50];
 
   // Дата последней активности
   google.protobuf.Timestamp last_activity_at = 12;
@@ -60,24 +60,24 @@ message User {
   bool is_active = 13;
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 14 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 14 [(buf.validate.field).required = true];
 }
 
 // UserAddress - адрес пользователя
 message UserAddress {
   // Уникальный идентификатор адреса
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Адрес
-  com.gastroflow.common.Address address = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.Address address = 2 [(buf.validate.field).required = true];
 
   // Тип адреса
-  AddressType type = 3 [(validate.rules).enum = {
+  AddressType type = 3 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Название адреса (например, "Дом", "Офис")
-  string label = 4 [(validate.rules).string.max_len = 50];
+  string label = 4 [(buf.validate.field).string.max_len = 50];
 
   // Адрес по умолчанию
   bool is_default = 5;
@@ -86,7 +86,7 @@ message UserAddress {
   bool is_active = 6;
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 7 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 7 [(buf.validate.field).required = true];
 }
 
 // UserSettings - настройки пользователя
@@ -122,13 +122,13 @@ message UserSettings {
   com.gastroflow.common.PaymentMethod default_payment_method = 10;
 
   // Временная зона пользователя
-  string timezone = 11 [(validate.rules).string.max_len = 50];
+  string timezone = 11 [(buf.validate.field).string.max_len = 50];
 }
 
 // UserProfile - профиль пользователя
 message UserProfile {
   // URL аватара пользователя
-  string avatar_url = 1 [(validate.rules).string.max_len = 500];
+  string avatar_url = 1 [(buf.validate.field).string.max_len = 500];
 
   // Дата рождения
   google.protobuf.Timestamp birth_date = 2;
@@ -137,16 +137,16 @@ message UserProfile {
   Gender gender = 3;
 
   // О себе
-  string bio = 4 [(validate.rules).string.max_len = 1000];
+  string bio = 4 [(buf.validate.field).string.max_len = 1000];
 
   // Диетические предпочтения
-  repeated DietaryPreference dietary_preferences = 5 [(validate.rules).repeated.max_items = 20];
+  repeated DietaryPreference dietary_preferences = 5 [(buf.validate.field).repeated.max_items = 20];
 
   // Любимые рестораны
-  repeated com.gastroflow.common.UUID favorite_restaurants = 6 [(validate.rules).repeated.max_items = 100];
+  repeated com.gastroflow.common.UUID favorite_restaurants = 6 [(buf.validate.field).repeated.max_items = 100];
 
   // Любимые блюда
-  repeated com.gastroflow.common.UUID favorite_menu_items = 7 [(validate.rules).repeated.max_items = 200];
+  repeated com.gastroflow.common.UUID favorite_menu_items = 7 [(buf.validate.field).repeated.max_items = 200];
 
   // Программа лояльности
   LoyaltyInfo loyalty_info = 8;
@@ -155,10 +155,10 @@ message UserProfile {
 // RestaurantBinding - привязка пользователя к ресторану
 message RestaurantBinding {
   // Идентификатор ресторана
-  com.gastroflow.common.UUID restaurant_id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID restaurant_id = 1 [(buf.validate.field).required = true];
 
   // Роль в ресторане
-  com.gastroflow.common.UserRole role = 2 [(validate.rules).enum = {
+  com.gastroflow.common.UserRole role = 2 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
@@ -169,66 +169,66 @@ message RestaurantBinding {
   bool is_active = 4;
 
   // Дата начала работы
-  google.protobuf.Timestamp start_date = 5 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp start_date = 5 [(buf.validate.field).required = true];
 
   // Дата окончания работы
   google.protobuf.Timestamp end_date = 6;
 
   // Дополнительные разрешения
-  repeated Permission permissions = 7 [(validate.rules).repeated.max_items = 50];
+  repeated Permission permissions = 7 [(buf.validate.field).repeated.max_items = 50];
 }
 
 // LoyaltyInfo - информация о программе лояльности
 message LoyaltyInfo {
   // Уровень лояльности
-  LoyaltyLevel level = 1 [(validate.rules).enum = {
+  LoyaltyLevel level = 1 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Текущие баллы
-  int64 current_points = 2 [(validate.rules).int64.gte = 0];
+  int64 current_points = 2 [(buf.validate.field).int64.gte = 0];
 
   // Общее количество заработанных баллов
-  int64 total_earned_points = 3 [(validate.rules).int64.gte = 0];
+  int64 total_earned_points = 3 [(buf.validate.field).int64.gte = 0];
 
   // Общее количество потраченных баллов
-  int64 total_spent_points = 4 [(validate.rules).int64.gte = 0];
+  int64 total_spent_points = 4 [(buf.validate.field).int64.gte = 0];
 
   // Количество заказов
-  int32 total_orders = 5 [(validate.rules).int32.gte = 0];
+  int32 total_orders = 5 [(buf.validate.field).int32.gte = 0];
 
   // Общая сумма заказов
   com.gastroflow.common.Money total_spent = 6;
 
   // Дата регистрации в программе лояльности
-  google.protobuf.Timestamp registered_at = 7 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp registered_at = 7 [(buf.validate.field).required = true];
 }
 
 // Session - пользовательская сессия
 message Session {
   // Идентификатор сессии
-  string session_id = 1 [(validate.rules).string = {
+  string session_id = 1 [(buf.validate.field).string = {
     min_len: 1
     max_len: 128
   }];
 
   // Идентификатор пользователя
-  com.gastroflow.common.UUID user_id = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID user_id = 2 [(buf.validate.field).required = true];
 
   // Время создания сессии
-  google.protobuf.Timestamp created_at = 3 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp created_at = 3 [(buf.validate.field).required = true];
 
   // Время истечения сессии
-  google.protobuf.Timestamp expires_at = 4 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp expires_at = 4 [(buf.validate.field).required = true];
 
   // Время последней активности
-  google.protobuf.Timestamp last_activity_at = 5 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp last_activity_at = 5 [(buf.validate.field).required = true];
 
   // IP адрес клиента
-  string client_ip = 6 [(validate.rules).string.max_len = 45];
+  string client_ip = 6 [(buf.validate.field).string.max_len = 45];
 
   // User Agent клиента
-  string client_user_agent = 7 [(validate.rules).string.max_len = 500];
+  string client_user_agent = 7 [(buf.validate.field).string.max_len = 500];
 
   // Устройство клиента
   DeviceInfo device_info = 8;
@@ -240,27 +240,27 @@ message Session {
 // DeviceInfo - информация об устройстве
 message DeviceInfo {
   // Тип устройства
-  DeviceType device_type = 1 [(validate.rules).enum = {
+  DeviceType device_type = 1 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Операционная система
-  string os = 2 [(validate.rules).string.max_len = 50];
+  string os = 2 [(buf.validate.field).string.max_len = 50];
 
   // Версия ОС
-  string os_version = 3 [(validate.rules).string.max_len = 50];
+  string os_version = 3 [(buf.validate.field).string.max_len = 50];
 
   // Браузер (для веб-клиентов)
-  string browser = 4 [(validate.rules).string.max_len = 50];
+  string browser = 4 [(buf.validate.field).string.max_len = 50];
 
   // Версия браузера
-  string browser_version = 5 [(validate.rules).string.max_len = 50];
+  string browser_version = 5 [(buf.validate.field).string.max_len = 50];
 
   // Версия приложения
-  string app_version = 6 [(validate.rules).string.max_len = 50];
+  string app_version = 6 [(buf.validate.field).string.max_len = 50];
 
   // Токен для push уведомлений
-  string push_token = 7 [(validate.rules).string.max_len = 500];
+  string push_token = 7 [(buf.validate.field).string.max_len = 500];
 }
 
 // Енумы для домена Users

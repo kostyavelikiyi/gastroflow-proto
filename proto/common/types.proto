@@ -3,68 +3,68 @@ syntax = "proto3";
 package com.gastroflow.common;
 
 import "google/protobuf/timestamp.proto";
-import "validate/validate.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/common";
 
 // UUID - универсальный уникальный идентификатор
 // Используется для всех основных сущностей в системе
 message UUID {
-  string value = 1 [(validate.rules).string = {pattern: "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"}];
+  string value = 1 [(buf.validate.field).string.pattern = "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"];
 }
 
 // Money - представление денежных сумм с точностью до копеек
 message Money {
   // Сумма в минимальных единицах (например, копейках)
-  int64 amount = 1 [(validate.rules).int64.gte = 0];
+  int64 amount = 1 [(buf.validate.field).int64.gte = 0];
   // Код валюты ISO 4217 (по умолчанию RUB)
-  string currency = 2 [(validate.rules).string = {pattern: "^[A-Z]{3}$"}];
+  string currency = 2 [(buf.validate.field).string.pattern = "^[A-Z]{3}$"];
 }
 
 // Address - адрес для доставки
 message Address {
   // Полный адрес в текстовом виде
-  string full_address = 1 [(validate.rules).string = {
+  string full_address = 1 [(buf.validate.field).string = {
     min_len: 5
     max_len: 500
   }];
 
   // Город
-  string city = 2 [(validate.rules).string = {
+  string city = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 100
   }];
 
   // Улица
-  string street = 3 [(validate.rules).string = {
+  string street = 3 [(buf.validate.field).string = {
     min_len: 1
     max_len: 200
   }];
 
   // Номер дома
-  string house_number = 4 [(validate.rules).string = {
+  string house_number = 4 [(buf.validate.field).string = {
     min_len: 1
     max_len: 20
   }];
 
   // Квартира/офис (опционально)
-  string apartment = 5 [(validate.rules).string.max_len = 20];
+  string apartment = 5 [(buf.validate.field).string.max_len = 20];
 
   // Подъезд (опционально)
-  string entrance = 6 [(validate.rules).string.max_len = 10];
+  string entrance = 6 [(buf.validate.field).string.max_len = 10];
 
   // Этаж (опционально)
-  string floor = 7 [(validate.rules).string.max_len = 10];
+  string floor = 7 [(buf.validate.field).string.max_len = 10];
 
   // Комментарий к адресу (опционально)
-  string comment = 8 [(validate.rules).string.max_len = 500];
+  string comment = 8 [(buf.validate.field).string.max_len = 500];
 
   // Координаты (опционально)
-  double latitude = 9 [(validate.rules).double = {
+  double latitude = 9 [(buf.validate.field).double = {
     gte: -90.0
     lte: 90.0
   }];
-  double longitude = 10 [(validate.rules).double = {
+  double longitude = 10 [(buf.validate.field).double = {
     gte: -180.0
     lte: 180.0
   }];
@@ -73,25 +73,25 @@ message Address {
 // ContactInfo - контактная информация
 message ContactInfo {
   // Номер телефона в международном формате
-  string phone = 1 [(validate.rules).string = {pattern: "^\\+[1-9]\\d{10,14}$"}];
+  string phone = 1 [(buf.validate.field).string.pattern = "^\\+[1-9]\\d{10,14}$"];
 
   // Email адрес (опционально)
-  string email = 2 [(validate.rules).string = {pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"}];
+  string email = 2 [(buf.validate.field).string.pattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"];
 }
 
 // AuditInfo - информация для аудита изменений
 message AuditInfo {
   // Время создания записи
-  google.protobuf.Timestamp created_at = 1 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp created_at = 1 [(buf.validate.field).required = true];
 
   // Время последнего обновления записи
-  google.protobuf.Timestamp updated_at = 2 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp updated_at = 2 [(buf.validate.field).required = true];
 
   // Идентификатор пользователя, создавшего запись
-  UUID created_by = 3 [(validate.rules).message.required = true];
+  UUID created_by = 3 [(buf.validate.field).required = true];
 
   // Идентификатор пользователя, обновившего запись
-  UUID updated_by = 4 [(validate.rules).message.required = true];
+  UUID updated_by = 4 [(buf.validate.field).required = true];
 
   // Время мягкого удаления (null если не удалено)
   google.protobuf.Timestamp deleted_at = 5;
@@ -100,25 +100,25 @@ message AuditInfo {
   UUID deleted_by = 6;
 
   // Версия записи для оптимистичной блокировки
-  int64 version = 7 [(validate.rules).int64.gte = 1];
+  int64 version = 7 [(buf.validate.field).int64.gte = 1];
 }
 
 // PaginationRequest - запрос с пагинацией
 message PaginationRequest {
   // Номер страницы (начиная с 1)
-  int32 page = 1 [(validate.rules).int32 = {
+  int32 page = 1 [(buf.validate.field).int32 = {
     gte: 1
     lte: 10000
   }];
 
   // Размер страницы (максимум 100)
-  int32 page_size = 2 [(validate.rules).int32 = {
+  int32 page_size = 2 [(buf.validate.field).int32 = {
     gte: 1
     lte: 100
   }];
 
   // Поле для сортировки
-  string sort_by = 3 [(validate.rules).string.max_len = 50];
+  string sort_by = 3 [(buf.validate.field).string.max_len = 50];
 
   // Направление сортировки
   SortOrder sort_order = 4;

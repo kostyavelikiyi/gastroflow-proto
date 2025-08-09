@@ -4,51 +4,51 @@ package com.gastroflow.inventory;
 
 import "common/types.proto";
 import "google/protobuf/timestamp.proto";
-import "validate/validate.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/inventory";
 
 // InventoryItem - товар на складе
 message InventoryItem {
   // Уникальный идентификатор товара
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Название товара
-  string name = 2 [(validate.rules).string = {
+  string name = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 200
   }];
 
   // Описание товара
-  string description = 3 [(validate.rules).string.max_len = 1000];
+  string description = 3 [(buf.validate.field).string.max_len = 1000];
 
   // Артикул/SKU
-  string sku = 4 [(validate.rules).string = {
+  string sku = 4 [(buf.validate.field).string = {
     min_len: 1
     max_len: 100
   }];
 
   // Штрихкод
-  string barcode = 5 [(validate.rules).string.max_len = 50];
+  string barcode = 5 [(buf.validate.field).string.max_len = 50];
 
   // Категория товара
-  ItemCategory category = 6 [(validate.rules).enum = {
+  ItemCategory category = 6 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Единица измерения
-  MeasurementUnit measurement_unit = 7 [(validate.rules).enum = {
+  MeasurementUnit measurement_unit = 7 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Текущий остаток
-  double current_stock = 8 [(validate.rules).double.gte = 0];
+  double current_stock = 8 [(buf.validate.field).double.gte = 0];
 
   // Минимальный остаток (для уведомлений)
-  double min_stock_level = 9 [(validate.rules).double.gte = 0];
+  double min_stock_level = 9 [(buf.validate.field).double.gte = 0];
 
   // Максимальный остаток
-  double max_stock_level = 10 [(validate.rules).double.gte = 0];
+  double max_stock_level = 10 [(buf.validate.field).double.gte = 0];
 
   // Себестоимость единицы товара
   com.gastroflow.common.Money cost_per_unit = 11;
@@ -60,78 +60,78 @@ message InventoryItem {
   Supplier supplier = 13;
 
   // Идентификатор ресторана
-  com.gastroflow.common.UUID restaurant_id = 14 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID restaurant_id = 14 [(buf.validate.field).required = true];
 
   // Идентификатор филиала (если товар привязан к филиалу)
   com.gastroflow.common.UUID branch_id = 15;
 
   // Статус товара
-  ItemStatus status = 16 [(validate.rules).enum = {
+  ItemStatus status = 16 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Срок годности (дни)
-  int32 shelf_life_days = 17 [(validate.rules).int32.gte = 0];
+  int32 shelf_life_days = 17 [(buf.validate.field).int32.gte = 0];
 
   // Условия хранения
-  string storage_conditions = 18 [(validate.rules).string.max_len = 500];
+  string storage_conditions = 18 [(buf.validate.field).string.max_len = 500];
 
   // Активен ли товар
   bool is_active = 19;
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 20 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 20 [(buf.validate.field).required = true];
 }
 
 // Supplier - поставщик
 message Supplier {
   // Уникальный идентификатор поставщика
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Название поставщика
-  string name = 2 [(validate.rules).string = {
+  string name = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 200
   }];
 
   // Контактная информация
-  com.gastroflow.common.ContactInfo contact_info = 3 [(validate.rules).message.required = true];
+  com.gastroflow.common.ContactInfo contact_info = 3 [(buf.validate.field).required = true];
 
   // Адрес поставщика
   com.gastroflow.common.Address address = 4;
 
   // ИНН/налоговый номер
-  string tax_number = 5 [(validate.rules).string.max_len = 20];
+  string tax_number = 5 [(buf.validate.field).string.max_len = 20];
 
   // Рейтинг поставщика (1-5)
-  double rating = 6 [(validate.rules).double = {
+  double rating = 6 [(buf.validate.field).double = {
     gte: 1.0
     lte: 5.0
   }];
 
   // Условия оплаты
-  string payment_terms = 7 [(validate.rules).string.max_len = 200];
+  string payment_terms = 7 [(buf.validate.field).string.max_len = 200];
 
   // Условия доставки
-  string delivery_terms = 8 [(validate.rules).string.max_len = 200];
+  string delivery_terms = 8 [(buf.validate.field).string.max_len = 200];
 
   // Активен ли поставщик
   bool is_active = 9;
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 10 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 10 [(buf.validate.field).required = true];
 }
 
 // StockMovement - движение товара на складе
 message StockMovement {
   // Уникальный идентификатор движения
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Идентификатор товара
-  com.gastroflow.common.UUID item_id = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID item_id = 2 [(buf.validate.field).required = true];
 
   // Тип движения
-  MovementType movement_type = 3 [(validate.rules).enum = {
+  MovementType movement_type = 3 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
@@ -139,77 +139,77 @@ message StockMovement {
   double quantity = 4;
 
   // Остаток до движения
-  double stock_before = 5 [(validate.rules).double.gte = 0];
+  double stock_before = 5 [(buf.validate.field).double.gte = 0];
 
   // Остаток после движения
-  double stock_after = 6 [(validate.rules).double.gte = 0];
+  double stock_after = 6 [(buf.validate.field).double.gte = 0];
 
   // Причина движения
-  MovementReason reason = 7 [(validate.rules).enum = {
+  MovementReason reason = 7 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Дополнительное описание
-  string description = 8 [(validate.rules).string.max_len = 500];
+  string description = 8 [(buf.validate.field).string.max_len = 500];
 
   // Стоимость движения
   com.gastroflow.common.Money cost = 9;
 
   // Связанный документ (накладная, заказ и т.д.)
-  string reference_document = 10 [(validate.rules).string.max_len = 100];
+  string reference_document = 10 [(buf.validate.field).string.max_len = 100];
 
   // Идентификатор связанного заказа
   com.gastroflow.common.UUID order_id = 11;
 
   // Идентификатор ресторана
-  com.gastroflow.common.UUID restaurant_id = 12 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID restaurant_id = 12 [(buf.validate.field).required = true];
 
   // Идентификатор филиала
   com.gastroflow.common.UUID branch_id = 13;
 
   // Время движения
-  google.protobuf.Timestamp movement_date = 14 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp movement_date = 14 [(buf.validate.field).required = true];
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 15 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 15 [(buf.validate.field).required = true];
 }
 
 // PurchaseOrder - заказ поставщику
 message PurchaseOrder {
   // Уникальный идентификатор заказа
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Номер заказа
-  string order_number = 2 [(validate.rules).string = {
+  string order_number = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 50
   }];
 
   // Идентификатор поставщика
-  com.gastroflow.common.UUID supplier_id = 3 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID supplier_id = 3 [(buf.validate.field).required = true];
 
   // Идентификатор ресторана
-  com.gastroflow.common.UUID restaurant_id = 4 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID restaurant_id = 4 [(buf.validate.field).required = true];
 
   // Идентификатор филиала
   com.gastroflow.common.UUID branch_id = 5;
 
   // Позиции заказа
-  repeated PurchaseOrderItem items = 6 [(validate.rules).repeated = {
+  repeated PurchaseOrderItem items = 6 [(buf.validate.field).repeated = {
     min_items: 1
     max_items: 1000
   }];
 
   // Статус заказа
-  PurchaseOrderStatus status = 7 [(validate.rules).enum = {
+  PurchaseOrderStatus status = 7 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Общая сумма заказа
-  com.gastroflow.common.Money total_amount = 8 [(validate.rules).message.required = true];
+  com.gastroflow.common.Money total_amount = 8 [(buf.validate.field).required = true];
 
   // Дата создания заказа
-  google.protobuf.Timestamp order_date = 9 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp order_date = 9 [(buf.validate.field).required = true];
 
   // Ожидаемая дата доставки
   google.protobuf.Timestamp expected_delivery_date = 10;
@@ -218,90 +218,90 @@ message PurchaseOrder {
   google.protobuf.Timestamp actual_delivery_date = 11;
 
   // Комментарий к заказу
-  string comment = 12 [(validate.rules).string.max_len = 1000];
+  string comment = 12 [(buf.validate.field).string.max_len = 1000];
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 13 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 13 [(buf.validate.field).required = true];
 }
 
 // PurchaseOrderItem - позиция в заказе поставщику
 message PurchaseOrderItem {
   // Идентификатор товара
-  com.gastroflow.common.UUID item_id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID item_id = 1 [(buf.validate.field).required = true];
 
   // Количество
-  double quantity = 2 [(validate.rules).double.gt = 0];
+  double quantity = 2 [(buf.validate.field).double.gt = 0];
 
   // Цена за единицу
-  com.gastroflow.common.Money unit_price = 3 [(validate.rules).message.required = true];
+  com.gastroflow.common.Money unit_price = 3 [(buf.validate.field).required = true];
 
   // Общая стоимость позиции
-  com.gastroflow.common.Money total_price = 4 [(validate.rules).message.required = true];
+  com.gastroflow.common.Money total_price = 4 [(buf.validate.field).required = true];
 
   // Полученное количество
-  double received_quantity = 5 [(validate.rules).double.gte = 0];
+  double received_quantity = 5 [(buf.validate.field).double.gte = 0];
 
   // Комментарий к позиции
-  string comment = 6 [(validate.rules).string.max_len = 200];
+  string comment = 6 [(buf.validate.field).string.max_len = 200];
 }
 
 // StockAdjustment - корректировка остатков
 message StockAdjustment {
   // Уникальный идентификатор корректировки
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Номер корректировки
-  string adjustment_number = 2 [(validate.rules).string = {
+  string adjustment_number = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 50
   }];
 
   // Идентификатор ресторана
-  com.gastroflow.common.UUID restaurant_id = 3 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID restaurant_id = 3 [(buf.validate.field).required = true];
 
   // Идентификатор филиала
   com.gastroflow.common.UUID branch_id = 4;
 
   // Тип корректировки
-  AdjustmentType adjustment_type = 5 [(validate.rules).enum = {
+  AdjustmentType adjustment_type = 5 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Позиции корректировки
-  repeated StockAdjustmentItem items = 6 [(validate.rules).repeated = {
+  repeated StockAdjustmentItem items = 6 [(buf.validate.field).repeated = {
     min_items: 1
     max_items: 1000
   }];
 
   // Причина корректировки
-  string reason = 7 [(validate.rules).string = {
+  string reason = 7 [(buf.validate.field).string = {
     min_len: 1
     max_len: 500
   }];
 
   // Дата корректировки
-  google.protobuf.Timestamp adjustment_date = 8 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp adjustment_date = 8 [(buf.validate.field).required = true];
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 9 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 9 [(buf.validate.field).required = true];
 }
 
 // StockAdjustmentItem - позиция в корректировке
 message StockAdjustmentItem {
   // Идентификатор товара
-  com.gastroflow.common.UUID item_id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID item_id = 1 [(buf.validate.field).required = true];
 
   // Остаток до корректировки
-  double old_quantity = 2 [(validate.rules).double.gte = 0];
+  double old_quantity = 2 [(buf.validate.field).double.gte = 0];
 
   // Остаток после корректировки
-  double new_quantity = 3 [(validate.rules).double.gte = 0];
+  double new_quantity = 3 [(buf.validate.field).double.gte = 0];
 
   // Разница
   double difference = 4;
 
   // Причина корректировки конкретной позиции
-  string reason = 5 [(validate.rules).string.max_len = 200];
+  string reason = 5 [(buf.validate.field).string.max_len = 200];
 }
 
 // Енумы для домена Inventory

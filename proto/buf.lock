@@ -2,10 +2,10 @@
 version: v1
 deps:
   - remote: buf.build
-    owner: envoyproxy
-    repository: protoc-gen-validate
-    commit: daf171c6cdb54629b5f51e345a79e4dd
-    digest: shake256:4ae167d7eed10da5f83a3f5df8c670d249170f11b1f2fd19afda06be2cff4d47dcc95e9e4a15151ecc8ce2d3d3614caf9a04d3ad82fb768a3870dedfa9455f36
+    owner: bufbuild
+    repository: protovalidate
+    commit: 6c6e0d3c608e4549802254a2eee81bc8
+    digest: shake256:0ef32b59cbbf249d9068e009725befd8109b8d2d6541f15184c8622711bc71d532bb3746d43d50ac051810044b82992b756a048df334b770b38571b2bb04331c
   - remote: buf.build
     owner: googleapis
     repository: googleapis

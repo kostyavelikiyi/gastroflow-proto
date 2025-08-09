@@ -7,7 +7,7 @@
 package analytics
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -1466,13 +1466,13 @@ var File_analytics_models_proto protoreflect.FileDescriptor
 
 const file_analytics_models_proto_rawDesc = "" +
 	"\n" +
-	"\x16analytics/models.proto\x12\x18com.gastroflow.analytics\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\x95\x06\n" +
-	"\x0eAnalyticsEvent\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12R\n" +
+	"\x16analytics/models.proto\x12\x18com.gastroflow.analytics\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\x8f\x06\n" +
+	"\x0eAnalyticsEvent\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12R\n" +
 	"\n" +
-	"event_type\x18\x02 \x01(\x0e2).com.gastroflow.common.AnalyticsEventTypeB\b\xfaB\x05\x82\x01\x02 \x00R\teventType\x12B\n" +
-	"\ttimestamp\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\ttimestamp\x12J\n" +
-	"\rrestaurant_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x124\n" +
+	"event_type\x18\x02 \x01(\x0e2).com.gastroflow.common.AnalyticsEventTypeB\b\xbaH\x05\x82\x01\x02 \x00R\teventType\x12@\n" +
+	"\ttimestamp\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\ttimestamp\x12H\n" +
+	"\rrestaurant_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x124\n" +
 	"\auser_id\x18\x05 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x06userId\x126\n" +
 	"\border_id\x18\x06 \x01(\v2\x1b.com.gastroflow.common.UUIDR\aorderId\x12=\n" +
 	"\fmenu_item_id\x18\a \x01(\v2\x1b.com.gastroflow.common.UUIDR\n" +
@@ -1481,77 +1481,77 @@ const file_analytics_models_proto_rawDesc = "" +
 	"properties\x18\b \x03(\v28.com.gastroflow.analytics.AnalyticsEvent.PropertiesEntryR\n" +
 	"properties\x12'\n" +
 	"\n" +
-	"session_id\x18\t \x01(\tB\b\xfaB\x05r\x03\x18\x80\x01R\tsessionId\x12(\n" +
+	"session_id\x18\t \x01(\tB\b\xbaH\x05r\x03\x18\x80\x01R\tsessionId\x12(\n" +
 	"\vdevice_type\x18\n" +
-	" \x01(\tB\a\xfaB\x04r\x02\x182R\n" +
+	" \x01(\tB\a\xbaH\x04r\x02\x182R\n" +
 	"deviceType\x12&\n" +
 	"\n" +
-	"ip_address\x18\v \x01(\tB\a\xfaB\x04r\x02\x18-R\tipAddress\x12'\n" +
+	"ip_address\x18\v \x01(\tB\a\xbaH\x04r\x02\x18-R\tipAddress\x12'\n" +
 	"\n" +
-	"user_agent\x18\f \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\tuserAgent\x1a=\n" +
+	"user_agent\x18\f \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\tuserAgent\x1a=\n" +
 	"\x0fPropertiesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xa3\x05\n" +
-	"\x0eOrderAnalytics\x12K\n" +
-	"\x06period\x18\x01 \x01(\v2).com.gastroflow.analytics.AnalyticsPeriodB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06period\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12S\n" +
-	"\roverall_stats\x18\x03 \x01(\v2$.com.gastroflow.analytics.OrderStatsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\foverallStats\x12J\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x9d\x05\n" +
+	"\x0eOrderAnalytics\x12I\n" +
+	"\x06period\x18\x01 \x01(\v2).com.gastroflow.analytics.AnalyticsPeriodB\x06\xbaH\x03\xc8\x01\x01R\x06period\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12Q\n" +
+	"\roverall_stats\x18\x03 \x01(\v2$.com.gastroflow.analytics.OrderStatsB\x06\xbaH\x03\xc8\x01\x01R\foverallStats\x12J\n" +
 	"\vdaily_stats\x18\x04 \x03(\v2).com.gastroflow.analytics.DailyOrderStatsR\n" +
 	"dailyStats\x12M\n" +
 	"\fhourly_stats\x18\x05 \x03(\v2*.com.gastroflow.analytics.HourlyOrderStatsR\vhourlyStats\x12N\n" +
 	"\rpopular_items\x18\x06 \x03(\v2).com.gastroflow.analytics.PopularMenuItemR\fpopularItems\x12X\n" +
 	"\x12packing_mode_stats\x18\a \x03(\v2*.com.gastroflow.analytics.PackingModeStatsR\x10packingModeStats\x12^\n" +
-	"\x14payment_method_stats\x18\b \x03(\v2,.com.gastroflow.analytics.PaymentMethodStatsR\x12paymentMethodStats\"\xdb\x01\n" +
-	"\x0fAnalyticsPeriod\x12C\n" +
+	"\x14payment_method_stats\x18\b \x03(\v2,.com.gastroflow.analytics.PaymentMethodStatsR\x12paymentMethodStats\"\xd7\x01\n" +
+	"\x0fAnalyticsPeriod\x12A\n" +
 	"\n" +
-	"start_date\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\tstartDate\x12?\n" +
-	"\bend_date\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\aendDate\x12B\n" +
-	"\x04type\x18\x03 \x01(\x0e2$.com.gastroflow.analytics.PeriodTypeB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\"\xc1\x03\n" +
+	"start_date\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tstartDate\x12=\n" +
+	"\bend_date\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\aendDate\x12B\n" +
+	"\x04type\x18\x03 \x01(\x0e2$.com.gastroflow.analytics.PeriodTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\"\xbd\x03\n" +
 	"\n" +
 	"OrderStats\x12!\n" +
-	"\ftotal_orders\x18\x01 \x01(\x03R\vtotalOrders\x12K\n" +
-	"\rtotal_revenue\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\ftotalRevenue\x12V\n" +
-	"\x13average_order_value\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x11averageOrderValue\x12)\n" +
+	"\ftotal_orders\x18\x01 \x01(\x03R\vtotalOrders\x12I\n" +
+	"\rtotal_revenue\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\ftotalRevenue\x12T\n" +
+	"\x13average_order_value\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x11averageOrderValue\x12)\n" +
 	"\x10completed_orders\x18\x04 \x01(\x03R\x0fcompletedOrders\x12)\n" +
 	"\x10cancelled_orders\x18\x05 \x01(\x03R\x0fcancelledOrders\x12+\n" +
 	"\x11cancellation_rate\x18\x06 \x01(\x01R\x10cancellationRate\x128\n" +
 	"\x18average_preparation_time\x18\a \x01(\x01R\x16averagePreparationTime\x12.\n" +
-	"\x13total_items_ordered\x18\b \x01(\x03R\x11totalItemsOrdered\"\xc7\x01\n" +
+	"\x13total_items_ordered\x18\b \x01(\x03R\x11totalItemsOrdered\"\xc5\x01\n" +
 	"\x0fDailyOrderStats\x12.\n" +
-	"\x04date\x18\x01 \x01(\tB\x1a\xfaB\x17r\x152\x13^\\d{4}-\\d{2}-\\d{2}$R\x04date\x12D\n" +
-	"\x05stats\x18\x02 \x01(\v2$.com.gastroflow.analytics.OrderStatsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05stats\x12>\n" +
-	"\vday_of_week\x18\x03 \x01(\x0e2\x1e.com.gastroflow.common.WeekDayR\tdayOfWeek\"w\n" +
+	"\x04date\x18\x01 \x01(\tB\x1a\xbaH\x17r\x152\x13^\\d{4}-\\d{2}-\\d{2}$R\x04date\x12B\n" +
+	"\x05stats\x18\x02 \x01(\v2$.com.gastroflow.analytics.OrderStatsB\x06\xbaH\x03\xc8\x01\x01R\x05stats\x12>\n" +
+	"\vday_of_week\x18\x03 \x01(\x0e2\x1e.com.gastroflow.common.WeekDayR\tdayOfWeek\"u\n" +
 	"\x10HourlyOrderStats\x12\x1d\n" +
-	"\x04hour\x18\x01 \x01(\x05B\t\xfaB\x06\x1a\x04\x18\x17(\x00R\x04hour\x12D\n" +
-	"\x05stats\x18\x02 \x01(\v2$.com.gastroflow.analytics.OrderStatsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05stats\"\x98\x02\n" +
-	"\x0fPopularMenuItem\x12G\n" +
-	"\fmenu_item_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"\x04hour\x18\x01 \x01(\x05B\t\xbaH\x06\x1a\x04\x18\x17(\x00R\x04hour\x12B\n" +
+	"\x05stats\x18\x02 \x01(\v2$.com.gastroflow.analytics.OrderStatsB\x06\xbaH\x03\xc8\x01\x01R\x05stats\"\x94\x02\n" +
+	"\x0fPopularMenuItem\x12E\n" +
+	"\fmenu_item_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"menuItemId\x12\x1c\n" +
-	"\x04name\x18\x02 \x01(\tB\b\xfaB\x05r\x03\x18\xc8\x01R\x04name\x12\x1f\n" +
+	"\x04name\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\x04name\x12\x1f\n" +
 	"\vorder_count\x18\x03 \x01(\x03R\n" +
-	"orderCount\x12K\n" +
-	"\rtotal_revenue\x18\x04 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\ftotalRevenue\x120\n" +
-	"\x14percentage_of_orders\x18\x05 \x01(\x01R\x12percentageOfOrders\"\xe6\x01\n" +
+	"orderCount\x12I\n" +
+	"\rtotal_revenue\x18\x04 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\ftotalRevenue\x120\n" +
+	"\x14percentage_of_orders\x18\x05 \x01(\x01R\x12percentageOfOrders\"\xe4\x01\n" +
 	"\x10PackingModeStats\x12O\n" +
-	"\fpacking_mode\x18\x01 \x01(\x0e2\".com.gastroflow.common.PackingModeB\b\xfaB\x05\x82\x01\x02 \x00R\vpackingMode\x12\x1f\n" +
+	"\fpacking_mode\x18\x01 \x01(\x0e2\".com.gastroflow.common.PackingModeB\b\xbaH\x05\x82\x01\x02 \x00R\vpackingMode\x12\x1f\n" +
 	"\vorder_count\x18\x02 \x01(\x03R\n" +
-	"orderCount\x12@\n" +
-	"\arevenue\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\arevenue\x12\x1e\n" +
+	"orderCount\x12>\n" +
+	"\arevenue\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\arevenue\x12\x1e\n" +
 	"\n" +
 	"percentage\x18\x04 \x01(\x01R\n" +
-	"percentage\"\xee\x01\n" +
+	"percentage\"\xec\x01\n" +
 	"\x12PaymentMethodStats\x12U\n" +
-	"\x0epayment_method\x18\x01 \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xfaB\x05\x82\x01\x02 \x00R\rpaymentMethod\x12\x1f\n" +
+	"\x0epayment_method\x18\x01 \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xbaH\x05\x82\x01\x02 \x00R\rpaymentMethod\x12\x1f\n" +
 	"\vorder_count\x18\x02 \x01(\x03R\n" +
-	"orderCount\x12@\n" +
-	"\arevenue\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\arevenue\x12\x1e\n" +
+	"orderCount\x12>\n" +
+	"\arevenue\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\arevenue\x12\x1e\n" +
 	"\n" +
 	"percentage\x18\x04 \x01(\x01R\n" +
-	"percentage\"\x9f\x03\n" +
-	"\x11CustomerAnalytics\x12K\n" +
-	"\x06period\x18\x01 \x01(\v2).com.gastroflow.analytics.AnalyticsPeriodB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06period\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12V\n" +
-	"\roverall_stats\x18\x03 \x01(\v2'.com.gastroflow.analytics.CustomerStatsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\foverallStats\x12M\n" +
+	"percentage\"\x99\x03\n" +
+	"\x11CustomerAnalytics\x12I\n" +
+	"\x06period\x18\x01 \x01(\v2).com.gastroflow.analytics.AnalyticsPeriodB\x06\xbaH\x03\xc8\x01\x01R\x06period\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12T\n" +
+	"\roverall_stats\x18\x03 \x01(\v2'.com.gastroflow.analytics.CustomerStatsB\x06\xbaH\x03\xc8\x01\x01R\foverallStats\x12M\n" +
 	"\vdaily_stats\x18\x04 \x03(\v2,.com.gastroflow.analytics.DailyCustomerStatsR\n" +
 	"dailyStats\x12J\n" +
 	"\rtop_customers\x18\x05 \x03(\v2%.com.gastroflow.analytics.TopCustomerR\ftopCustomers\"\xc1\x02\n" +
@@ -1563,38 +1563,38 @@ const file_analytics_models_proto_rawDesc = "" +
 	"\x16average_customer_value\x18\x05 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x14averageCustomerValue\x126\n" +
 	"\x17average_order_frequency\x18\x06 \x01(\x01R\x15averageOrderFrequency\"\x94\x01\n" +
 	"\x12DailyCustomerStats\x12.\n" +
-	"\x04date\x18\x01 \x01(\tB\x1a\xfaB\x17r\x152\x13^\\d{4}-\\d{2}-\\d{2}$R\x04date\x12#\n" +
+	"\x04date\x18\x01 \x01(\tB\x1a\xbaH\x17r\x152\x13^\\d{4}-\\d{2}-\\d{2}$R\x04date\x12#\n" +
 	"\rnew_customers\x18\x02 \x01(\x03R\fnewCustomers\x12)\n" +
-	"\x10active_customers\x18\x03 \x01(\x03R\x0factiveCustomers\"\xb1\x02\n" +
-	"\vTopCustomer\x12F\n" +
-	"\vcustomer_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"\x10active_customers\x18\x03 \x01(\x03R\x0factiveCustomers\"\xad\x02\n" +
+	"\vTopCustomer\x12D\n" +
+	"\vcustomer_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"customerId\x12,\n" +
-	"\rcustomer_name\x18\x02 \x01(\tB\a\xfaB\x04r\x02\x18dR\fcustomerName\x12\x1f\n" +
+	"\rcustomer_name\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x18dR\fcustomerName\x12\x1f\n" +
 	"\vorder_count\x18\x03 \x01(\x03R\n" +
-	"orderCount\x12G\n" +
-	"\vtotal_spent\x18\x04 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"orderCount\x12E\n" +
+	"\vtotal_spent\x18\x04 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"totalSpent\x12B\n" +
-	"\x0flast_order_date\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\rlastOrderDate\"\x8f\x03\n" +
-	"\x10RevenueAnalytics\x12K\n" +
-	"\x06period\x18\x01 \x01(\v2).com.gastroflow.analytics.AnalyticsPeriodB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06period\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12K\n" +
+	"\x0flast_order_date\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\rlastOrderDate\"\x8b\x03\n" +
+	"\x10RevenueAnalytics\x12I\n" +
+	"\x06period\x18\x01 \x01(\v2).com.gastroflow.analytics.AnalyticsPeriodB\x06\xbaH\x03\xc8\x01\x01R\x06period\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12K\n" +
 	"\rdaily_revenue\x18\x03 \x03(\v2&.com.gastroflow.analytics.DailyRevenueR\fdailyRevenue\x12N\n" +
 	"\x0ehourly_revenue\x18\x04 \x03(\v2'.com.gastroflow.analytics.HourlyRevenueR\rhourlyRevenue\x12E\n" +
-	"\bforecast\x18\x05 \x03(\v2).com.gastroflow.analytics.RevenueForecastR\bforecast\"\xce\x01\n" +
+	"\bforecast\x18\x05 \x03(\v2).com.gastroflow.analytics.RevenueForecastR\bforecast\"\xcc\x01\n" +
 	"\fDailyRevenue\x12.\n" +
-	"\x04date\x18\x01 \x01(\tB\x1a\xfaB\x17r\x152\x13^\\d{4}-\\d{2}-\\d{2}$R\x04date\x12@\n" +
-	"\arevenue\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\arevenue\x12\x1f\n" +
+	"\x04date\x18\x01 \x01(\tB\x1a\xbaH\x17r\x152\x13^\\d{4}-\\d{2}-\\d{2}$R\x04date\x12>\n" +
+	"\arevenue\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\arevenue\x12\x1f\n" +
 	"\vorder_count\x18\x03 \x01(\x03R\n" +
 	"orderCount\x12+\n" +
-	"\x11growth_percentage\x18\x04 \x01(\x01R\x10growthPercentage\"\x91\x01\n" +
+	"\x11growth_percentage\x18\x04 \x01(\x01R\x10growthPercentage\"\x8f\x01\n" +
 	"\rHourlyRevenue\x12\x1d\n" +
-	"\x04hour\x18\x01 \x01(\x05B\t\xfaB\x06\x1a\x04\x18\x17(\x00R\x04hour\x12@\n" +
-	"\arevenue\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\arevenue\x12\x1f\n" +
+	"\x04hour\x18\x01 \x01(\x05B\t\xbaH\x06\x1a\x04\x18\x17(\x00R\x04hour\x12>\n" +
+	"\arevenue\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\arevenue\x12\x1f\n" +
 	"\vorder_count\x18\x03 \x01(\x03R\n" +
-	"orderCount\"\xc1\x01\n" +
+	"orderCount\"\xbf\x01\n" +
 	"\x0fRevenueForecast\x12.\n" +
-	"\x04date\x18\x01 \x01(\tB\x1a\xfaB\x17r\x152\x13^\\d{4}-\\d{2}-\\d{2}$R\x04date\x12S\n" +
-	"\x11predicted_revenue\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x10predictedRevenue\x12)\n" +
+	"\x04date\x18\x01 \x01(\tB\x1a\xbaH\x17r\x152\x13^\\d{4}-\\d{2}-\\d{2}$R\x04date\x12Q\n" +
+	"\x11predicted_revenue\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x10predictedRevenue\x12)\n" +
 	"\x10confidence_level\x18\x03 \x01(\x01R\x0fconfidenceLevel*\xb2\x01\n" +
 	"\n" +
 	"PeriodType\x12\x1b\n" +

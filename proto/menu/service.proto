@@ -6,7 +6,7 @@ import "common/enums.proto";
 import "common/types.proto";
 import "google/protobuf/empty.proto";
 import "menu/models.proto";
-import "validate/validate.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/menu";
 
@@ -85,133 +85,133 @@ service MenuItemService {
 // Запросы и ответы для MenuService
 
 message CreateMenuRequest {
-  string name = 1 [(validate.rules).string = {
+  string name = 1 [(buf.validate.field).string = {
     min_len: 1
     max_len: 200
   }];
-  string description = 2 [(validate.rules).string.max_len = 1000];
-  com.gastroflow.common.UUID restaurant_id = 3 [(validate.rules).message.required = true];
+  string description = 2 [(buf.validate.field).string.max_len = 1000];
+  com.gastroflow.common.UUID restaurant_id = 3 [(buf.validate.field).required = true];
   TimeSlot time_slot = 4;
-  repeated com.gastroflow.common.WeekDay active_days = 5 [(validate.rules).repeated.max_items = 7];
-  com.gastroflow.common.Language language = 6 [(validate.rules).enum = {
+  repeated com.gastroflow.common.WeekDay active_days = 5 [(buf.validate.field).repeated.max_items = 7];
+  com.gastroflow.common.Language language = 6 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 }
 
 message CreateMenuResponse {
-  Menu menu = 1 [(validate.rules).message.required = true];
+  Menu menu = 1 [(buf.validate.field).required = true];
 }
 
 message GetMenuRequest {
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 2 [(buf.validate.field).required = true];
 }
 
 message GetMenuResponse {
-  Menu menu = 1 [(validate.rules).message.required = true];
+  Menu menu = 1 [(buf.validate.field).required = true];
 }
 
 message UpdateMenuRequest {
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
-  Menu menu = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  Menu menu = 2 [(buf.validate.field).required = true];
 }
 
 message UpdateMenuResponse {
-  Menu menu = 1 [(validate.rules).message.required = true];
+  Menu menu = 1 [(buf.validate.field).required = true];
 }
 
 message DeleteMenuRequest {
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 2 [(buf.validate.field).required = true];
 }
 
 message ListMenusRequest {
-  com.gastroflow.common.UUID restaurant_id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.PaginationRequest pagination = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID restaurant_id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.PaginationRequest pagination = 2 [(buf.validate.field).required = true];
   bool active_only = 3;
   com.gastroflow.common.Language language = 4;
 }
 
 message ListMenusResponse {
   repeated Menu menus = 1;
-  com.gastroflow.common.PaginationResponse pagination = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.PaginationResponse pagination = 2 [(buf.validate.field).required = true];
 }
 
 message GetActiveMenuRequest {
-  com.gastroflow.common.UUID restaurant_id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID restaurant_id = 1 [(buf.validate.field).required = true];
   com.gastroflow.common.Language language = 2;
 }
 
 message GetActiveMenuResponse {
-  Menu menu = 1 [(validate.rules).message.required = true];
+  Menu menu = 1 [(buf.validate.field).required = true];
 }
 
 // Запросы и ответы для CategoryService
 
 message CreateCategoryRequest {
-  string name = 1 [(validate.rules).string = {
+  string name = 1 [(buf.validate.field).string = {
     min_len: 1
     max_len: 100
   }];
-  string description = 2 [(validate.rules).string.max_len = 500];
-  com.gastroflow.common.UUID menu_id = 3 [(validate.rules).message.required = true];
+  string description = 2 [(buf.validate.field).string.max_len = 500];
+  com.gastroflow.common.UUID menu_id = 3 [(buf.validate.field).required = true];
   com.gastroflow.common.UUID parent_id = 4;
-  string image_url = 5 [(validate.rules).string.max_len = 500];
-  int32 sort_order = 6 [(validate.rules).int32.gte = 0];
+  string image_url = 5 [(buf.validate.field).string.max_len = 500];
+  int32 sort_order = 6 [(buf.validate.field).int32.gte = 0];
 }
 
 message CreateCategoryResponse {
-  Category category = 1 [(validate.rules).message.required = true];
+  Category category = 1 [(buf.validate.field).required = true];
 }
 
 message GetCategoryRequest {
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 2 [(buf.validate.field).required = true];
 }
 
 message GetCategoryResponse {
-  Category category = 1 [(validate.rules).message.required = true];
+  Category category = 1 [(buf.validate.field).required = true];
 }
 
 message UpdateCategoryRequest {
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
-  Category category = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  Category category = 2 [(buf.validate.field).required = true];
 }
 
 message UpdateCategoryResponse {
-  Category category = 1 [(validate.rules).message.required = true];
+  Category category = 1 [(buf.validate.field).required = true];
 }
 
 message DeleteCategoryRequest {
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 2 [(buf.validate.field).required = true];
 }
 
 message ListCategoriesRequest {
-  com.gastroflow.common.UUID menu_id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
-  com.gastroflow.common.PaginationRequest pagination = 3 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID menu_id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 2 [(buf.validate.field).required = true];
+  com.gastroflow.common.PaginationRequest pagination = 3 [(buf.validate.field).required = true];
   bool active_only = 4;
   com.gastroflow.common.UUID parent_id = 5;
 }
 
 message ListCategoriesResponse {
   repeated Category categories = 1;
-  com.gastroflow.common.PaginationResponse pagination = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.PaginationResponse pagination = 2 [(buf.validate.field).required = true];
 }
 
 message ReorderCategoriesRequest {
-  com.gastroflow.common.UUID menu_id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
-  repeated CategoryOrder category_orders = 3 [(validate.rules).repeated = {
+  com.gastroflow.common.UUID menu_id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 2 [(buf.validate.field).required = true];
+  repeated CategoryOrder category_orders = 3 [(buf.validate.field).repeated = {
     min_items: 1
     max_items: 100
   }];
 }
 
 message CategoryOrder {
-  com.gastroflow.common.UUID category_id = 1 [(validate.rules).message.required = true];
-  int32 sort_order = 2 [(validate.rules).int32.gte = 0];
+  com.gastroflow.common.UUID category_id = 1 [(buf.validate.field).required = true];
+  int32 sort_order = 2 [(buf.validate.field).int32.gte = 0];
 }
 
 message ReorderCategoriesResponse {
@@ -221,136 +221,136 @@ message ReorderCategoriesResponse {
 // Запросы и ответы для MenuItemService
 
 message CreateMenuItemRequest {
-  string name = 1 [(validate.rules).string = {
+  string name = 1 [(buf.validate.field).string = {
     min_len: 1
     max_len: 200
   }];
-  string description = 2 [(validate.rules).string.max_len = 1000];
-  com.gastroflow.common.Money price = 3 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID category_id = 4 [(validate.rules).message.required = true];
-  int32 cooking_time = 5 [(validate.rules).int32 = {
+  string description = 2 [(buf.validate.field).string.max_len = 1000];
+  com.gastroflow.common.Money price = 3 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID category_id = 4 [(buf.validate.field).required = true];
+  int32 cooking_time = 5 [(buf.validate.field).int32 = {
     gte: 1
     lte: 120
   }];
   NutritionInfo nutrition_info = 6;
-  repeated Allergen allergens = 7 [(validate.rules).repeated.max_items = 50];
-  string image_url = 8 [(validate.rules).string.max_len = 500];
-  repeated string additional_images = 9 [(validate.rules).repeated = {
+  repeated Allergen allergens = 7 [(buf.validate.field).repeated.max_items = 50];
+  string image_url = 8 [(buf.validate.field).string.max_len = 500];
+  repeated string additional_images = 9 [(buf.validate.field).repeated = {
     max_items: 10
     items: {
       string: {max_len: 500}
     }
   }];
-  string portion_size = 10 [(validate.rules).string.max_len = 50];
-  repeated DietaryProperty dietary_properties = 11 [(validate.rules).repeated.max_items = 20];
-  repeated string ingredients = 12 [(validate.rules).repeated = {
+  string portion_size = 10 [(buf.validate.field).string.max_len = 50];
+  repeated DietaryProperty dietary_properties = 11 [(buf.validate.field).repeated.max_items = 20];
+  repeated string ingredients = 12 [(buf.validate.field).repeated = {
     max_items: 100
     items: {
       string: {max_len: 100}
     }
   }];
-  repeated CreateMenuItemVariantRequest variants = 13 [(validate.rules).repeated.max_items = 100];
+  repeated CreateMenuItemVariantRequest variants = 13 [(buf.validate.field).repeated.max_items = 100];
 }
 
 message CreateMenuItemVariantRequest {
-  string name = 1 [(validate.rules).string = {
+  string name = 1 [(buf.validate.field).string = {
     min_len: 1
     max_len: 100
   }];
-  com.gastroflow.common.Money price_modifier = 2 [(validate.rules).message.required = true];
-  VariantType type = 3 [(validate.rules).enum = {
+  com.gastroflow.common.Money price_modifier = 2 [(buf.validate.field).required = true];
+  VariantType type = 3 [(buf.validate.field).enum = {
     not_in: [0]
   }];
-  string group_name = 4 [(validate.rules).string.max_len = 50];
+  string group_name = 4 [(buf.validate.field).string.max_len = 50];
   bool is_required = 5;
-  int32 max_selections = 6 [(validate.rules).int32 = {
+  int32 max_selections = 6 [(buf.validate.field).int32 = {
     gte: 1
     lte: 20
   }];
-  int32 sort_order = 7 [(validate.rules).int32.gte = 0];
+  int32 sort_order = 7 [(buf.validate.field).int32.gte = 0];
 }
 
 message CreateMenuItemResponse {
-  MenuItem menu_item = 1 [(validate.rules).message.required = true];
+  MenuItem menu_item = 1 [(buf.validate.field).required = true];
 }
 
 message GetMenuItemRequest {
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 2 [(buf.validate.field).required = true];
 }
 
 message GetMenuItemResponse {
-  MenuItem menu_item = 1 [(validate.rules).message.required = true];
+  MenuItem menu_item = 1 [(buf.validate.field).required = true];
 }
 
 message UpdateMenuItemRequest {
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
-  MenuItem menu_item = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  MenuItem menu_item = 2 [(buf.validate.field).required = true];
 }
 
 message UpdateMenuItemResponse {
-  MenuItem menu_item = 1 [(validate.rules).message.required = true];
+  MenuItem menu_item = 1 [(buf.validate.field).required = true];
 }
 
 message DeleteMenuItemRequest {
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 2 [(buf.validate.field).required = true];
 }
 
 message ListMenuItemsRequest {
-  com.gastroflow.common.UUID category_id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
-  com.gastroflow.common.PaginationRequest pagination = 3 [(validate.rules).message.required = true];
-  repeated com.gastroflow.common.MenuItemStatus status_filter = 4 [(validate.rules).repeated.max_items = 10];
-  repeated DietaryProperty dietary_filter = 5 [(validate.rules).repeated.max_items = 20];
+  com.gastroflow.common.UUID category_id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 2 [(buf.validate.field).required = true];
+  com.gastroflow.common.PaginationRequest pagination = 3 [(buf.validate.field).required = true];
+  repeated com.gastroflow.common.MenuItemStatus status_filter = 4 [(buf.validate.field).repeated.max_items = 10];
+  repeated DietaryProperty dietary_filter = 5 [(buf.validate.field).repeated.max_items = 20];
   bool available_only = 6;
 }
 
 message ListMenuItemsResponse {
   repeated MenuItem menu_items = 1;
-  com.gastroflow.common.PaginationResponse pagination = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.PaginationResponse pagination = 2 [(buf.validate.field).required = true];
 }
 
 message SearchMenuItemsRequest {
-  com.gastroflow.common.UUID restaurant_id = 1 [(validate.rules).message.required = true];
-  string query = 2 [(validate.rules).string = {
+  com.gastroflow.common.UUID restaurant_id = 1 [(buf.validate.field).required = true];
+  string query = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 100
   }];
-  com.gastroflow.common.PaginationRequest pagination = 3 [(validate.rules).message.required = true];
+  com.gastroflow.common.PaginationRequest pagination = 3 [(buf.validate.field).required = true];
   repeated com.gastroflow.common.MenuItemStatus status_filter = 4;
   repeated DietaryProperty dietary_filter = 5;
 }
 
 message SearchMenuItemsResponse {
   repeated MenuItem menu_items = 1;
-  com.gastroflow.common.PaginationResponse pagination = 2 [(validate.rules).message.required = true];
+  com.gastroflow.common.PaginationResponse pagination = 2 [(buf.validate.field).required = true];
 }
 
 message UpdateMenuItemStatusRequest {
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
-  com.gastroflow.common.MenuItemStatus status = 3 [(validate.rules).enum = {
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 2 [(buf.validate.field).required = true];
+  com.gastroflow.common.MenuItemStatus status = 3 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 }
 
 message UpdateMenuItemStatusResponse {
-  MenuItem menu_item = 1 [(validate.rules).message.required = true];
+  MenuItem menu_item = 1 [(buf.validate.field).required = true];
 }
 
 message ReorderMenuItemsRequest {
-  com.gastroflow.common.UUID category_id = 1 [(validate.rules).message.required = true];
-  com.gastroflow.common.UUID restaurant_id = 2 [(validate.rules).message.required = true];
-  repeated MenuItemOrder menu_item_orders = 3 [(validate.rules).repeated = {
+  com.gastroflow.common.UUID category_id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 2 [(buf.validate.field).required = true];
+  repeated MenuItemOrder menu_item_orders = 3 [(buf.validate.field).repeated = {
     min_items: 1
     max_items: 200
   }];
 }
 
 message MenuItemOrder {
-  com.gastroflow.common.UUID menu_item_id = 1 [(validate.rules).message.required = true];
-  int32 sort_order = 2 [(validate.rules).int32.gte = 0];
+  com.gastroflow.common.UUID menu_item_id = 1 [(buf.validate.field).required = true];
+  int32 sort_order = 2 [(buf.validate.field).int32.gte = 0];
 }
 
 message ReorderMenuItemsResponse {
@@ -358,8 +358,8 @@ message ReorderMenuItemsResponse {
 }
 
 message GetPopularMenuItemsRequest {
-  com.gastroflow.common.UUID restaurant_id = 1 [(validate.rules).message.required = true];
-  int32 limit = 2 [(validate.rules).int32 = {
+  com.gastroflow.common.UUID restaurant_id = 1 [(buf.validate.field).required = true];
+  int32 limit = 2 [(buf.validate.field).int32 = {
     gte: 1
     lte: 50
   }];

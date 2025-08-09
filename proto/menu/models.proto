@@ -4,29 +4,29 @@ package com.gastroflow.menu;
 
 import "common/enums.proto";
 import "common/types.proto";
-import "validate/validate.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/menu";
 
 // Menu - меню ресторана
 message Menu {
   // Уникальный идентификатор меню
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Название меню
-  string name = 2 [(validate.rules).string = {
+  string name = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 200
   }];
 
   // Описание меню
-  string description = 3 [(validate.rules).string.max_len = 1000];
+  string description = 3 [(buf.validate.field).string.max_len = 1000];
 
   // Идентификатор ресторана
-  com.gastroflow.common.UUID restaurant_id = 4 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID restaurant_id = 4 [(buf.validate.field).required = true];
 
   // Категории в меню
-  repeated Category categories = 5 [(validate.rules).repeated.max_items = 100];
+  repeated Category categories = 5 [(buf.validate.field).repeated.max_items = 100];
 
   // Активность меню
   bool is_active = 6;
@@ -35,39 +35,39 @@ message Menu {
   TimeSlot time_slot = 7;
 
   // Дни недели, когда меню активно
-  repeated com.gastroflow.common.WeekDay active_days = 8 [(validate.rules).repeated.max_items = 7];
+  repeated com.gastroflow.common.WeekDay active_days = 8 [(buf.validate.field).repeated.max_items = 7];
 
   // Локализация меню
-  com.gastroflow.common.Language language = 9 [(validate.rules).enum = {
+  com.gastroflow.common.Language language = 9 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 10 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 10 [(buf.validate.field).required = true];
 }
 
 // Category - категория блюд в меню
 message Category {
   // Уникальный идентификатор категории
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Название категории
-  string name = 2 [(validate.rules).string = {
+  string name = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 100
   }];
 
   // Описание категории
-  string description = 3 [(validate.rules).string.max_len = 500];
+  string description = 3 [(buf.validate.field).string.max_len = 500];
 
   // Позиции в категории
-  repeated MenuItem items = 4 [(validate.rules).repeated.max_items = 200];
+  repeated MenuItem items = 4 [(buf.validate.field).repeated.max_items = 200];
 
   // Порядок сортировки категории
-  int32 sort_order = 5 [(validate.rules).int32.gte = 0];
+  int32 sort_order = 5 [(buf.validate.field).int32.gte = 0];
 
   // URL изображения категории
-  string image_url = 6 [(validate.rules).string.max_len = 500];
+  string image_url = 6 [(buf.validate.field).string.max_len = 500];
 
   // Активность категории
   bool is_active = 7;
@@ -76,36 +76,36 @@ message Category {
   com.gastroflow.common.UUID parent_id = 8;
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 9 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 9 [(buf.validate.field).required = true];
 }
 
 // MenuItem - позиция меню (блюдо)
 message MenuItem {
   // Уникальный идентификатор позиции
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Название блюда
-  string name = 2 [(validate.rules).string = {
+  string name = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 200
   }];
 
   // Описание блюда
-  string description = 3 [(validate.rules).string.max_len = 1000];
+  string description = 3 [(buf.validate.field).string.max_len = 1000];
 
   // Базовая цена
-  com.gastroflow.common.Money price = 4 [(validate.rules).message.required = true];
+  com.gastroflow.common.Money price = 4 [(buf.validate.field).required = true];
 
   // Статус позиции
-  com.gastroflow.common.MenuItemStatus status = 5 [(validate.rules).enum = {
+  com.gastroflow.common.MenuItemStatus status = 5 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Доступные варианты (размеры, добавки и т.д.)
-  repeated MenuItemVariant variants = 6 [(validate.rules).repeated.max_items = 100];
+  repeated MenuItemVariant variants = 6 [(buf.validate.field).repeated.max_items = 100];
 
   // Время приготовления в минутах
-  int32 cooking_time = 7 [(validate.rules).int32 = {
+  int32 cooking_time = 7 [(buf.validate.field).int32 = {
     gte: 1
     lte: 120
   }];
@@ -114,13 +114,13 @@ message MenuItem {
   NutritionInfo nutrition_info = 8;
 
   // Информация об аллергенах
-  repeated Allergen allergens = 9 [(validate.rules).repeated.max_items = 50];
+  repeated Allergen allergens = 9 [(buf.validate.field).repeated.max_items = 50];
 
   // URL изображения блюда
-  string image_url = 10 [(validate.rules).string.max_len = 500];
+  string image_url = 10 [(buf.validate.field).string.max_len = 500];
 
   // Дополнительные изображения
-  repeated string additional_images = 11 [(validate.rules).repeated = {
+  repeated string additional_images = 11 [(buf.validate.field).repeated = {
     max_items: 10
     items: {
       string: {max_len: 500}
@@ -128,16 +128,16 @@ message MenuItem {
   }];
 
   // Порядок сортировки в категории
-  int32 sort_order = 12 [(validate.rules).int32.gte = 0];
+  int32 sort_order = 12 [(buf.validate.field).int32.gte = 0];
 
   // Вес/объем порции
-  string portion_size = 13 [(validate.rules).string.max_len = 50];
+  string portion_size = 13 [(buf.validate.field).string.max_len = 50];
 
   // Особенности блюда (острое, вегетарианское и т.д.)
-  repeated DietaryProperty dietary_properties = 14 [(validate.rules).repeated.max_items = 20];
+  repeated DietaryProperty dietary_properties = 14 [(buf.validate.field).repeated.max_items = 20];
 
   // Ингредиенты
-  repeated string ingredients = 15 [(validate.rules).repeated = {
+  repeated string ingredients = 15 [(buf.validate.field).repeated = {
     max_items: 100
     items: {
       string: {max_len: 100}
@@ -145,48 +145,48 @@ message MenuItem {
   }];
 
   // Идентификатор категории
-  com.gastroflow.common.UUID category_id = 16 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID category_id = 16 [(buf.validate.field).required = true];
 
   // Популярность блюда (для рекомендаций)
-  int32 popularity_score = 17 [(validate.rules).int32.gte = 0];
+  int32 popularity_score = 17 [(buf.validate.field).int32.gte = 0];
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 18 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 18 [(buf.validate.field).required = true];
 }
 
 // MenuItemVariant - вариант позиции меню
 message MenuItemVariant {
   // Уникальный идентификатор варианта
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Название варианта
-  string name = 2 [(validate.rules).string = {
+  string name = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 100
   }];
 
   // Дополнительная цена (может быть отрицательной)
-  com.gastroflow.common.Money price_modifier = 3 [(validate.rules).message.required = true];
+  com.gastroflow.common.Money price_modifier = 3 [(buf.validate.field).required = true];
 
   // Тип варианта
-  VariantType type = 4 [(validate.rules).enum = {
+  VariantType type = 4 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Группа вариантов (для группировки связанных вариантов)
-  string group_name = 5 [(validate.rules).string.max_len = 50];
+  string group_name = 5 [(buf.validate.field).string.max_len = 50];
 
   // Обязательность выбора варианта
   bool is_required = 6;
 
   // Максимальное количество выборов в группе
-  int32 max_selections = 7 [(validate.rules).int32 = {
+  int32 max_selections = 7 [(buf.validate.field).int32 = {
     gte: 1
     lte: 20
   }];
 
   // Порядок сортировки варианта
-  int32 sort_order = 8 [(validate.rules).int32.gte = 0];
+  int32 sort_order = 8 [(buf.validate.field).int32.gte = 0];
 
   // Доступность варианта
   bool is_available = 9;
@@ -195,31 +195,31 @@ message MenuItemVariant {
 // NutritionInfo - информация о пищевой ценности
 message NutritionInfo {
   // Калорийность на 100г
-  double calories_per_100g = 1 [(validate.rules).double.gte = 0];
+  double calories_per_100g = 1 [(buf.validate.field).double.gte = 0];
 
   // Белки в граммах на 100г
-  double protein_per_100g = 2 [(validate.rules).double.gte = 0];
+  double protein_per_100g = 2 [(buf.validate.field).double.gte = 0];
 
   // Жиры в граммах на 100г
-  double fats_per_100g = 3 [(validate.rules).double.gte = 0];
+  double fats_per_100g = 3 [(buf.validate.field).double.gte = 0];
 
   // Углеводы в граммах на 100г
-  double carbs_per_100g = 4 [(validate.rules).double.gte = 0];
+  double carbs_per_100g = 4 [(buf.validate.field).double.gte = 0];
 
   // Общий вес порции в граммах
-  double portion_weight = 5 [(validate.rules).double.gte = 0];
+  double portion_weight = 5 [(buf.validate.field).double.gte = 0];
 }
 
 // TimeSlot - временной слот для меню
 message TimeSlot {
   // Время начала действия меню
-  string start_time = 1 [(validate.rules).string = {pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"}];
+  string start_time = 1 [(buf.validate.field).string = {pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"}];
 
   // Время окончания действия меню
-  string end_time = 2 [(validate.rules).string = {pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"}];
+  string end_time = 2 [(buf.validate.field).string = {pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"}];
 
   // Название временного слота
-  string name = 3 [(validate.rules).string.max_len = 50];
+  string name = 3 [(buf.validate.field).string.max_len = 50];
 }
 
 // Енумы для домена Menu

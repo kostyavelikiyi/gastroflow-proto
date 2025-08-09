@@ -5,34 +5,34 @@ package com.gastroflow.notifications;
 import "common/enums.proto";
 import "common/types.proto";
 import "google/protobuf/timestamp.proto";
-import "validate/validate.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/notifications";
 
 // Notification - уведомление в системе
 message Notification {
   // Уникальный идентификатор уведомления
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Тип уведомления
-  com.gastroflow.common.NotificationType type = 2 [(validate.rules).enum = {
+  com.gastroflow.common.NotificationType type = 2 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Заголовок уведомления
-  string title = 3 [(validate.rules).string = {
+  string title = 3 [(buf.validate.field).string = {
     min_len: 1
     max_len: 200
   }];
 
   // Текст уведомления
-  string message = 4 [(validate.rules).string = {
+  string message = 4 [(buf.validate.field).string = {
     min_len: 1
     max_len: 1000
   }];
 
   // Получатель уведомления
-  com.gastroflow.common.UUID recipient_id = 5 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID recipient_id = 5 [(buf.validate.field).required = true];
 
   // Отправитель уведомления
   com.gastroflow.common.UUID sender_id = 6;
@@ -44,20 +44,20 @@ message Notification {
   RelatedEntities related_entities = 8;
 
   // Каналы доставки уведомления
-  repeated DeliveryChannel channels = 9 [(validate.rules).repeated.max_items = 10];
+  repeated DeliveryChannel channels = 9 [(buf.validate.field).repeated.max_items = 10];
 
   // Приоритет уведомления
-  com.gastroflow.common.Priority priority = 10 [(validate.rules).enum = {
+  com.gastroflow.common.Priority priority = 10 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Статус уведомления
-  NotificationStatus status = 11 [(validate.rules).enum = {
+  NotificationStatus status = 11 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Время создания
-  google.protobuf.Timestamp created_at = 12 [(validate.rules).timestamp.required = true];
+  google.protobuf.Timestamp created_at = 12 [(buf.validate.field).required = true];
 
   // Время запланированной отправки
   google.protobuf.Timestamp scheduled_at = 13;
@@ -72,16 +72,16 @@ message Notification {
   NotificationData data = 16;
 
   // Действия, доступные в уведомлении
-  repeated NotificationAction actions = 17 [(validate.rules).repeated.max_items = 5];
+  repeated NotificationAction actions = 17 [(buf.validate.field).repeated.max_items = 5];
 
   // Количество попыток отправки
-  int32 retry_count = 18 [(validate.rules).int32.gte = 0];
+  int32 retry_count = 18 [(buf.validate.field).int32.gte = 0];
 
   // Время истечения актуальности уведомления
   google.protobuf.Timestamp expires_at = 19;
 
   // Локализация
-  com.gastroflow.common.Language language = 20 [(validate.rules).enum = {
+  com.gastroflow.common.Language language = 20 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 }
@@ -107,18 +107,18 @@ message RelatedEntities {
 // DeliveryChannel - канал доставки уведомления
 message DeliveryChannel {
   // Тип канала
-  ChannelType type = 1 [(validate.rules).enum = {
+  ChannelType type = 1 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Адрес доставки (email, phone, webhook URL и т.д.)
-  string address = 2 [(validate.rules).string = {
+  string address = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 500
   }];
 
   // Статус доставки по данному каналу
-  DeliveryStatus status = 3 [(validate.rules).enum = {
+  DeliveryStatus status = 3 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
@@ -126,10 +126,10 @@ message DeliveryChannel {
   google.protobuf.Timestamp delivered_at = 4;
 
   // Ошибка доставки
-  string delivery_error = 5 [(validate.rules).string.max_len = 500];
+  string delivery_error = 5 [(buf.validate.field).string.max_len = 500];
 
   // Количество попыток доставки
-  int32 delivery_attempts = 6 [(validate.rules).int32.gte = 0];
+  int32 delivery_attempts = 6 [(buf.validate.field).int32.gte = 0];
 
   // Конфигурация канала
   map<string, string> config = 7;
@@ -138,49 +138,49 @@ message DeliveryChannel {
 // NotificationData - данные для отображения уведомления
 message NotificationData {
   // URL иконки
-  string icon_url = 1 [(validate.rules).string.max_len = 500];
+  string icon_url = 1 [(buf.validate.field).string.max_len = 500];
 
   // URL изображения
-  string image_url = 2 [(validate.rules).string.max_len = 500];
+  string image_url = 2 [(buf.validate.field).string.max_len = 500];
 
   // Цвет уведомления (hex)
-  string color = 3 [(validate.rules).string = {pattern: "^#[0-9A-Fa-f]{6}$"}];
+  string color = 3 [(buf.validate.field).string = {pattern: "^#[0-9A-Fa-f]{6}$"}];
 
   // URL для перехода при клике
-  string click_url = 4 [(validate.rules).string.max_len = 500];
+  string click_url = 4 [(buf.validate.field).string.max_len = 500];
 
   // Дополнительные данные для отображения
   map<string, string> custom_data = 5;
 
   // Звук уведомления
-  string sound = 6 [(validate.rules).string.max_len = 100];
+  string sound = 6 [(buf.validate.field).string.max_len = 100];
 
   // Группировка уведомлений
-  string group_key = 7 [(validate.rules).string.max_len = 100];
+  string group_key = 7 [(buf.validate.field).string.max_len = 100];
 
   // Тэг уведомления
-  string tag = 8 [(validate.rules).string.max_len = 100];
+  string tag = 8 [(buf.validate.field).string.max_len = 100];
 }
 
 // NotificationAction - действие в уведомлении
 message NotificationAction {
   // Идентификатор действия
-  string action_id = 1 [(validate.rules).string = {
+  string action_id = 1 [(buf.validate.field).string = {
     min_len: 1
     max_len: 50
   }];
 
   // Текст кнопки действия
-  string title = 2 [(validate.rules).string = {
+  string title = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 100
   }];
 
   // URL для действия
-  string url = 3 [(validate.rules).string.max_len = 500];
+  string url = 3 [(buf.validate.field).string.max_len = 500];
 
   // Тип действия
-  ActionType type = 4 [(validate.rules).enum = {
+  ActionType type = 4 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
@@ -191,33 +191,33 @@ message NotificationAction {
 // NotificationTemplate - шаблон уведомления
 message NotificationTemplate {
   // Уникальный идентификатор шаблона
-  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
 
   // Название шаблона
-  string name = 2 [(validate.rules).string = {
+  string name = 2 [(buf.validate.field).string = {
     min_len: 1
     max_len: 100
   }];
 
   // Тип уведомления
-  com.gastroflow.common.NotificationType type = 3 [(validate.rules).enum = {
+  com.gastroflow.common.NotificationType type = 3 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
   // Шаблон заголовка
-  string title_template = 4 [(validate.rules).string = {
+  string title_template = 4 [(buf.validate.field).string = {
     min_len: 1
     max_len: 200
   }];
 
   // Шаблон сообщения
-  string message_template = 5 [(validate.rules).string = {
+  string message_template = 5 [(buf.validate.field).string = {
     min_len: 1
     max_len: 1000
   }];
 
   // Язык шаблона
-  com.gastroflow.common.Language language = 6 [(validate.rules).enum = {
+  com.gastroflow.common.Language language = 6 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
@@ -225,34 +225,34 @@ message NotificationTemplate {
   com.gastroflow.common.UUID restaurant_id = 7;
 
   // Переменные шаблона
-  repeated TemplateVariable variables = 8 [(validate.rules).repeated.max_items = 50];
+  repeated TemplateVariable variables = 8 [(buf.validate.field).repeated.max_items = 50];
 
   // Настройки отображения
   NotificationData display_settings = 9;
 
   // Каналы по умолчанию
-  repeated ChannelType default_channels = 10 [(validate.rules).repeated.max_items = 10];
+  repeated ChannelType default_channels = 10 [(buf.validate.field).repeated.max_items = 10];
 
   // Активен ли шаблон
   bool is_active = 11;
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 12 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 12 [(buf.validate.field).required = true];
 }
 
 // TemplateVariable - переменная шаблона
 message TemplateVariable {
   // Название переменной
-  string name = 1 [(validate.rules).string = {
+  string name = 1 [(buf.validate.field).string = {
     min_len: 1
     max_len: 50
   }];
 
   // Описание переменной
-  string description = 2 [(validate.rules).string.max_len = 200];
+  string description = 2 [(buf.validate.field).string.max_len = 200];
 
   // Тип переменной
-  VariableType type = 3 [(validate.rules).enum = {
+  VariableType type = 3 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
@@ -260,28 +260,28 @@ message TemplateVariable {
   bool is_required = 4;
 
   // Значение по умолчанию
-  string default_value = 5 [(validate.rules).string.max_len = 100];
+  string default_value = 5 [(buf.validate.field).string.max_len = 100];
 }
 
 // NotificationSettings - настройки уведомлений для ресторана
 message NotificationSettings {
   // Идентификатор ресторана
-  com.gastroflow.common.UUID restaurant_id = 1 [(validate.rules).message.required = true];
+  com.gastroflow.common.UUID restaurant_id = 1 [(buf.validate.field).required = true];
 
   // Настройки по типам уведомлений
-  repeated TypeSettings type_settings = 2 [(validate.rules).repeated.max_items = 50];
+  repeated TypeSettings type_settings = 2 [(buf.validate.field).repeated.max_items = 50];
 
   // Общие настройки
-  GeneralSettings general_settings = 3 [(validate.rules).message.required = true];
+  GeneralSettings general_settings = 3 [(buf.validate.field).required = true];
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 4 [(validate.rules).message.required = true];
+  com.gastroflow.common.AuditInfo audit_info = 4 [(buf.validate.field).required = true];
 }
 
 // TypeSettings - настройки для типа уведомлений
 message TypeSettings {
   // Тип уведомления
-  com.gastroflow.common.NotificationType type = 1 [(validate.rules).enum = {
+  com.gastroflow.common.NotificationType type = 1 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
@@ -289,13 +289,13 @@ message TypeSettings {
   bool enabled = 2;
 
   // Каналы доставки для данного типа
-  repeated ChannelType channels = 3 [(validate.rules).repeated.max_items = 10];
+  repeated ChannelType channels = 3 [(buf.validate.field).repeated.max_items = 10];
 
   // Задержка отправки (секунды)
-  int32 delay_seconds = 4 [(validate.rules).int32.gte = 0];
+  int32 delay_seconds = 4 [(buf.validate.field).int32.gte = 0];
 
   // Приоритет по умолчанию
-  com.gastroflow.common.Priority default_priority = 5 [(validate.rules).enum = {
+  com.gastroflow.common.Priority default_priority = 5 [(buf.validate.field).enum = {
     not_in: [0]
   }];
 
@@ -306,25 +306,25 @@ message TypeSettings {
 // GeneralSettings - общие настройки уведомлений
 message GeneralSettings {
   // Часовой пояс для уведомлений
-  string timezone = 1 [(validate.rules).string.max_len = 50];
+  string timezone = 1 [(buf.validate.field).string.max_len = 50];
 
   // Тихие часы (не отправлять push и SMS)
   QuietHours quiet_hours = 2;
 
   // Максимальное количество попыток отправки
-  int32 max_retry_attempts = 3 [(validate.rules).int32 = {
+  int32 max_retry_attempts = 3 [(buf.validate.field).int32 = {
     gte: 1
     lte: 10
   }];
 
   // Интервал между попытками (секунды)
-  int32 retry_interval_seconds = 4 [(validate.rules).int32 = {
+  int32 retry_interval_seconds = 4 [(buf.validate.field).int32 = {
     gte: 60
     lte: 3600
   }];
 
   // Время жизни уведомлений (часы)
-  int32 notification_ttl_hours = 5 [(validate.rules).int32 = {
+  int32 notification_ttl_hours = 5 [(buf.validate.field).int32 = {
     gte: 1
     lte: 720
   }];
@@ -333,13 +333,13 @@ message GeneralSettings {
 // QuietHours - тихие часы
 message QuietHours {
   // Начало тихих часов (HH:MM)
-  string start_time = 1 [(validate.rules).string = {pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"}];
+  string start_time = 1 [(buf.validate.field).string = {pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"}];
 
   // Конец тихих часов (HH:MM)
-  string end_time = 2 [(validate.rules).string = {pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"}];
+  string end_time = 2 [(buf.validate.field).string = {pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"}];
 
   // Дни недели для тихих часов
-  repeated com.gastroflow.common.WeekDay days = 3 [(validate.rules).repeated.max_items = 7];
+  repeated com.gastroflow.common.WeekDay days = 3 [(buf.validate.field).repeated.max_items = 7];
 }
 
 // Енумы для домена Notifications

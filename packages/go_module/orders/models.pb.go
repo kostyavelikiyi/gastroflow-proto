@@ -7,7 +7,7 @@
 package orders
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -595,63 +595,63 @@ var File_orders_models_proto protoreflect.FileDescriptor
 
 const file_orders_models_proto_rawDesc = "" +
 	"\n" +
-	"\x13orders/models.proto\x12\x15com.gastroflow.orders\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\x8d\n" +
+	"\x13orders/models.proto\x12\x15com.gastroflow.orders\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\x81\n" +
 	"\n" +
-	"\x05Order\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x18dR\x04name\x12A\n" +
-	"\tdate_time\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\bdateTime\x12O\n" +
-	"\fpacking_mode\x18\x04 \x01(\x0e2\".com.gastroflow.common.PackingModeB\b\xfaB\x05\x82\x01\x02 \x00R\vpackingMode\x12I\n" +
+	"\x05Order\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1d\n" +
+	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12?\n" +
+	"\tdate_time\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\bdateTime\x12O\n" +
+	"\fpacking_mode\x18\x04 \x01(\x0e2\".com.gastroflow.common.PackingModeB\b\xbaH\x05\x82\x01\x02 \x00R\vpackingMode\x12I\n" +
 	"\tpositions\x18\x05 \x03(\v2\x1f.com.gastroflow.orders.PositionB\n" +
-	"\xfaB\a\x92\x01\x04\b\x01\x10dR\tpositions\x12<\n" +
-	"\x05total\x18\x06 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05total\x12\x19\n" +
-	"\bis_ready\x18\a \x01(\bR\aisReady\x12O\n" +
-	"\fcontact_info\x18\b \x01(\v2\".com.gastroflow.common.ContactInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\vcontactInfo\x12&\n" +
+	"\xbaH\a\x92\x01\x04\b\x01\x10dR\tpositions\x12:\n" +
+	"\x05total\x18\x06 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x05total\x12\x19\n" +
+	"\bis_ready\x18\a \x01(\bR\aisReady\x12M\n" +
+	"\fcontact_info\x18\b \x01(\v2\".com.gastroflow.common.ContactInfoB\x06\xbaH\x03\xc8\x01\x01R\vcontactInfo\x12&\n" +
 	"\bduration\x18\t \x01(\x05B\n" +
-	"\xfaB\a\x1a\x05\x18\xe0\x03(\x01R\bduration\x128\n" +
+	"\xbaH\a\x1a\x05\x18\xe0\x03(\x01R\bduration\x128\n" +
 	"\aaddress\x18\n" +
 	" \x01(\v2\x1e.com.gastroflow.common.AddressR\aaddress\x12;\n" +
-	"\x15external_order_number\x18\v \x01(\tB\a\xfaB\x04r\x02\x18dR\x13externalOrderNumber\x12?\n" +
+	"\x15external_order_number\x18\v \x01(\tB\a\xbaH\x04r\x02\x18dR\x13externalOrderNumber\x12?\n" +
 	"\rpromo_code_id\x18\f \x01(\v2\x1b.com.gastroflow.common.UUIDR\vpromoCodeId\x12U\n" +
-	"\x0epayment_method\x18\r \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xfaB\x05\x82\x01\x02 \x00R\rpaymentMethod\x12D\n" +
-	"\x06status\x18\x0e \x01(\x0e2\".com.gastroflow.common.OrderStatusB\b\xfaB\x05\x82\x01\x02 \x00R\x06status\x12b\n" +
-	"\x13preparing_time_mode\x18\x0f \x01(\x0e2(.com.gastroflow.common.PreparingTimeModeB\b\xfaB\x05\x82\x01\x02 \x00R\x11preparingTimeMode\x12H\n" +
-	"\x12desired_ready_time\x18\x10 \x01(\v2\x1a.google.protobuf.TimestampR\x10desiredReadyTime\x12J\n" +
-	"\rrestaurant_id\x18\x11 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12\"\n" +
-	"\acomment\x18\x12 \x01(\tB\b\xfaB\x05r\x03\x18\xe8\aR\acomment\x12?\n" +
-	"\bdiscount\x18\x13 \x01(\v2#.com.gastroflow.orders.DiscountInfoR\bdiscount\x12I\n" +
+	"\x0epayment_method\x18\r \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xbaH\x05\x82\x01\x02 \x00R\rpaymentMethod\x12D\n" +
+	"\x06status\x18\x0e \x01(\x0e2\".com.gastroflow.common.OrderStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12b\n" +
+	"\x13preparing_time_mode\x18\x0f \x01(\x0e2(.com.gastroflow.common.PreparingTimeModeB\b\xbaH\x05\x82\x01\x02 \x00R\x11preparingTimeMode\x12H\n" +
+	"\x12desired_ready_time\x18\x10 \x01(\v2\x1a.google.protobuf.TimestampR\x10desiredReadyTime\x12H\n" +
+	"\rrestaurant_id\x18\x11 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12\"\n" +
+	"\acomment\x18\x12 \x01(\tB\b\xbaH\x05r\x03\x18\xe8\aR\acomment\x12?\n" +
+	"\bdiscount\x18\x13 \x01(\v2#.com.gastroflow.orders.DiscountInfoR\bdiscount\x12G\n" +
 	"\n" +
-	"audit_info\x18\x14 \x01(\v2 .com.gastroflow.common.AuditInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tauditInfo\"\xca\x04\n" +
-	"\bPosition\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12\x1e\n" +
+	"audit_info\x18\x14 \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\xc4\x04\n" +
+	"\bPosition\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1e\n" +
 	"\x04name\x18\x02 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12<\n" +
-	"\x05price\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05price\x12%\n" +
-	"\bquantity\x18\x04 \x01(\x05B\t\xfaB\x06\x1a\x04\x18d(\x01R\bquantity\x12U\n" +
-	"\x11selected_variants\x18\x05 \x03(\v2\x1e.com.gastroflow.orders.VariantB\b\xfaB\x05\x92\x01\x02\x102R\x10selectedVariants\x12\"\n" +
-	"\acomment\x18\x06 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\acomment\x12\x19\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12:\n" +
+	"\x05price\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x05price\x12%\n" +
+	"\bquantity\x18\x04 \x01(\x05B\t\xbaH\x06\x1a\x04\x18d(\x01R\bquantity\x12U\n" +
+	"\x11selected_variants\x18\x05 \x03(\v2\x1e.com.gastroflow.orders.VariantB\b\xbaH\x05\x92\x01\x02\x102R\x10selectedVariants\x12\"\n" +
+	"\acomment\x18\x06 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\acomment\x12\x19\n" +
 	"\bis_ready\x18\a \x01(\bR\aisReady\x128\n" +
-	"\tparent_id\x18\b \x01(\v2\x1b.com.gastroflow.common.UUIDR\bparentId\x12G\n" +
-	"\fmenu_item_id\x18\t \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"\tparent_id\x18\b \x01(\v2\x1b.com.gastroflow.common.UUIDR\bparentId\x12E\n" +
+	"\fmenu_item_id\x18\t \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"menuItemId\x12,\n" +
 	"\fcooking_time\x18\n" +
-	" \x01(\x05B\t\xfaB\x06\x1a\x04\x18x(\x01R\vcookingTime\x12;\n" +
-	"\x14cooking_instructions\x18\v \x01(\tB\b\xfaB\x05r\x03\x18\xac\x02R\x13cookingInstructions\"\xd1\x01\n" +
+	" \x01(\x05B\t\xbaH\x06\x1a\x04\x18x(\x01R\vcookingTime\x12;\n" +
+	"\x14cooking_instructions\x18\v \x01(\tB\b\xbaH\x05r\x03\x18\xac\x02R\x13cookingInstructions\"\xcd\x01\n" +
 	"\aVariant\x12\x1d\n" +
-	"\x04name\x18\x01 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x18dR\x04name\x12<\n" +
-	"\x05price\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x05price\x12D\n" +
+	"\x04name\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12:\n" +
+	"\x05price\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x05price\x12B\n" +
 	"\n" +
-	"variant_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tvariantId\x12#\n" +
-	"\bcategory\x18\x04 \x01(\tB\a\xfaB\x04r\x02\x182R\bcategory\"\x9e\x02\n" +
-	"\fDiscountInfo\x12>\n" +
-	"\x06amount\x18\x01 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06amount\x127\n" +
+	"variant_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\tvariantId\x12#\n" +
+	"\bcategory\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\bcategory\"\x9c\x02\n" +
+	"\fDiscountInfo\x12<\n" +
+	"\x06amount\x18\x01 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x06amount\x127\n" +
 	"\n" +
-	"percentage\x18\x02 \x01(\x01B\x17\xfaB\x14\x12\x12\x19\x00\x00\x00\x00\x00\x00Y@)\x00\x00\x00\x00\x00\x00\x00\x00R\n" +
+	"percentage\x18\x02 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x00Y@)\x00\x00\x00\x00\x00\x00\x00\x00R\n" +
 	"percentage\x12A\n" +
-	"\x04type\x18\x03 \x01(\x0e2#.com.gastroflow.orders.DiscountTypeB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\x12*\n" +
-	"\vdescription\x18\x04 \x01(\tB\b\xfaB\x05r\x03\x18\xc8\x01R\vdescription\x12&\n" +
+	"\x04type\x18\x03 \x01(\x0e2#.com.gastroflow.orders.DiscountTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12*\n" +
+	"\vdescription\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\vdescription\x12&\n" +
 	"\n" +
-	"promo_code\x18\x05 \x01(\tB\a\xfaB\x04r\x02\x182R\tpromoCode*\xc3\x01\n" +
+	"promo_code\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x182R\tpromoCode*\xc3\x01\n" +
 	"\fDiscountType\x12\x1d\n" +
 	"\x19DISCOUNT_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n" +
 	"\x1aDISCOUNT_TYPE_FIXED_AMOUNT\x10\x01\x12\x1c\n" +

@@ -7,7 +7,7 @@
 package payments
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -1800,21 +1800,21 @@ var File_payments_models_proto protoreflect.FileDescriptor
 
 const file_payments_models_proto_rawDesc = "" +
 	"\n" +
-	"\x15payments/models.proto\x12\x17com.gastroflow.payments\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xbd\v\n" +
-	"\aPayment\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12@\n" +
-	"\border_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aorderId\x12@\n" +
-	"\bpayer_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\apayerId\x12J\n" +
-	"\rrestaurant_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12>\n" +
-	"\x06amount\x18\x05 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06amount\x12F\n" +
-	"\x06method\x18\x06 \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xfaB\x05\x82\x01\x02 \x00R\x06method\x12H\n" +
-	"\x06status\x18\a \x01(\x0e2&.com.gastroflow.payments.PaymentStatusB\b\xfaB\x05\x82\x01\x02 \x00R\x06status\x12N\n" +
-	"\bprovider\x18\b \x01(\x0e2(.com.gastroflow.payments.PaymentProviderB\b\xfaB\x05\x82\x01\x02 \x00R\bprovider\x128\n" +
-	"\x13external_payment_id\x18\t \x01(\tB\b\xfaB\x05r\x03\x18\xc8\x01R\x11externalPaymentId\x12*\n" +
+	"\x15payments/models.proto\x12\x17com.gastroflow.payments\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\xaf\v\n" +
+	"\aPayment\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12>\n" +
+	"\border_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\aorderId\x12>\n" +
+	"\bpayer_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\apayerId\x12H\n" +
+	"\rrestaurant_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12<\n" +
+	"\x06amount\x18\x05 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x06amount\x12F\n" +
+	"\x06method\x18\x06 \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xbaH\x05\x82\x01\x02 \x00R\x06method\x12H\n" +
+	"\x06status\x18\a \x01(\x0e2&.com.gastroflow.payments.PaymentStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12N\n" +
+	"\bprovider\x18\b \x01(\x0e2(.com.gastroflow.payments.PaymentProviderB\b\xbaH\x05\x82\x01\x02 \x00R\bprovider\x128\n" +
+	"\x13external_payment_id\x18\t \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\x11externalPaymentId\x12*\n" +
 	"\vdescription\x18\n" +
-	" \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\vdescription\x12C\n" +
+	" \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\vdescription\x12A\n" +
 	"\n" +
-	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\tcreatedAt\x12=\n" +
+	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tcreatedAt\x12=\n" +
 	"\fprocessed_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\vprocessedAt\x129\n" +
 	"\n" +
 	"expires_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x12A\n" +
@@ -1824,12 +1824,12 @@ const file_payments_models_proto_rawDesc = "" +
 	"\n" +
 	"net_amount\x18\x11 \x01(\v2\x1c.com.gastroflow.common.MoneyR\tnetAmount\x12;\n" +
 	"\x05error\x18\x12 \x01(\v2%.com.gastroflow.payments.PaymentErrorR\x05error\x12$\n" +
-	"\tclient_ip\x18\x13 \x01(\tB\a\xfaB\x04r\x02\x18-R\bclientIp\x12'\n" +
+	"\tclient_ip\x18\x13 \x01(\tB\a\xbaH\x04r\x02\x18-R\bclientIp\x12'\n" +
 	"\n" +
-	"user_agent\x18\x14 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\tuserAgent\x12J\n" +
-	"\bmetadata\x18\x15 \x03(\v2..com.gastroflow.payments.Payment.MetadataEntryR\bmetadata\x12I\n" +
+	"user_agent\x18\x14 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\tuserAgent\x12J\n" +
+	"\bmetadata\x18\x15 \x03(\v2..com.gastroflow.payments.Payment.MetadataEntryR\bmetadata\x12G\n" +
 	"\n" +
-	"audit_info\x18\x16 \x01(\v2 .com.gastroflow.common.AuditInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tauditInfo\x1a;\n" +
+	"audit_info\x18\x16 \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x8f\x04\n" +
@@ -1838,93 +1838,93 @@ const file_payments_models_proto_rawDesc = "" +
 	"\x15bank_transfer_details\x18\x02 \x01(\v2,.com.gastroflow.payments.BankTransferDetailsR\x13bankTransferDetails\x12M\n" +
 	"\x0ewallet_details\x18\x03 \x01(\v2&.com.gastroflow.payments.WalletDetailsR\rwalletDetails\x12G\n" +
 	"\fcash_details\x18\x04 \x01(\v2$.com.gastroflow.payments.CashDetailsR\vcashDetails\x123\n" +
-	"\x10confirmation_url\x18\x05 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\x0fconfirmationUrl\x121\n" +
-	"\x0frecurring_token\x18\x06 \x01(\tB\b\xfaB\x05r\x03\x18\xc8\x01R\x0erecurringToken\x12R\n" +
+	"\x10confirmation_url\x18\x05 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\x0fconfirmationUrl\x121\n" +
+	"\x0frecurring_token\x18\x06 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\x0erecurringToken\x12R\n" +
 	"\x0ethree_d_secure\x18\a \x01(\v2,.com.gastroflow.payments.ThreeDSecureDetailsR\fthreeDSecure\"\xae\x03\n" +
 	"\vCardDetails\x12&\n" +
 	"\n" +
-	"masked_pan\x18\x01 \x01(\tB\a\xfaB\x04r\x02\x18\x14R\tmaskedPan\x12H\n" +
-	"\tcard_type\x18\x02 \x01(\x0e2!.com.gastroflow.payments.CardTypeB\b\xfaB\x05\x82\x01\x02 \x00R\bcardType\x12(\n" +
-	"\vissuer_bank\x18\x03 \x01(\tB\a\xfaB\x04r\x02\x18dR\n" +
+	"masked_pan\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x18\x14R\tmaskedPan\x12H\n" +
+	"\tcard_type\x18\x02 \x01(\x0e2!.com.gastroflow.payments.CardTypeB\b\xbaH\x05\x82\x01\x02 \x00R\bcardType\x12(\n" +
+	"\vissuer_bank\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18dR\n" +
 	"issuerBank\x128\n" +
-	"\x0eissuer_country\x18\x04 \x01(\tB\x11\xfaB\x0er\f2\n" +
+	"\x0eissuer_country\x18\x04 \x01(\tB\x11\xbaH\x0er\f2\n" +
 	"^[A-Z]{2}$R\rissuerCountry\x12;\n" +
-	"\x10last_four_digits\x18\x05 \x01(\tB\x11\xfaB\x0er\f2\n" +
+	"\x10last_four_digits\x18\x05 \x01(\tB\x11\xbaH\x0er\f2\n" +
 	"^[0-9]{4}$R\x0elastFourDigits\x12&\n" +
-	"\texp_month\x18\x06 \x01(\x05B\t\xfaB\x06\x1a\x04\x18\f(\x01R\bexpMonth\x12#\n" +
-	"\bexp_year\x18\a \x01(\x05B\b\xfaB\x05\x1a\x03(\xe4\x0fR\aexpYear\x12$\n" +
-	"\tauth_code\x18\b \x01(\tB\a\xfaB\x04r\x02\x18\x14R\bauthCode\x12\x19\n" +
-	"\x03rrn\x18\t \x01(\tB\a\xfaB\x04r\x02\x18\x14R\x03rrn\"\xdc\x01\n" +
+	"\texp_month\x18\x06 \x01(\x05B\t\xbaH\x06\x1a\x04\x18\f(\x01R\bexpMonth\x12#\n" +
+	"\bexp_year\x18\a \x01(\x05B\b\xbaH\x05\x1a\x03(\xe4\x0fR\aexpYear\x12$\n" +
+	"\tauth_code\x18\b \x01(\tB\a\xbaH\x04r\x02\x18\x14R\bauthCode\x12\x19\n" +
+	"\x03rrn\x18\t \x01(\tB\a\xbaH\x04r\x02\x18\x14R\x03rrn\"\xdc\x01\n" +
 	"\x13BankTransferDetails\x12$\n" +
-	"\tbank_name\x18\x01 \x01(\tB\a\xfaB\x04r\x02\x18dR\bbankName\x12\x19\n" +
-	"\x03bik\x18\x02 \x01(\tB\a\xfaB\x04r\x02\x18\x14R\x03bik\x12.\n" +
-	"\x0eaccount_number\x18\x03 \x01(\tB\a\xfaB\x04r\x02\x182R\raccountNumber\x120\n" +
-	"\x0ftransfer_number\x18\x04 \x01(\tB\a\xfaB\x04r\x02\x182R\x0etransferNumber\x12\"\n" +
-	"\apurpose\x18\x05 \x01(\tB\b\xfaB\x05r\x03\x18\xc8\x01R\apurpose\"\xbb\x01\n" +
+	"\tbank_name\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x18dR\bbankName\x12\x19\n" +
+	"\x03bik\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x18\x14R\x03bik\x12.\n" +
+	"\x0eaccount_number\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x182R\raccountNumber\x120\n" +
+	"\x0ftransfer_number\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\x0etransferNumber\x12\"\n" +
+	"\apurpose\x18\x05 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\apurpose\"\xbb\x01\n" +
 	"\rWalletDetails\x12N\n" +
-	"\vwallet_type\x18\x01 \x01(\x0e2#.com.gastroflow.payments.WalletTypeB\b\xfaB\x05\x82\x01\x02 \x00R\n" +
+	"\vwallet_type\x18\x01 \x01(\x0e2#.com.gastroflow.payments.WalletTypeB\b\xbaH\x05\x82\x01\x02 \x00R\n" +
 	"walletType\x12$\n" +
-	"\twallet_id\x18\x02 \x01(\tB\a\xfaB\x04r\x02\x18dR\bwalletId\x124\n" +
-	"\x11masked_identifier\x18\x03 \x01(\tB\a\xfaB\x04r\x02\x18dR\x10maskedIdentifier\"\xa1\x02\n" +
-	"\vCashDetails\x12O\n" +
-	"\x0freceived_amount\x18\x01 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x0ereceivedAmount\x12K\n" +
-	"\rchange_amount\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\fchangeAmount\x12D\n" +
+	"\twallet_id\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x18dR\bwalletId\x124\n" +
+	"\x11masked_identifier\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18dR\x10maskedIdentifier\"\x9b\x02\n" +
+	"\vCashDetails\x12M\n" +
+	"\x0freceived_amount\x18\x01 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x0ereceivedAmount\x12I\n" +
+	"\rchange_amount\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\fchangeAmount\x12B\n" +
 	"\n" +
-	"cashier_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tcashierId\x12.\n" +
-	"\x0ereceipt_number\x18\x04 \x01(\tB\a\xfaB\x04r\x02\x182R\rreceiptNumber\"\x8f\x01\n" +
+	"cashier_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\tcashierId\x12.\n" +
+	"\x0ereceipt_number\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\rreceiptNumber\"\x8f\x01\n" +
 	"\x13ThreeDSecureDetails\x12\x18\n" +
 	"\aapplied\x18\x01 \x01(\bR\aapplied\x12(\n" +
-	"\vauth_status\x18\x02 \x01(\tB\a\xfaB\x04r\x02\x18\x14R\n" +
+	"\vauth_status\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x18\x14R\n" +
 	"authStatus\x12\x19\n" +
-	"\x03eci\x18\x03 \x01(\tB\a\xfaB\x04r\x02\x18\n" +
+	"\x03eci\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18\n" +
 	"R\x03eci\x12\x19\n" +
-	"\x03xid\x18\x04 \x01(\tB\a\xfaB\x04r\x02\x182R\x03xid\"\xb9\x02\n" +
+	"\x03xid\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\x03xid\"\xb7\x02\n" +
 	"\x14PaymentStatusHistory\x12G\n" +
 	"\vfrom_status\x18\x01 \x01(\x0e2&.com.gastroflow.payments.PaymentStatusR\n" +
 	"fromStatus\x12M\n" +
-	"\tto_status\x18\x02 \x01(\x0e2&.com.gastroflow.payments.PaymentStatusB\b\xfaB\x05\x82\x01\x02 \x00R\btoStatus\x12C\n" +
+	"\tto_status\x18\x02 \x01(\x0e2&.com.gastroflow.payments.PaymentStatusB\b\xbaH\x05\x82\x01\x02 \x00R\btoStatus\x12A\n" +
 	"\n" +
-	"changed_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\tchangedAt\x12 \n" +
-	"\x06reason\x18\x04 \x01(\tB\b\xfaB\x05r\x03\x18\xc8\x01R\x06reason\x12\"\n" +
-	"\adetails\x18\x05 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\adetails\"\xbe\x02\n" +
+	"changed_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tchangedAt\x12 \n" +
+	"\x06reason\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\x06reason\x12\"\n" +
+	"\adetails\x18\x05 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\adetails\"\xbe\x02\n" +
 	"\fPaymentError\x12&\n" +
 	"\n" +
-	"error_code\x18\x01 \x01(\tB\a\xfaB\x04r\x02\x182R\terrorCode\x12-\n" +
-	"\rerror_message\x18\x02 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\ferrorMessage\x127\n" +
-	"\x13provider_error_code\x18\x03 \x01(\tB\a\xfaB\x04r\x02\x182R\x11providerErrorCode\x12>\n" +
-	"\x16provider_error_message\x18\x04 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\x14providerErrorMessage\x12!\n" +
+	"error_code\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x182R\terrorCode\x12-\n" +
+	"\rerror_message\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\ferrorMessage\x127\n" +
+	"\x13provider_error_code\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x182R\x11providerErrorCode\x12>\n" +
+	"\x16provider_error_message\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\x14providerErrorMessage\x12!\n" +
 	"\fis_retryable\x18\x05 \x01(\bR\visRetryable\x12;\n" +
 	"\vretry_after\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"retryAfter\"\xf7\x05\n" +
-	"\x06Refund\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12D\n" +
+	"retryAfter\"\xed\x05\n" +
+	"\x06Refund\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12B\n" +
 	"\n" +
-	"payment_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tpaymentId\x12>\n" +
-	"\x06amount\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06amount\x12G\n" +
-	"\x06reason\x18\x04 \x01(\x0e2%.com.gastroflow.payments.RefundReasonB\b\xfaB\x05\x82\x01\x02 \x00R\x06reason\x12G\n" +
-	"\x06status\x18\x05 \x01(\x0e2%.com.gastroflow.payments.RefundStatusB\b\xfaB\x05\x82\x01\x02 \x00R\x06status\x12*\n" +
-	"\vdescription\x18\x06 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\vdescription\x126\n" +
-	"\x12external_refund_id\x18\a \x01(\tB\b\xfaB\x05r\x03\x18\xc8\x01R\x10externalRefundId\x12C\n" +
+	"payment_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\tpaymentId\x12<\n" +
+	"\x06amount\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x06amount\x12G\n" +
+	"\x06reason\x18\x04 \x01(\x0e2%.com.gastroflow.payments.RefundReasonB\b\xbaH\x05\x82\x01\x02 \x00R\x06reason\x12G\n" +
+	"\x06status\x18\x05 \x01(\x0e2%.com.gastroflow.payments.RefundStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12*\n" +
+	"\vdescription\x18\x06 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\vdescription\x126\n" +
+	"\x12external_refund_id\x18\a \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\x10externalRefundId\x12A\n" +
 	"\n" +
-	"created_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\tcreatedAt\x12=\n" +
+	"created_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tcreatedAt\x12=\n" +
 	"\fprocessed_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\vprocessedAt\x12.\n" +
 	"\x03fee\x18\n" +
 	" \x01(\v2\x1c.com.gastroflow.common.MoneyR\x03fee\x12;\n" +
-	"\x05error\x18\v \x01(\v2%.com.gastroflow.payments.PaymentErrorR\x05error\x12I\n" +
+	"\x05error\x18\v \x01(\v2%.com.gastroflow.payments.PaymentErrorR\x05error\x12G\n" +
 	"\n" +
-	"audit_info\x18\f \x01(\v2 .com.gastroflow.common.AuditInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\tauditInfo\"\x82\x04\n" +
-	"\x11PaymentMethodInfo\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12>\n" +
-	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06userId\x12B\n" +
-	"\x04type\x18\x03 \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\x12 \n" +
+	"audit_info\x18\f \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\xfa\x03\n" +
+	"\x11PaymentMethodInfo\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12<\n" +
+	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12B\n" +
+	"\x04type\x18\x03 \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12 \n" +
 	"\x05token\x18\x04 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\xc8\x01R\x05token\x12Q\n" +
-	"\adetails\x18\x05 \x01(\v2-.com.gastroflow.payments.PaymentMethodDetailsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\adetails\x12\x1d\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x05token\x12O\n" +
+	"\adetails\x18\x05 \x01(\v2-.com.gastroflow.payments.PaymentMethodDetailsB\x06\xbaH\x03\xc8\x01\x01R\adetails\x12\x1d\n" +
 	"\n" +
 	"is_default\x18\x06 \x01(\bR\tisDefault\x12\x1b\n" +
-	"\tis_active\x18\a \x01(\bR\bisActive\x12C\n" +
+	"\tis_active\x18\a \x01(\bR\bisActive\x12A\n" +
 	"\n" +
-	"created_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampB\b\xfaB\x05\xb2\x01\x02\b\x01R\tcreatedAt\x12<\n" +
+	"created_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tcreatedAt\x12<\n" +
 	"\flast_used_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"lastUsedAt\"\x9a\x01\n" +
 	"\x14PaymentMethodDetails\x12=\n" +
@@ -1932,16 +1932,16 @@ const file_payments_models_proto_rawDesc = "" +
 	"\x06wallet\x18\x02 \x01(\v2+.com.gastroflow.payments.SavedWalletDetailsR\x06wallet\"\xfb\x01\n" +
 	"\x10SavedCardDetails\x12&\n" +
 	"\n" +
-	"masked_pan\x18\x01 \x01(\tB\a\xfaB\x04r\x02\x18\x14R\tmaskedPan\x12H\n" +
-	"\tcard_type\x18\x02 \x01(\x0e2!.com.gastroflow.payments.CardTypeB\b\xfaB\x05\x82\x01\x02 \x00R\bcardType\x12&\n" +
-	"\texp_month\x18\x03 \x01(\x05B\t\xfaB\x06\x1a\x04\x18\f(\x01R\bexpMonth\x12#\n" +
-	"\bexp_year\x18\x04 \x01(\x05B\b\xfaB\x05\x1a\x03(\xe4\x0fR\aexpYear\x12(\n" +
-	"\vissuer_bank\x18\x05 \x01(\tB\a\xfaB\x04r\x02\x18dR\n" +
+	"masked_pan\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x18\x14R\tmaskedPan\x12H\n" +
+	"\tcard_type\x18\x02 \x01(\x0e2!.com.gastroflow.payments.CardTypeB\b\xbaH\x05\x82\x01\x02 \x00R\bcardType\x12&\n" +
+	"\texp_month\x18\x03 \x01(\x05B\t\xbaH\x06\x1a\x04\x18\f(\x01R\bexpMonth\x12#\n" +
+	"\bexp_year\x18\x04 \x01(\x05B\b\xbaH\x05\x1a\x03(\xe4\x0fR\aexpYear\x12(\n" +
+	"\vissuer_bank\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x18dR\n" +
 	"issuerBank\"\x9a\x01\n" +
 	"\x12SavedWalletDetails\x12N\n" +
-	"\vwallet_type\x18\x01 \x01(\x0e2#.com.gastroflow.payments.WalletTypeB\b\xfaB\x05\x82\x01\x02 \x00R\n" +
+	"\vwallet_type\x18\x01 \x01(\x0e2#.com.gastroflow.payments.WalletTypeB\b\xbaH\x05\x82\x01\x02 \x00R\n" +
 	"walletType\x124\n" +
-	"\x11masked_identifier\x18\x02 \x01(\tB\a\xfaB\x04r\x02\x18dR\x10maskedIdentifier*\xc5\x02\n" +
+	"\x11masked_identifier\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x18dR\x10maskedIdentifier*\xc5\x02\n" +
 	"\rPaymentStatus\x12\x1e\n" +
 	"\x1aPAYMENT_STATUS_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16PAYMENT_STATUS_PENDING\x10\x01\x12\x1d\n" +

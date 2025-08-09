@@ -7,7 +7,7 @@
 package restaurants
 
 import (
-	_ "github.com/envoyproxy/protoc-gen-validate/validate"
+	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -2396,203 +2396,203 @@ var File_restaurants_service_proto protoreflect.FileDescriptor
 
 const file_restaurants_service_proto_rawDesc = "" +
 	"\n" +
-	"\x19restaurants/service.proto\x12\x1acom.gastroflow.restaurants\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x18restaurants/models.proto\x1a\x17validate/validate.proto\"\x9e\x05\n" +
+	"\x19restaurants/service.proto\x12\x1acom.gastroflow.restaurants\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x18restaurants/models.proto\x1a\x1bbuf/validate/validate.proto\"\x96\x05\n" +
 	"\x17CreateRestaurantRequest\x12\x1e\n" +
 	"\x04name\x18\x01 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12*\n" +
-	"\vdescription\x18\x02 \x01(\tB\b\xfaB\x05r\x03\x18\xd0\x0fR\vdescription\x12V\n" +
-	"\rcuisine_types\x18\x03 \x03(\x0e2'.com.gastroflow.restaurants.CuisineTypeB\b\xfaB\x05\x92\x01\x02\x10\n" +
-	"R\fcuisineTypes\x12O\n" +
-	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\vcontactInfo\x12B\n" +
-	"\aaddress\x18\x05 \x01(\v2\x1e.com.gastroflow.common.AddressB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aaddress\x12T\n" +
-	"\bsettings\x18\x06 \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\bsettings\x12d\n" +
-	"\rworking_hours\x18\a \x03(\v25.com.gastroflow.restaurants.CreateWorkingHoursRequestB\b\xfaB\x05\x92\x01\x02\x10\aR\fworkingHours\x12#\n" +
-	"\blogo_url\x18\b \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\alogoUrl\x12'\n" +
-	"\x06images\x18\t \x03(\tB\x0f\xfaB\f\x92\x01\t\x10\x14\"\x05r\x03\x18\xf4\x03R\x06images\x12@\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12*\n" +
+	"\vdescription\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xd0\x0fR\vdescription\x12V\n" +
+	"\rcuisine_types\x18\x03 \x03(\x0e2'.com.gastroflow.restaurants.CuisineTypeB\b\xbaH\x05\x92\x01\x02\x10\n" +
+	"R\fcuisineTypes\x12M\n" +
+	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoB\x06\xbaH\x03\xc8\x01\x01R\vcontactInfo\x12@\n" +
+	"\aaddress\x18\x05 \x01(\v2\x1e.com.gastroflow.common.AddressB\x06\xbaH\x03\xc8\x01\x01R\aaddress\x12R\n" +
+	"\bsettings\x18\x06 \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsB\x06\xbaH\x03\xc8\x01\x01R\bsettings\x12d\n" +
+	"\rworking_hours\x18\a \x03(\v25.com.gastroflow.restaurants.CreateWorkingHoursRequestB\b\xbaH\x05\x92\x01\x02\x10\aR\fworkingHours\x12#\n" +
+	"\blogo_url\x18\b \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\alogoUrl\x12'\n" +
+	"\x06images\x18\t \x03(\tB\x0f\xbaH\f\x92\x01\t\x10\x14\"\x05r\x03\x18\xf4\x03R\x06images\x12>\n" +
 	"\bowner_id\x18\n" +
-	" \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aownerId\"\xf9\x01\n" +
+	" \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\aownerId\"\xf9\x01\n" +
 	"\x19CreateWorkingHoursRequest\x12:\n" +
-	"\x03day\x18\x01 \x01(\x0e2\x1e.com.gastroflow.common.WeekDayB\b\xfaB\x05\x82\x01\x02 \x00R\x03day\x12\x1d\n" +
+	"\x03day\x18\x01 \x01(\x0e2\x1e.com.gastroflow.common.WeekDayB\b\xbaH\x05\x82\x01\x02 \x00R\x03day\x12\x1d\n" +
 	"\n" +
 	"is_working\x18\x02 \x01(\bR\tisWorking\x12]\n" +
-	"\tintervals\x18\x03 \x03(\v25.com.gastroflow.restaurants.CreateTimeIntervalRequestB\b\xfaB\x05\x92\x01\x02\x10\x05R\tintervals\x12\"\n" +
-	"\acomment\x18\x04 \x01(\tB\b\xfaB\x05r\x03\x18\xc8\x01R\acomment\"\xef\x01\n" +
+	"\tintervals\x18\x03 \x03(\v25.com.gastroflow.restaurants.CreateTimeIntervalRequestB\b\xbaH\x05\x92\x01\x02\x10\x05R\tintervals\x12\"\n" +
+	"\acomment\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\acomment\"\xef\x01\n" +
 	"\x19CreateTimeIntervalRequest\x12F\n" +
 	"\n" +
-	"start_time\x18\x01 \x01(\tB'\xfaB$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\tstartTime\x12B\n" +
-	"\bend_time\x18\x02 \x01(\tB'\xfaB$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\aendTime\x12F\n" +
-	"\x04type\x18\x03 \x01(\x0e2(.com.gastroflow.restaurants.IntervalTypeB\b\xfaB\x05\x82\x01\x02 \x00R\x04type\"l\n" +
-	"\x18CreateRestaurantResponse\x12P\n" +
+	"start_time\x18\x01 \x01(\tB'\xbaH$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\tstartTime\x12B\n" +
+	"\bend_time\x18\x02 \x01(\tB'\xbaH$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\aendTime\x12F\n" +
+	"\x04type\x18\x03 \x01(\x0e2(.com.gastroflow.restaurants.IntervalTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\"j\n" +
+	"\x18CreateRestaurantResponse\x12N\n" +
 	"\n" +
-	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"restaurant\"M\n" +
-	"\x14GetRestaurantRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\"i\n" +
-	"\x15GetRestaurantResponse\x12P\n" +
+	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"restaurant\"K\n" +
+	"\x14GetRestaurantRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\"g\n" +
+	"\x15GetRestaurantResponse\x12N\n" +
 	"\n" +
-	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"restaurant\"\xa2\x01\n" +
-	"\x17UpdateRestaurantRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12P\n" +
+	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"restaurant\"\x9e\x01\n" +
+	"\x17UpdateRestaurantRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12N\n" +
 	"\n" +
-	"restaurant\x18\x02 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"restaurant\"l\n" +
-	"\x18UpdateRestaurantResponse\x12P\n" +
+	"restaurant\x18\x02 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"restaurant\"j\n" +
+	"\x18UpdateRestaurantResponse\x12N\n" +
 	"\n" +
-	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"restaurant\"P\n" +
-	"\x17DeleteRestaurantRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\"\xf7\x02\n" +
-	"\x16ListRestaurantsRequest\x12R\n" +
+	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"restaurant\"N\n" +
+	"\x17DeleteRestaurantRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\"\xf5\x02\n" +
+	"\x16ListRestaurantsRequest\x12P\n" +
 	"\n" +
-	"pagination\x18\x01 \x01(\v2(.com.gastroflow.common.PaginationRequestB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"pagination\x18\x01 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"pagination\x12V\n" +
-	"\rstatus_filter\x18\x02 \x03(\x0e2'.com.gastroflow.common.RestaurantStatusB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\rstatus_filter\x18\x02 \x03(\x0e2'.com.gastroflow.common.RestaurantStatusB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\fstatusFilter\x12X\n" +
-	"\x0ecuisine_filter\x18\x03 \x03(\x0e2'.com.gastroflow.restaurants.CuisineTypeB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\x0ecuisine_filter\x18\x03 \x03(\x0e2'.com.gastroflow.restaurants.CuisineTypeB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\rcuisineFilter\x126\n" +
 	"\bowner_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDR\aownerId\x12\x1f\n" +
 	"\vactive_only\x18\x05 \x01(\bR\n" +
-	"activeOnly\"\xb8\x01\n" +
+	"activeOnly\"\xb6\x01\n" +
 	"\x17ListRestaurantsResponse\x12H\n" +
-	"\vrestaurants\x18\x01 \x03(\v2&.com.gastroflow.restaurants.RestaurantR\vrestaurants\x12S\n" +
+	"\vrestaurants\x18\x01 \x03(\v2&.com.gastroflow.restaurants.RestaurantR\vrestaurants\x12Q\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"pagination\"\x96\x03\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"pagination\"\x94\x03\n" +
 	"\x18SearchRestaurantsRequest\x12\x1f\n" +
-	"\x05query\x18\x01 \x01(\tB\t\xfaB\x06r\x04\x10\x01\x18dR\x05query\x12R\n" +
+	"\x05query\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x05query\x12P\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"pagination\x12X\n" +
-	"\x0ecuisine_filter\x18\x03 \x03(\x0e2'.com.gastroflow.restaurants.CuisineTypeB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\x0ecuisine_filter\x18\x03 \x03(\x0e2'.com.gastroflow.restaurants.CuisineTypeB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\rcuisineFilter\x123\n" +
-	"\blatitude\x18\x04 \x01(\x01B\x17\xfaB\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x125\n" +
-	"\tlongitude\x18\x05 \x01(\x01B\x17\xfaB\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\x12?\n" +
-	"\x0fmax_distance_km\x18\x06 \x01(\x01B\x17\xfaB\x14\x12\x12\x19\x00\x00\x00\x00\x00\x00Y@)\x9a\x99\x99\x99\x99\x99\xb9?R\rmaxDistanceKm\"\xc6\x01\n" +
+	"\blatitude\x18\x04 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x125\n" +
+	"\tlongitude\x18\x05 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\x12?\n" +
+	"\x0fmax_distance_km\x18\x06 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x00Y@)\x9a\x99\x99\x99\x99\x99\xb9?R\rmaxDistanceKm\"\xc4\x01\n" +
 	"\x19SearchRestaurantsResponse\x12T\n" +
-	"\vrestaurants\x18\x01 \x03(\v22.com.gastroflow.restaurants.RestaurantSearchResultR\vrestaurants\x12S\n" +
+	"\vrestaurants\x18\x01 \x03(\v22.com.gastroflow.restaurants.RestaurantSearchResultR\vrestaurants\x12Q\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"pagination\"\xb4\x01\n" +
-	"\x16RestaurantSearchResult\x12P\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"pagination\"\xb2\x01\n" +
+	"\x16RestaurantSearchResult\x12N\n" +
 	"\n" +
-	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"restaurant\x12\x1f\n" +
 	"\vdistance_km\x18\x02 \x01(\x01R\n" +
 	"distanceKm\x12'\n" +
-	"\x0frelevance_score\x18\x03 \x01(\x01R\x0erelevanceScore\"\xc3\x01\n" +
-	"\x1dUpdateRestaurantStatusRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12I\n" +
-	"\x06status\x18\x02 \x01(\x0e2'.com.gastroflow.common.RestaurantStatusB\b\xfaB\x05\x82\x01\x02 \x00R\x06status\x12 \n" +
-	"\x06reason\x18\x03 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\x06reason\"r\n" +
-	"\x1eUpdateRestaurantStatusResponse\x12P\n" +
+	"\x0frelevance_score\x18\x03 \x01(\x01R\x0erelevanceScore\"\xc1\x01\n" +
+	"\x1dUpdateRestaurantStatusRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12I\n" +
+	"\x06status\x18\x02 \x01(\x0e2'.com.gastroflow.common.RestaurantStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12 \n" +
+	"\x06reason\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\x06reason\"p\n" +
+	"\x1eUpdateRestaurantStatusResponse\x12N\n" +
 	"\n" +
-	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"restaurant\"\xb9\x03\n" +
+	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"restaurant\"\xb7\x03\n" +
 	"\x1bGetNearbyRestaurantsRequest\x123\n" +
-	"\blatitude\x18\x01 \x01(\x01B\x17\xfaB\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x125\n" +
-	"\tlongitude\x18\x02 \x01(\x01B\x17\xfaB\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\x124\n" +
-	"\tradius_km\x18\x03 \x01(\x01B\x17\xfaB\x14\x12\x12\x19\x00\x00\x00\x00\x00\x00I@)\x9a\x99\x99\x99\x99\x99\xb9?R\bradiusKm\x12R\n" +
+	"\blatitude\x18\x01 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x125\n" +
+	"\tlongitude\x18\x02 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\x124\n" +
+	"\tradius_km\x18\x03 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x00I@)\x9a\x99\x99\x99\x99\x99\xb9?R\bradiusKm\x12P\n" +
 	"\n" +
-	"pagination\x18\x04 \x01(\v2(.com.gastroflow.common.PaginationRequestB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"pagination\x18\x04 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"pagination\x12X\n" +
-	"\x0ecuisine_filter\x18\x05 \x03(\x0e2'.com.gastroflow.restaurants.CuisineTypeB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\x0ecuisine_filter\x18\x05 \x03(\x0e2'.com.gastroflow.restaurants.CuisineTypeB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\rcuisineFilter\x12\x1b\n" +
 	"\topen_only\x18\x06 \x01(\bR\bopenOnly\x12-\n" +
-	"\x12delivery_available\x18\a \x01(\bR\x11deliveryAvailable\"\xc9\x01\n" +
+	"\x12delivery_available\x18\a \x01(\bR\x11deliveryAvailable\"\xc7\x01\n" +
 	"\x1cGetNearbyRestaurantsResponse\x12T\n" +
-	"\vrestaurants\x18\x01 \x03(\v22.com.gastroflow.restaurants.RestaurantWithDistanceR\vrestaurants\x12S\n" +
+	"\vrestaurants\x18\x01 \x03(\v22.com.gastroflow.restaurants.RestaurantWithDistanceR\vrestaurants\x12Q\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"pagination\"\xc3\x01\n" +
-	"\x16RestaurantWithDistance\x12P\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"pagination\"\xc1\x01\n" +
+	"\x16RestaurantWithDistance\x12N\n" +
 	"\n" +
-	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"restaurant\x18\x01 \x01(\v2&.com.gastroflow.restaurants.RestaurantB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"restaurant\x12\x1f\n" +
 	"\vdistance_km\x18\x02 \x01(\x01R\n" +
 	"distanceKm\x126\n" +
-	"\x17estimated_delivery_time\x18\x03 \x01(\x05R\x15estimatedDeliveryTime\"\xc3\x01\n" +
-	" CheckDeliveryAvailabilityRequest\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12S\n" +
-	"\x10delivery_address\x18\x02 \x01(\v2\x1e.com.gastroflow.common.AddressB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x0fdeliveryAddress\"\x8f\x02\n" +
+	"\x17estimated_delivery_time\x18\x03 \x01(\x05R\x15estimatedDeliveryTime\"\xbf\x01\n" +
+	" CheckDeliveryAvailabilityRequest\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12Q\n" +
+	"\x10delivery_address\x18\x02 \x01(\v2\x1e.com.gastroflow.common.AddressB\x06\xbaH\x03\xc8\x01\x01R\x0fdeliveryAddress\"\x8f\x02\n" +
 	"!CheckDeliveryAvailabilityResponse\x12!\n" +
 	"\fis_available\x18\x01 \x01(\bR\visAvailable\x12?\n" +
 	"\fdelivery_fee\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyR\vdeliveryFee\x126\n" +
 	"\x17estimated_delivery_time\x18\x03 \x01(\x05R\x15estimatedDeliveryTime\x12\x1f\n" +
 	"\vdistance_km\x18\x04 \x01(\x01R\n" +
 	"distanceKm\x12-\n" +
-	"\x12unavailable_reason\x18\x05 \x01(\tR\x11unavailableReason\"\x84\x04\n" +
-	"\x13CreateBranchRequest\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12\x1e\n" +
+	"\x12unavailable_reason\x18\x05 \x01(\tR\x11unavailableReason\"\xfe\x03\n" +
+	"\x13CreateBranchRequest\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12\x1e\n" +
 	"\x04name\x18\x02 \x01(\tB\n" +
-	"\xfaB\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12B\n" +
-	"\aaddress\x18\x03 \x01(\v2\x1e.com.gastroflow.common.AddressB\b\xfaB\x05\x8a\x01\x02\x10\x01R\aaddress\x12O\n" +
-	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoB\b\xfaB\x05\x8a\x01\x02\x10\x01R\vcontactInfo\x12d\n" +
-	"\rworking_hours\x18\x05 \x03(\v25.com.gastroflow.restaurants.CreateWorkingHoursRequestB\b\xfaB\x05\x92\x01\x02\x10\aR\fworkingHours\x12J\n" +
+	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12@\n" +
+	"\aaddress\x18\x03 \x01(\v2\x1e.com.gastroflow.common.AddressB\x06\xbaH\x03\xc8\x01\x01R\aaddress\x12M\n" +
+	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoB\x06\xbaH\x03\xc8\x01\x01R\vcontactInfo\x12d\n" +
+	"\rworking_hours\x18\x05 \x03(\v25.com.gastroflow.restaurants.CreateWorkingHoursRequestB\b\xbaH\x05\x92\x01\x02\x10\aR\fworkingHours\x12J\n" +
 	"\bsettings\x18\x06 \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsR\bsettings\x12:\n" +
 	"\n" +
-	"manager_id\x18\a \x01(\v2\x1b.com.gastroflow.common.UUIDR\tmanagerId\"\\\n" +
-	"\x14CreateBranchResponse\x12D\n" +
-	"\x06branch\x18\x01 \x01(\v2\".com.gastroflow.restaurants.BranchB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06branch\"\x95\x01\n" +
-	"\x10GetBranchRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\"Y\n" +
-	"\x11GetBranchResponse\x12D\n" +
-	"\x06branch\x18\x01 \x01(\v2\".com.gastroflow.restaurants.BranchB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06branch\"\x92\x01\n" +
-	"\x13UpdateBranchRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12D\n" +
-	"\x06branch\x18\x02 \x01(\v2\".com.gastroflow.restaurants.BranchB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06branch\"\\\n" +
-	"\x14UpdateBranchResponse\x12D\n" +
-	"\x06branch\x18\x01 \x01(\v2\".com.gastroflow.restaurants.BranchB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06branch\"\x98\x01\n" +
-	"\x13DeleteBranchRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\"\xae\x02\n" +
-	"\x13ListBranchesRequest\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12R\n" +
+	"manager_id\x18\a \x01(\v2\x1b.com.gastroflow.common.UUIDR\tmanagerId\"Z\n" +
+	"\x14CreateBranchResponse\x12B\n" +
+	"\x06branch\x18\x01 \x01(\v2\".com.gastroflow.restaurants.BranchB\x06\xbaH\x03\xc8\x01\x01R\x06branch\"\x91\x01\n" +
+	"\x10GetBranchRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"W\n" +
+	"\x11GetBranchResponse\x12B\n" +
+	"\x06branch\x18\x01 \x01(\v2\".com.gastroflow.restaurants.BranchB\x06\xbaH\x03\xc8\x01\x01R\x06branch\"\x8e\x01\n" +
+	"\x13UpdateBranchRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12B\n" +
+	"\x06branch\x18\x02 \x01(\v2\".com.gastroflow.restaurants.BranchB\x06\xbaH\x03\xc8\x01\x01R\x06branch\"Z\n" +
+	"\x14UpdateBranchResponse\x12B\n" +
+	"\x06branch\x18\x01 \x01(\v2\".com.gastroflow.restaurants.BranchB\x06\xbaH\x03\xc8\x01\x01R\x06branch\"\x94\x01\n" +
+	"\x13DeleteBranchRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"\xaa\x02\n" +
+	"\x13ListBranchesRequest\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12P\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
+	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
 	"pagination\x12V\n" +
-	"\rstatus_filter\x18\x03 \x03(\x0e2'.com.gastroflow.common.RestaurantStatusB\b\xfaB\x05\x92\x01\x02\x10\n" +
+	"\rstatus_filter\x18\x03 \x03(\x0e2'.com.gastroflow.common.RestaurantStatusB\b\xbaH\x05\x92\x01\x02\x10\n" +
 	"R\fstatusFilter\x12\x1f\n" +
 	"\vactive_only\x18\x04 \x01(\bR\n" +
-	"activeOnly\"\xab\x01\n" +
+	"activeOnly\"\xa9\x01\n" +
 	"\x14ListBranchesResponse\x12>\n" +
-	"\bbranches\x18\x01 \x03(\v2\".com.gastroflow.restaurants.BranchR\bbranches\x12S\n" +
+	"\bbranches\x18\x01 \x03(\v2\".com.gastroflow.restaurants.BranchR\bbranches\x12Q\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\b\xfaB\x05\x8a\x01\x02\x10\x01R\n" +
-	"pagination\"\x8b\x02\n" +
-	"\x19UpdateBranchStatusRequest\x125\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x02id\x12J\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12I\n" +
-	"\x06status\x18\x03 \x01(\x0e2'.com.gastroflow.common.RestaurantStatusB\b\xfaB\x05\x82\x01\x02 \x00R\x06status\x12 \n" +
-	"\x06reason\x18\x04 \x01(\tB\b\xfaB\x05r\x03\x18\xf4\x03R\x06reason\"b\n" +
-	"\x1aUpdateBranchStatusResponse\x12D\n" +
-	"\x06branch\x18\x01 \x01(\v2\".com.gastroflow.restaurants.BranchB\b\xfaB\x05\x8a\x01\x02\x10\x01R\x06branch\"`\n" +
-	"\x12GetSettingsRequest\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\"k\n" +
-	"\x13GetSettingsResponse\x12T\n" +
-	"\bsettings\x18\x01 \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\bsettings\"\xb9\x01\n" +
-	"\x15UpdateSettingsRequest\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12T\n" +
-	"\bsettings\x18\x02 \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\bsettings\"n\n" +
-	"\x16UpdateSettingsResponse\x12T\n" +
-	"\bsettings\x18\x01 \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsB\b\xfaB\x05\x8a\x01\x02\x10\x01R\bsettings\"\x9e\x01\n" +
-	"\x16GetWorkingHoursRequest\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x128\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"pagination\"\x87\x02\n" +
+	"\x19UpdateBranchStatusRequest\x123\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12I\n" +
+	"\x06status\x18\x03 \x01(\x0e2'.com.gastroflow.common.RestaurantStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12 \n" +
+	"\x06reason\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\x06reason\"`\n" +
+	"\x1aUpdateBranchStatusResponse\x12B\n" +
+	"\x06branch\x18\x01 \x01(\v2\".com.gastroflow.restaurants.BranchB\x06\xbaH\x03\xc8\x01\x01R\x06branch\"^\n" +
+	"\x12GetSettingsRequest\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"i\n" +
+	"\x13GetSettingsResponse\x12R\n" +
+	"\bsettings\x18\x01 \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsB\x06\xbaH\x03\xc8\x01\x01R\bsettings\"\xb5\x01\n" +
+	"\x15UpdateSettingsRequest\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12R\n" +
+	"\bsettings\x18\x02 \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsB\x06\xbaH\x03\xc8\x01\x01R\bsettings\"l\n" +
+	"\x16UpdateSettingsResponse\x12R\n" +
+	"\bsettings\x18\x01 \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsB\x06\xbaH\x03\xc8\x01\x01R\bsettings\"\x9c\x01\n" +
+	"\x16GetWorkingHoursRequest\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x128\n" +
 	"\tbranch_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\bbranchId\"h\n" +
 	"\x17GetWorkingHoursResponse\x12M\n" +
-	"\rworking_hours\x18\x01 \x03(\v2(.com.gastroflow.restaurants.WorkingHoursR\fworkingHours\"\x87\x02\n" +
-	"\x19UpdateWorkingHoursRequest\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x128\n" +
+	"\rworking_hours\x18\x01 \x03(\v2(.com.gastroflow.restaurants.WorkingHoursR\fworkingHours\"\x85\x02\n" +
+	"\x19UpdateWorkingHoursRequest\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x128\n" +
 	"\tbranch_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\bbranchId\x12d\n" +
-	"\rworking_hours\x18\x03 \x03(\v25.com.gastroflow.restaurants.CreateWorkingHoursRequestB\b\xfaB\x05\x92\x01\x02\x10\aR\fworkingHours\"k\n" +
+	"\rworking_hours\x18\x03 \x03(\v25.com.gastroflow.restaurants.CreateWorkingHoursRequestB\b\xbaH\x05\x92\x01\x02\x10\aR\fworkingHours\"k\n" +
 	"\x1aUpdateWorkingHoursResponse\x12M\n" +
-	"\rworking_hours\x18\x01 \x03(\v2(.com.gastroflow.restaurants.WorkingHoursR\fworkingHours\"\xc0\x01\n" +
-	"\x19UpdateDeliveryZoneRequest\x12J\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\b\xfaB\x05\x8a\x01\x02\x10\x01R\frestaurantId\x12W\n" +
-	"\rdelivery_zone\x18\x02 \x01(\v2(.com.gastroflow.restaurants.DeliveryZoneB\b\xfaB\x05\x8a\x01\x02\x10\x01R\fdeliveryZone\"u\n" +
-	"\x1aUpdateDeliveryZoneResponse\x12W\n" +
-	"\rdelivery_zone\x18\x01 \x01(\v2(.com.gastroflow.restaurants.DeliveryZoneB\b\xfaB\x05\x8a\x01\x02\x10\x01R\fdeliveryZone2\xa0\t\n" +
+	"\rworking_hours\x18\x01 \x03(\v2(.com.gastroflow.restaurants.WorkingHoursR\fworkingHours\"\xbc\x01\n" +
+	"\x19UpdateDeliveryZoneRequest\x12H\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12U\n" +
+	"\rdelivery_zone\x18\x02 \x01(\v2(.com.gastroflow.restaurants.DeliveryZoneB\x06\xbaH\x03\xc8\x01\x01R\fdeliveryZone\"s\n" +
+	"\x1aUpdateDeliveryZoneResponse\x12U\n" +
+	"\rdelivery_zone\x18\x01 \x01(\v2(.com.gastroflow.restaurants.DeliveryZoneB\x06\xbaH\x03\xc8\x01\x01R\fdeliveryZone2\xa0\t\n" +
 	"\x11RestaurantService\x12}\n" +
 	"\x10CreateRestaurant\x123.com.gastroflow.restaurants.CreateRestaurantRequest\x1a4.com.gastroflow.restaurants.CreateRestaurantResponse\x12t\n" +
 	"\rGetRestaurant\x120.com.gastroflow.restaurants.GetRestaurantRequest\x1a1.com.gastroflow.restaurants.GetRestaurantResponse\x12}\n" +
