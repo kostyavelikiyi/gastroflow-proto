@@ -4,6 +4,7 @@ package com.gastroflow.menu;
 
 import "menu/models.proto";
 import "common/types.proto";
+import "common/enums.proto";
 import "google/protobuf/empty.proto";
 import "validate/validate.proto";
 

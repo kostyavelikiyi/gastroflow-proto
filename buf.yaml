@@ -1,3 +1,0 @@
-version: v1
-# Main buf configuration - delegates to buf.work.yaml for workspace management
-
