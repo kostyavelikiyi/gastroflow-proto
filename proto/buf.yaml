@@ -17,7 +17,7 @@ breaking:
 
 lint:
   use:
-    - STANDARD
+    - BASIC
   except:
     - PACKAGE_VERSION_SUFFIX
     - COMMENT_ENUM_VALUE
