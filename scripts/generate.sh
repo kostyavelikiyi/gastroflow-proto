@@ -88,6 +88,12 @@ generate_code() {
 post_process_dart() {
     log "Постобработка Dart кода..."
     
+    # Проверяем, есть ли сгенерированный Dart код
+    if [[ ! -d "$GENERATED_DIR/dart" ]] || [[ -z "$(ls -A "$GENERATED_DIR/dart" 2>/dev/null)" ]]; then
+        warn "Dart код не был сгенерирован, пропускаем постобработку Dart"
+        return 0
+    fi
+    
     # Создание pubspec.yaml для Dart пакета
     cat > "$PACKAGES_DIR/flutter_package/pubspec.yaml" << EOF
 name: gastroflow_proto
@@ -177,6 +183,12 @@ EOF
 # Постобработка для TypeScript
 post_process_typescript() {
     log "Постобработка TypeScript кода..."
+    
+    # Проверяем, есть ли сгенерированный TypeScript код
+    if [[ ! -d "$GENERATED_DIR/typescript" ]] || [[ -z "$(ls -A "$GENERATED_DIR/typescript" 2>/dev/null)" ]]; then
+        warn "TypeScript код не был сгенерирован, пропускаем постобработку TypeScript"
+        return 0
+    fi
     
     # Создание package.json для npm пакета
     cat > "$PACKAGES_DIR/npm_package/package.json" << EOF
