@@ -47,8 +47,8 @@ check_project_structure() {
         exit 1
     fi
     
-    if [[ ! -f "$PROJECT_ROOT/buf.yaml" ]]; then
-        error "buf.yaml не найден в корне проекта"
+    if [[ ! -f "$PROTO_DIR/buf.yaml" ]]; then
+        error "buf.yaml не найден в proto директории"
         exit 1
     fi
     
@@ -69,7 +69,7 @@ generate_code() {
     
     # Проверка синтаксиса proto файлов
     log "Проверка синтаксиса proto файлов..."
-    if ! buf lint; then
+    if ! buf lint proto; then
         error "Ошибки в proto файлах. Исправьте их и попробуйте снова."
         exit 1
     fi
@@ -77,7 +77,7 @@ generate_code() {
     
     # Генерация кода
     log "Генерация кода для всех языков..."
-    if ! buf generate; then
+    if ! buf generate proto; then
         error "Ошибка генерации кода"
         exit 1
     fi
