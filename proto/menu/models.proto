@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package com.gastroflow.menu;
 
-import "google/protobuf/timestamp.proto";
 import "common/types.proto";
 import "common/enums.proto";
 import "validate/validate.proto";
