@@ -1465,7 +1465,7 @@ var File_inventory_models_proto protoreflect.FileDescriptor
 
 const file_inventory_models_proto_rawDesc = "" +
 	"\n" +
-	"\x16inventory/models.proto\x12\x18com.gastroflow.inventory\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\x85\t\n" +
+	"\x16inventory/models.proto\x12\x18com.gastroflow.inventory\x1a\x1bbuf/validate/validate.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x85\t\n" +
 	"\rInventoryItem\x123\n" +
 	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1e\n" +
 	"\x04name\x18\x02 \x01(\tB\n" +

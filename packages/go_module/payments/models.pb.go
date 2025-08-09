@@ -1800,7 +1800,7 @@ var File_payments_models_proto protoreflect.FileDescriptor
 
 const file_payments_models_proto_rawDesc = "" +
 	"\n" +
-	"\x15payments/models.proto\x12\x17com.gastroflow.payments\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\xaf\v\n" +
+	"\x15payments/models.proto\x12\x17com.gastroflow.payments\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xaf\v\n" +
 	"\aPayment\x123\n" +
 	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12>\n" +
 	"\border_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\aorderId\x12>\n" +

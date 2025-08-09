@@ -1665,7 +1665,7 @@ var File_orders_service_proto protoreflect.FileDescriptor
 
 const file_orders_service_proto_rawDesc = "" +
 	"\n" +
-	"\x14orders/service.proto\x12\x15com.gastroflow.orders\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x13orders/models.proto\x1a\x1bbuf/validate/validate.proto\"\x80\x06\n" +
+	"\x14orders/service.proto\x12\x15com.gastroflow.orders\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x13orders/models.proto\"\x80\x06\n" +
 	"\x12CreateOrderRequest\x12\x1d\n" +
 	"\x04name\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12O\n" +
 	"\fpacking_mode\x18\x02 \x01(\x0e2\".com.gastroflow.common.PackingModeB\b\xbaH\x05\x82\x01\x02 \x00R\vpackingMode\x12V\n" +

@@ -1267,7 +1267,7 @@ var File_restaurants_models_proto protoreflect.FileDescriptor
 
 const file_restaurants_models_proto_rawDesc = "" +
 	"\n" +
-	"\x18restaurants/models.proto\x12\x1acom.gastroflow.restaurants\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bbuf/validate/validate.proto\"\x85\n" +
+	"\x18restaurants/models.proto\x12\x1acom.gastroflow.restaurants\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\"\x85\n" +
 	"\n" +
 	"\n" +
 	"Restaurant\x123\n" +

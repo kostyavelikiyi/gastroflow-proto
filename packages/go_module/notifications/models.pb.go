@@ -1465,7 +1465,7 @@ var File_notifications_models_proto protoreflect.FileDescriptor
 
 const file_notifications_models_proto_rawDesc = "" +
 	"\n" +
-	"\x1anotifications/models.proto\x12\x1ccom.gastroflow.notifications\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\x92\n" +
+	"\x1anotifications/models.proto\x12\x1ccom.gastroflow.notifications\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x92\n" +
 	"\n" +
 	"\fNotification\x123\n" +
 	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12E\n" +

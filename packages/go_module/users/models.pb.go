@@ -1391,7 +1391,7 @@ var File_users_models_proto protoreflect.FileDescriptor
 
 const file_users_models_proto_rawDesc = "" +
 	"\n" +
-	"\x12users/models.proto\x12\x14com.gastroflow.users\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\x8f\a\n" +
+	"\x12users/models.proto\x12\x14com.gastroflow.users\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8f\a\n" +
 	"\x04User\x123\n" +
 	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12(\n" +
 	"\n" +

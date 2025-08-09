@@ -623,7 +623,7 @@ var File_common_types_proto protoreflect.FileDescriptor
 
 const file_common_types_proto_rawDesc = "" +
 	"\n" +
-	"\x12common/types.proto\x12\x15com.gastroflow.common\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"r\n" +
+	"\x12common/types.proto\x12\x15com.gastroflow.common\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"r\n" +
 	"\x04UUID\x12j\n" +
 	"\x05value\x18\x01 \x01(\tBT\xbaHQrO2M^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$R\x05value\"W\n" +
 	"\x05Money\x12\x1f\n" +

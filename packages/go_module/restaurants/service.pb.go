@@ -2396,7 +2396,7 @@ var File_restaurants_service_proto protoreflect.FileDescriptor
 
 const file_restaurants_service_proto_rawDesc = "" +
 	"\n" +
-	"\x19restaurants/service.proto\x12\x1acom.gastroflow.restaurants\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x18restaurants/models.proto\x1a\x1bbuf/validate/validate.proto\"\x96\x05\n" +
+	"\x19restaurants/service.proto\x12\x1acom.gastroflow.restaurants\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x18restaurants/models.proto\"\x96\x05\n" +
 	"\x17CreateRestaurantRequest\x12\x1e\n" +
 	"\x04name\x18\x01 \x01(\tB\n" +
 	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12*\n" +
