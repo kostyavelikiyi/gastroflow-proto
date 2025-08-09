@@ -1,0 +1,38 @@
+version: v1
+# Buf code generation configuration
+# Настройка генерации кода для всех поддерживаемых языков
+
+plugins:
+  # Go generation
+  - plugin: buf.build/protocolbuffers/go
+    out: generated/go
+    opt:
+      - paths=source_relative
+      - module=github.com/gastroflow/proto-go
+  
+  # Go gRPC generation
+  - plugin: buf.build/grpc/go
+    out: generated/go
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false
+
+  # Dart generation
+  - plugin: buf.build/dart-lang/dart
+    out: generated/dart
+
+  # TypeScript generation  
+  - plugin: buf.build/community/stephenh-ts-proto
+    out: generated/typescript
+    opt:
+      - esModuleInterop=true
+      - useExactTypes=false
+      - useOptionals=messages
+      - exportCommonSymbols=false
+      - outputServices=grpc-js
+
+  # Validation generation
+  - plugin: buf.build/bufbuild/validate-go
+    out: generated/go
+    opt:
+      - paths=source_relative

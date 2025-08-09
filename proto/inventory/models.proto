@@ -1,0 +1,398 @@
+syntax = "proto3";
+
+package com.gastroflow.inventory;
+
+import "google/protobuf/timestamp.proto";
+import "common/types.proto";
+import "validate/validate.proto";
+
+option go_package = "github.com/gastroflow/proto-go/inventory";
+
+// InventoryItem - товар на складе
+message InventoryItem {
+  // Уникальный идентификатор товара
+  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  
+  // Название товара
+  string name = 2 [(validate.rules).string = {
+    min_len: 1,
+    max_len: 200
+  }];
+  
+  // Описание товара
+  string description = 3 [(validate.rules).string.max_len = 1000];
+  
+  // Артикул/SKU
+  string sku = 4 [(validate.rules).string = {
+    min_len: 1,
+    max_len: 100
+  }];
+  
+  // Штрихкод
+  string barcode = 5 [(validate.rules).string.max_len = 50];
+  
+  // Категория товара
+  ItemCategory category = 6 [(validate.rules).enum = {
+    not_in: [0]
+  }];
+  
+  // Единица измерения
+  MeasurementUnit measurement_unit = 7 [(validate.rules).enum = {
+    not_in: [0]
+  }];
+  
+  // Текущий остаток
+  double current_stock = 8 [(validate.rules).double.gte = 0];
+  
+  // Минимальный остаток (для уведомлений)
+  double min_stock_level = 9 [(validate.rules).double.gte = 0];
+  
+  // Максимальный остаток
+  double max_stock_level = 10 [(validate.rules).double.gte = 0];
+  
+  // Себестоимость единицы товара
+  com.gastroflow.common.Money cost_per_unit = 11;
+  
+  // Продажная цена единицы товара
+  com.gastroflow.common.Money price_per_unit = 12;
+  
+  // Поставщик товара
+  Supplier supplier = 13;
+  
+  // Идентификатор ресторана
+  com.gastroflow.common.UUID restaurant_id = 14 [(validate.rules).message.required = true];
+  
+  // Идентификатор филиала (если товар привязан к филиалу)
+  com.gastroflow.common.UUID branch_id = 15;
+  
+  // Статус товара
+  ItemStatus status = 16 [(validate.rules).enum = {
+    not_in: [0]
+  }];
+  
+  // Срок годности (дни)
+  int32 shelf_life_days = 17 [(validate.rules).int32.gte = 0];
+  
+  // Условия хранения
+  string storage_conditions = 18 [(validate.rules).string.max_len = 500];
+  
+  // Активен ли товар
+  bool is_active = 19;
+  
+  // Информация об аудите
+  com.gastroflow.common.AuditInfo audit_info = 20 [(validate.rules).message.required = true];
+}
+
+// Supplier - поставщик
+message Supplier {
+  // Уникальный идентификатор поставщика
+  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  
+  // Название поставщика
+  string name = 2 [(validate.rules).string = {
+    min_len: 1,
+    max_len: 200
+  }];
+  
+  // Контактная информация
+  com.gastroflow.common.ContactInfo contact_info = 3 [(validate.rules).message.required = true];
+  
+  // Адрес поставщика
+  com.gastroflow.common.Address address = 4;
+  
+  // ИНН/налоговый номер
+  string tax_number = 5 [(validate.rules).string.max_len = 20];
+  
+  // Рейтинг поставщика (1-5)
+  double rating = 6 [(validate.rules).double = {
+    gte: 1.0,
+    lte: 5.0
+  }];
+  
+  // Условия оплаты
+  string payment_terms = 7 [(validate.rules).string.max_len = 200];
+  
+  // Условия доставки
+  string delivery_terms = 8 [(validate.rules).string.max_len = 200];
+  
+  // Активен ли поставщик
+  bool is_active = 9;
+  
+  // Информация об аудите
+  com.gastroflow.common.AuditInfo audit_info = 10 [(validate.rules).message.required = true];
+}
+
+// StockMovement - движение товара на складе
+message StockMovement {
+  // Уникальный идентификатор движения
+  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  
+  // Идентификатор товара
+  com.gastroflow.common.UUID item_id = 2 [(validate.rules).message.required = true];
+  
+  // Тип движения
+  MovementType movement_type = 3 [(validate.rules).enum = {
+    not_in: [0]
+  }];
+  
+  // Количество (положительное для поступления, отрицательное для расхода)
+  double quantity = 4;
+  
+  // Остаток до движения
+  double stock_before = 5 [(validate.rules).double.gte = 0];
+  
+  // Остаток после движения
+  double stock_after = 6 [(validate.rules).double.gte = 0];
+  
+  // Причина движения
+  MovementReason reason = 7 [(validate.rules).enum = {
+    not_in: [0]
+  }];
+  
+  // Дополнительное описание
+  string description = 8 [(validate.rules).string.max_len = 500];
+  
+  // Стоимость движения
+  com.gastroflow.common.Money cost = 9;
+  
+  // Связанный документ (накладная, заказ и т.д.)
+  string reference_document = 10 [(validate.rules).string.max_len = 100];
+  
+  // Идентификатор связанного заказа
+  com.gastroflow.common.UUID order_id = 11;
+  
+  // Идентификатор ресторана
+  com.gastroflow.common.UUID restaurant_id = 12 [(validate.rules).message.required = true];
+  
+  // Идентификатор филиала
+  com.gastroflow.common.UUID branch_id = 13;
+  
+  // Время движения
+  google.protobuf.Timestamp movement_date = 14 [(validate.rules).timestamp.required = true];
+  
+  // Информация об аудите
+  com.gastroflow.common.AuditInfo audit_info = 15 [(validate.rules).message.required = true];
+}
+
+// PurchaseOrder - заказ поставщику
+message PurchaseOrder {
+  // Уникальный идентификатор заказа
+  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  
+  // Номер заказа
+  string order_number = 2 [(validate.rules).string = {
+    min_len: 1,
+    max_len: 50
+  }];
+  
+  // Идентификатор поставщика
+  com.gastroflow.common.UUID supplier_id = 3 [(validate.rules).message.required = true];
+  
+  // Идентификатор ресторана
+  com.gastroflow.common.UUID restaurant_id = 4 [(validate.rules).message.required = true];
+  
+  // Идентификатор филиала
+  com.gastroflow.common.UUID branch_id = 5;
+  
+  // Позиции заказа
+  repeated PurchaseOrderItem items = 6 [(validate.rules).repeated = {
+    min_items: 1,
+    max_items: 1000
+  }];
+  
+  // Статус заказа
+  PurchaseOrderStatus status = 7 [(validate.rules).enum = {
+    not_in: [0]
+  }];
+  
+  // Общая сумма заказа
+  com.gastroflow.common.Money total_amount = 8 [(validate.rules).message.required = true];
+  
+  // Дата создания заказа
+  google.protobuf.Timestamp order_date = 9 [(validate.rules).timestamp.required = true];
+  
+  // Ожидаемая дата доставки
+  google.protobuf.Timestamp expected_delivery_date = 10;
+  
+  // Фактическая дата доставки
+  google.protobuf.Timestamp actual_delivery_date = 11;
+  
+  // Комментарий к заказу
+  string comment = 12 [(validate.rules).string.max_len = 1000];
+  
+  // Информация об аудите
+  com.gastroflow.common.AuditInfo audit_info = 13 [(validate.rules).message.required = true];
+}
+
+// PurchaseOrderItem - позиция в заказе поставщику
+message PurchaseOrderItem {
+  // Идентификатор товара
+  com.gastroflow.common.UUID item_id = 1 [(validate.rules).message.required = true];
+  
+  // Количество
+  double quantity = 2 [(validate.rules).double.gt = 0];
+  
+  // Цена за единицу
+  com.gastroflow.common.Money unit_price = 3 [(validate.rules).message.required = true];
+  
+  // Общая стоимость позиции
+  com.gastroflow.common.Money total_price = 4 [(validate.rules).message.required = true];
+  
+  // Полученное количество
+  double received_quantity = 5 [(validate.rules).double.gte = 0];
+  
+  // Комментарий к позиции
+  string comment = 6 [(validate.rules).string.max_len = 200];
+}
+
+// StockAdjustment - корректировка остатков
+message StockAdjustment {
+  // Уникальный идентификатор корректировки
+  com.gastroflow.common.UUID id = 1 [(validate.rules).message.required = true];
+  
+  // Номер корректировки
+  string adjustment_number = 2 [(validate.rules).string = {
+    min_len: 1,
+    max_len: 50
+  }];
+  
+  // Идентификатор ресторана
+  com.gastroflow.common.UUID restaurant_id = 3 [(validate.rules).message.required = true];
+  
+  // Идентификатор филиала
+  com.gastroflow.common.UUID branch_id = 4;
+  
+  // Тип корректировки
+  AdjustmentType adjustment_type = 5 [(validate.rules).enum = {
+    not_in: [0]
+  }];
+  
+  // Позиции корректировки
+  repeated StockAdjustmentItem items = 6 [(validate.rules).repeated = {
+    min_items: 1,
+    max_items: 1000
+  }];
+  
+  // Причина корректировки
+  string reason = 7 [(validate.rules).string = {
+    min_len: 1,
+    max_len: 500
+  }];
+  
+  // Дата корректировки
+  google.protobuf.Timestamp adjustment_date = 8 [(validate.rules).timestamp.required = true];
+  
+  // Информация об аудите
+  com.gastroflow.common.AuditInfo audit_info = 9 [(validate.rules).message.required = true];
+}
+
+// StockAdjustmentItem - позиция в корректировке
+message StockAdjustmentItem {
+  // Идентификатор товара
+  com.gastroflow.common.UUID item_id = 1 [(validate.rules).message.required = true];
+  
+  // Остаток до корректировки
+  double old_quantity = 2 [(validate.rules).double.gte = 0];
+  
+  // Остаток после корректировки
+  double new_quantity = 3 [(validate.rules).double.gte = 0];
+  
+  // Разница
+  double difference = 4;
+  
+  // Причина корректировки конкретной позиции
+  string reason = 5 [(validate.rules).string.max_len = 200];
+}
+
+// Енумы для домена Inventory
+
+// ItemCategory - категория товара
+enum ItemCategory {
+  ITEM_CATEGORY_UNSPECIFIED = 0;
+  ITEM_CATEGORY_INGREDIENTS = 1;         // Ингредиенты
+  ITEM_CATEGORY_MEAT = 2;                // Мясо
+  ITEM_CATEGORY_VEGETABLES = 3;          // Овощи
+  ITEM_CATEGORY_FRUITS = 4;              // Фрукты
+  ITEM_CATEGORY_DAIRY = 5;               // Молочные продукты
+  ITEM_CATEGORY_BEVERAGES = 6;           // Напитки
+  ITEM_CATEGORY_SPICES = 7;              // Специи и приправы
+  ITEM_CATEGORY_BAKERY = 8;              // Хлебобулочные изделия
+  ITEM_CATEGORY_FROZEN = 9;              // Замороженные продукты
+  ITEM_CATEGORY_CLEANING = 10;           // Средства для уборки
+  ITEM_CATEGORY_PACKAGING = 11;          // Упаковочные материалы
+  ITEM_CATEGORY_EQUIPMENT = 12;          // Оборудование
+  ITEM_CATEGORY_OTHER = 13;              // Прочее
+}
+
+// MeasurementUnit - единица измерения
+enum MeasurementUnit {
+  MEASUREMENT_UNIT_UNSPECIFIED = 0;
+  MEASUREMENT_UNIT_PIECE = 1;            // Штука
+  MEASUREMENT_UNIT_KILOGRAM = 2;         // Килограмм
+  MEASUREMENT_UNIT_GRAM = 3;             // Грамм
+  MEASUREMENT_UNIT_LITER = 4;            // Литр
+  MEASUREMENT_UNIT_MILLILITER = 5;       // Миллилитр
+  MEASUREMENT_UNIT_PACKAGE = 6;          // Упаковка
+  MEASUREMENT_UNIT_BOX = 7;              // Коробка
+  MEASUREMENT_UNIT_BOTTLE = 8;           // Бутылка
+  MEASUREMENT_UNIT_CAN = 9;              // Банка
+}
+
+// ItemStatus - статус товара
+enum ItemStatus {
+  ITEM_STATUS_UNSPECIFIED = 0;
+  ITEM_STATUS_AVAILABLE = 1;             // Доступен
+  ITEM_STATUS_LOW_STOCK = 2;             // Низкий остаток
+  ITEM_STATUS_OUT_OF_STOCK = 3;          // Нет в наличии
+  ITEM_STATUS_DISCONTINUED = 4;          // Снят с производства
+  ITEM_STATUS_EXPIRED = 5;               // Просрочен
+}
+
+// MovementType - тип движения товара
+enum MovementType {
+  MOVEMENT_TYPE_UNSPECIFIED = 0;
+  MOVEMENT_TYPE_IN = 1;                  // Поступление
+  MOVEMENT_TYPE_OUT = 2;                 // Расход
+  MOVEMENT_TYPE_ADJUSTMENT = 3;          // Корректировка
+  MOVEMENT_TYPE_TRANSFER = 4;            // Перемещение
+  MOVEMENT_TYPE_RETURN = 5;              // Возврат
+  MOVEMENT_TYPE_WRITE_OFF = 6;           // Списание
+}
+
+// MovementReason - причина движения
+enum MovementReason {
+  MOVEMENT_REASON_UNSPECIFIED = 0;
+  MOVEMENT_REASON_PURCHASE = 1;          // Закупка
+  MOVEMENT_REASON_SALE = 2;              // Продажа
+  MOVEMENT_REASON_PRODUCTION = 3;        // Производство
+  MOVEMENT_REASON_INVENTORY = 4;         // Инвентаризация
+  MOVEMENT_REASON_DAMAGED = 5;           // Порча
+  MOVEMENT_REASON_EXPIRED = 6;           // Истечение срока
+  MOVEMENT_REASON_THEFT = 7;             // Кража
+  MOVEMENT_REASON_LOSS = 8;              // Потеря
+  MOVEMENT_REASON_RETURN_TO_SUPPLIER = 9; // Возврат поставщику
+  MOVEMENT_REASON_PROMOTION = 10;        // Промо-акция
+  MOVEMENT_REASON_SAMPLE = 11;           // Образец
+  MOVEMENT_REASON_OTHER = 12;            // Другое
+}
+
+// PurchaseOrderStatus - статус заказа поставщику
+enum PurchaseOrderStatus {
+  PURCHASE_ORDER_STATUS_UNSPECIFIED = 0;
+  PURCHASE_ORDER_STATUS_DRAFT = 1;       // Черновик
+  PURCHASE_ORDER_STATUS_SENT = 2;        // Отправлен
+  PURCHASE_ORDER_STATUS_CONFIRMED = 3;   // Подтвержден
+  PURCHASE_ORDER_STATUS_PARTIALLY_RECEIVED = 4; // Частично получен
+  PURCHASE_ORDER_STATUS_RECEIVED = 5;    // Получен
+  PURCHASE_ORDER_STATUS_CANCELLED = 6;   // Отменен
+  PURCHASE_ORDER_STATUS_CLOSED = 7;      // Закрыт
+}
+
+// AdjustmentType - тип корректировки
+enum AdjustmentType {
+  ADJUSTMENT_TYPE_UNSPECIFIED = 0;
+  ADJUSTMENT_TYPE_INVENTORY = 1;         // Инвентаризация
+  ADJUSTMENT_TYPE_WRITE_OFF = 2;         // Списание
+  ADJUSTMENT_TYPE_FOUND = 3;             // Оприходование излишков
+  ADJUSTMENT_TYPE_CORRECTION = 4;        // Исправление ошибок
+}

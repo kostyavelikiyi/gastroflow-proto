@@ -1,0 +1,69 @@
+name: gastroflow_proto
+description: >
+  Generated Dart/Flutter code for GastroFlow Protocol Buffers.
+  Provides strongly-typed models and gRPC clients for all GastroFlow domains:
+  orders, menu, restaurants, users, analytics, notifications, payments, and inventory.
+version: 1.0.0
+homepage: https://github.com/gastroflow/gastroflow-proto
+repository: https://github.com/gastroflow/gastroflow-proto
+issue_tracker: https://github.com/gastroflow/gastroflow-proto/issues
+documentation: https://proto.gastroflow.com
+
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Protocol Buffers
+  protobuf: ^3.1.0
+  
+  # gRPC support
+  grpc: ^3.2.4
+  
+  # Validation
+  fixnum: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  
+  # Testing
+  mockito: ^5.4.0
+  build_runner: ^2.4.0
+
+flutter:
+  # No assets currently
+
+# Topics for pub.dev discovery
+topics:
+  - protobuf
+  - grpc
+  - restaurant
+  - gastroflow
+  - api
+  - client
+  - flutter
+  - dart
+
+# Screenshots and example links for pub.dev
+screenshots:
+  - description: 'GastroFlow Protocol Buffers integration'
+    path: example/screenshot.png
+
+funding:
+  - https://github.com/sponsors/gastroflow
+
+# Platforms supported
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
