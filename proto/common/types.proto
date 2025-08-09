@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package com.gastroflow.common;
 
-import "google/protobuf/timestamp.proto";
 import "buf/validate/validate.proto";
+import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/gastroflow/proto-go/common";
 

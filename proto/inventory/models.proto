@@ -2,9 +2,9 @@ syntax = "proto3";
 
 package com.gastroflow.inventory;
 
+import "buf/validate/validate.proto";
 import "common/types.proto";
 import "google/protobuf/timestamp.proto";
-import "buf/validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/inventory";
 

@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package com.gastroflow.orders;
 
+import "buf/validate/validate.proto";
 import "common/enums.proto";
 import "common/types.proto";
 import "google/protobuf/timestamp.proto";
-import "buf/validate/validate.proto";
 
 option go_package = "github.com/gastroflow/proto-go/orders";
 
