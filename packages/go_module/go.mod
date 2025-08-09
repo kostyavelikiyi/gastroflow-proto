@@ -3,16 +3,12 @@ module github.com/gastroflow/proto-go
 go 1.21
 
 require (
-	// Protocol Buffers and gRPC
-	google.golang.org/protobuf v1.31.0
-	google.golang.org/grpc v1.58.3
-	
-	// Validation
 	github.com/envoyproxy/protoc-gen-validate v1.0.2
+	google.golang.org/grpc v1.58.3
+	google.golang.org/protobuf v1.31.0
 )
 
 require (
-	// Indirect dependencies
 	github.com/golang/protobuf v1.5.3 // indirect
 	golang.org/x/net v0.15.0 // indirect
 	golang.org/x/sys v0.12.0 // indirect
