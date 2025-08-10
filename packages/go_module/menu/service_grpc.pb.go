@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: menu/service.proto
+// source: com/gastroflow/menu/service.proto
 
 package menu
 
@@ -322,7 +322,7 @@ var MenuService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "menu/service.proto",
+	Metadata: "com/gastroflow/menu/service.proto",
 }
 
 const (
@@ -628,7 +628,7 @@ var CategoryService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "menu/service.proto",
+	Metadata: "com/gastroflow/menu/service.proto",
 }
 
 const (
@@ -1054,5 +1054,5 @@ var MenuItemService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "menu/service.proto",
+	Metadata: "com/gastroflow/menu/service.proto",
 }

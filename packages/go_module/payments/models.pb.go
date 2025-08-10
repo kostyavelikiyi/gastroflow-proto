@@ -2,12 +2,11 @@
 // versions:
 // 	protoc-gen-go v1.36.7
 // 	protoc        (unknown)
-// source: payments/models.proto
+// source: com/gastroflow/payments/models.proto
 
 package payments
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -79,11 +78,11 @@ func (x PaymentStatus) String() string {
 }
 
 func (PaymentStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_payments_models_proto_enumTypes[0].Descriptor()
+	return file_com_gastroflow_payments_models_proto_enumTypes[0].Descriptor()
 }
 
 func (PaymentStatus) Type() protoreflect.EnumType {
-	return &file_payments_models_proto_enumTypes[0]
+	return &file_com_gastroflow_payments_models_proto_enumTypes[0]
 }
 
 func (x PaymentStatus) Number() protoreflect.EnumNumber {
@@ -92,7 +91,7 @@ func (x PaymentStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PaymentStatus.Descriptor instead.
 func (PaymentStatus) EnumDescriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{0}
 }
 
 // PaymentProvider - поставщик платежных услуг
@@ -150,11 +149,11 @@ func (x PaymentProvider) String() string {
 }
 
 func (PaymentProvider) Descriptor() protoreflect.EnumDescriptor {
-	return file_payments_models_proto_enumTypes[1].Descriptor()
+	return file_com_gastroflow_payments_models_proto_enumTypes[1].Descriptor()
 }
 
 func (PaymentProvider) Type() protoreflect.EnumType {
-	return &file_payments_models_proto_enumTypes[1]
+	return &file_com_gastroflow_payments_models_proto_enumTypes[1]
 }
 
 func (x PaymentProvider) Number() protoreflect.EnumNumber {
@@ -163,7 +162,7 @@ func (x PaymentProvider) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PaymentProvider.Descriptor instead.
 func (PaymentProvider) EnumDescriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{1}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{1}
 }
 
 // CardType - тип банковской карты
@@ -218,11 +217,11 @@ func (x CardType) String() string {
 }
 
 func (CardType) Descriptor() protoreflect.EnumDescriptor {
-	return file_payments_models_proto_enumTypes[2].Descriptor()
+	return file_com_gastroflow_payments_models_proto_enumTypes[2].Descriptor()
 }
 
 func (CardType) Type() protoreflect.EnumType {
-	return &file_payments_models_proto_enumTypes[2]
+	return &file_com_gastroflow_payments_models_proto_enumTypes[2]
 }
 
 func (x CardType) Number() protoreflect.EnumNumber {
@@ -231,7 +230,7 @@ func (x CardType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use CardType.Descriptor instead.
 func (CardType) EnumDescriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{2}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{2}
 }
 
 // WalletType - тип электронного кошелька
@@ -283,11 +282,11 @@ func (x WalletType) String() string {
 }
 
 func (WalletType) Descriptor() protoreflect.EnumDescriptor {
-	return file_payments_models_proto_enumTypes[3].Descriptor()
+	return file_com_gastroflow_payments_models_proto_enumTypes[3].Descriptor()
 }
 
 func (WalletType) Type() protoreflect.EnumType {
-	return &file_payments_models_proto_enumTypes[3]
+	return &file_com_gastroflow_payments_models_proto_enumTypes[3]
 }
 
 func (x WalletType) Number() protoreflect.EnumNumber {
@@ -296,7 +295,7 @@ func (x WalletType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use WalletType.Descriptor instead.
 func (WalletType) EnumDescriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{3}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{3}
 }
 
 // RefundReason - причина возврата
@@ -348,11 +347,11 @@ func (x RefundReason) String() string {
 }
 
 func (RefundReason) Descriptor() protoreflect.EnumDescriptor {
-	return file_payments_models_proto_enumTypes[4].Descriptor()
+	return file_com_gastroflow_payments_models_proto_enumTypes[4].Descriptor()
 }
 
 func (RefundReason) Type() protoreflect.EnumType {
-	return &file_payments_models_proto_enumTypes[4]
+	return &file_com_gastroflow_payments_models_proto_enumTypes[4]
 }
 
 func (x RefundReason) Number() protoreflect.EnumNumber {
@@ -361,7 +360,7 @@ func (x RefundReason) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RefundReason.Descriptor instead.
 func (RefundReason) EnumDescriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{4}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{4}
 }
 
 // RefundStatus - статус возврата
@@ -407,11 +406,11 @@ func (x RefundStatus) String() string {
 }
 
 func (RefundStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_payments_models_proto_enumTypes[5].Descriptor()
+	return file_com_gastroflow_payments_models_proto_enumTypes[5].Descriptor()
 }
 
 func (RefundStatus) Type() protoreflect.EnumType {
-	return &file_payments_models_proto_enumTypes[5]
+	return &file_com_gastroflow_payments_models_proto_enumTypes[5]
 }
 
 func (x RefundStatus) Number() protoreflect.EnumNumber {
@@ -420,7 +419,7 @@ func (x RefundStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RefundStatus.Descriptor instead.
 func (RefundStatus) EnumDescriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{5}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{5}
 }
 
 // Payment - платеж в системе
@@ -428,8 +427,6 @@ type Payment struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Уникальный идентификатор платежа
 	Id *common.UUID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	// Идентификатор заказа
-	OrderId *common.UUID `protobuf:"bytes,2,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
 	// Идентификатор плательщика
 	PayerId *common.UUID `protobuf:"bytes,3,opt,name=payer_id,json=payerId,proto3" json:"payer_id,omitempty"`
 	// Идентификатор ресторана
@@ -476,7 +473,7 @@ type Payment struct {
 
 func (x *Payment) Reset() {
 	*x = Payment{}
-	mi := &file_payments_models_proto_msgTypes[0]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -488,7 +485,7 @@ func (x *Payment) String() string {
 func (*Payment) ProtoMessage() {}
 
 func (x *Payment) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[0]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -501,19 +498,12 @@ func (x *Payment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Payment.ProtoReflect.Descriptor instead.
 func (*Payment) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Payment) GetId() *common.UUID {
 	if x != nil {
 		return x.Id
-	}
-	return nil
-}
-
-func (x *Payment) GetOrderId() *common.UUID {
-	if x != nil {
-		return x.OrderId
 	}
 	return nil
 }
@@ -681,7 +671,7 @@ type PaymentDetails struct {
 
 func (x *PaymentDetails) Reset() {
 	*x = PaymentDetails{}
-	mi := &file_payments_models_proto_msgTypes[1]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -693,7 +683,7 @@ func (x *PaymentDetails) String() string {
 func (*PaymentDetails) ProtoMessage() {}
 
 func (x *PaymentDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[1]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -706,7 +696,7 @@ func (x *PaymentDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PaymentDetails.ProtoReflect.Descriptor instead.
 func (*PaymentDetails) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{1}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PaymentDetails) GetCardDetails() *CardDetails {
@@ -785,7 +775,7 @@ type CardDetails struct {
 
 func (x *CardDetails) Reset() {
 	*x = CardDetails{}
-	mi := &file_payments_models_proto_msgTypes[2]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -797,7 +787,7 @@ func (x *CardDetails) String() string {
 func (*CardDetails) ProtoMessage() {}
 
 func (x *CardDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[2]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -810,7 +800,7 @@ func (x *CardDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CardDetails.ProtoReflect.Descriptor instead.
 func (*CardDetails) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{2}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CardDetails) GetMaskedPan() string {
@@ -895,7 +885,7 @@ type BankTransferDetails struct {
 
 func (x *BankTransferDetails) Reset() {
 	*x = BankTransferDetails{}
-	mi := &file_payments_models_proto_msgTypes[3]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -907,7 +897,7 @@ func (x *BankTransferDetails) String() string {
 func (*BankTransferDetails) ProtoMessage() {}
 
 func (x *BankTransferDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[3]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -920,7 +910,7 @@ func (x *BankTransferDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BankTransferDetails.ProtoReflect.Descriptor instead.
 func (*BankTransferDetails) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{3}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *BankTransferDetails) GetBankName() string {
@@ -973,7 +963,7 @@ type WalletDetails struct {
 
 func (x *WalletDetails) Reset() {
 	*x = WalletDetails{}
-	mi := &file_payments_models_proto_msgTypes[4]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -985,7 +975,7 @@ func (x *WalletDetails) String() string {
 func (*WalletDetails) ProtoMessage() {}
 
 func (x *WalletDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[4]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -998,7 +988,7 @@ func (x *WalletDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WalletDetails.ProtoReflect.Descriptor instead.
 func (*WalletDetails) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{4}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *WalletDetails) GetWalletType() WalletType {
@@ -1039,7 +1029,7 @@ type CashDetails struct {
 
 func (x *CashDetails) Reset() {
 	*x = CashDetails{}
-	mi := &file_payments_models_proto_msgTypes[5]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1051,7 +1041,7 @@ func (x *CashDetails) String() string {
 func (*CashDetails) ProtoMessage() {}
 
 func (x *CashDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[5]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1064,7 +1054,7 @@ func (x *CashDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CashDetails.ProtoReflect.Descriptor instead.
 func (*CashDetails) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{5}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CashDetails) GetReceivedAmount() *common.Money {
@@ -1112,7 +1102,7 @@ type ThreeDSecureDetails struct {
 
 func (x *ThreeDSecureDetails) Reset() {
 	*x = ThreeDSecureDetails{}
-	mi := &file_payments_models_proto_msgTypes[6]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1124,7 +1114,7 @@ func (x *ThreeDSecureDetails) String() string {
 func (*ThreeDSecureDetails) ProtoMessage() {}
 
 func (x *ThreeDSecureDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[6]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1137,7 +1127,7 @@ func (x *ThreeDSecureDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ThreeDSecureDetails.ProtoReflect.Descriptor instead.
 func (*ThreeDSecureDetails) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{6}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ThreeDSecureDetails) GetApplied() bool {
@@ -1187,7 +1177,7 @@ type PaymentStatusHistory struct {
 
 func (x *PaymentStatusHistory) Reset() {
 	*x = PaymentStatusHistory{}
-	mi := &file_payments_models_proto_msgTypes[7]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1199,7 +1189,7 @@ func (x *PaymentStatusHistory) String() string {
 func (*PaymentStatusHistory) ProtoMessage() {}
 
 func (x *PaymentStatusHistory) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[7]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1212,7 +1202,7 @@ func (x *PaymentStatusHistory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PaymentStatusHistory.ProtoReflect.Descriptor instead.
 func (*PaymentStatusHistory) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{7}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *PaymentStatusHistory) GetFromStatus() PaymentStatus {
@@ -1271,7 +1261,7 @@ type PaymentError struct {
 
 func (x *PaymentError) Reset() {
 	*x = PaymentError{}
-	mi := &file_payments_models_proto_msgTypes[8]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1283,7 +1273,7 @@ func (x *PaymentError) String() string {
 func (*PaymentError) ProtoMessage() {}
 
 func (x *PaymentError) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[8]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1296,7 +1286,7 @@ func (x *PaymentError) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PaymentError.ProtoReflect.Descriptor instead.
 func (*PaymentError) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{8}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *PaymentError) GetErrorCode() string {
@@ -1374,7 +1364,7 @@ type Refund struct {
 
 func (x *Refund) Reset() {
 	*x = Refund{}
-	mi := &file_payments_models_proto_msgTypes[9]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1386,7 +1376,7 @@ func (x *Refund) String() string {
 func (*Refund) ProtoMessage() {}
 
 func (x *Refund) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[9]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1399,7 +1389,7 @@ func (x *Refund) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Refund.ProtoReflect.Descriptor instead.
 func (*Refund) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{9}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *Refund) GetId() *common.UUID {
@@ -1513,7 +1503,7 @@ type PaymentMethodInfo struct {
 
 func (x *PaymentMethodInfo) Reset() {
 	*x = PaymentMethodInfo{}
-	mi := &file_payments_models_proto_msgTypes[10]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1525,7 +1515,7 @@ func (x *PaymentMethodInfo) String() string {
 func (*PaymentMethodInfo) ProtoMessage() {}
 
 func (x *PaymentMethodInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[10]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1538,7 +1528,7 @@ func (x *PaymentMethodInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PaymentMethodInfo.ProtoReflect.Descriptor instead.
 func (*PaymentMethodInfo) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{10}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *PaymentMethodInfo) GetId() *common.UUID {
@@ -1617,7 +1607,7 @@ type PaymentMethodDetails struct {
 
 func (x *PaymentMethodDetails) Reset() {
 	*x = PaymentMethodDetails{}
-	mi := &file_payments_models_proto_msgTypes[11]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1629,7 +1619,7 @@ func (x *PaymentMethodDetails) String() string {
 func (*PaymentMethodDetails) ProtoMessage() {}
 
 func (x *PaymentMethodDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[11]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1642,7 +1632,7 @@ func (x *PaymentMethodDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PaymentMethodDetails.ProtoReflect.Descriptor instead.
 func (*PaymentMethodDetails) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{11}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *PaymentMethodDetails) GetCard() *SavedCardDetails {
@@ -1678,7 +1668,7 @@ type SavedCardDetails struct {
 
 func (x *SavedCardDetails) Reset() {
 	*x = SavedCardDetails{}
-	mi := &file_payments_models_proto_msgTypes[12]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1690,7 +1680,7 @@ func (x *SavedCardDetails) String() string {
 func (*SavedCardDetails) ProtoMessage() {}
 
 func (x *SavedCardDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[12]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1703,7 +1693,7 @@ func (x *SavedCardDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SavedCardDetails.ProtoReflect.Descriptor instead.
 func (*SavedCardDetails) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{12}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *SavedCardDetails) GetMaskedPan() string {
@@ -1754,7 +1744,7 @@ type SavedWalletDetails struct {
 
 func (x *SavedWalletDetails) Reset() {
 	*x = SavedWalletDetails{}
-	mi := &file_payments_models_proto_msgTypes[13]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1766,7 +1756,7 @@ func (x *SavedWalletDetails) String() string {
 func (*SavedWalletDetails) ProtoMessage() {}
 
 func (x *SavedWalletDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_payments_models_proto_msgTypes[13]
+	mi := &file_com_gastroflow_payments_models_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1779,7 +1769,7 @@ func (x *SavedWalletDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SavedWalletDetails.ProtoReflect.Descriptor instead.
 func (*SavedWalletDetails) Descriptor() ([]byte, []int) {
-	return file_payments_models_proto_rawDescGZIP(), []int{13}
+	return file_com_gastroflow_payments_models_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *SavedWalletDetails) GetWalletType() WalletType {
@@ -1796,25 +1786,24 @@ func (x *SavedWalletDetails) GetMaskedIdentifier() string {
 	return ""
 }
 
-var File_payments_models_proto protoreflect.FileDescriptor
+var File_com_gastroflow_payments_models_proto protoreflect.FileDescriptor
 
-const file_payments_models_proto_rawDesc = "" +
+const file_com_gastroflow_payments_models_proto_rawDesc = "" +
 	"\n" +
-	"\x15payments/models.proto\x12\x17com.gastroflow.payments\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xaf\v\n" +
-	"\aPayment\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12>\n" +
-	"\border_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\aorderId\x12>\n" +
-	"\bpayer_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\apayerId\x12H\n" +
-	"\rrestaurant_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12<\n" +
-	"\x06amount\x18\x05 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x06amount\x12F\n" +
-	"\x06method\x18\x06 \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xbaH\x05\x82\x01\x02 \x00R\x06method\x12H\n" +
-	"\x06status\x18\a \x01(\x0e2&.com.gastroflow.payments.PaymentStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12N\n" +
-	"\bprovider\x18\b \x01(\x0e2(.com.gastroflow.payments.PaymentProviderB\b\xbaH\x05\x82\x01\x02 \x00R\bprovider\x128\n" +
-	"\x13external_payment_id\x18\t \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\x11externalPaymentId\x12*\n" +
+	"$com/gastroflow/payments/models.proto\x12\x17com.gastroflow.payments\x1a!com/gastroflow/common/enums.proto\x1a!com/gastroflow/common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfa\t\n" +
+	"\aPayment\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x126\n" +
+	"\bpayer_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDR\apayerId\x12@\n" +
+	"\rrestaurant_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x124\n" +
+	"\x06amount\x18\x05 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x06amount\x12<\n" +
+	"\x06method\x18\x06 \x01(\x0e2$.com.gastroflow.common.PaymentMethodR\x06method\x12>\n" +
+	"\x06status\x18\a \x01(\x0e2&.com.gastroflow.payments.PaymentStatusR\x06status\x12D\n" +
+	"\bprovider\x18\b \x01(\x0e2(.com.gastroflow.payments.PaymentProviderR\bprovider\x12.\n" +
+	"\x13external_payment_id\x18\t \x01(\tR\x11externalPaymentId\x12 \n" +
 	"\vdescription\x18\n" +
-	" \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\vdescription\x12A\n" +
+	" \x01(\tR\vdescription\x129\n" +
 	"\n" +
-	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tcreatedAt\x12=\n" +
+	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12=\n" +
 	"\fprocessed_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\vprocessedAt\x129\n" +
 	"\n" +
 	"expires_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x12A\n" +
@@ -1823,125 +1812,121 @@ const file_payments_models_proto_rawDesc = "" +
 	"\x03fee\x18\x10 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x03fee\x12;\n" +
 	"\n" +
 	"net_amount\x18\x11 \x01(\v2\x1c.com.gastroflow.common.MoneyR\tnetAmount\x12;\n" +
-	"\x05error\x18\x12 \x01(\v2%.com.gastroflow.payments.PaymentErrorR\x05error\x12$\n" +
-	"\tclient_ip\x18\x13 \x01(\tB\a\xbaH\x04r\x02\x18-R\bclientIp\x12'\n" +
+	"\x05error\x18\x12 \x01(\v2%.com.gastroflow.payments.PaymentErrorR\x05error\x12\x1b\n" +
+	"\tclient_ip\x18\x13 \x01(\tR\bclientIp\x12\x1d\n" +
 	"\n" +
-	"user_agent\x18\x14 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\tuserAgent\x12J\n" +
-	"\bmetadata\x18\x15 \x03(\v2..com.gastroflow.payments.Payment.MetadataEntryR\bmetadata\x12G\n" +
+	"user_agent\x18\x14 \x01(\tR\tuserAgent\x12J\n" +
+	"\bmetadata\x18\x15 \x03(\v2..com.gastroflow.payments.Payment.MetadataEntryR\bmetadata\x12?\n" +
 	"\n" +
-	"audit_info\x18\x16 \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\x1a;\n" +
+	"audit_info\x18\x16 \x01(\v2 .com.gastroflow.common.AuditInfoR\tauditInfo\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x8f\x04\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xfb\x03\n" +
 	"\x0ePaymentDetails\x12G\n" +
 	"\fcard_details\x18\x01 \x01(\v2$.com.gastroflow.payments.CardDetailsR\vcardDetails\x12`\n" +
 	"\x15bank_transfer_details\x18\x02 \x01(\v2,.com.gastroflow.payments.BankTransferDetailsR\x13bankTransferDetails\x12M\n" +
 	"\x0ewallet_details\x18\x03 \x01(\v2&.com.gastroflow.payments.WalletDetailsR\rwalletDetails\x12G\n" +
-	"\fcash_details\x18\x04 \x01(\v2$.com.gastroflow.payments.CashDetailsR\vcashDetails\x123\n" +
-	"\x10confirmation_url\x18\x05 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\x0fconfirmationUrl\x121\n" +
-	"\x0frecurring_token\x18\x06 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\x0erecurringToken\x12R\n" +
-	"\x0ethree_d_secure\x18\a \x01(\v2,.com.gastroflow.payments.ThreeDSecureDetailsR\fthreeDSecure\"\xae\x03\n" +
-	"\vCardDetails\x12&\n" +
+	"\fcash_details\x18\x04 \x01(\v2$.com.gastroflow.payments.CashDetailsR\vcashDetails\x12)\n" +
+	"\x10confirmation_url\x18\x05 \x01(\tR\x0fconfirmationUrl\x12'\n" +
+	"\x0frecurring_token\x18\x06 \x01(\tR\x0erecurringToken\x12R\n" +
+	"\x0ethree_d_secure\x18\a \x01(\v2,.com.gastroflow.payments.ThreeDSecureDetailsR\fthreeDSecure\"\xc5\x02\n" +
+	"\vCardDetails\x12\x1d\n" +
 	"\n" +
-	"masked_pan\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x18\x14R\tmaskedPan\x12H\n" +
-	"\tcard_type\x18\x02 \x01(\x0e2!.com.gastroflow.payments.CardTypeB\b\xbaH\x05\x82\x01\x02 \x00R\bcardType\x12(\n" +
-	"\vissuer_bank\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18dR\n" +
-	"issuerBank\x128\n" +
-	"\x0eissuer_country\x18\x04 \x01(\tB\x11\xbaH\x0er\f2\n" +
-	"^[A-Z]{2}$R\rissuerCountry\x12;\n" +
-	"\x10last_four_digits\x18\x05 \x01(\tB\x11\xbaH\x0er\f2\n" +
-	"^[0-9]{4}$R\x0elastFourDigits\x12&\n" +
-	"\texp_month\x18\x06 \x01(\x05B\t\xbaH\x06\x1a\x04\x18\f(\x01R\bexpMonth\x12#\n" +
-	"\bexp_year\x18\a \x01(\x05B\b\xbaH\x05\x1a\x03(\xe4\x0fR\aexpYear\x12$\n" +
-	"\tauth_code\x18\b \x01(\tB\a\xbaH\x04r\x02\x18\x14R\bauthCode\x12\x19\n" +
-	"\x03rrn\x18\t \x01(\tB\a\xbaH\x04r\x02\x18\x14R\x03rrn\"\xdc\x01\n" +
-	"\x13BankTransferDetails\x12$\n" +
-	"\tbank_name\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x18dR\bbankName\x12\x19\n" +
-	"\x03bik\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x18\x14R\x03bik\x12.\n" +
-	"\x0eaccount_number\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x182R\raccountNumber\x120\n" +
-	"\x0ftransfer_number\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\x0etransferNumber\x12\"\n" +
-	"\apurpose\x18\x05 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\apurpose\"\xbb\x01\n" +
-	"\rWalletDetails\x12N\n" +
-	"\vwallet_type\x18\x01 \x01(\x0e2#.com.gastroflow.payments.WalletTypeB\b\xbaH\x05\x82\x01\x02 \x00R\n" +
-	"walletType\x12$\n" +
-	"\twallet_id\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x18dR\bwalletId\x124\n" +
-	"\x11masked_identifier\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18dR\x10maskedIdentifier\"\x9b\x02\n" +
-	"\vCashDetails\x12M\n" +
-	"\x0freceived_amount\x18\x01 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x0ereceivedAmount\x12I\n" +
-	"\rchange_amount\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\fchangeAmount\x12B\n" +
+	"masked_pan\x18\x01 \x01(\tR\tmaskedPan\x12>\n" +
+	"\tcard_type\x18\x02 \x01(\x0e2!.com.gastroflow.payments.CardTypeR\bcardType\x12\x1f\n" +
+	"\vissuer_bank\x18\x03 \x01(\tR\n" +
+	"issuerBank\x12%\n" +
+	"\x0eissuer_country\x18\x04 \x01(\tR\rissuerCountry\x12(\n" +
+	"\x10last_four_digits\x18\x05 \x01(\tR\x0elastFourDigits\x12\x1b\n" +
+	"\texp_month\x18\x06 \x01(\x05R\bexpMonth\x12\x19\n" +
+	"\bexp_year\x18\a \x01(\x05R\aexpYear\x12\x1b\n" +
+	"\tauth_code\x18\b \x01(\tR\bauthCode\x12\x10\n" +
+	"\x03rrn\x18\t \x01(\tR\x03rrn\"\xae\x01\n" +
+	"\x13BankTransferDetails\x12\x1b\n" +
+	"\tbank_name\x18\x01 \x01(\tR\bbankName\x12\x10\n" +
+	"\x03bik\x18\x02 \x01(\tR\x03bik\x12%\n" +
+	"\x0eaccount_number\x18\x03 \x01(\tR\raccountNumber\x12'\n" +
+	"\x0ftransfer_number\x18\x04 \x01(\tR\x0etransferNumber\x12\x18\n" +
+	"\apurpose\x18\x05 \x01(\tR\apurpose\"\x9f\x01\n" +
+	"\rWalletDetails\x12D\n" +
+	"\vwallet_type\x18\x01 \x01(\x0e2#.com.gastroflow.payments.WalletTypeR\n" +
+	"walletType\x12\x1b\n" +
+	"\twallet_id\x18\x02 \x01(\tR\bwalletId\x12+\n" +
+	"\x11masked_identifier\x18\x03 \x01(\tR\x10maskedIdentifier\"\xfa\x01\n" +
+	"\vCashDetails\x12E\n" +
+	"\x0freceived_amount\x18\x01 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x0ereceivedAmount\x12A\n" +
+	"\rchange_amount\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyR\fchangeAmount\x12:\n" +
 	"\n" +
-	"cashier_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\tcashierId\x12.\n" +
-	"\x0ereceipt_number\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\rreceiptNumber\"\x8f\x01\n" +
+	"cashier_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDR\tcashierId\x12%\n" +
+	"\x0ereceipt_number\x18\x04 \x01(\tR\rreceiptNumber\"t\n" +
 	"\x13ThreeDSecureDetails\x12\x18\n" +
-	"\aapplied\x18\x01 \x01(\bR\aapplied\x12(\n" +
-	"\vauth_status\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x18\x14R\n" +
-	"authStatus\x12\x19\n" +
-	"\x03eci\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18\n" +
-	"R\x03eci\x12\x19\n" +
-	"\x03xid\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\x03xid\"\xb7\x02\n" +
+	"\aapplied\x18\x01 \x01(\bR\aapplied\x12\x1f\n" +
+	"\vauth_status\x18\x02 \x01(\tR\n" +
+	"authStatus\x12\x10\n" +
+	"\x03eci\x18\x03 \x01(\tR\x03eci\x12\x10\n" +
+	"\x03xid\x18\x04 \x01(\tR\x03xid\"\x91\x02\n" +
 	"\x14PaymentStatusHistory\x12G\n" +
 	"\vfrom_status\x18\x01 \x01(\x0e2&.com.gastroflow.payments.PaymentStatusR\n" +
-	"fromStatus\x12M\n" +
-	"\tto_status\x18\x02 \x01(\x0e2&.com.gastroflow.payments.PaymentStatusB\b\xbaH\x05\x82\x01\x02 \x00R\btoStatus\x12A\n" +
+	"fromStatus\x12C\n" +
+	"\tto_status\x18\x02 \x01(\x0e2&.com.gastroflow.payments.PaymentStatusR\btoStatus\x129\n" +
 	"\n" +
-	"changed_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tchangedAt\x12 \n" +
-	"\x06reason\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\x06reason\x12\"\n" +
-	"\adetails\x18\x05 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\adetails\"\xbe\x02\n" +
-	"\fPaymentError\x12&\n" +
+	"changed_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tchangedAt\x12\x16\n" +
+	"\x06reason\x18\x04 \x01(\tR\x06reason\x12\x18\n" +
+	"\adetails\x18\x05 \x01(\tR\adetails\"\x98\x02\n" +
+	"\fPaymentError\x12\x1d\n" +
 	"\n" +
-	"error_code\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x182R\terrorCode\x12-\n" +
-	"\rerror_message\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\ferrorMessage\x127\n" +
-	"\x13provider_error_code\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x182R\x11providerErrorCode\x12>\n" +
-	"\x16provider_error_message\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\x14providerErrorMessage\x12!\n" +
+	"error_code\x18\x01 \x01(\tR\terrorCode\x12#\n" +
+	"\rerror_message\x18\x02 \x01(\tR\ferrorMessage\x12.\n" +
+	"\x13provider_error_code\x18\x03 \x01(\tR\x11providerErrorCode\x124\n" +
+	"\x16provider_error_message\x18\x04 \x01(\tR\x14providerErrorMessage\x12!\n" +
 	"\fis_retryable\x18\x05 \x01(\bR\visRetryable\x12;\n" +
 	"\vretry_after\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"retryAfter\"\xed\x05\n" +
-	"\x06Refund\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12B\n" +
+	"retryAfter\"\x9d\x05\n" +
+	"\x06Refund\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12:\n" +
 	"\n" +
-	"payment_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\tpaymentId\x12<\n" +
-	"\x06amount\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x06amount\x12G\n" +
-	"\x06reason\x18\x04 \x01(\x0e2%.com.gastroflow.payments.RefundReasonB\b\xbaH\x05\x82\x01\x02 \x00R\x06reason\x12G\n" +
-	"\x06status\x18\x05 \x01(\x0e2%.com.gastroflow.payments.RefundStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12*\n" +
-	"\vdescription\x18\x06 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\vdescription\x126\n" +
-	"\x12external_refund_id\x18\a \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\x10externalRefundId\x12A\n" +
+	"payment_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\tpaymentId\x124\n" +
+	"\x06amount\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x06amount\x12=\n" +
+	"\x06reason\x18\x04 \x01(\x0e2%.com.gastroflow.payments.RefundReasonR\x06reason\x12=\n" +
+	"\x06status\x18\x05 \x01(\x0e2%.com.gastroflow.payments.RefundStatusR\x06status\x12 \n" +
+	"\vdescription\x18\x06 \x01(\tR\vdescription\x12,\n" +
+	"\x12external_refund_id\x18\a \x01(\tR\x10externalRefundId\x129\n" +
 	"\n" +
-	"created_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tcreatedAt\x12=\n" +
+	"created_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12=\n" +
 	"\fprocessed_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\vprocessedAt\x12.\n" +
 	"\x03fee\x18\n" +
 	" \x01(\v2\x1c.com.gastroflow.common.MoneyR\x03fee\x12;\n" +
-	"\x05error\x18\v \x01(\v2%.com.gastroflow.payments.PaymentErrorR\x05error\x12G\n" +
+	"\x05error\x18\v \x01(\v2%.com.gastroflow.payments.PaymentErrorR\x05error\x12?\n" +
 	"\n" +
-	"audit_info\x18\f \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\xfa\x03\n" +
-	"\x11PaymentMethodInfo\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12<\n" +
-	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06userId\x12B\n" +
-	"\x04type\x18\x03 \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12 \n" +
-	"\x05token\x18\x04 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x05token\x12O\n" +
-	"\adetails\x18\x05 \x01(\v2-.com.gastroflow.payments.PaymentMethodDetailsB\x06\xbaH\x03\xc8\x01\x01R\adetails\x12\x1d\n" +
+	"audit_info\x18\f \x01(\v2 .com.gastroflow.common.AuditInfoR\tauditInfo\"\xc4\x03\n" +
+	"\x11PaymentMethodInfo\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x124\n" +
+	"\auser_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x06userId\x128\n" +
+	"\x04type\x18\x03 \x01(\x0e2$.com.gastroflow.common.PaymentMethodR\x04type\x12\x14\n" +
+	"\x05token\x18\x04 \x01(\tR\x05token\x12G\n" +
+	"\adetails\x18\x05 \x01(\v2-.com.gastroflow.payments.PaymentMethodDetailsR\adetails\x12\x1d\n" +
 	"\n" +
 	"is_default\x18\x06 \x01(\bR\tisDefault\x12\x1b\n" +
-	"\tis_active\x18\a \x01(\bR\bisActive\x12A\n" +
+	"\tis_active\x18\a \x01(\bR\bisActive\x129\n" +
 	"\n" +
-	"created_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tcreatedAt\x12<\n" +
+	"created_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12<\n" +
 	"\flast_used_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"lastUsedAt\"\x9a\x01\n" +
 	"\x14PaymentMethodDetails\x12=\n" +
 	"\x04card\x18\x01 \x01(\v2).com.gastroflow.payments.SavedCardDetailsR\x04card\x12C\n" +
-	"\x06wallet\x18\x02 \x01(\v2+.com.gastroflow.payments.SavedWalletDetailsR\x06wallet\"\xfb\x01\n" +
-	"\x10SavedCardDetails\x12&\n" +
+	"\x06wallet\x18\x02 \x01(\v2+.com.gastroflow.payments.SavedWalletDetailsR\x06wallet\"\xca\x01\n" +
+	"\x10SavedCardDetails\x12\x1d\n" +
 	"\n" +
-	"masked_pan\x18\x01 \x01(\tB\a\xbaH\x04r\x02\x18\x14R\tmaskedPan\x12H\n" +
-	"\tcard_type\x18\x02 \x01(\x0e2!.com.gastroflow.payments.CardTypeB\b\xbaH\x05\x82\x01\x02 \x00R\bcardType\x12&\n" +
-	"\texp_month\x18\x03 \x01(\x05B\t\xbaH\x06\x1a\x04\x18\f(\x01R\bexpMonth\x12#\n" +
-	"\bexp_year\x18\x04 \x01(\x05B\b\xbaH\x05\x1a\x03(\xe4\x0fR\aexpYear\x12(\n" +
-	"\vissuer_bank\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x18dR\n" +
-	"issuerBank\"\x9a\x01\n" +
-	"\x12SavedWalletDetails\x12N\n" +
-	"\vwallet_type\x18\x01 \x01(\x0e2#.com.gastroflow.payments.WalletTypeB\b\xbaH\x05\x82\x01\x02 \x00R\n" +
-	"walletType\x124\n" +
-	"\x11masked_identifier\x18\x02 \x01(\tB\a\xbaH\x04r\x02\x18dR\x10maskedIdentifier*\xc5\x02\n" +
+	"masked_pan\x18\x01 \x01(\tR\tmaskedPan\x12>\n" +
+	"\tcard_type\x18\x02 \x01(\x0e2!.com.gastroflow.payments.CardTypeR\bcardType\x12\x1b\n" +
+	"\texp_month\x18\x03 \x01(\x05R\bexpMonth\x12\x19\n" +
+	"\bexp_year\x18\x04 \x01(\x05R\aexpYear\x12\x1f\n" +
+	"\vissuer_bank\x18\x05 \x01(\tR\n" +
+	"issuerBank\"\x87\x01\n" +
+	"\x12SavedWalletDetails\x12D\n" +
+	"\vwallet_type\x18\x01 \x01(\x0e2#.com.gastroflow.payments.WalletTypeR\n" +
+	"walletType\x12+\n" +
+	"\x11masked_identifier\x18\x02 \x01(\tR\x10maskedIdentifier*\xc5\x02\n" +
 	"\rPaymentStatus\x12\x1e\n" +
 	"\x1aPAYMENT_STATUS_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16PAYMENT_STATUS_PENDING\x10\x01\x12\x1d\n" +
@@ -2003,20 +1988,20 @@ const file_payments_models_proto_rawDesc = "" +
 	"\x1bcom.com.gastroflow.paymentsB\vModelsProtoP\x01Z'github.com/gastroflow/proto-go/payments\xa2\x02\x03CGP\xaa\x02\x17Com.Gastroflow.Payments\xca\x02\x17Com\\Gastroflow\\Payments\xe2\x02#Com\\Gastroflow\\Payments\\GPBMetadata\xea\x02\x19Com::Gastroflow::Paymentsb\x06proto3"
 
 var (
-	file_payments_models_proto_rawDescOnce sync.Once
-	file_payments_models_proto_rawDescData []byte
+	file_com_gastroflow_payments_models_proto_rawDescOnce sync.Once
+	file_com_gastroflow_payments_models_proto_rawDescData []byte
 )
 
-func file_payments_models_proto_rawDescGZIP() []byte {
-	file_payments_models_proto_rawDescOnce.Do(func() {
-		file_payments_models_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_payments_models_proto_rawDesc), len(file_payments_models_proto_rawDesc)))
+func file_com_gastroflow_payments_models_proto_rawDescGZIP() []byte {
+	file_com_gastroflow_payments_models_proto_rawDescOnce.Do(func() {
+		file_com_gastroflow_payments_models_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_com_gastroflow_payments_models_proto_rawDesc), len(file_com_gastroflow_payments_models_proto_rawDesc)))
 	})
-	return file_payments_models_proto_rawDescData
+	return file_com_gastroflow_payments_models_proto_rawDescData
 }
 
-var file_payments_models_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
-var file_payments_models_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
-var file_payments_models_proto_goTypes = []any{
+var file_com_gastroflow_payments_models_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
+var file_com_gastroflow_payments_models_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_com_gastroflow_payments_models_proto_goTypes = []any{
 	(PaymentStatus)(0),            // 0: com.gastroflow.payments.PaymentStatus
 	(PaymentProvider)(0),          // 1: com.gastroflow.payments.PaymentProvider
 	(CardType)(0),                 // 2: com.gastroflow.payments.CardType
@@ -2044,87 +2029,86 @@ var file_payments_models_proto_goTypes = []any{
 	(*timestamppb.Timestamp)(nil), // 24: google.protobuf.Timestamp
 	(*common.AuditInfo)(nil),      // 25: com.gastroflow.common.AuditInfo
 }
-var file_payments_models_proto_depIdxs = []int32{
+var file_com_gastroflow_payments_models_proto_depIdxs = []int32{
 	21, // 0: com.gastroflow.payments.Payment.id:type_name -> com.gastroflow.common.UUID
-	21, // 1: com.gastroflow.payments.Payment.order_id:type_name -> com.gastroflow.common.UUID
-	21, // 2: com.gastroflow.payments.Payment.payer_id:type_name -> com.gastroflow.common.UUID
-	21, // 3: com.gastroflow.payments.Payment.restaurant_id:type_name -> com.gastroflow.common.UUID
-	22, // 4: com.gastroflow.payments.Payment.amount:type_name -> com.gastroflow.common.Money
-	23, // 5: com.gastroflow.payments.Payment.method:type_name -> com.gastroflow.common.PaymentMethod
-	0,  // 6: com.gastroflow.payments.Payment.status:type_name -> com.gastroflow.payments.PaymentStatus
-	1,  // 7: com.gastroflow.payments.Payment.provider:type_name -> com.gastroflow.payments.PaymentProvider
-	24, // 8: com.gastroflow.payments.Payment.created_at:type_name -> google.protobuf.Timestamp
-	24, // 9: com.gastroflow.payments.Payment.processed_at:type_name -> google.protobuf.Timestamp
-	24, // 10: com.gastroflow.payments.Payment.expires_at:type_name -> google.protobuf.Timestamp
-	7,  // 11: com.gastroflow.payments.Payment.details:type_name -> com.gastroflow.payments.PaymentDetails
-	13, // 12: com.gastroflow.payments.Payment.status_history:type_name -> com.gastroflow.payments.PaymentStatusHistory
-	22, // 13: com.gastroflow.payments.Payment.fee:type_name -> com.gastroflow.common.Money
-	22, // 14: com.gastroflow.payments.Payment.net_amount:type_name -> com.gastroflow.common.Money
-	14, // 15: com.gastroflow.payments.Payment.error:type_name -> com.gastroflow.payments.PaymentError
-	20, // 16: com.gastroflow.payments.Payment.metadata:type_name -> com.gastroflow.payments.Payment.MetadataEntry
-	25, // 17: com.gastroflow.payments.Payment.audit_info:type_name -> com.gastroflow.common.AuditInfo
-	8,  // 18: com.gastroflow.payments.PaymentDetails.card_details:type_name -> com.gastroflow.payments.CardDetails
-	9,  // 19: com.gastroflow.payments.PaymentDetails.bank_transfer_details:type_name -> com.gastroflow.payments.BankTransferDetails
-	10, // 20: com.gastroflow.payments.PaymentDetails.wallet_details:type_name -> com.gastroflow.payments.WalletDetails
-	11, // 21: com.gastroflow.payments.PaymentDetails.cash_details:type_name -> com.gastroflow.payments.CashDetails
-	12, // 22: com.gastroflow.payments.PaymentDetails.three_d_secure:type_name -> com.gastroflow.payments.ThreeDSecureDetails
-	2,  // 23: com.gastroflow.payments.CardDetails.card_type:type_name -> com.gastroflow.payments.CardType
-	3,  // 24: com.gastroflow.payments.WalletDetails.wallet_type:type_name -> com.gastroflow.payments.WalletType
-	22, // 25: com.gastroflow.payments.CashDetails.received_amount:type_name -> com.gastroflow.common.Money
-	22, // 26: com.gastroflow.payments.CashDetails.change_amount:type_name -> com.gastroflow.common.Money
-	21, // 27: com.gastroflow.payments.CashDetails.cashier_id:type_name -> com.gastroflow.common.UUID
-	0,  // 28: com.gastroflow.payments.PaymentStatusHistory.from_status:type_name -> com.gastroflow.payments.PaymentStatus
-	0,  // 29: com.gastroflow.payments.PaymentStatusHistory.to_status:type_name -> com.gastroflow.payments.PaymentStatus
-	24, // 30: com.gastroflow.payments.PaymentStatusHistory.changed_at:type_name -> google.protobuf.Timestamp
-	24, // 31: com.gastroflow.payments.PaymentError.retry_after:type_name -> google.protobuf.Timestamp
-	21, // 32: com.gastroflow.payments.Refund.id:type_name -> com.gastroflow.common.UUID
-	21, // 33: com.gastroflow.payments.Refund.payment_id:type_name -> com.gastroflow.common.UUID
-	22, // 34: com.gastroflow.payments.Refund.amount:type_name -> com.gastroflow.common.Money
-	4,  // 35: com.gastroflow.payments.Refund.reason:type_name -> com.gastroflow.payments.RefundReason
-	5,  // 36: com.gastroflow.payments.Refund.status:type_name -> com.gastroflow.payments.RefundStatus
-	24, // 37: com.gastroflow.payments.Refund.created_at:type_name -> google.protobuf.Timestamp
-	24, // 38: com.gastroflow.payments.Refund.processed_at:type_name -> google.protobuf.Timestamp
-	22, // 39: com.gastroflow.payments.Refund.fee:type_name -> com.gastroflow.common.Money
-	14, // 40: com.gastroflow.payments.Refund.error:type_name -> com.gastroflow.payments.PaymentError
-	25, // 41: com.gastroflow.payments.Refund.audit_info:type_name -> com.gastroflow.common.AuditInfo
-	21, // 42: com.gastroflow.payments.PaymentMethodInfo.id:type_name -> com.gastroflow.common.UUID
-	21, // 43: com.gastroflow.payments.PaymentMethodInfo.user_id:type_name -> com.gastroflow.common.UUID
-	23, // 44: com.gastroflow.payments.PaymentMethodInfo.type:type_name -> com.gastroflow.common.PaymentMethod
-	17, // 45: com.gastroflow.payments.PaymentMethodInfo.details:type_name -> com.gastroflow.payments.PaymentMethodDetails
-	24, // 46: com.gastroflow.payments.PaymentMethodInfo.created_at:type_name -> google.protobuf.Timestamp
-	24, // 47: com.gastroflow.payments.PaymentMethodInfo.last_used_at:type_name -> google.protobuf.Timestamp
-	18, // 48: com.gastroflow.payments.PaymentMethodDetails.card:type_name -> com.gastroflow.payments.SavedCardDetails
-	19, // 49: com.gastroflow.payments.PaymentMethodDetails.wallet:type_name -> com.gastroflow.payments.SavedWalletDetails
-	2,  // 50: com.gastroflow.payments.SavedCardDetails.card_type:type_name -> com.gastroflow.payments.CardType
-	3,  // 51: com.gastroflow.payments.SavedWalletDetails.wallet_type:type_name -> com.gastroflow.payments.WalletType
-	52, // [52:52] is the sub-list for method output_type
-	52, // [52:52] is the sub-list for method input_type
-	52, // [52:52] is the sub-list for extension type_name
-	52, // [52:52] is the sub-list for extension extendee
-	0,  // [0:52] is the sub-list for field type_name
+	21, // 1: com.gastroflow.payments.Payment.payer_id:type_name -> com.gastroflow.common.UUID
+	21, // 2: com.gastroflow.payments.Payment.restaurant_id:type_name -> com.gastroflow.common.UUID
+	22, // 3: com.gastroflow.payments.Payment.amount:type_name -> com.gastroflow.common.Money
+	23, // 4: com.gastroflow.payments.Payment.method:type_name -> com.gastroflow.common.PaymentMethod
+	0,  // 5: com.gastroflow.payments.Payment.status:type_name -> com.gastroflow.payments.PaymentStatus
+	1,  // 6: com.gastroflow.payments.Payment.provider:type_name -> com.gastroflow.payments.PaymentProvider
+	24, // 7: com.gastroflow.payments.Payment.created_at:type_name -> google.protobuf.Timestamp
+	24, // 8: com.gastroflow.payments.Payment.processed_at:type_name -> google.protobuf.Timestamp
+	24, // 9: com.gastroflow.payments.Payment.expires_at:type_name -> google.protobuf.Timestamp
+	7,  // 10: com.gastroflow.payments.Payment.details:type_name -> com.gastroflow.payments.PaymentDetails
+	13, // 11: com.gastroflow.payments.Payment.status_history:type_name -> com.gastroflow.payments.PaymentStatusHistory
+	22, // 12: com.gastroflow.payments.Payment.fee:type_name -> com.gastroflow.common.Money
+	22, // 13: com.gastroflow.payments.Payment.net_amount:type_name -> com.gastroflow.common.Money
+	14, // 14: com.gastroflow.payments.Payment.error:type_name -> com.gastroflow.payments.PaymentError
+	20, // 15: com.gastroflow.payments.Payment.metadata:type_name -> com.gastroflow.payments.Payment.MetadataEntry
+	25, // 16: com.gastroflow.payments.Payment.audit_info:type_name -> com.gastroflow.common.AuditInfo
+	8,  // 17: com.gastroflow.payments.PaymentDetails.card_details:type_name -> com.gastroflow.payments.CardDetails
+	9,  // 18: com.gastroflow.payments.PaymentDetails.bank_transfer_details:type_name -> com.gastroflow.payments.BankTransferDetails
+	10, // 19: com.gastroflow.payments.PaymentDetails.wallet_details:type_name -> com.gastroflow.payments.WalletDetails
+	11, // 20: com.gastroflow.payments.PaymentDetails.cash_details:type_name -> com.gastroflow.payments.CashDetails
+	12, // 21: com.gastroflow.payments.PaymentDetails.three_d_secure:type_name -> com.gastroflow.payments.ThreeDSecureDetails
+	2,  // 22: com.gastroflow.payments.CardDetails.card_type:type_name -> com.gastroflow.payments.CardType
+	3,  // 23: com.gastroflow.payments.WalletDetails.wallet_type:type_name -> com.gastroflow.payments.WalletType
+	22, // 24: com.gastroflow.payments.CashDetails.received_amount:type_name -> com.gastroflow.common.Money
+	22, // 25: com.gastroflow.payments.CashDetails.change_amount:type_name -> com.gastroflow.common.Money
+	21, // 26: com.gastroflow.payments.CashDetails.cashier_id:type_name -> com.gastroflow.common.UUID
+	0,  // 27: com.gastroflow.payments.PaymentStatusHistory.from_status:type_name -> com.gastroflow.payments.PaymentStatus
+	0,  // 28: com.gastroflow.payments.PaymentStatusHistory.to_status:type_name -> com.gastroflow.payments.PaymentStatus
+	24, // 29: com.gastroflow.payments.PaymentStatusHistory.changed_at:type_name -> google.protobuf.Timestamp
+	24, // 30: com.gastroflow.payments.PaymentError.retry_after:type_name -> google.protobuf.Timestamp
+	21, // 31: com.gastroflow.payments.Refund.id:type_name -> com.gastroflow.common.UUID
+	21, // 32: com.gastroflow.payments.Refund.payment_id:type_name -> com.gastroflow.common.UUID
+	22, // 33: com.gastroflow.payments.Refund.amount:type_name -> com.gastroflow.common.Money
+	4,  // 34: com.gastroflow.payments.Refund.reason:type_name -> com.gastroflow.payments.RefundReason
+	5,  // 35: com.gastroflow.payments.Refund.status:type_name -> com.gastroflow.payments.RefundStatus
+	24, // 36: com.gastroflow.payments.Refund.created_at:type_name -> google.protobuf.Timestamp
+	24, // 37: com.gastroflow.payments.Refund.processed_at:type_name -> google.protobuf.Timestamp
+	22, // 38: com.gastroflow.payments.Refund.fee:type_name -> com.gastroflow.common.Money
+	14, // 39: com.gastroflow.payments.Refund.error:type_name -> com.gastroflow.payments.PaymentError
+	25, // 40: com.gastroflow.payments.Refund.audit_info:type_name -> com.gastroflow.common.AuditInfo
+	21, // 41: com.gastroflow.payments.PaymentMethodInfo.id:type_name -> com.gastroflow.common.UUID
+	21, // 42: com.gastroflow.payments.PaymentMethodInfo.user_id:type_name -> com.gastroflow.common.UUID
+	23, // 43: com.gastroflow.payments.PaymentMethodInfo.type:type_name -> com.gastroflow.common.PaymentMethod
+	17, // 44: com.gastroflow.payments.PaymentMethodInfo.details:type_name -> com.gastroflow.payments.PaymentMethodDetails
+	24, // 45: com.gastroflow.payments.PaymentMethodInfo.created_at:type_name -> google.protobuf.Timestamp
+	24, // 46: com.gastroflow.payments.PaymentMethodInfo.last_used_at:type_name -> google.protobuf.Timestamp
+	18, // 47: com.gastroflow.payments.PaymentMethodDetails.card:type_name -> com.gastroflow.payments.SavedCardDetails
+	19, // 48: com.gastroflow.payments.PaymentMethodDetails.wallet:type_name -> com.gastroflow.payments.SavedWalletDetails
+	2,  // 49: com.gastroflow.payments.SavedCardDetails.card_type:type_name -> com.gastroflow.payments.CardType
+	3,  // 50: com.gastroflow.payments.SavedWalletDetails.wallet_type:type_name -> com.gastroflow.payments.WalletType
+	51, // [51:51] is the sub-list for method output_type
+	51, // [51:51] is the sub-list for method input_type
+	51, // [51:51] is the sub-list for extension type_name
+	51, // [51:51] is the sub-list for extension extendee
+	0,  // [0:51] is the sub-list for field type_name
 }
 
-func init() { file_payments_models_proto_init() }
-func file_payments_models_proto_init() {
-	if File_payments_models_proto != nil {
+func init() { file_com_gastroflow_payments_models_proto_init() }
+func file_com_gastroflow_payments_models_proto_init() {
+	if File_com_gastroflow_payments_models_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_payments_models_proto_rawDesc), len(file_payments_models_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_com_gastroflow_payments_models_proto_rawDesc), len(file_com_gastroflow_payments_models_proto_rawDesc)),
 			NumEnums:      6,
 			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_payments_models_proto_goTypes,
-		DependencyIndexes: file_payments_models_proto_depIdxs,
-		EnumInfos:         file_payments_models_proto_enumTypes,
-		MessageInfos:      file_payments_models_proto_msgTypes,
+		GoTypes:           file_com_gastroflow_payments_models_proto_goTypes,
+		DependencyIndexes: file_com_gastroflow_payments_models_proto_depIdxs,
+		EnumInfos:         file_com_gastroflow_payments_models_proto_enumTypes,
+		MessageInfos:      file_com_gastroflow_payments_models_proto_msgTypes,
 	}.Build()
-	File_payments_models_proto = out.File
-	file_payments_models_proto_goTypes = nil
-	file_payments_models_proto_depIdxs = nil
+	File_com_gastroflow_payments_models_proto = out.File
+	file_com_gastroflow_payments_models_proto_goTypes = nil
+	file_com_gastroflow_payments_models_proto_depIdxs = nil
 }

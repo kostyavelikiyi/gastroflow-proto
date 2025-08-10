@@ -2,12 +2,11 @@
 // versions:
 // 	protoc-gen-go v1.36.7
 // 	protoc        (unknown)
-// source: menu/models.proto
+// source: com/gastroflow/menu/models.proto
 
 package menu
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -72,11 +71,11 @@ func (x VariantType) String() string {
 }
 
 func (VariantType) Descriptor() protoreflect.EnumDescriptor {
-	return file_menu_models_proto_enumTypes[0].Descriptor()
+	return file_com_gastroflow_menu_models_proto_enumTypes[0].Descriptor()
 }
 
 func (VariantType) Type() protoreflect.EnumType {
-	return &file_menu_models_proto_enumTypes[0]
+	return &file_com_gastroflow_menu_models_proto_enumTypes[0]
 }
 
 func (x VariantType) Number() protoreflect.EnumNumber {
@@ -85,7 +84,7 @@ func (x VariantType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use VariantType.Descriptor instead.
 func (VariantType) EnumDescriptor() ([]byte, []int) {
-	return file_menu_models_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_menu_models_proto_rawDescGZIP(), []int{0}
 }
 
 // Allergen - аллергены
@@ -143,11 +142,11 @@ func (x Allergen) String() string {
 }
 
 func (Allergen) Descriptor() protoreflect.EnumDescriptor {
-	return file_menu_models_proto_enumTypes[1].Descriptor()
+	return file_com_gastroflow_menu_models_proto_enumTypes[1].Descriptor()
 }
 
 func (Allergen) Type() protoreflect.EnumType {
-	return &file_menu_models_proto_enumTypes[1]
+	return &file_com_gastroflow_menu_models_proto_enumTypes[1]
 }
 
 func (x Allergen) Number() protoreflect.EnumNumber {
@@ -156,7 +155,7 @@ func (x Allergen) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Allergen.Descriptor instead.
 func (Allergen) EnumDescriptor() ([]byte, []int) {
-	return file_menu_models_proto_rawDescGZIP(), []int{1}
+	return file_com_gastroflow_menu_models_proto_rawDescGZIP(), []int{1}
 }
 
 // DietaryProperty - особенности питания
@@ -220,11 +219,11 @@ func (x DietaryProperty) String() string {
 }
 
 func (DietaryProperty) Descriptor() protoreflect.EnumDescriptor {
-	return file_menu_models_proto_enumTypes[2].Descriptor()
+	return file_com_gastroflow_menu_models_proto_enumTypes[2].Descriptor()
 }
 
 func (DietaryProperty) Type() protoreflect.EnumType {
-	return &file_menu_models_proto_enumTypes[2]
+	return &file_com_gastroflow_menu_models_proto_enumTypes[2]
 }
 
 func (x DietaryProperty) Number() protoreflect.EnumNumber {
@@ -233,7 +232,7 @@ func (x DietaryProperty) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use DietaryProperty.Descriptor instead.
 func (DietaryProperty) EnumDescriptor() ([]byte, []int) {
-	return file_menu_models_proto_rawDescGZIP(), []int{2}
+	return file_com_gastroflow_menu_models_proto_rawDescGZIP(), []int{2}
 }
 
 // Menu - меню ресторана
@@ -265,7 +264,7 @@ type Menu struct {
 
 func (x *Menu) Reset() {
 	*x = Menu{}
-	mi := &file_menu_models_proto_msgTypes[0]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -277,7 +276,7 @@ func (x *Menu) String() string {
 func (*Menu) ProtoMessage() {}
 
 func (x *Menu) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_models_proto_msgTypes[0]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -290,7 +289,7 @@ func (x *Menu) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Menu.ProtoReflect.Descriptor instead.
 func (*Menu) Descriptor() ([]byte, []int) {
-	return file_menu_models_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_menu_models_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Menu) GetId() *common.UUID {
@@ -390,7 +389,7 @@ type Category struct {
 
 func (x *Category) Reset() {
 	*x = Category{}
-	mi := &file_menu_models_proto_msgTypes[1]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -402,7 +401,7 @@ func (x *Category) String() string {
 func (*Category) ProtoMessage() {}
 
 func (x *Category) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_models_proto_msgTypes[1]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -415,7 +414,7 @@ func (x *Category) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Category.ProtoReflect.Descriptor instead.
 func (*Category) Descriptor() ([]byte, []int) {
-	return file_menu_models_proto_rawDescGZIP(), []int{1}
+	return file_com_gastroflow_menu_models_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Category) GetId() *common.UUID {
@@ -526,7 +525,7 @@ type MenuItem struct {
 
 func (x *MenuItem) Reset() {
 	*x = MenuItem{}
-	mi := &file_menu_models_proto_msgTypes[2]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -538,7 +537,7 @@ func (x *MenuItem) String() string {
 func (*MenuItem) ProtoMessage() {}
 
 func (x *MenuItem) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_models_proto_msgTypes[2]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -551,7 +550,7 @@ func (x *MenuItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MenuItem.ProtoReflect.Descriptor instead.
 func (*MenuItem) Descriptor() ([]byte, []int) {
-	return file_menu_models_proto_rawDescGZIP(), []int{2}
+	return file_com_gastroflow_menu_models_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *MenuItem) GetId() *common.UUID {
@@ -707,7 +706,7 @@ type MenuItemVariant struct {
 
 func (x *MenuItemVariant) Reset() {
 	*x = MenuItemVariant{}
-	mi := &file_menu_models_proto_msgTypes[3]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -719,7 +718,7 @@ func (x *MenuItemVariant) String() string {
 func (*MenuItemVariant) ProtoMessage() {}
 
 func (x *MenuItemVariant) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_models_proto_msgTypes[3]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -732,7 +731,7 @@ func (x *MenuItemVariant) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MenuItemVariant.ProtoReflect.Descriptor instead.
 func (*MenuItemVariant) Descriptor() ([]byte, []int) {
-	return file_menu_models_proto_rawDescGZIP(), []int{3}
+	return file_com_gastroflow_menu_models_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *MenuItemVariant) GetId() *common.UUID {
@@ -817,7 +816,7 @@ type NutritionInfo struct {
 
 func (x *NutritionInfo) Reset() {
 	*x = NutritionInfo{}
-	mi := &file_menu_models_proto_msgTypes[4]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -829,7 +828,7 @@ func (x *NutritionInfo) String() string {
 func (*NutritionInfo) ProtoMessage() {}
 
 func (x *NutritionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_models_proto_msgTypes[4]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -842,7 +841,7 @@ func (x *NutritionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NutritionInfo.ProtoReflect.Descriptor instead.
 func (*NutritionInfo) Descriptor() ([]byte, []int) {
-	return file_menu_models_proto_rawDescGZIP(), []int{4}
+	return file_com_gastroflow_menu_models_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *NutritionInfo) GetCaloriesPer_100G() float64 {
@@ -895,7 +894,7 @@ type TimeSlot struct {
 
 func (x *TimeSlot) Reset() {
 	*x = TimeSlot{}
-	mi := &file_menu_models_proto_msgTypes[5]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -907,7 +906,7 @@ func (x *TimeSlot) String() string {
 func (*TimeSlot) ProtoMessage() {}
 
 func (x *TimeSlot) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_models_proto_msgTypes[5]
+	mi := &file_com_gastroflow_menu_models_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -920,7 +919,7 @@ func (x *TimeSlot) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TimeSlot.ProtoReflect.Descriptor instead.
 func (*TimeSlot) Descriptor() ([]byte, []int) {
-	return file_menu_models_proto_rawDescGZIP(), []int{5}
+	return file_com_gastroflow_menu_models_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *TimeSlot) GetStartTime() string {
@@ -944,89 +943,86 @@ func (x *TimeSlot) GetName() string {
 	return ""
 }
 
-var File_menu_models_proto protoreflect.FileDescriptor
+var File_com_gastroflow_menu_models_proto protoreflect.FileDescriptor
 
-const file_menu_models_proto_rawDesc = "" +
+const file_com_gastroflow_menu_models_proto_rawDesc = "" +
 	"\n" +
-	"\x11menu/models.proto\x12\x13com.gastroflow.menu\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\"\xce\x04\n" +
-	"\x04Menu\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1e\n" +
-	"\x04name\x18\x02 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12*\n" +
-	"\vdescription\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\xe8\aR\vdescription\x12H\n" +
-	"\rrestaurant_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12G\n" +
+	" com/gastroflow/menu/models.proto\x12\x13com.gastroflow.menu\x1a!com/gastroflow/common/enums.proto\x1a!com/gastroflow/common/types.proto\"\x82\x04\n" +
+	"\x04Menu\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x12@\n" +
+	"\rrestaurant_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12=\n" +
 	"\n" +
-	"categories\x18\x05 \x03(\v2\x1d.com.gastroflow.menu.CategoryB\b\xbaH\x05\x92\x01\x02\x10dR\n" +
+	"categories\x18\x05 \x03(\v2\x1d.com.gastroflow.menu.CategoryR\n" +
 	"categories\x12\x1b\n" +
 	"\tis_active\x18\x06 \x01(\bR\bisActive\x12:\n" +
-	"\ttime_slot\x18\a \x01(\v2\x1d.com.gastroflow.menu.TimeSlotR\btimeSlot\x12I\n" +
-	"\vactive_days\x18\b \x03(\x0e2\x1e.com.gastroflow.common.WeekDayB\b\xbaH\x05\x92\x01\x02\x10\aR\n" +
-	"activeDays\x12E\n" +
-	"\blanguage\x18\t \x01(\x0e2\x1f.com.gastroflow.common.LanguageB\b\xbaH\x05\x82\x01\x02 \x00R\blanguage\x12G\n" +
+	"\ttime_slot\x18\a \x01(\v2\x1d.com.gastroflow.menu.TimeSlotR\btimeSlot\x12?\n" +
+	"\vactive_days\x18\b \x03(\x0e2\x1e.com.gastroflow.common.WeekDayR\n" +
+	"activeDays\x12;\n" +
+	"\blanguage\x18\t \x01(\x0e2\x1f.com.gastroflow.common.LanguageR\blanguage\x12?\n" +
 	"\n" +
 	"audit_info\x18\n" +
-	" \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\xb9\x03\n" +
-	"\bCategory\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12*\n" +
-	"\vdescription\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\vdescription\x12>\n" +
-	"\x05items\x18\x04 \x03(\v2\x1d.com.gastroflow.menu.MenuItemB\t\xbaH\x06\x92\x01\x03\x10\xc8\x01R\x05items\x12&\n" +
+	" \x01(\v2 .com.gastroflow.common.AuditInfoR\tauditInfo\"\xf6\x02\n" +
+	"\bCategory\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x123\n" +
+	"\x05items\x18\x04 \x03(\v2\x1d.com.gastroflow.menu.MenuItemR\x05items\x12\x1d\n" +
 	"\n" +
-	"sort_order\x18\x05 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\tsortOrder\x12%\n" +
-	"\timage_url\x18\x06 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\bimageUrl\x12\x1b\n" +
+	"sort_order\x18\x05 \x01(\x05R\tsortOrder\x12\x1b\n" +
+	"\timage_url\x18\x06 \x01(\tR\bimageUrl\x12\x1b\n" +
 	"\tis_active\x18\a \x01(\bR\bisActive\x128\n" +
-	"\tparent_id\x18\b \x01(\v2\x1b.com.gastroflow.common.UUIDR\bparentId\x12G\n" +
+	"\tparent_id\x18\b \x01(\v2\x1b.com.gastroflow.common.UUIDR\bparentId\x12?\n" +
 	"\n" +
-	"audit_info\x18\t \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\xa9\b\n" +
-	"\bMenuItem\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1e\n" +
-	"\x04name\x18\x02 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12*\n" +
-	"\vdescription\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\xe8\aR\vdescription\x12:\n" +
-	"\x05price\x18\x04 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x05price\x12G\n" +
-	"\x06status\x18\x05 \x01(\x0e2%.com.gastroflow.common.MenuItemStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12J\n" +
-	"\bvariants\x18\x06 \x03(\v2$.com.gastroflow.menu.MenuItemVariantB\b\xbaH\x05\x92\x01\x02\x10dR\bvariants\x12,\n" +
-	"\fcooking_time\x18\a \x01(\x05B\t\xbaH\x06\x1a\x04\x18x(\x01R\vcookingTime\x12I\n" +
-	"\x0enutrition_info\x18\b \x01(\v2\".com.gastroflow.menu.NutritionInfoR\rnutritionInfo\x12E\n" +
-	"\tallergens\x18\t \x03(\x0e2\x1d.com.gastroflow.menu.AllergenB\b\xbaH\x05\x92\x01\x02\x102R\tallergens\x12%\n" +
+	"audit_info\x18\t \x01(\v2 .com.gastroflow.common.AuditInfoR\tauditInfo\"\xfa\x06\n" +
+	"\bMenuItem\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x122\n" +
+	"\x05price\x18\x04 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x05price\x12=\n" +
+	"\x06status\x18\x05 \x01(\x0e2%.com.gastroflow.common.MenuItemStatusR\x06status\x12@\n" +
+	"\bvariants\x18\x06 \x03(\v2$.com.gastroflow.menu.MenuItemVariantR\bvariants\x12!\n" +
+	"\fcooking_time\x18\a \x01(\x05R\vcookingTime\x12I\n" +
+	"\x0enutrition_info\x18\b \x01(\v2\".com.gastroflow.menu.NutritionInfoR\rnutritionInfo\x12;\n" +
+	"\tallergens\x18\t \x03(\x0e2\x1d.com.gastroflow.menu.AllergenR\tallergens\x12\x1b\n" +
 	"\timage_url\x18\n" +
-	" \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\bimageUrl\x12<\n" +
-	"\x11additional_images\x18\v \x03(\tB\x0f\xbaH\f\x92\x01\t\x10\n" +
-	"\"\x05r\x03\x18\xf4\x03R\x10additionalImages\x12&\n" +
+	" \x01(\tR\bimageUrl\x12+\n" +
+	"\x11additional_images\x18\v \x03(\tR\x10additionalImages\x12\x1d\n" +
 	"\n" +
-	"sort_order\x18\f \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\tsortOrder\x12*\n" +
-	"\fportion_size\x18\r \x01(\tB\a\xbaH\x04r\x02\x182R\vportionSize\x12]\n" +
-	"\x12dietary_properties\x18\x0e \x03(\x0e2$.com.gastroflow.menu.DietaryPropertyB\b\xbaH\x05\x92\x01\x02\x10\x14R\x11dietaryProperties\x120\n" +
-	"\vingredients\x18\x0f \x03(\tB\x0e\xbaH\v\x92\x01\b\x10d\"\x04r\x02\x18dR\vingredients\x12D\n" +
-	"\vcategory_id\x18\x10 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"categoryId\x122\n" +
-	"\x10popularity_score\x18\x11 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\x0fpopularityScore\x12G\n" +
+	"sort_order\x18\f \x01(\x05R\tsortOrder\x12!\n" +
+	"\fportion_size\x18\r \x01(\tR\vportionSize\x12S\n" +
+	"\x12dietary_properties\x18\x0e \x03(\x0e2$.com.gastroflow.menu.DietaryPropertyR\x11dietaryProperties\x12 \n" +
+	"\vingredients\x18\x0f \x03(\tR\vingredients\x12<\n" +
+	"\vcategory_id\x18\x10 \x01(\v2\x1b.com.gastroflow.common.UUIDR\n" +
+	"categoryId\x12)\n" +
+	"\x10popularity_score\x18\x11 \x01(\x05R\x0fpopularityScore\x12?\n" +
 	"\n" +
-	"audit_info\x18\x12 \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\xb8\x03\n" +
-	"\x0fMenuItemVariant\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12K\n" +
-	"\x0eprice_modifier\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\rpriceModifier\x12>\n" +
-	"\x04type\x18\x04 \x01(\x0e2 .com.gastroflow.menu.VariantTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12&\n" +
+	"audit_info\x18\x12 \x01(\v2 .com.gastroflow.common.AuditInfoR\tauditInfo\"\xf6\x02\n" +
+	"\x0fMenuItemVariant\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12C\n" +
+	"\x0eprice_modifier\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyR\rpriceModifier\x124\n" +
+	"\x04type\x18\x04 \x01(\x0e2 .com.gastroflow.menu.VariantTypeR\x04type\x12\x1d\n" +
 	"\n" +
-	"group_name\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x182R\tgroupName\x12\x1f\n" +
+	"group_name\x18\x05 \x01(\tR\tgroupName\x12\x1f\n" +
 	"\vis_required\x18\x06 \x01(\bR\n" +
-	"isRequired\x120\n" +
-	"\x0emax_selections\x18\a \x01(\x05B\t\xbaH\x06\x1a\x04\x18\x14(\x01R\rmaxSelections\x12&\n" +
+	"isRequired\x12%\n" +
+	"\x0emax_selections\x18\a \x01(\x05R\rmaxSelections\x12\x1d\n" +
 	"\n" +
-	"sort_order\x18\b \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\tsortOrder\x12!\n" +
-	"\fis_available\x18\t \x01(\bR\visAvailable\"\xa6\x02\n" +
-	"\rNutritionInfo\x12:\n" +
-	"\x11calories_per_100g\x18\x01 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x0fcaloriesPer100g\x128\n" +
-	"\x10protein_per_100g\x18\x02 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\x0eproteinPer100g\x122\n" +
-	"\rfats_per_100g\x18\x03 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\vfatsPer100g\x124\n" +
-	"\x0ecarbs_per_100g\x18\x04 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\fcarbsPer100g\x125\n" +
-	"\x0eportion_weight\x18\x05 \x01(\x01B\x0e\xbaH\v\x12\t)\x00\x00\x00\x00\x00\x00\x00\x00R\rportionWeight\"\xb3\x01\n" +
-	"\bTimeSlot\x12F\n" +
+	"sort_order\x18\b \x01(\x05R\tsortOrder\x12!\n" +
+	"\fis_available\x18\t \x01(\bR\visAvailable\"\xd6\x01\n" +
+	"\rNutritionInfo\x12*\n" +
+	"\x11calories_per_100g\x18\x01 \x01(\x01R\x0fcaloriesPer100g\x12(\n" +
+	"\x10protein_per_100g\x18\x02 \x01(\x01R\x0eproteinPer100g\x12\"\n" +
+	"\rfats_per_100g\x18\x03 \x01(\x01R\vfatsPer100g\x12$\n" +
+	"\x0ecarbs_per_100g\x18\x04 \x01(\x01R\fcarbsPer100g\x12%\n" +
+	"\x0eportion_weight\x18\x05 \x01(\x01R\rportionWeight\"X\n" +
+	"\bTimeSlot\x12\x1d\n" +
 	"\n" +
-	"start_time\x18\x01 \x01(\tB'\xbaH$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\tstartTime\x12B\n" +
-	"\bend_time\x18\x02 \x01(\tB'\xbaH$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\aendTime\x12\x1b\n" +
-	"\x04name\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x182R\x04name*\xd5\x01\n" +
+	"start_time\x18\x01 \x01(\tR\tstartTime\x12\x19\n" +
+	"\bend_time\x18\x02 \x01(\tR\aendTime\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name*\xd5\x01\n" +
 	"\vVariantType\x12\x1c\n" +
 	"\x18VARIANT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n" +
 	"\x11VARIANT_TYPE_SIZE\x10\x01\x12\x16\n" +
@@ -1064,20 +1060,20 @@ const file_menu_models_proto_rawDesc = "" +
 	"\x17com.com.gastroflow.menuB\vModelsProtoP\x01Z#github.com/gastroflow/proto-go/menu\xa2\x02\x03CGM\xaa\x02\x13Com.Gastroflow.Menu\xca\x02\x13Com\\Gastroflow\\Menu\xe2\x02\x1fCom\\Gastroflow\\Menu\\GPBMetadata\xea\x02\x15Com::Gastroflow::Menub\x06proto3"
 
 var (
-	file_menu_models_proto_rawDescOnce sync.Once
-	file_menu_models_proto_rawDescData []byte
+	file_com_gastroflow_menu_models_proto_rawDescOnce sync.Once
+	file_com_gastroflow_menu_models_proto_rawDescData []byte
 )
 
-func file_menu_models_proto_rawDescGZIP() []byte {
-	file_menu_models_proto_rawDescOnce.Do(func() {
-		file_menu_models_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_menu_models_proto_rawDesc), len(file_menu_models_proto_rawDesc)))
+func file_com_gastroflow_menu_models_proto_rawDescGZIP() []byte {
+	file_com_gastroflow_menu_models_proto_rawDescOnce.Do(func() {
+		file_com_gastroflow_menu_models_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_com_gastroflow_menu_models_proto_rawDesc), len(file_com_gastroflow_menu_models_proto_rawDesc)))
 	})
-	return file_menu_models_proto_rawDescData
+	return file_com_gastroflow_menu_models_proto_rawDescData
 }
 
-var file_menu_models_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_menu_models_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_menu_models_proto_goTypes = []any{
+var file_com_gastroflow_menu_models_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_com_gastroflow_menu_models_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_com_gastroflow_menu_models_proto_goTypes = []any{
 	(VariantType)(0),           // 0: com.gastroflow.menu.VariantType
 	(Allergen)(0),              // 1: com.gastroflow.menu.Allergen
 	(DietaryProperty)(0),       // 2: com.gastroflow.menu.DietaryProperty
@@ -1094,7 +1090,7 @@ var file_menu_models_proto_goTypes = []any{
 	(*common.Money)(nil),       // 13: com.gastroflow.common.Money
 	(common.MenuItemStatus)(0), // 14: com.gastroflow.common.MenuItemStatus
 }
-var file_menu_models_proto_depIdxs = []int32{
+var file_com_gastroflow_menu_models_proto_depIdxs = []int32{
 	9,  // 0: com.gastroflow.menu.Menu.id:type_name -> com.gastroflow.common.UUID
 	9,  // 1: com.gastroflow.menu.Menu.restaurant_id:type_name -> com.gastroflow.common.UUID
 	4,  // 2: com.gastroflow.menu.Menu.categories:type_name -> com.gastroflow.menu.Category
@@ -1125,27 +1121,27 @@ var file_menu_models_proto_depIdxs = []int32{
 	0,  // [0:23] is the sub-list for field type_name
 }
 
-func init() { file_menu_models_proto_init() }
-func file_menu_models_proto_init() {
-	if File_menu_models_proto != nil {
+func init() { file_com_gastroflow_menu_models_proto_init() }
+func file_com_gastroflow_menu_models_proto_init() {
+	if File_com_gastroflow_menu_models_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_menu_models_proto_rawDesc), len(file_menu_models_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_com_gastroflow_menu_models_proto_rawDesc), len(file_com_gastroflow_menu_models_proto_rawDesc)),
 			NumEnums:      3,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_menu_models_proto_goTypes,
-		DependencyIndexes: file_menu_models_proto_depIdxs,
-		EnumInfos:         file_menu_models_proto_enumTypes,
-		MessageInfos:      file_menu_models_proto_msgTypes,
+		GoTypes:           file_com_gastroflow_menu_models_proto_goTypes,
+		DependencyIndexes: file_com_gastroflow_menu_models_proto_depIdxs,
+		EnumInfos:         file_com_gastroflow_menu_models_proto_enumTypes,
+		MessageInfos:      file_com_gastroflow_menu_models_proto_msgTypes,
 	}.Build()
-	File_menu_models_proto = out.File
-	file_menu_models_proto_goTypes = nil
-	file_menu_models_proto_depIdxs = nil
+	File_com_gastroflow_menu_models_proto = out.File
+	file_com_gastroflow_menu_models_proto_goTypes = nil
+	file_com_gastroflow_menu_models_proto_depIdxs = nil
 }

@@ -2,12 +2,11 @@
 // versions:
 // 	protoc-gen-go v1.36.7
 // 	protoc        (unknown)
-// source: orders/models.proto
+// source: com/gastroflow/orders/models.proto
 
 package orders
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -67,11 +66,11 @@ func (x DiscountType) String() string {
 }
 
 func (DiscountType) Descriptor() protoreflect.EnumDescriptor {
-	return file_orders_models_proto_enumTypes[0].Descriptor()
+	return file_com_gastroflow_orders_models_proto_enumTypes[0].Descriptor()
 }
 
 func (DiscountType) Type() protoreflect.EnumType {
-	return &file_orders_models_proto_enumTypes[0]
+	return &file_com_gastroflow_orders_models_proto_enumTypes[0]
 }
 
 func (x DiscountType) Number() protoreflect.EnumNumber {
@@ -80,7 +79,7 @@ func (x DiscountType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use DiscountType.Descriptor instead.
 func (DiscountType) EnumDescriptor() ([]byte, []int) {
-	return file_orders_models_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_orders_models_proto_rawDescGZIP(), []int{0}
 }
 
 // Order - основная сущность заказа в системе GastroFlow
@@ -132,7 +131,7 @@ type Order struct {
 
 func (x *Order) Reset() {
 	*x = Order{}
-	mi := &file_orders_models_proto_msgTypes[0]
+	mi := &file_com_gastroflow_orders_models_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -144,7 +143,7 @@ func (x *Order) String() string {
 func (*Order) ProtoMessage() {}
 
 func (x *Order) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_models_proto_msgTypes[0]
+	mi := &file_com_gastroflow_orders_models_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -157,7 +156,7 @@ func (x *Order) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Order.ProtoReflect.Descriptor instead.
 func (*Order) Descriptor() ([]byte, []int) {
-	return file_orders_models_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_orders_models_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Order) GetId() *common.UUID {
@@ -331,7 +330,7 @@ type Position struct {
 
 func (x *Position) Reset() {
 	*x = Position{}
-	mi := &file_orders_models_proto_msgTypes[1]
+	mi := &file_com_gastroflow_orders_models_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -343,7 +342,7 @@ func (x *Position) String() string {
 func (*Position) ProtoMessage() {}
 
 func (x *Position) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_models_proto_msgTypes[1]
+	mi := &file_com_gastroflow_orders_models_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -356,7 +355,7 @@ func (x *Position) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Position.ProtoReflect.Descriptor instead.
 func (*Position) Descriptor() ([]byte, []int) {
-	return file_orders_models_proto_rawDescGZIP(), []int{1}
+	return file_com_gastroflow_orders_models_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Position) GetId() *common.UUID {
@@ -453,7 +452,7 @@ type Variant struct {
 
 func (x *Variant) Reset() {
 	*x = Variant{}
-	mi := &file_orders_models_proto_msgTypes[2]
+	mi := &file_com_gastroflow_orders_models_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -465,7 +464,7 @@ func (x *Variant) String() string {
 func (*Variant) ProtoMessage() {}
 
 func (x *Variant) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_models_proto_msgTypes[2]
+	mi := &file_com_gastroflow_orders_models_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -478,7 +477,7 @@ func (x *Variant) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Variant.ProtoReflect.Descriptor instead.
 func (*Variant) Descriptor() ([]byte, []int) {
-	return file_orders_models_proto_rawDescGZIP(), []int{2}
+	return file_com_gastroflow_orders_models_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Variant) GetName() string {
@@ -528,7 +527,7 @@ type DiscountInfo struct {
 
 func (x *DiscountInfo) Reset() {
 	*x = DiscountInfo{}
-	mi := &file_orders_models_proto_msgTypes[3]
+	mi := &file_com_gastroflow_orders_models_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -540,7 +539,7 @@ func (x *DiscountInfo) String() string {
 func (*DiscountInfo) ProtoMessage() {}
 
 func (x *DiscountInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_models_proto_msgTypes[3]
+	mi := &file_com_gastroflow_orders_models_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -553,7 +552,7 @@ func (x *DiscountInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DiscountInfo.ProtoReflect.Descriptor instead.
 func (*DiscountInfo) Descriptor() ([]byte, []int) {
-	return file_orders_models_proto_rawDescGZIP(), []int{3}
+	return file_com_gastroflow_orders_models_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DiscountInfo) GetAmount() *common.Money {
@@ -591,67 +590,63 @@ func (x *DiscountInfo) GetPromoCode() string {
 	return ""
 }
 
-var File_orders_models_proto protoreflect.FileDescriptor
+var File_com_gastroflow_orders_models_proto protoreflect.FileDescriptor
 
-const file_orders_models_proto_rawDesc = "" +
+const file_com_gastroflow_orders_models_proto_rawDesc = "" +
 	"\n" +
-	"\x13orders/models.proto\x12\x15com.gastroflow.orders\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x81\n" +
-	"\n" +
-	"\x05Order\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1d\n" +
-	"\x04name\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12?\n" +
-	"\tdate_time\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\bdateTime\x12O\n" +
-	"\fpacking_mode\x18\x04 \x01(\x0e2\".com.gastroflow.common.PackingModeB\b\xbaH\x05\x82\x01\x02 \x00R\vpackingMode\x12I\n" +
-	"\tpositions\x18\x05 \x03(\v2\x1f.com.gastroflow.orders.PositionB\n" +
-	"\xbaH\a\x92\x01\x04\b\x01\x10dR\tpositions\x12:\n" +
-	"\x05total\x18\x06 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x05total\x12\x19\n" +
-	"\bis_ready\x18\a \x01(\bR\aisReady\x12M\n" +
-	"\fcontact_info\x18\b \x01(\v2\".com.gastroflow.common.ContactInfoB\x06\xbaH\x03\xc8\x01\x01R\vcontactInfo\x12&\n" +
-	"\bduration\x18\t \x01(\x05B\n" +
-	"\xbaH\a\x1a\x05\x18\xe0\x03(\x01R\bduration\x128\n" +
+	"\"com/gastroflow/orders/models.proto\x12\x15com.gastroflow.orders\x1a!com/gastroflow/common/enums.proto\x1a!com/gastroflow/common/types.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf3\b\n" +
+	"\x05Order\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x127\n" +
+	"\tdate_time\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\bdateTime\x12E\n" +
+	"\fpacking_mode\x18\x04 \x01(\x0e2\".com.gastroflow.common.PackingModeR\vpackingMode\x12=\n" +
+	"\tpositions\x18\x05 \x03(\v2\x1f.com.gastroflow.orders.PositionR\tpositions\x122\n" +
+	"\x05total\x18\x06 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x05total\x12\x19\n" +
+	"\bis_ready\x18\a \x01(\bR\aisReady\x12E\n" +
+	"\fcontact_info\x18\b \x01(\v2\".com.gastroflow.common.ContactInfoR\vcontactInfo\x12\x1a\n" +
+	"\bduration\x18\t \x01(\x05R\bduration\x128\n" +
 	"\aaddress\x18\n" +
-	" \x01(\v2\x1e.com.gastroflow.common.AddressR\aaddress\x12;\n" +
-	"\x15external_order_number\x18\v \x01(\tB\a\xbaH\x04r\x02\x18dR\x13externalOrderNumber\x12?\n" +
-	"\rpromo_code_id\x18\f \x01(\v2\x1b.com.gastroflow.common.UUIDR\vpromoCodeId\x12U\n" +
-	"\x0epayment_method\x18\r \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xbaH\x05\x82\x01\x02 \x00R\rpaymentMethod\x12D\n" +
-	"\x06status\x18\x0e \x01(\x0e2\".com.gastroflow.common.OrderStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12b\n" +
-	"\x13preparing_time_mode\x18\x0f \x01(\x0e2(.com.gastroflow.common.PreparingTimeModeB\b\xbaH\x05\x82\x01\x02 \x00R\x11preparingTimeMode\x12H\n" +
-	"\x12desired_ready_time\x18\x10 \x01(\v2\x1a.google.protobuf.TimestampR\x10desiredReadyTime\x12H\n" +
-	"\rrestaurant_id\x18\x11 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12\"\n" +
-	"\acomment\x18\x12 \x01(\tB\b\xbaH\x05r\x03\x18\xe8\aR\acomment\x12?\n" +
-	"\bdiscount\x18\x13 \x01(\v2#.com.gastroflow.orders.DiscountInfoR\bdiscount\x12G\n" +
+	" \x01(\v2\x1e.com.gastroflow.common.AddressR\aaddress\x122\n" +
+	"\x15external_order_number\x18\v \x01(\tR\x13externalOrderNumber\x12?\n" +
+	"\rpromo_code_id\x18\f \x01(\v2\x1b.com.gastroflow.common.UUIDR\vpromoCodeId\x12K\n" +
+	"\x0epayment_method\x18\r \x01(\x0e2$.com.gastroflow.common.PaymentMethodR\rpaymentMethod\x12:\n" +
+	"\x06status\x18\x0e \x01(\x0e2\".com.gastroflow.common.OrderStatusR\x06status\x12X\n" +
+	"\x13preparing_time_mode\x18\x0f \x01(\x0e2(.com.gastroflow.common.PreparingTimeModeR\x11preparingTimeMode\x12H\n" +
+	"\x12desired_ready_time\x18\x10 \x01(\v2\x1a.google.protobuf.TimestampR\x10desiredReadyTime\x12@\n" +
+	"\rrestaurant_id\x18\x11 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12\x18\n" +
+	"\acomment\x18\x12 \x01(\tR\acomment\x12?\n" +
+	"\bdiscount\x18\x13 \x01(\v2#.com.gastroflow.orders.DiscountInfoR\bdiscount\x12?\n" +
 	"\n" +
-	"audit_info\x18\x14 \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\xc4\x04\n" +
-	"\bPosition\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1e\n" +
-	"\x04name\x18\x02 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12:\n" +
-	"\x05price\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x05price\x12%\n" +
-	"\bquantity\x18\x04 \x01(\x05B\t\xbaH\x06\x1a\x04\x18d(\x01R\bquantity\x12U\n" +
-	"\x11selected_variants\x18\x05 \x03(\v2\x1e.com.gastroflow.orders.VariantB\b\xbaH\x05\x92\x01\x02\x102R\x10selectedVariants\x12\"\n" +
-	"\acomment\x18\x06 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\acomment\x12\x19\n" +
+	"audit_info\x18\x14 \x01(\v2 .com.gastroflow.common.AuditInfoR\tauditInfo\"\xec\x03\n" +
+	"\bPosition\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x122\n" +
+	"\x05price\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x05price\x12\x1a\n" +
+	"\bquantity\x18\x04 \x01(\x05R\bquantity\x12K\n" +
+	"\x11selected_variants\x18\x05 \x03(\v2\x1e.com.gastroflow.orders.VariantR\x10selectedVariants\x12\x18\n" +
+	"\acomment\x18\x06 \x01(\tR\acomment\x12\x19\n" +
 	"\bis_ready\x18\a \x01(\bR\aisReady\x128\n" +
-	"\tparent_id\x18\b \x01(\v2\x1b.com.gastroflow.common.UUIDR\bparentId\x12E\n" +
-	"\fmenu_item_id\x18\t \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"menuItemId\x12,\n" +
+	"\tparent_id\x18\b \x01(\v2\x1b.com.gastroflow.common.UUIDR\bparentId\x12=\n" +
+	"\fmenu_item_id\x18\t \x01(\v2\x1b.com.gastroflow.common.UUIDR\n" +
+	"menuItemId\x12!\n" +
 	"\fcooking_time\x18\n" +
-	" \x01(\x05B\t\xbaH\x06\x1a\x04\x18x(\x01R\vcookingTime\x12;\n" +
-	"\x14cooking_instructions\x18\v \x01(\tB\b\xbaH\x05r\x03\x18\xac\x02R\x13cookingInstructions\"\xcd\x01\n" +
-	"\aVariant\x12\x1d\n" +
-	"\x04name\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12:\n" +
-	"\x05price\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x05price\x12B\n" +
+	" \x01(\x05R\vcookingTime\x121\n" +
+	"\x14cooking_instructions\x18\v \x01(\tR\x13cookingInstructions\"\xa9\x01\n" +
+	"\aVariant\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x122\n" +
+	"\x05price\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x05price\x12:\n" +
 	"\n" +
-	"variant_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\tvariantId\x12#\n" +
-	"\bcategory\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\bcategory\"\x9c\x02\n" +
-	"\fDiscountInfo\x12<\n" +
-	"\x06amount\x18\x01 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x06amount\x127\n" +
+	"variant_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDR\tvariantId\x12\x1a\n" +
+	"\bcategory\x18\x04 \x01(\tR\bcategory\"\xde\x01\n" +
+	"\fDiscountInfo\x124\n" +
+	"\x06amount\x18\x01 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x06amount\x12\x1e\n" +
 	"\n" +
-	"percentage\x18\x02 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x00Y@)\x00\x00\x00\x00\x00\x00\x00\x00R\n" +
-	"percentage\x12A\n" +
-	"\x04type\x18\x03 \x01(\x0e2#.com.gastroflow.orders.DiscountTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12*\n" +
-	"\vdescription\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\vdescription\x12&\n" +
+	"percentage\x18\x02 \x01(\x01R\n" +
+	"percentage\x127\n" +
+	"\x04type\x18\x03 \x01(\x0e2#.com.gastroflow.orders.DiscountTypeR\x04type\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x1d\n" +
 	"\n" +
-	"promo_code\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x182R\tpromoCode*\xc3\x01\n" +
+	"promo_code\x18\x05 \x01(\tR\tpromoCode*\xc3\x01\n" +
 	"\fDiscountType\x12\x1d\n" +
 	"\x19DISCOUNT_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n" +
 	"\x1aDISCOUNT_TYPE_FIXED_AMOUNT\x10\x01\x12\x1c\n" +
@@ -662,20 +657,20 @@ const file_orders_models_proto_rawDesc = "" +
 	"\x19com.com.gastroflow.ordersB\vModelsProtoP\x01Z%github.com/gastroflow/proto-go/orders\xa2\x02\x03CGO\xaa\x02\x15Com.Gastroflow.Orders\xca\x02\x15Com\\Gastroflow\\Orders\xe2\x02!Com\\Gastroflow\\Orders\\GPBMetadata\xea\x02\x17Com::Gastroflow::Ordersb\x06proto3"
 
 var (
-	file_orders_models_proto_rawDescOnce sync.Once
-	file_orders_models_proto_rawDescData []byte
+	file_com_gastroflow_orders_models_proto_rawDescOnce sync.Once
+	file_com_gastroflow_orders_models_proto_rawDescData []byte
 )
 
-func file_orders_models_proto_rawDescGZIP() []byte {
-	file_orders_models_proto_rawDescOnce.Do(func() {
-		file_orders_models_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_orders_models_proto_rawDesc), len(file_orders_models_proto_rawDesc)))
+func file_com_gastroflow_orders_models_proto_rawDescGZIP() []byte {
+	file_com_gastroflow_orders_models_proto_rawDescOnce.Do(func() {
+		file_com_gastroflow_orders_models_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_com_gastroflow_orders_models_proto_rawDesc), len(file_com_gastroflow_orders_models_proto_rawDesc)))
 	})
-	return file_orders_models_proto_rawDescData
+	return file_com_gastroflow_orders_models_proto_rawDescData
 }
 
-var file_orders_models_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_orders_models_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_orders_models_proto_goTypes = []any{
+var file_com_gastroflow_orders_models_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_com_gastroflow_orders_models_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_com_gastroflow_orders_models_proto_goTypes = []any{
 	(DiscountType)(0),             // 0: com.gastroflow.orders.DiscountType
 	(*Order)(nil),                 // 1: com.gastroflow.orders.Order
 	(*Position)(nil),              // 2: com.gastroflow.orders.Position
@@ -692,7 +687,7 @@ var file_orders_models_proto_goTypes = []any{
 	(common.PreparingTimeMode)(0), // 13: com.gastroflow.common.PreparingTimeMode
 	(*common.AuditInfo)(nil),      // 14: com.gastroflow.common.AuditInfo
 }
-var file_orders_models_proto_depIdxs = []int32{
+var file_com_gastroflow_orders_models_proto_depIdxs = []int32{
 	5,  // 0: com.gastroflow.orders.Order.id:type_name -> com.gastroflow.common.UUID
 	6,  // 1: com.gastroflow.orders.Order.date_time:type_name -> google.protobuf.Timestamp
 	7,  // 2: com.gastroflow.orders.Order.packing_mode:type_name -> com.gastroflow.common.PackingMode
@@ -724,27 +719,27 @@ var file_orders_models_proto_depIdxs = []int32{
 	0,  // [0:24] is the sub-list for field type_name
 }
 
-func init() { file_orders_models_proto_init() }
-func file_orders_models_proto_init() {
-	if File_orders_models_proto != nil {
+func init() { file_com_gastroflow_orders_models_proto_init() }
+func file_com_gastroflow_orders_models_proto_init() {
+	if File_com_gastroflow_orders_models_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_orders_models_proto_rawDesc), len(file_orders_models_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_com_gastroflow_orders_models_proto_rawDesc), len(file_com_gastroflow_orders_models_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_orders_models_proto_goTypes,
-		DependencyIndexes: file_orders_models_proto_depIdxs,
-		EnumInfos:         file_orders_models_proto_enumTypes,
-		MessageInfos:      file_orders_models_proto_msgTypes,
+		GoTypes:           file_com_gastroflow_orders_models_proto_goTypes,
+		DependencyIndexes: file_com_gastroflow_orders_models_proto_depIdxs,
+		EnumInfos:         file_com_gastroflow_orders_models_proto_enumTypes,
+		MessageInfos:      file_com_gastroflow_orders_models_proto_msgTypes,
 	}.Build()
-	File_orders_models_proto = out.File
-	file_orders_models_proto_goTypes = nil
-	file_orders_models_proto_depIdxs = nil
+	File_com_gastroflow_orders_models_proto = out.File
+	file_com_gastroflow_orders_models_proto_goTypes = nil
+	file_com_gastroflow_orders_models_proto_depIdxs = nil
 }

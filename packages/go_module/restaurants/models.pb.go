@@ -2,12 +2,11 @@
 // versions:
 // 	protoc-gen-go v1.36.7
 // 	protoc        (unknown)
-// source: restaurants/models.proto
+// source: com/gastroflow/restaurants/models.proto
 
 package restaurants
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -123,11 +122,11 @@ func (x CuisineType) String() string {
 }
 
 func (CuisineType) Descriptor() protoreflect.EnumDescriptor {
-	return file_restaurants_models_proto_enumTypes[0].Descriptor()
+	return file_com_gastroflow_restaurants_models_proto_enumTypes[0].Descriptor()
 }
 
 func (CuisineType) Type() protoreflect.EnumType {
-	return &file_restaurants_models_proto_enumTypes[0]
+	return &file_com_gastroflow_restaurants_models_proto_enumTypes[0]
 }
 
 func (x CuisineType) Number() protoreflect.EnumNumber {
@@ -136,7 +135,7 @@ func (x CuisineType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use CuisineType.Descriptor instead.
 func (CuisineType) EnumDescriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{0}
 }
 
 // IntervalType - тип временного интервала
@@ -179,11 +178,11 @@ func (x IntervalType) String() string {
 }
 
 func (IntervalType) Descriptor() protoreflect.EnumDescriptor {
-	return file_restaurants_models_proto_enumTypes[1].Descriptor()
+	return file_com_gastroflow_restaurants_models_proto_enumTypes[1].Descriptor()
 }
 
 func (IntervalType) Type() protoreflect.EnumType {
-	return &file_restaurants_models_proto_enumTypes[1]
+	return &file_com_gastroflow_restaurants_models_proto_enumTypes[1]
 }
 
 func (x IntervalType) Number() protoreflect.EnumNumber {
@@ -192,7 +191,7 @@ func (x IntervalType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use IntervalType.Descriptor instead.
 func (IntervalType) EnumDescriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{1}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{1}
 }
 
 // NotificationChannel - канал уведомлений
@@ -241,11 +240,11 @@ func (x NotificationChannel) String() string {
 }
 
 func (NotificationChannel) Descriptor() protoreflect.EnumDescriptor {
-	return file_restaurants_models_proto_enumTypes[2].Descriptor()
+	return file_com_gastroflow_restaurants_models_proto_enumTypes[2].Descriptor()
 }
 
 func (NotificationChannel) Type() protoreflect.EnumType {
-	return &file_restaurants_models_proto_enumTypes[2]
+	return &file_com_gastroflow_restaurants_models_proto_enumTypes[2]
 }
 
 func (x NotificationChannel) Number() protoreflect.EnumNumber {
@@ -254,7 +253,7 @@ func (x NotificationChannel) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NotificationChannel.Descriptor instead.
 func (NotificationChannel) EnumDescriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{2}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{2}
 }
 
 // Restaurant - основная сущность ресторана
@@ -306,7 +305,7 @@ type Restaurant struct {
 
 func (x *Restaurant) Reset() {
 	*x = Restaurant{}
-	mi := &file_restaurants_models_proto_msgTypes[0]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -318,7 +317,7 @@ func (x *Restaurant) String() string {
 func (*Restaurant) ProtoMessage() {}
 
 func (x *Restaurant) ProtoReflect() protoreflect.Message {
-	mi := &file_restaurants_models_proto_msgTypes[0]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -331,7 +330,7 @@ func (x *Restaurant) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Restaurant.ProtoReflect.Descriptor instead.
 func (*Restaurant) Descriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Restaurant) GetId() *common.UUID {
@@ -503,7 +502,7 @@ type Branch struct {
 
 func (x *Branch) Reset() {
 	*x = Branch{}
-	mi := &file_restaurants_models_proto_msgTypes[1]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -515,7 +514,7 @@ func (x *Branch) String() string {
 func (*Branch) ProtoMessage() {}
 
 func (x *Branch) ProtoReflect() protoreflect.Message {
-	mi := &file_restaurants_models_proto_msgTypes[1]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -528,7 +527,7 @@ func (x *Branch) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Branch.ProtoReflect.Descriptor instead.
 func (*Branch) Descriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{1}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Branch) GetId() *common.UUID {
@@ -640,7 +639,7 @@ type RestaurantSettings struct {
 
 func (x *RestaurantSettings) Reset() {
 	*x = RestaurantSettings{}
-	mi := &file_restaurants_models_proto_msgTypes[2]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -652,7 +651,7 @@ func (x *RestaurantSettings) String() string {
 func (*RestaurantSettings) ProtoMessage() {}
 
 func (x *RestaurantSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_restaurants_models_proto_msgTypes[2]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -665,7 +664,7 @@ func (x *RestaurantSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RestaurantSettings.ProtoReflect.Descriptor instead.
 func (*RestaurantSettings) Descriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{2}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *RestaurantSettings) GetAcceptsTakeaway() bool {
@@ -792,7 +791,7 @@ type WorkingHours struct {
 
 func (x *WorkingHours) Reset() {
 	*x = WorkingHours{}
-	mi := &file_restaurants_models_proto_msgTypes[3]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -804,7 +803,7 @@ func (x *WorkingHours) String() string {
 func (*WorkingHours) ProtoMessage() {}
 
 func (x *WorkingHours) ProtoReflect() protoreflect.Message {
-	mi := &file_restaurants_models_proto_msgTypes[3]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -817,7 +816,7 @@ func (x *WorkingHours) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WorkingHours.ProtoReflect.Descriptor instead.
 func (*WorkingHours) Descriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{3}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *WorkingHours) GetDay() common.WeekDay {
@@ -870,7 +869,7 @@ type TimeInterval struct {
 
 func (x *TimeInterval) Reset() {
 	*x = TimeInterval{}
-	mi := &file_restaurants_models_proto_msgTypes[4]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -882,7 +881,7 @@ func (x *TimeInterval) String() string {
 func (*TimeInterval) ProtoMessage() {}
 
 func (x *TimeInterval) ProtoReflect() protoreflect.Message {
-	mi := &file_restaurants_models_proto_msgTypes[4]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -895,7 +894,7 @@ func (x *TimeInterval) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TimeInterval.ProtoReflect.Descriptor instead.
 func (*TimeInterval) Descriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{4}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *TimeInterval) GetStartTime() string {
@@ -932,7 +931,7 @@ type DeliveryTimeRange struct {
 
 func (x *DeliveryTimeRange) Reset() {
 	*x = DeliveryTimeRange{}
-	mi := &file_restaurants_models_proto_msgTypes[5]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -944,7 +943,7 @@ func (x *DeliveryTimeRange) String() string {
 func (*DeliveryTimeRange) ProtoMessage() {}
 
 func (x *DeliveryTimeRange) ProtoReflect() protoreflect.Message {
-	mi := &file_restaurants_models_proto_msgTypes[5]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -957,7 +956,7 @@ func (x *DeliveryTimeRange) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeliveryTimeRange.ProtoReflect.Descriptor instead.
 func (*DeliveryTimeRange) Descriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{5}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DeliveryTimeRange) GetMinDeliveryTime() int32 {
@@ -990,7 +989,7 @@ type DeliveryZone struct {
 
 func (x *DeliveryZone) Reset() {
 	*x = DeliveryZone{}
-	mi := &file_restaurants_models_proto_msgTypes[6]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1002,7 +1001,7 @@ func (x *DeliveryZone) String() string {
 func (*DeliveryZone) ProtoMessage() {}
 
 func (x *DeliveryZone) ProtoReflect() protoreflect.Message {
-	mi := &file_restaurants_models_proto_msgTypes[6]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1015,7 +1014,7 @@ func (x *DeliveryZone) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeliveryZone.ProtoReflect.Descriptor instead.
 func (*DeliveryZone) Descriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{6}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *DeliveryZone) GetCenterLatitude() float64 {
@@ -1061,7 +1060,7 @@ type DeliveryPolygon struct {
 
 func (x *DeliveryPolygon) Reset() {
 	*x = DeliveryPolygon{}
-	mi := &file_restaurants_models_proto_msgTypes[7]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1073,7 +1072,7 @@ func (x *DeliveryPolygon) String() string {
 func (*DeliveryPolygon) ProtoMessage() {}
 
 func (x *DeliveryPolygon) ProtoReflect() protoreflect.Message {
-	mi := &file_restaurants_models_proto_msgTypes[7]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1086,7 +1085,7 @@ func (x *DeliveryPolygon) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeliveryPolygon.ProtoReflect.Descriptor instead.
 func (*DeliveryPolygon) Descriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{7}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *DeliveryPolygon) GetPoints() []*GeoPoint {
@@ -1121,7 +1120,7 @@ type GeoPoint struct {
 
 func (x *GeoPoint) Reset() {
 	*x = GeoPoint{}
-	mi := &file_restaurants_models_proto_msgTypes[8]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1133,7 +1132,7 @@ func (x *GeoPoint) String() string {
 func (*GeoPoint) ProtoMessage() {}
 
 func (x *GeoPoint) ProtoReflect() protoreflect.Message {
-	mi := &file_restaurants_models_proto_msgTypes[8]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1146,7 +1145,7 @@ func (x *GeoPoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GeoPoint.ProtoReflect.Descriptor instead.
 func (*GeoPoint) Descriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{8}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GeoPoint) GetLatitude() float64 {
@@ -1186,7 +1185,7 @@ type NotificationSettings struct {
 
 func (x *NotificationSettings) Reset() {
 	*x = NotificationSettings{}
-	mi := &file_restaurants_models_proto_msgTypes[9]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1198,7 +1197,7 @@ func (x *NotificationSettings) String() string {
 func (*NotificationSettings) ProtoMessage() {}
 
 func (x *NotificationSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_restaurants_models_proto_msgTypes[9]
+	mi := &file_com_gastroflow_restaurants_models_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1211,7 +1210,7 @@ func (x *NotificationSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotificationSettings.ProtoReflect.Descriptor instead.
 func (*NotificationSettings) Descriptor() ([]byte, []int) {
-	return file_restaurants_models_proto_rawDescGZIP(), []int{9}
+	return file_com_gastroflow_restaurants_models_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *NotificationSettings) GetNotifyNewOrders() bool {
@@ -1263,53 +1262,49 @@ func (x *NotificationSettings) GetNotificationChannels() []NotificationChannel {
 	return nil
 }
 
-var File_restaurants_models_proto protoreflect.FileDescriptor
+var File_com_gastroflow_restaurants_models_proto protoreflect.FileDescriptor
 
-const file_restaurants_models_proto_rawDesc = "" +
+const file_com_gastroflow_restaurants_models_proto_rawDesc = "" +
 	"\n" +
-	"\x18restaurants/models.proto\x12\x1acom.gastroflow.restaurants\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\"\x85\n" +
+	"'com/gastroflow/restaurants/models.proto\x12\x1acom.gastroflow.restaurants\x1a!com/gastroflow/common/enums.proto\x1a!com/gastroflow/common/types.proto\"\xda\b\n" +
 	"\n" +
-	"\n" +
-	"Restaurant\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1e\n" +
-	"\x04name\x18\x02 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12*\n" +
-	"\vdescription\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\xd0\x0fR\vdescription\x12V\n" +
-	"\rcuisine_types\x18\x04 \x03(\x0e2'.com.gastroflow.restaurants.CuisineTypeB\b\xbaH\x05\x92\x01\x02\x10\n" +
-	"R\fcuisineTypes\x12M\n" +
-	"\fcontact_info\x18\x05 \x01(\v2\".com.gastroflow.common.ContactInfoB\x06\xbaH\x03\xc8\x01\x01R\vcontactInfo\x12@\n" +
-	"\aaddress\x18\x06 \x01(\v2\x1e.com.gastroflow.common.AddressB\x06\xbaH\x03\xc8\x01\x01R\aaddress\x12I\n" +
-	"\x06status\x18\a \x01(\x0e2'.com.gastroflow.common.RestaurantStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12R\n" +
-	"\bsettings\x18\b \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsB\x06\xbaH\x03\xc8\x01\x01R\bsettings\x12W\n" +
-	"\rworking_hours\x18\t \x03(\v2(.com.gastroflow.restaurants.WorkingHoursB\b\xbaH\x05\x92\x01\x02\x10\aR\fworkingHours\x12H\n" +
+	"Restaurant\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x12L\n" +
+	"\rcuisine_types\x18\x04 \x03(\x0e2'.com.gastroflow.restaurants.CuisineTypeR\fcuisineTypes\x12E\n" +
+	"\fcontact_info\x18\x05 \x01(\v2\".com.gastroflow.common.ContactInfoR\vcontactInfo\x128\n" +
+	"\aaddress\x18\x06 \x01(\v2\x1e.com.gastroflow.common.AddressR\aaddress\x12?\n" +
+	"\x06status\x18\a \x01(\x0e2'.com.gastroflow.common.RestaurantStatusR\x06status\x12J\n" +
+	"\bsettings\x18\b \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsR\bsettings\x12M\n" +
+	"\rworking_hours\x18\t \x03(\v2(.com.gastroflow.restaurants.WorkingHoursR\fworkingHours\x12>\n" +
 	"\bbranches\x18\n" +
-	" \x03(\v2\".com.gastroflow.restaurants.BranchB\b\xbaH\x05\x92\x01\x02\x10dR\bbranches\x12#\n" +
-	"\blogo_url\x18\v \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\alogoUrl\x12'\n" +
-	"\x06images\x18\f \x03(\tB\x0f\xbaH\f\x92\x01\t\x10\x14\"\x05r\x03\x18\xf4\x03R\x06images\x12/\n" +
-	"\x06rating\x18\r \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x00\x14@)\x00\x00\x00\x00\x00\x00\xf0?R\x06rating\x12*\n" +
-	"\freview_count\x18\x0e \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\vreviewCount\x12L\n" +
+	" \x03(\v2\".com.gastroflow.restaurants.BranchR\bbranches\x12\x19\n" +
+	"\blogo_url\x18\v \x01(\tR\alogoUrl\x12\x16\n" +
+	"\x06images\x18\f \x03(\tR\x06images\x12\x16\n" +
+	"\x06rating\x18\r \x01(\x01R\x06rating\x12!\n" +
+	"\freview_count\x18\x0e \x01(\x05R\vreviewCount\x12L\n" +
 	"\x13average_order_value\x18\x0f \x01(\v2\x1c.com.gastroflow.common.MoneyR\x11averageOrderValue\x12]\n" +
 	"\x13delivery_time_range\x18\x10 \x01(\v2-.com.gastroflow.restaurants.DeliveryTimeRangeR\x11deliveryTimeRange\x12M\n" +
-	"\rdelivery_zone\x18\x11 \x01(\v2(.com.gastroflow.restaurants.DeliveryZoneR\fdeliveryZone\x12>\n" +
-	"\bowner_id\x18\x12 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\aownerId\x12\x1b\n" +
-	"\tis_active\x18\x13 \x01(\bR\bisActive\x12G\n" +
+	"\rdelivery_zone\x18\x11 \x01(\v2(.com.gastroflow.restaurants.DeliveryZoneR\fdeliveryZone\x126\n" +
+	"\bowner_id\x18\x12 \x01(\v2\x1b.com.gastroflow.common.UUIDR\aownerId\x12\x1b\n" +
+	"\tis_active\x18\x13 \x01(\bR\bisActive\x12?\n" +
 	"\n" +
-	"audit_info\x18\x14 \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\x80\x05\n" +
-	"\x06Branch\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12\x1e\n" +
-	"\x04name\x18\x02 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12@\n" +
-	"\aaddress\x18\x03 \x01(\v2\x1e.com.gastroflow.common.AddressB\x06\xbaH\x03\xc8\x01\x01R\aaddress\x12M\n" +
-	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoB\x06\xbaH\x03\xc8\x01\x01R\vcontactInfo\x12I\n" +
-	"\x06status\x18\x05 \x01(\x0e2'.com.gastroflow.common.RestaurantStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12W\n" +
-	"\rworking_hours\x18\x06 \x03(\v2(.com.gastroflow.restaurants.WorkingHoursB\b\xbaH\x05\x92\x01\x02\x10\aR\fworkingHours\x12J\n" +
+	"audit_info\x18\x14 \x01(\v2 .com.gastroflow.common.AuditInfoR\tauditInfo\"\xc0\x04\n" +
+	"\x06Branch\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x128\n" +
+	"\aaddress\x18\x03 \x01(\v2\x1e.com.gastroflow.common.AddressR\aaddress\x12E\n" +
+	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoR\vcontactInfo\x12?\n" +
+	"\x06status\x18\x05 \x01(\x0e2'.com.gastroflow.common.RestaurantStatusR\x06status\x12M\n" +
+	"\rworking_hours\x18\x06 \x03(\v2(.com.gastroflow.restaurants.WorkingHoursR\fworkingHours\x12J\n" +
 	"\bsettings\x18\a \x01(\v2..com.gastroflow.restaurants.RestaurantSettingsR\bsettings\x12:\n" +
 	"\n" +
 	"manager_id\x18\b \x01(\v2\x1b.com.gastroflow.common.UUIDR\tmanagerId\x12\x1b\n" +
-	"\tis_active\x18\t \x01(\bR\bisActive\x12G\n" +
+	"\tis_active\x18\t \x01(\bR\bisActive\x12?\n" +
 	"\n" +
 	"audit_info\x18\n" +
-	" \x01(\v2 .com.gastroflow.common.AuditInfoB\x06\xbaH\x03\xc8\x01\x01R\tauditInfo\"\xe2\a\n" +
+	" \x01(\v2 .com.gastroflow.common.AuditInfoR\tauditInfo\"\x9a\a\n" +
 	"\x12RestaurantSettings\x12)\n" +
 	"\x10accepts_takeaway\x18\x01 \x01(\bR\x0facceptsTakeaway\x12)\n" +
 	"\x10accepts_delivery\x18\x02 \x01(\bR\x0facceptsDelivery\x12&\n" +
@@ -1318,60 +1313,50 @@ const file_restaurants_models_proto_rawDesc = "" +
 	"\x12auto_accept_orders\x18\x05 \x01(\bR\x10autoAcceptOrders\x12R\n" +
 	"\x16minimum_delivery_order\x18\x06 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x14minimumDeliveryOrder\x12?\n" +
 	"\fdelivery_fee\x18\a \x01(\v2\x1c.com.gastroflow.common.MoneyR\vdeliveryFee\x12T\n" +
-	"\x17free_delivery_threshold\x18\b \x01(\v2\x1c.com.gastroflow.common.MoneyR\x15freeDeliveryThreshold\x12<\n" +
-	"\x14max_preparation_time\x18\t \x01(\x05B\n" +
-	"\xbaH\a\x1a\x05\x18\xe0\x03(\x01R\x12maxPreparationTime\x12D\n" +
+	"\x17free_delivery_threshold\x18\b \x01(\v2\x1c.com.gastroflow.common.MoneyR\x15freeDeliveryThreshold\x120\n" +
+	"\x14max_preparation_time\x18\t \x01(\x05R\x12maxPreparationTime\x128\n" +
 	"\x18default_preparation_time\x18\n" +
-	" \x01(\x05B\n" +
-	"\xbaH\a\x1a\x05\x18\xe0\x03(\x01R\x16defaultPreparationTime\x12h\n" +
-	"\x18accepted_payment_methods\x18\v \x03(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xbaH\x05\x92\x01\x02\x10\n" +
-	"R\x16acceptedPaymentMethods\x12e\n" +
-	"\x15notification_settings\x18\f \x01(\v20.com.gastroflow.restaurants.NotificationSettingsR\x14notificationSettings\x12#\n" +
-	"\btimezone\x18\r \x01(\tB\a\xbaH\x04r\x02\x182R\btimezone\x12-\n" +
-	"\bcurrency\x18\x0e \x01(\tB\x11\xbaH\x0er\f2\n" +
-	"^[A-Z]{3}$R\bcurrency\x12T\n" +
-	"\x10default_language\x18\x0f \x01(\x0e2\x1f.com.gastroflow.common.LanguageB\b\xbaH\x05\x82\x01\x02 \x00R\x0fdefaultLanguage\"\x89\x02\n" +
-	"\fWorkingHours\x12:\n" +
-	"\x03day\x18\x01 \x01(\x0e2\x1e.com.gastroflow.common.WeekDayB\b\xbaH\x05\x82\x01\x02 \x00R\x03day\x12\x1d\n" +
+	" \x01(\x05R\x16defaultPreparationTime\x12^\n" +
+	"\x18accepted_payment_methods\x18\v \x03(\x0e2$.com.gastroflow.common.PaymentMethodR\x16acceptedPaymentMethods\x12e\n" +
+	"\x15notification_settings\x18\f \x01(\v20.com.gastroflow.restaurants.NotificationSettingsR\x14notificationSettings\x12\x1a\n" +
+	"\btimezone\x18\r \x01(\tR\btimezone\x12\x1a\n" +
+	"\bcurrency\x18\x0e \x01(\tR\bcurrency\x12J\n" +
+	"\x10default_language\x18\x0f \x01(\x0e2\x1f.com.gastroflow.common.LanguageR\x0fdefaultLanguage\"\xeb\x01\n" +
+	"\fWorkingHours\x120\n" +
+	"\x03day\x18\x01 \x01(\x0e2\x1e.com.gastroflow.common.WeekDayR\x03day\x12\x1d\n" +
 	"\n" +
-	"is_working\x18\x02 \x01(\bR\tisWorking\x12P\n" +
-	"\tintervals\x18\x03 \x03(\v2(.com.gastroflow.restaurants.TimeIntervalB\b\xbaH\x05\x92\x01\x02\x10\x05R\tintervals\x12(\n" +
-	"\x10is_special_hours\x18\x04 \x01(\bR\x0eisSpecialHours\x12\"\n" +
-	"\acomment\x18\x05 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\acomment\"\xe2\x01\n" +
-	"\fTimeInterval\x12F\n" +
+	"is_working\x18\x02 \x01(\bR\tisWorking\x12F\n" +
+	"\tintervals\x18\x03 \x03(\v2(.com.gastroflow.restaurants.TimeIntervalR\tintervals\x12(\n" +
+	"\x10is_special_hours\x18\x04 \x01(\bR\x0eisSpecialHours\x12\x18\n" +
+	"\acomment\x18\x05 \x01(\tR\acomment\"\x86\x01\n" +
+	"\fTimeInterval\x12\x1d\n" +
 	"\n" +
-	"start_time\x18\x01 \x01(\tB'\xbaH$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\tstartTime\x12B\n" +
-	"\bend_time\x18\x02 \x01(\tB'\xbaH$r\"2 ^([01]?[0-9]|2[0-3]):[0-5][0-9]$R\aendTime\x12F\n" +
-	"\x04type\x18\x03 \x01(\x0e2(.com.gastroflow.restaurants.IntervalTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\"\x83\x01\n" +
-	"\x11DeliveryTimeRange\x126\n" +
-	"\x11min_delivery_time\x18\x01 \x01(\x05B\n" +
-	"\xbaH\a\x1a\x05\x18\xac\x02(\x05R\x0fminDeliveryTime\x126\n" +
-	"\x11max_delivery_time\x18\x02 \x01(\x05B\n" +
-	"\xbaH\a\x1a\x05\x18\xac\x02(\n" +
-	"R\x0fmaxDeliveryTime\"\x9d\x02\n" +
-	"\fDeliveryZone\x12@\n" +
-	"\x0fcenter_latitude\x18\x01 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\x0ecenterLatitude\x12B\n" +
-	"\x10center_longitude\x18\x02 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\x0fcenterLongitude\x124\n" +
-	"\tradius_km\x18\x03 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x00I@)\x00\x00\x00\x00\x00\x00\xe0?R\bradiusKm\x12Q\n" +
-	"\bpolygons\x18\x04 \x03(\v2+.com.gastroflow.restaurants.DeliveryPolygonB\b\xbaH\x05\x92\x01\x02\x10\n" +
-	"R\bpolygons\"\xbd\x01\n" +
-	"\x0fDeliveryPolygon\x12H\n" +
-	"\x06points\x18\x01 \x03(\v2$.com.gastroflow.restaurants.GeoPointB\n" +
-	"\xbaH\a\x92\x01\x04\b\x03\x10dR\x06points\x12C\n" +
-	"\x0eadditional_fee\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyR\radditionalFee\x12\x1b\n" +
-	"\x04name\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x18dR\x04name\"v\n" +
-	"\bGeoPoint\x123\n" +
-	"\blatitude\x18\x01 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x125\n" +
-	"\tlongitude\x18\x02 \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\"\x80\x04\n" +
+	"start_time\x18\x01 \x01(\tR\tstartTime\x12\x19\n" +
+	"\bend_time\x18\x02 \x01(\tR\aendTime\x12<\n" +
+	"\x04type\x18\x03 \x01(\x0e2(.com.gastroflow.restaurants.IntervalTypeR\x04type\"k\n" +
+	"\x11DeliveryTimeRange\x12*\n" +
+	"\x11min_delivery_time\x18\x01 \x01(\x05R\x0fminDeliveryTime\x12*\n" +
+	"\x11max_delivery_time\x18\x02 \x01(\x05R\x0fmaxDeliveryTime\"\xc8\x01\n" +
+	"\fDeliveryZone\x12'\n" +
+	"\x0fcenter_latitude\x18\x01 \x01(\x01R\x0ecenterLatitude\x12)\n" +
+	"\x10center_longitude\x18\x02 \x01(\x01R\x0fcenterLongitude\x12\x1b\n" +
+	"\tradius_km\x18\x03 \x01(\x01R\bradiusKm\x12G\n" +
+	"\bpolygons\x18\x04 \x03(\v2+.com.gastroflow.restaurants.DeliveryPolygonR\bpolygons\"\xa8\x01\n" +
+	"\x0fDeliveryPolygon\x12<\n" +
+	"\x06points\x18\x01 \x03(\v2$.com.gastroflow.restaurants.GeoPointR\x06points\x12C\n" +
+	"\x0eadditional_fee\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyR\radditionalFee\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\"D\n" +
+	"\bGeoPoint\x12\x1a\n" +
+	"\blatitude\x18\x01 \x01(\x01R\blatitude\x12\x1c\n" +
+	"\tlongitude\x18\x02 \x01(\x01R\tlongitude\"\xa2\x03\n" +
 	"\x14NotificationSettings\x12*\n" +
 	"\x11notify_new_orders\x18\x01 \x01(\bR\x0fnotifyNewOrders\x126\n" +
 	"\x17notify_cancelled_orders\x18\x02 \x01(\bR\x15notifyCancelledOrders\x12.\n" +
 	"\x13notify_ready_orders\x18\x03 \x01(\bR\x11notifyReadyOrders\x122\n" +
-	"\x15notify_payment_issues\x18\x04 \x01(\bR\x13notifyPaymentIssues\x12f\n" +
-	"\x12notification_email\x18\x05 \x01(\tB7\xbaH4r220^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$R\x11notificationEmail\x12H\n" +
-	"\x12notification_phone\x18\x06 \x01(\tB\x19\xbaH\x16r\x142\x12^\\+[1-9]\\d{10,14}$R\x11notificationPhone\x12n\n" +
-	"\x15notification_channels\x18\a \x03(\x0e2/.com.gastroflow.restaurants.NotificationChannelB\b\xbaH\x05\x92\x01\x02\x10\n" +
-	"R\x14notificationChannels*\x98\x05\n" +
+	"\x15notify_payment_issues\x18\x04 \x01(\bR\x13notifyPaymentIssues\x12-\n" +
+	"\x12notification_email\x18\x05 \x01(\tR\x11notificationEmail\x12-\n" +
+	"\x12notification_phone\x18\x06 \x01(\tR\x11notificationPhone\x12d\n" +
+	"\x15notification_channels\x18\a \x03(\x0e2/.com.gastroflow.restaurants.NotificationChannelR\x14notificationChannels*\x98\x05\n" +
 	"\vCuisineType\x12\x1c\n" +
 	"\x18CUISINE_TYPE_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14CUISINE_TYPE_ITALIAN\x10\x01\x12\x19\n" +
@@ -1416,20 +1401,20 @@ const file_restaurants_models_proto_rawDesc = "" +
 	"\x1ecom.com.gastroflow.restaurantsB\vModelsProtoP\x01Z*github.com/gastroflow/proto-go/restaurants\xa2\x02\x03CGR\xaa\x02\x1aCom.Gastroflow.Restaurants\xca\x02\x1aCom\\Gastroflow\\Restaurants\xe2\x02&Com\\Gastroflow\\Restaurants\\GPBMetadata\xea\x02\x1cCom::Gastroflow::Restaurantsb\x06proto3"
 
 var (
-	file_restaurants_models_proto_rawDescOnce sync.Once
-	file_restaurants_models_proto_rawDescData []byte
+	file_com_gastroflow_restaurants_models_proto_rawDescOnce sync.Once
+	file_com_gastroflow_restaurants_models_proto_rawDescData []byte
 )
 
-func file_restaurants_models_proto_rawDescGZIP() []byte {
-	file_restaurants_models_proto_rawDescOnce.Do(func() {
-		file_restaurants_models_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_restaurants_models_proto_rawDesc), len(file_restaurants_models_proto_rawDesc)))
+func file_com_gastroflow_restaurants_models_proto_rawDescGZIP() []byte {
+	file_com_gastroflow_restaurants_models_proto_rawDescOnce.Do(func() {
+		file_com_gastroflow_restaurants_models_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_com_gastroflow_restaurants_models_proto_rawDesc), len(file_com_gastroflow_restaurants_models_proto_rawDesc)))
 	})
-	return file_restaurants_models_proto_rawDescData
+	return file_com_gastroflow_restaurants_models_proto_rawDescData
 }
 
-var file_restaurants_models_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_restaurants_models_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
-var file_restaurants_models_proto_goTypes = []any{
+var file_com_gastroflow_restaurants_models_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_com_gastroflow_restaurants_models_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_com_gastroflow_restaurants_models_proto_goTypes = []any{
 	(CuisineType)(0),             // 0: com.gastroflow.restaurants.CuisineType
 	(IntervalType)(0),            // 1: com.gastroflow.restaurants.IntervalType
 	(NotificationChannel)(0),     // 2: com.gastroflow.restaurants.NotificationChannel
@@ -1453,7 +1438,7 @@ var file_restaurants_models_proto_goTypes = []any{
 	(common.Language)(0),         // 20: com.gastroflow.common.Language
 	(common.WeekDay)(0),          // 21: com.gastroflow.common.WeekDay
 }
-var file_restaurants_models_proto_depIdxs = []int32{
+var file_com_gastroflow_restaurants_models_proto_depIdxs = []int32{
 	13, // 0: com.gastroflow.restaurants.Restaurant.id:type_name -> com.gastroflow.common.UUID
 	0,  // 1: com.gastroflow.restaurants.Restaurant.cuisine_types:type_name -> com.gastroflow.restaurants.CuisineType
 	14, // 2: com.gastroflow.restaurants.Restaurant.contact_info:type_name -> com.gastroflow.common.ContactInfo
@@ -1495,27 +1480,27 @@ var file_restaurants_models_proto_depIdxs = []int32{
 	0,  // [0:34] is the sub-list for field type_name
 }
 
-func init() { file_restaurants_models_proto_init() }
-func file_restaurants_models_proto_init() {
-	if File_restaurants_models_proto != nil {
+func init() { file_com_gastroflow_restaurants_models_proto_init() }
+func file_com_gastroflow_restaurants_models_proto_init() {
+	if File_com_gastroflow_restaurants_models_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_restaurants_models_proto_rawDesc), len(file_restaurants_models_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_com_gastroflow_restaurants_models_proto_rawDesc), len(file_com_gastroflow_restaurants_models_proto_rawDesc)),
 			NumEnums:      3,
 			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_restaurants_models_proto_goTypes,
-		DependencyIndexes: file_restaurants_models_proto_depIdxs,
-		EnumInfos:         file_restaurants_models_proto_enumTypes,
-		MessageInfos:      file_restaurants_models_proto_msgTypes,
+		GoTypes:           file_com_gastroflow_restaurants_models_proto_goTypes,
+		DependencyIndexes: file_com_gastroflow_restaurants_models_proto_depIdxs,
+		EnumInfos:         file_com_gastroflow_restaurants_models_proto_enumTypes,
+		MessageInfos:      file_com_gastroflow_restaurants_models_proto_msgTypes,
 	}.Build()
-	File_restaurants_models_proto = out.File
-	file_restaurants_models_proto_goTypes = nil
-	file_restaurants_models_proto_depIdxs = nil
+	File_com_gastroflow_restaurants_models_proto = out.File
+	file_com_gastroflow_restaurants_models_proto_goTypes = nil
+	file_com_gastroflow_restaurants_models_proto_depIdxs = nil
 }

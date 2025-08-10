@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: orders/service.proto
+// source: com/gastroflow/orders/service.proto
 
 package orders
 
@@ -566,5 +566,5 @@ var OrderService_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "orders/service.proto",
+	Metadata: "com/gastroflow/orders/service.proto",
 }

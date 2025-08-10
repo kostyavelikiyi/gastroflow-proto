@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.7
 // 	protoc        (unknown)
-// source: common/enums.proto
+// source: com/gastroflow/common/enums.proto
 
 package common
 
@@ -61,11 +61,11 @@ func (x PackingMode) String() string {
 }
 
 func (PackingMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[0].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[0].Descriptor()
 }
 
 func (PackingMode) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[0]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[0]
 }
 
 func (x PackingMode) Number() protoreflect.EnumNumber {
@@ -74,7 +74,7 @@ func (x PackingMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PackingMode.Descriptor instead.
 func (PackingMode) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{0}
 }
 
 // PaymentMethod - способ оплаты заказа
@@ -120,11 +120,11 @@ func (x PaymentMethod) String() string {
 }
 
 func (PaymentMethod) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[1].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[1].Descriptor()
 }
 
 func (PaymentMethod) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[1]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[1]
 }
 
 func (x PaymentMethod) Number() protoreflect.EnumNumber {
@@ -133,7 +133,7 @@ func (x PaymentMethod) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PaymentMethod.Descriptor instead.
 func (PaymentMethod) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{1}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{1}
 }
 
 // OrderStatus - статус заказа в системе
@@ -191,11 +191,11 @@ func (x OrderStatus) String() string {
 }
 
 func (OrderStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[2].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[2].Descriptor()
 }
 
 func (OrderStatus) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[2]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[2]
 }
 
 func (x OrderStatus) Number() protoreflect.EnumNumber {
@@ -204,7 +204,7 @@ func (x OrderStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use OrderStatus.Descriptor instead.
 func (OrderStatus) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{2}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{2}
 }
 
 // PreparingTimeMode - режим времени приготовления
@@ -241,11 +241,11 @@ func (x PreparingTimeMode) String() string {
 }
 
 func (PreparingTimeMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[3].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[3].Descriptor()
 }
 
 func (PreparingTimeMode) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[3]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[3]
 }
 
 func (x PreparingTimeMode) Number() protoreflect.EnumNumber {
@@ -254,7 +254,7 @@ func (x PreparingTimeMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PreparingTimeMode.Descriptor instead.
 func (PreparingTimeMode) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{3}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{3}
 }
 
 // UserRole - роль пользователя в системе
@@ -300,11 +300,11 @@ func (x UserRole) String() string {
 }
 
 func (UserRole) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[4].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[4].Descriptor()
 }
 
 func (UserRole) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[4]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[4]
 }
 
 func (x UserRole) Number() protoreflect.EnumNumber {
@@ -313,7 +313,7 @@ func (x UserRole) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use UserRole.Descriptor instead.
 func (UserRole) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{4}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{4}
 }
 
 // MenuItemStatus - статус позиции меню
@@ -356,11 +356,11 @@ func (x MenuItemStatus) String() string {
 }
 
 func (MenuItemStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[5].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[5].Descriptor()
 }
 
 func (MenuItemStatus) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[5]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[5]
 }
 
 func (x MenuItemStatus) Number() protoreflect.EnumNumber {
@@ -369,7 +369,7 @@ func (x MenuItemStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use MenuItemStatus.Descriptor instead.
 func (MenuItemStatus) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{5}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{5}
 }
 
 // RestaurantStatus - статус работы ресторана
@@ -412,11 +412,11 @@ func (x RestaurantStatus) String() string {
 }
 
 func (RestaurantStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[6].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[6].Descriptor()
 }
 
 func (RestaurantStatus) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[6]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[6]
 }
 
 func (x RestaurantStatus) Number() protoreflect.EnumNumber {
@@ -425,7 +425,7 @@ func (x RestaurantStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RestaurantStatus.Descriptor instead.
 func (RestaurantStatus) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{6}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{6}
 }
 
 // NotificationType - тип уведомления
@@ -477,11 +477,11 @@ func (x NotificationType) String() string {
 }
 
 func (NotificationType) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[7].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[7].Descriptor()
 }
 
 func (NotificationType) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[7]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[7]
 }
 
 func (x NotificationType) Number() protoreflect.EnumNumber {
@@ -490,7 +490,7 @@ func (x NotificationType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NotificationType.Descriptor instead.
 func (NotificationType) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{7}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{7}
 }
 
 // Priority - приоритет (для уведомлений, задач и т.д.)
@@ -533,11 +533,11 @@ func (x Priority) String() string {
 }
 
 func (Priority) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[8].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[8].Descriptor()
 }
 
 func (Priority) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[8]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[8]
 }
 
 func (x Priority) Number() protoreflect.EnumNumber {
@@ -546,7 +546,7 @@ func (x Priority) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Priority.Descriptor instead.
 func (Priority) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{8}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{8}
 }
 
 // WeekDay - день недели
@@ -598,11 +598,11 @@ func (x WeekDay) String() string {
 }
 
 func (WeekDay) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[9].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[9].Descriptor()
 }
 
 func (WeekDay) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[9]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[9]
 }
 
 func (x WeekDay) Number() protoreflect.EnumNumber {
@@ -611,7 +611,7 @@ func (x WeekDay) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use WeekDay.Descriptor instead.
 func (WeekDay) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{9}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{9}
 }
 
 // Language - поддерживаемые языки системы
@@ -651,11 +651,11 @@ func (x Language) String() string {
 }
 
 func (Language) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[10].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[10].Descriptor()
 }
 
 func (Language) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[10]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[10]
 }
 
 func (x Language) Number() protoreflect.EnumNumber {
@@ -664,7 +664,7 @@ func (x Language) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Language.Descriptor instead.
 func (Language) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{10}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{10}
 }
 
 // AnalyticsEventType - типы аналитических событий
@@ -713,11 +713,11 @@ func (x AnalyticsEventType) String() string {
 }
 
 func (AnalyticsEventType) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_enums_proto_enumTypes[11].Descriptor()
+	return file_com_gastroflow_common_enums_proto_enumTypes[11].Descriptor()
 }
 
 func (AnalyticsEventType) Type() protoreflect.EnumType {
-	return &file_common_enums_proto_enumTypes[11]
+	return &file_com_gastroflow_common_enums_proto_enumTypes[11]
 }
 
 func (x AnalyticsEventType) Number() protoreflect.EnumNumber {
@@ -726,14 +726,14 @@ func (x AnalyticsEventType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use AnalyticsEventType.Descriptor instead.
 func (AnalyticsEventType) EnumDescriptor() ([]byte, []int) {
-	return file_common_enums_proto_rawDescGZIP(), []int{11}
+	return file_com_gastroflow_common_enums_proto_rawDescGZIP(), []int{11}
 }
 
-var File_common_enums_proto protoreflect.FileDescriptor
+var File_com_gastroflow_common_enums_proto protoreflect.FileDescriptor
 
-const file_common_enums_proto_rawDesc = "" +
+const file_com_gastroflow_common_enums_proto_rawDesc = "" +
 	"\n" +
-	"\x12common/enums.proto\x12\x15com.gastroflow.common*\x90\x01\n" +
+	"!com/gastroflow/common/enums.proto\x12\x15com.gastroflow.common*\x90\x01\n" +
 	"\vPackingMode\x12\x1c\n" +
 	"\x18PACKING_MODE_UNSPECIFIED\x10\x00\x12\x15\n" +
 	"\x11PACKING_MODE_HERE\x10\x01\x12\x19\n" +
@@ -822,19 +822,19 @@ const file_common_enums_proto_rawDesc = "" +
 	"EnumsProtoP\x01Z%github.com/gastroflow/proto-go/common\xa2\x02\x03CGC\xaa\x02\x15Com.Gastroflow.Common\xca\x02\x15Com\\Gastroflow\\Common\xe2\x02!Com\\Gastroflow\\Common\\GPBMetadata\xea\x02\x17Com::Gastroflow::Commonb\x06proto3"
 
 var (
-	file_common_enums_proto_rawDescOnce sync.Once
-	file_common_enums_proto_rawDescData []byte
+	file_com_gastroflow_common_enums_proto_rawDescOnce sync.Once
+	file_com_gastroflow_common_enums_proto_rawDescData []byte
 )
 
-func file_common_enums_proto_rawDescGZIP() []byte {
-	file_common_enums_proto_rawDescOnce.Do(func() {
-		file_common_enums_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_common_enums_proto_rawDesc), len(file_common_enums_proto_rawDesc)))
+func file_com_gastroflow_common_enums_proto_rawDescGZIP() []byte {
+	file_com_gastroflow_common_enums_proto_rawDescOnce.Do(func() {
+		file_com_gastroflow_common_enums_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_com_gastroflow_common_enums_proto_rawDesc), len(file_com_gastroflow_common_enums_proto_rawDesc)))
 	})
-	return file_common_enums_proto_rawDescData
+	return file_com_gastroflow_common_enums_proto_rawDescData
 }
 
-var file_common_enums_proto_enumTypes = make([]protoimpl.EnumInfo, 12)
-var file_common_enums_proto_goTypes = []any{
+var file_com_gastroflow_common_enums_proto_enumTypes = make([]protoimpl.EnumInfo, 12)
+var file_com_gastroflow_common_enums_proto_goTypes = []any{
 	(PackingMode)(0),        // 0: com.gastroflow.common.PackingMode
 	(PaymentMethod)(0),      // 1: com.gastroflow.common.PaymentMethod
 	(OrderStatus)(0),        // 2: com.gastroflow.common.OrderStatus
@@ -848,7 +848,7 @@ var file_common_enums_proto_goTypes = []any{
 	(Language)(0),           // 10: com.gastroflow.common.Language
 	(AnalyticsEventType)(0), // 11: com.gastroflow.common.AnalyticsEventType
 }
-var file_common_enums_proto_depIdxs = []int32{
+var file_com_gastroflow_common_enums_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -856,26 +856,26 @@ var file_common_enums_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_common_enums_proto_init() }
-func file_common_enums_proto_init() {
-	if File_common_enums_proto != nil {
+func init() { file_com_gastroflow_common_enums_proto_init() }
+func file_com_gastroflow_common_enums_proto_init() {
+	if File_com_gastroflow_common_enums_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_enums_proto_rawDesc), len(file_common_enums_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_com_gastroflow_common_enums_proto_rawDesc), len(file_com_gastroflow_common_enums_proto_rawDesc)),
 			NumEnums:      12,
 			NumMessages:   0,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_common_enums_proto_goTypes,
-		DependencyIndexes: file_common_enums_proto_depIdxs,
-		EnumInfos:         file_common_enums_proto_enumTypes,
+		GoTypes:           file_com_gastroflow_common_enums_proto_goTypes,
+		DependencyIndexes: file_com_gastroflow_common_enums_proto_depIdxs,
+		EnumInfos:         file_com_gastroflow_common_enums_proto_enumTypes,
 	}.Build()
-	File_common_enums_proto = out.File
-	file_common_enums_proto_goTypes = nil
-	file_common_enums_proto_depIdxs = nil
+	File_com_gastroflow_common_enums_proto = out.File
+	file_com_gastroflow_common_enums_proto_goTypes = nil
+	file_com_gastroflow_common_enums_proto_depIdxs = nil
 }

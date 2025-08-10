@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: restaurants/service.proto
+// source: com/gastroflow/restaurants/service.proto
 
 package restaurants
 
@@ -442,7 +442,7 @@ var RestaurantService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "restaurants/service.proto",
+	Metadata: "com/gastroflow/restaurants/service.proto",
 }
 
 const (
@@ -748,7 +748,7 @@ var BranchService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "restaurants/service.proto",
+	Metadata: "com/gastroflow/restaurants/service.proto",
 }
 
 const (
@@ -1014,5 +1014,5 @@ var RestaurantSettingsService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "restaurants/service.proto",
+	Metadata: "com/gastroflow/restaurants/service.proto",
 }

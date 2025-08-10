@@ -2,12 +2,11 @@
 // versions:
 // 	protoc-gen-go v1.36.7
 // 	protoc        (unknown)
-// source: common/types.proto
+// source: com/gastroflow/common/types.proto
 
 package common
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -57,11 +56,11 @@ func (x SortOrder) String() string {
 }
 
 func (SortOrder) Descriptor() protoreflect.EnumDescriptor {
-	return file_common_types_proto_enumTypes[0].Descriptor()
+	return file_com_gastroflow_common_types_proto_enumTypes[0].Descriptor()
 }
 
 func (SortOrder) Type() protoreflect.EnumType {
-	return &file_common_types_proto_enumTypes[0]
+	return &file_com_gastroflow_common_types_proto_enumTypes[0]
 }
 
 func (x SortOrder) Number() protoreflect.EnumNumber {
@@ -70,7 +69,7 @@ func (x SortOrder) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SortOrder.Descriptor instead.
 func (SortOrder) EnumDescriptor() ([]byte, []int) {
-	return file_common_types_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_common_types_proto_rawDescGZIP(), []int{0}
 }
 
 // UUID - универсальный уникальный идентификатор
@@ -84,7 +83,7 @@ type UUID struct {
 
 func (x *UUID) Reset() {
 	*x = UUID{}
-	mi := &file_common_types_proto_msgTypes[0]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -96,7 +95,7 @@ func (x *UUID) String() string {
 func (*UUID) ProtoMessage() {}
 
 func (x *UUID) ProtoReflect() protoreflect.Message {
-	mi := &file_common_types_proto_msgTypes[0]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -109,7 +108,7 @@ func (x *UUID) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UUID.ProtoReflect.Descriptor instead.
 func (*UUID) Descriptor() ([]byte, []int) {
-	return file_common_types_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_common_types_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *UUID) GetValue() string {
@@ -132,7 +131,7 @@ type Money struct {
 
 func (x *Money) Reset() {
 	*x = Money{}
-	mi := &file_common_types_proto_msgTypes[1]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -144,7 +143,7 @@ func (x *Money) String() string {
 func (*Money) ProtoMessage() {}
 
 func (x *Money) ProtoReflect() protoreflect.Message {
-	mi := &file_common_types_proto_msgTypes[1]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -157,7 +156,7 @@ func (x *Money) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Money.ProtoReflect.Descriptor instead.
 func (*Money) Descriptor() ([]byte, []int) {
-	return file_common_types_proto_rawDescGZIP(), []int{1}
+	return file_com_gastroflow_common_types_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Money) GetAmount() int64 {
@@ -202,7 +201,7 @@ type Address struct {
 
 func (x *Address) Reset() {
 	*x = Address{}
-	mi := &file_common_types_proto_msgTypes[2]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -214,7 +213,7 @@ func (x *Address) String() string {
 func (*Address) ProtoMessage() {}
 
 func (x *Address) ProtoReflect() protoreflect.Message {
-	mi := &file_common_types_proto_msgTypes[2]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -227,7 +226,7 @@ func (x *Address) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Address.ProtoReflect.Descriptor instead.
 func (*Address) Descriptor() ([]byte, []int) {
-	return file_common_types_proto_rawDescGZIP(), []int{2}
+	return file_com_gastroflow_common_types_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Address) GetFullAddress() string {
@@ -313,7 +312,7 @@ type ContactInfo struct {
 
 func (x *ContactInfo) Reset() {
 	*x = ContactInfo{}
-	mi := &file_common_types_proto_msgTypes[3]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -325,7 +324,7 @@ func (x *ContactInfo) String() string {
 func (*ContactInfo) ProtoMessage() {}
 
 func (x *ContactInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_common_types_proto_msgTypes[3]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -338,7 +337,7 @@ func (x *ContactInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ContactInfo.ProtoReflect.Descriptor instead.
 func (*ContactInfo) Descriptor() ([]byte, []int) {
-	return file_common_types_proto_rawDescGZIP(), []int{3}
+	return file_com_gastroflow_common_types_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ContactInfo) GetPhone() string {
@@ -378,7 +377,7 @@ type AuditInfo struct {
 
 func (x *AuditInfo) Reset() {
 	*x = AuditInfo{}
-	mi := &file_common_types_proto_msgTypes[4]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -390,7 +389,7 @@ func (x *AuditInfo) String() string {
 func (*AuditInfo) ProtoMessage() {}
 
 func (x *AuditInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_common_types_proto_msgTypes[4]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -403,7 +402,7 @@ func (x *AuditInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuditInfo.ProtoReflect.Descriptor instead.
 func (*AuditInfo) Descriptor() ([]byte, []int) {
-	return file_common_types_proto_rawDescGZIP(), []int{4}
+	return file_com_gastroflow_common_types_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *AuditInfo) GetCreatedAt() *timestamppb.Timestamp {
@@ -472,7 +471,7 @@ type PaginationRequest struct {
 
 func (x *PaginationRequest) Reset() {
 	*x = PaginationRequest{}
-	mi := &file_common_types_proto_msgTypes[5]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -484,7 +483,7 @@ func (x *PaginationRequest) String() string {
 func (*PaginationRequest) ProtoMessage() {}
 
 func (x *PaginationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_common_types_proto_msgTypes[5]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -497,7 +496,7 @@ func (x *PaginationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PaginationRequest.ProtoReflect.Descriptor instead.
 func (*PaginationRequest) Descriptor() ([]byte, []int) {
-	return file_common_types_proto_rawDescGZIP(), []int{5}
+	return file_com_gastroflow_common_types_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *PaginationRequest) GetPage() int32 {
@@ -549,7 +548,7 @@ type PaginationResponse struct {
 
 func (x *PaginationResponse) Reset() {
 	*x = PaginationResponse{}
-	mi := &file_common_types_proto_msgTypes[6]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -561,7 +560,7 @@ func (x *PaginationResponse) String() string {
 func (*PaginationResponse) ProtoMessage() {}
 
 func (x *PaginationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_common_types_proto_msgTypes[6]
+	mi := &file_com_gastroflow_common_types_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -574,7 +573,7 @@ func (x *PaginationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PaginationResponse.ProtoReflect.Descriptor instead.
 func (*PaginationResponse) Descriptor() ([]byte, []int) {
-	return file_common_types_proto_rawDescGZIP(), []int{6}
+	return file_com_gastroflow_common_types_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *PaginationResponse) GetCurrentPage() int32 {
@@ -619,55 +618,49 @@ func (x *PaginationResponse) GetHasPrev() bool {
 	return false
 }
 
-var File_common_types_proto protoreflect.FileDescriptor
+var File_com_gastroflow_common_types_proto protoreflect.FileDescriptor
 
-const file_common_types_proto_rawDesc = "" +
+const file_com_gastroflow_common_types_proto_rawDesc = "" +
 	"\n" +
-	"\x12common/types.proto\x12\x15com.gastroflow.common\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"r\n" +
-	"\x04UUID\x12j\n" +
-	"\x05value\x18\x01 \x01(\tBT\xbaHQrO2M^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$R\x05value\"W\n" +
-	"\x05Money\x12\x1f\n" +
-	"\x06amount\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02(\x00R\x06amount\x12-\n" +
-	"\bcurrency\x18\x02 \x01(\tB\x11\xbaH\x0er\f2\n" +
-	"^[A-Z]{3}$R\bcurrency\"\xa4\x03\n" +
-	"\aAddress\x12-\n" +
-	"\ffull_address\x18\x01 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x05\x18\xf4\x03R\vfullAddress\x12\x1d\n" +
-	"\x04city\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04city\x12\"\n" +
-	"\x06street\x18\x03 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x06street\x12,\n" +
-	"\fhouse_number\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18\x14R\vhouseNumber\x12%\n" +
-	"\tapartment\x18\x05 \x01(\tB\a\xbaH\x04r\x02\x18\x14R\tapartment\x12#\n" +
-	"\bentrance\x18\x06 \x01(\tB\a\xbaH\x04r\x02\x18\n" +
-	"R\bentrance\x12\x1d\n" +
-	"\x05floor\x18\a \x01(\tB\a\xbaH\x04r\x02\x18\n" +
-	"R\x05floor\x12\"\n" +
-	"\acomment\x18\b \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\acomment\x123\n" +
-	"\blatitude\x18\t \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80V@)\x00\x00\x00\x00\x00\x80V\xc0R\blatitude\x125\n" +
+	"!com/gastroflow/common/types.proto\x12\x15com.gastroflow.common\x1a\x1fgoogle/protobuf/timestamp.proto\"\x1c\n" +
+	"\x04UUID\x12\x14\n" +
+	"\x05value\x18\x01 \x01(\tR\x05value\";\n" +
+	"\x05Money\x12\x16\n" +
+	"\x06amount\x18\x01 \x01(\x03R\x06amount\x12\x1a\n" +
+	"\bcurrency\x18\x02 \x01(\tR\bcurrency\"\x9f\x02\n" +
+	"\aAddress\x12!\n" +
+	"\ffull_address\x18\x01 \x01(\tR\vfullAddress\x12\x12\n" +
+	"\x04city\x18\x02 \x01(\tR\x04city\x12\x16\n" +
+	"\x06street\x18\x03 \x01(\tR\x06street\x12!\n" +
+	"\fhouse_number\x18\x04 \x01(\tR\vhouseNumber\x12\x1c\n" +
+	"\tapartment\x18\x05 \x01(\tR\tapartment\x12\x1a\n" +
+	"\bentrance\x18\x06 \x01(\tR\bentrance\x12\x14\n" +
+	"\x05floor\x18\a \x01(\tR\x05floor\x12\x18\n" +
+	"\acomment\x18\b \x01(\tR\acomment\x12\x1a\n" +
+	"\blatitude\x18\t \x01(\x01R\blatitude\x12\x1c\n" +
 	"\tlongitude\x18\n" +
-	" \x01(\x01B\x17\xbaH\x14\x12\x12\x19\x00\x00\x00\x00\x00\x80f@)\x00\x00\x00\x00\x00\x80f\xc0R\tlongitude\"\x8d\x01\n" +
-	"\vContactInfo\x12/\n" +
-	"\x05phone\x18\x01 \x01(\tB\x19\xbaH\x16r\x142\x12^\\+[1-9]\\d{10,14}$R\x05phone\x12M\n" +
-	"\x05email\x18\x02 \x01(\tB7\xbaH4r220^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$R\x05email\"\xb3\x03\n" +
-	"\tAuditInfo\x12A\n" +
+	" \x01(\x01R\tlongitude\"9\n" +
+	"\vContactInfo\x12\x14\n" +
+	"\x05phone\x18\x01 \x01(\tR\x05phone\x12\x14\n" +
+	"\x05email\x18\x02 \x01(\tR\x05email\"\x8a\x03\n" +
+	"\tAuditInfo\x129\n" +
 	"\n" +
-	"created_at\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tcreatedAt\x12A\n" +
+	"created_at\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"updated_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\tupdatedAt\x12B\n" +
+	"updated_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12:\n" +
 	"\n" +
-	"created_by\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\tcreatedBy\x12B\n" +
+	"created_by\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDR\tcreatedBy\x12:\n" +
 	"\n" +
-	"updated_by\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\tupdatedBy\x129\n" +
+	"updated_by\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDR\tupdatedBy\x129\n" +
 	"\n" +
 	"deleted_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tdeletedAt\x12:\n" +
 	"\n" +
-	"deleted_by\x18\x06 \x01(\v2\x1b.com.gastroflow.common.UUIDR\tdeletedBy\x12!\n" +
-	"\aversion\x18\a \x01(\x03B\a\xbaH\x04\"\x02(\x01R\aversion\"\xbe\x01\n" +
-	"\x11PaginationRequest\x12\x1e\n" +
-	"\x04page\x18\x01 \x01(\x05B\n" +
-	"\xbaH\a\x1a\x05\x18\x90N(\x01R\x04page\x12&\n" +
-	"\tpage_size\x18\x02 \x01(\x05B\t\xbaH\x06\x1a\x04\x18d(\x01R\bpageSize\x12 \n" +
-	"\asort_by\x18\x03 \x01(\tB\a\xbaH\x04r\x02\x182R\x06sortBy\x12?\n" +
+	"deleted_by\x18\x06 \x01(\v2\x1b.com.gastroflow.common.UUIDR\tdeletedBy\x12\x18\n" +
+	"\aversion\x18\a \x01(\x03R\aversion\"\x9e\x01\n" +
+	"\x11PaginationRequest\x12\x12\n" +
+	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x1b\n" +
+	"\tpage_size\x18\x02 \x01(\x05R\bpageSize\x12\x17\n" +
+	"\asort_by\x18\x03 \x01(\tR\x06sortBy\x12?\n" +
 	"\n" +
 	"sort_order\x18\x04 \x01(\x0e2 .com.gastroflow.common.SortOrderR\tsortOrder\"\xcc\x01\n" +
 	"\x12PaginationResponse\x12!\n" +
@@ -687,20 +680,20 @@ const file_common_types_proto_rawDesc = "" +
 	"TypesProtoP\x01Z%github.com/gastroflow/proto-go/common\xa2\x02\x03CGC\xaa\x02\x15Com.Gastroflow.Common\xca\x02\x15Com\\Gastroflow\\Common\xe2\x02!Com\\Gastroflow\\Common\\GPBMetadata\xea\x02\x17Com::Gastroflow::Commonb\x06proto3"
 
 var (
-	file_common_types_proto_rawDescOnce sync.Once
-	file_common_types_proto_rawDescData []byte
+	file_com_gastroflow_common_types_proto_rawDescOnce sync.Once
+	file_com_gastroflow_common_types_proto_rawDescData []byte
 )
 
-func file_common_types_proto_rawDescGZIP() []byte {
-	file_common_types_proto_rawDescOnce.Do(func() {
-		file_common_types_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_common_types_proto_rawDesc), len(file_common_types_proto_rawDesc)))
+func file_com_gastroflow_common_types_proto_rawDescGZIP() []byte {
+	file_com_gastroflow_common_types_proto_rawDescOnce.Do(func() {
+		file_com_gastroflow_common_types_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_com_gastroflow_common_types_proto_rawDesc), len(file_com_gastroflow_common_types_proto_rawDesc)))
 	})
-	return file_common_types_proto_rawDescData
+	return file_com_gastroflow_common_types_proto_rawDescData
 }
 
-var file_common_types_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_common_types_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
-var file_common_types_proto_goTypes = []any{
+var file_com_gastroflow_common_types_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_com_gastroflow_common_types_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_com_gastroflow_common_types_proto_goTypes = []any{
 	(SortOrder)(0),                // 0: com.gastroflow.common.SortOrder
 	(*UUID)(nil),                  // 1: com.gastroflow.common.UUID
 	(*Money)(nil),                 // 2: com.gastroflow.common.Money
@@ -711,7 +704,7 @@ var file_common_types_proto_goTypes = []any{
 	(*PaginationResponse)(nil),    // 7: com.gastroflow.common.PaginationResponse
 	(*timestamppb.Timestamp)(nil), // 8: google.protobuf.Timestamp
 }
-var file_common_types_proto_depIdxs = []int32{
+var file_com_gastroflow_common_types_proto_depIdxs = []int32{
 	8, // 0: com.gastroflow.common.AuditInfo.created_at:type_name -> google.protobuf.Timestamp
 	8, // 1: com.gastroflow.common.AuditInfo.updated_at:type_name -> google.protobuf.Timestamp
 	1, // 2: com.gastroflow.common.AuditInfo.created_by:type_name -> com.gastroflow.common.UUID
@@ -726,27 +719,27 @@ var file_common_types_proto_depIdxs = []int32{
 	0, // [0:7] is the sub-list for field type_name
 }
 
-func init() { file_common_types_proto_init() }
-func file_common_types_proto_init() {
-	if File_common_types_proto != nil {
+func init() { file_com_gastroflow_common_types_proto_init() }
+func file_com_gastroflow_common_types_proto_init() {
+	if File_com_gastroflow_common_types_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_types_proto_rawDesc), len(file_common_types_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_com_gastroflow_common_types_proto_rawDesc), len(file_com_gastroflow_common_types_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_common_types_proto_goTypes,
-		DependencyIndexes: file_common_types_proto_depIdxs,
-		EnumInfos:         file_common_types_proto_enumTypes,
-		MessageInfos:      file_common_types_proto_msgTypes,
+		GoTypes:           file_com_gastroflow_common_types_proto_goTypes,
+		DependencyIndexes: file_com_gastroflow_common_types_proto_depIdxs,
+		EnumInfos:         file_com_gastroflow_common_types_proto_enumTypes,
+		MessageInfos:      file_com_gastroflow_common_types_proto_msgTypes,
 	}.Build()
-	File_common_types_proto = out.File
-	file_common_types_proto_goTypes = nil
-	file_common_types_proto_depIdxs = nil
+	File_com_gastroflow_common_types_proto = out.File
+	file_com_gastroflow_common_types_proto_goTypes = nil
+	file_com_gastroflow_common_types_proto_depIdxs = nil
 }

@@ -16,5 +16,5 @@ plugins:
   - plugin: buf.build/grpc/go
     out: packages/go_module
     opt:
-      - paths=source_relative
+      - module=github.com/gastroflow/proto-go
       - require_unimplemented_servers=false

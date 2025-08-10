@@ -2,12 +2,11 @@
 // versions:
 // 	protoc-gen-go v1.36.7
 // 	protoc        (unknown)
-// source: menu/service.proto
+// source: com/gastroflow/menu/service.proto
 
 package menu
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -38,7 +37,7 @@ type CreateMenuRequest struct {
 
 func (x *CreateMenuRequest) Reset() {
 	*x = CreateMenuRequest{}
-	mi := &file_menu_service_proto_msgTypes[0]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -50,7 +49,7 @@ func (x *CreateMenuRequest) String() string {
 func (*CreateMenuRequest) ProtoMessage() {}
 
 func (x *CreateMenuRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[0]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -63,7 +62,7 @@ func (x *CreateMenuRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateMenuRequest.ProtoReflect.Descriptor instead.
 func (*CreateMenuRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateMenuRequest) GetName() string {
@@ -117,7 +116,7 @@ type CreateMenuResponse struct {
 
 func (x *CreateMenuResponse) Reset() {
 	*x = CreateMenuResponse{}
-	mi := &file_menu_service_proto_msgTypes[1]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -129,7 +128,7 @@ func (x *CreateMenuResponse) String() string {
 func (*CreateMenuResponse) ProtoMessage() {}
 
 func (x *CreateMenuResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[1]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -142,7 +141,7 @@ func (x *CreateMenuResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateMenuResponse.ProtoReflect.Descriptor instead.
 func (*CreateMenuResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{1}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreateMenuResponse) GetMenu() *Menu {
@@ -162,7 +161,7 @@ type GetMenuRequest struct {
 
 func (x *GetMenuRequest) Reset() {
 	*x = GetMenuRequest{}
-	mi := &file_menu_service_proto_msgTypes[2]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -174,7 +173,7 @@ func (x *GetMenuRequest) String() string {
 func (*GetMenuRequest) ProtoMessage() {}
 
 func (x *GetMenuRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[2]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -187,7 +186,7 @@ func (x *GetMenuRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMenuRequest.ProtoReflect.Descriptor instead.
 func (*GetMenuRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{2}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetMenuRequest) GetId() *common.UUID {
@@ -213,7 +212,7 @@ type GetMenuResponse struct {
 
 func (x *GetMenuResponse) Reset() {
 	*x = GetMenuResponse{}
-	mi := &file_menu_service_proto_msgTypes[3]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -225,7 +224,7 @@ func (x *GetMenuResponse) String() string {
 func (*GetMenuResponse) ProtoMessage() {}
 
 func (x *GetMenuResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[3]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -238,7 +237,7 @@ func (x *GetMenuResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMenuResponse.ProtoReflect.Descriptor instead.
 func (*GetMenuResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{3}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetMenuResponse) GetMenu() *Menu {
@@ -258,7 +257,7 @@ type UpdateMenuRequest struct {
 
 func (x *UpdateMenuRequest) Reset() {
 	*x = UpdateMenuRequest{}
-	mi := &file_menu_service_proto_msgTypes[4]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -270,7 +269,7 @@ func (x *UpdateMenuRequest) String() string {
 func (*UpdateMenuRequest) ProtoMessage() {}
 
 func (x *UpdateMenuRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[4]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -283,7 +282,7 @@ func (x *UpdateMenuRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMenuRequest.ProtoReflect.Descriptor instead.
 func (*UpdateMenuRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{4}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateMenuRequest) GetId() *common.UUID {
@@ -309,7 +308,7 @@ type UpdateMenuResponse struct {
 
 func (x *UpdateMenuResponse) Reset() {
 	*x = UpdateMenuResponse{}
-	mi := &file_menu_service_proto_msgTypes[5]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -321,7 +320,7 @@ func (x *UpdateMenuResponse) String() string {
 func (*UpdateMenuResponse) ProtoMessage() {}
 
 func (x *UpdateMenuResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[5]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -334,7 +333,7 @@ func (x *UpdateMenuResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMenuResponse.ProtoReflect.Descriptor instead.
 func (*UpdateMenuResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{5}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateMenuResponse) GetMenu() *Menu {
@@ -354,7 +353,7 @@ type DeleteMenuRequest struct {
 
 func (x *DeleteMenuRequest) Reset() {
 	*x = DeleteMenuRequest{}
-	mi := &file_menu_service_proto_msgTypes[6]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -366,7 +365,7 @@ func (x *DeleteMenuRequest) String() string {
 func (*DeleteMenuRequest) ProtoMessage() {}
 
 func (x *DeleteMenuRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[6]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -379,7 +378,7 @@ func (x *DeleteMenuRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteMenuRequest.ProtoReflect.Descriptor instead.
 func (*DeleteMenuRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{6}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *DeleteMenuRequest) GetId() *common.UUID {
@@ -408,7 +407,7 @@ type ListMenusRequest struct {
 
 func (x *ListMenusRequest) Reset() {
 	*x = ListMenusRequest{}
-	mi := &file_menu_service_proto_msgTypes[7]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -420,7 +419,7 @@ func (x *ListMenusRequest) String() string {
 func (*ListMenusRequest) ProtoMessage() {}
 
 func (x *ListMenusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[7]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -433,7 +432,7 @@ func (x *ListMenusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMenusRequest.ProtoReflect.Descriptor instead.
 func (*ListMenusRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{7}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ListMenusRequest) GetRestaurantId() *common.UUID {
@@ -474,7 +473,7 @@ type ListMenusResponse struct {
 
 func (x *ListMenusResponse) Reset() {
 	*x = ListMenusResponse{}
-	mi := &file_menu_service_proto_msgTypes[8]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -486,7 +485,7 @@ func (x *ListMenusResponse) String() string {
 func (*ListMenusResponse) ProtoMessage() {}
 
 func (x *ListMenusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[8]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -499,7 +498,7 @@ func (x *ListMenusResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMenusResponse.ProtoReflect.Descriptor instead.
 func (*ListMenusResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{8}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ListMenusResponse) GetMenus() []*Menu {
@@ -526,7 +525,7 @@ type GetActiveMenuRequest struct {
 
 func (x *GetActiveMenuRequest) Reset() {
 	*x = GetActiveMenuRequest{}
-	mi := &file_menu_service_proto_msgTypes[9]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -538,7 +537,7 @@ func (x *GetActiveMenuRequest) String() string {
 func (*GetActiveMenuRequest) ProtoMessage() {}
 
 func (x *GetActiveMenuRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[9]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -551,7 +550,7 @@ func (x *GetActiveMenuRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetActiveMenuRequest.ProtoReflect.Descriptor instead.
 func (*GetActiveMenuRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{9}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetActiveMenuRequest) GetRestaurantId() *common.UUID {
@@ -577,7 +576,7 @@ type GetActiveMenuResponse struct {
 
 func (x *GetActiveMenuResponse) Reset() {
 	*x = GetActiveMenuResponse{}
-	mi := &file_menu_service_proto_msgTypes[10]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -589,7 +588,7 @@ func (x *GetActiveMenuResponse) String() string {
 func (*GetActiveMenuResponse) ProtoMessage() {}
 
 func (x *GetActiveMenuResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[10]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -602,7 +601,7 @@ func (x *GetActiveMenuResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetActiveMenuResponse.ProtoReflect.Descriptor instead.
 func (*GetActiveMenuResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{10}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetActiveMenuResponse) GetMenu() *Menu {
@@ -626,7 +625,7 @@ type CreateCategoryRequest struct {
 
 func (x *CreateCategoryRequest) Reset() {
 	*x = CreateCategoryRequest{}
-	mi := &file_menu_service_proto_msgTypes[11]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -638,7 +637,7 @@ func (x *CreateCategoryRequest) String() string {
 func (*CreateCategoryRequest) ProtoMessage() {}
 
 func (x *CreateCategoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[11]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -651,7 +650,7 @@ func (x *CreateCategoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCategoryRequest.ProtoReflect.Descriptor instead.
 func (*CreateCategoryRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{11}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *CreateCategoryRequest) GetName() string {
@@ -705,7 +704,7 @@ type CreateCategoryResponse struct {
 
 func (x *CreateCategoryResponse) Reset() {
 	*x = CreateCategoryResponse{}
-	mi := &file_menu_service_proto_msgTypes[12]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -717,7 +716,7 @@ func (x *CreateCategoryResponse) String() string {
 func (*CreateCategoryResponse) ProtoMessage() {}
 
 func (x *CreateCategoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[12]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -730,7 +729,7 @@ func (x *CreateCategoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCategoryResponse.ProtoReflect.Descriptor instead.
 func (*CreateCategoryResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{12}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *CreateCategoryResponse) GetCategory() *Category {
@@ -750,7 +749,7 @@ type GetCategoryRequest struct {
 
 func (x *GetCategoryRequest) Reset() {
 	*x = GetCategoryRequest{}
-	mi := &file_menu_service_proto_msgTypes[13]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -762,7 +761,7 @@ func (x *GetCategoryRequest) String() string {
 func (*GetCategoryRequest) ProtoMessage() {}
 
 func (x *GetCategoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[13]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -775,7 +774,7 @@ func (x *GetCategoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCategoryRequest.ProtoReflect.Descriptor instead.
 func (*GetCategoryRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{13}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *GetCategoryRequest) GetId() *common.UUID {
@@ -801,7 +800,7 @@ type GetCategoryResponse struct {
 
 func (x *GetCategoryResponse) Reset() {
 	*x = GetCategoryResponse{}
-	mi := &file_menu_service_proto_msgTypes[14]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -813,7 +812,7 @@ func (x *GetCategoryResponse) String() string {
 func (*GetCategoryResponse) ProtoMessage() {}
 
 func (x *GetCategoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[14]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -826,7 +825,7 @@ func (x *GetCategoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCategoryResponse.ProtoReflect.Descriptor instead.
 func (*GetCategoryResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{14}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetCategoryResponse) GetCategory() *Category {
@@ -846,7 +845,7 @@ type UpdateCategoryRequest struct {
 
 func (x *UpdateCategoryRequest) Reset() {
 	*x = UpdateCategoryRequest{}
-	mi := &file_menu_service_proto_msgTypes[15]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -858,7 +857,7 @@ func (x *UpdateCategoryRequest) String() string {
 func (*UpdateCategoryRequest) ProtoMessage() {}
 
 func (x *UpdateCategoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[15]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -871,7 +870,7 @@ func (x *UpdateCategoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCategoryRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCategoryRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{15}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *UpdateCategoryRequest) GetId() *common.UUID {
@@ -897,7 +896,7 @@ type UpdateCategoryResponse struct {
 
 func (x *UpdateCategoryResponse) Reset() {
 	*x = UpdateCategoryResponse{}
-	mi := &file_menu_service_proto_msgTypes[16]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -909,7 +908,7 @@ func (x *UpdateCategoryResponse) String() string {
 func (*UpdateCategoryResponse) ProtoMessage() {}
 
 func (x *UpdateCategoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[16]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -922,7 +921,7 @@ func (x *UpdateCategoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCategoryResponse.ProtoReflect.Descriptor instead.
 func (*UpdateCategoryResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{16}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *UpdateCategoryResponse) GetCategory() *Category {
@@ -942,7 +941,7 @@ type DeleteCategoryRequest struct {
 
 func (x *DeleteCategoryRequest) Reset() {
 	*x = DeleteCategoryRequest{}
-	mi := &file_menu_service_proto_msgTypes[17]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -954,7 +953,7 @@ func (x *DeleteCategoryRequest) String() string {
 func (*DeleteCategoryRequest) ProtoMessage() {}
 
 func (x *DeleteCategoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[17]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -967,7 +966,7 @@ func (x *DeleteCategoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCategoryRequest.ProtoReflect.Descriptor instead.
 func (*DeleteCategoryRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{17}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *DeleteCategoryRequest) GetId() *common.UUID {
@@ -997,7 +996,7 @@ type ListCategoriesRequest struct {
 
 func (x *ListCategoriesRequest) Reset() {
 	*x = ListCategoriesRequest{}
-	mi := &file_menu_service_proto_msgTypes[18]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1009,7 +1008,7 @@ func (x *ListCategoriesRequest) String() string {
 func (*ListCategoriesRequest) ProtoMessage() {}
 
 func (x *ListCategoriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[18]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1022,7 +1021,7 @@ func (x *ListCategoriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCategoriesRequest.ProtoReflect.Descriptor instead.
 func (*ListCategoriesRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{18}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ListCategoriesRequest) GetMenuId() *common.UUID {
@@ -1070,7 +1069,7 @@ type ListCategoriesResponse struct {
 
 func (x *ListCategoriesResponse) Reset() {
 	*x = ListCategoriesResponse{}
-	mi := &file_menu_service_proto_msgTypes[19]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1082,7 +1081,7 @@ func (x *ListCategoriesResponse) String() string {
 func (*ListCategoriesResponse) ProtoMessage() {}
 
 func (x *ListCategoriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[19]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1095,7 +1094,7 @@ func (x *ListCategoriesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCategoriesResponse.ProtoReflect.Descriptor instead.
 func (*ListCategoriesResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{19}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ListCategoriesResponse) GetCategories() []*Category {
@@ -1123,7 +1122,7 @@ type ReorderCategoriesRequest struct {
 
 func (x *ReorderCategoriesRequest) Reset() {
 	*x = ReorderCategoriesRequest{}
-	mi := &file_menu_service_proto_msgTypes[20]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1135,7 +1134,7 @@ func (x *ReorderCategoriesRequest) String() string {
 func (*ReorderCategoriesRequest) ProtoMessage() {}
 
 func (x *ReorderCategoriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[20]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1148,7 +1147,7 @@ func (x *ReorderCategoriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReorderCategoriesRequest.ProtoReflect.Descriptor instead.
 func (*ReorderCategoriesRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{20}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ReorderCategoriesRequest) GetMenuId() *common.UUID {
@@ -1182,7 +1181,7 @@ type CategoryOrder struct {
 
 func (x *CategoryOrder) Reset() {
 	*x = CategoryOrder{}
-	mi := &file_menu_service_proto_msgTypes[21]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1194,7 +1193,7 @@ func (x *CategoryOrder) String() string {
 func (*CategoryOrder) ProtoMessage() {}
 
 func (x *CategoryOrder) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[21]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1207,7 +1206,7 @@ func (x *CategoryOrder) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CategoryOrder.ProtoReflect.Descriptor instead.
 func (*CategoryOrder) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{21}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *CategoryOrder) GetCategoryId() *common.UUID {
@@ -1233,7 +1232,7 @@ type ReorderCategoriesResponse struct {
 
 func (x *ReorderCategoriesResponse) Reset() {
 	*x = ReorderCategoriesResponse{}
-	mi := &file_menu_service_proto_msgTypes[22]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1245,7 +1244,7 @@ func (x *ReorderCategoriesResponse) String() string {
 func (*ReorderCategoriesResponse) ProtoMessage() {}
 
 func (x *ReorderCategoriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[22]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1258,7 +1257,7 @@ func (x *ReorderCategoriesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReorderCategoriesResponse.ProtoReflect.Descriptor instead.
 func (*ReorderCategoriesResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{22}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *ReorderCategoriesResponse) GetCategories() []*Category {
@@ -1289,7 +1288,7 @@ type CreateMenuItemRequest struct {
 
 func (x *CreateMenuItemRequest) Reset() {
 	*x = CreateMenuItemRequest{}
-	mi := &file_menu_service_proto_msgTypes[23]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1301,7 +1300,7 @@ func (x *CreateMenuItemRequest) String() string {
 func (*CreateMenuItemRequest) ProtoMessage() {}
 
 func (x *CreateMenuItemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[23]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1314,7 +1313,7 @@ func (x *CreateMenuItemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateMenuItemRequest.ProtoReflect.Descriptor instead.
 func (*CreateMenuItemRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{23}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *CreateMenuItemRequest) GetName() string {
@@ -1423,7 +1422,7 @@ type CreateMenuItemVariantRequest struct {
 
 func (x *CreateMenuItemVariantRequest) Reset() {
 	*x = CreateMenuItemVariantRequest{}
-	mi := &file_menu_service_proto_msgTypes[24]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1435,7 +1434,7 @@ func (x *CreateMenuItemVariantRequest) String() string {
 func (*CreateMenuItemVariantRequest) ProtoMessage() {}
 
 func (x *CreateMenuItemVariantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[24]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1448,7 +1447,7 @@ func (x *CreateMenuItemVariantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateMenuItemVariantRequest.ProtoReflect.Descriptor instead.
 func (*CreateMenuItemVariantRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{24}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *CreateMenuItemVariantRequest) GetName() string {
@@ -1509,7 +1508,7 @@ type CreateMenuItemResponse struct {
 
 func (x *CreateMenuItemResponse) Reset() {
 	*x = CreateMenuItemResponse{}
-	mi := &file_menu_service_proto_msgTypes[25]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1521,7 +1520,7 @@ func (x *CreateMenuItemResponse) String() string {
 func (*CreateMenuItemResponse) ProtoMessage() {}
 
 func (x *CreateMenuItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[25]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1534,7 +1533,7 @@ func (x *CreateMenuItemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateMenuItemResponse.ProtoReflect.Descriptor instead.
 func (*CreateMenuItemResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{25}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *CreateMenuItemResponse) GetMenuItem() *MenuItem {
@@ -1554,7 +1553,7 @@ type GetMenuItemRequest struct {
 
 func (x *GetMenuItemRequest) Reset() {
 	*x = GetMenuItemRequest{}
-	mi := &file_menu_service_proto_msgTypes[26]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1566,7 +1565,7 @@ func (x *GetMenuItemRequest) String() string {
 func (*GetMenuItemRequest) ProtoMessage() {}
 
 func (x *GetMenuItemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[26]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1579,7 +1578,7 @@ func (x *GetMenuItemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMenuItemRequest.ProtoReflect.Descriptor instead.
 func (*GetMenuItemRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{26}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *GetMenuItemRequest) GetId() *common.UUID {
@@ -1605,7 +1604,7 @@ type GetMenuItemResponse struct {
 
 func (x *GetMenuItemResponse) Reset() {
 	*x = GetMenuItemResponse{}
-	mi := &file_menu_service_proto_msgTypes[27]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1617,7 +1616,7 @@ func (x *GetMenuItemResponse) String() string {
 func (*GetMenuItemResponse) ProtoMessage() {}
 
 func (x *GetMenuItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[27]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1630,7 +1629,7 @@ func (x *GetMenuItemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMenuItemResponse.ProtoReflect.Descriptor instead.
 func (*GetMenuItemResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{27}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *GetMenuItemResponse) GetMenuItem() *MenuItem {
@@ -1650,7 +1649,7 @@ type UpdateMenuItemRequest struct {
 
 func (x *UpdateMenuItemRequest) Reset() {
 	*x = UpdateMenuItemRequest{}
-	mi := &file_menu_service_proto_msgTypes[28]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1662,7 +1661,7 @@ func (x *UpdateMenuItemRequest) String() string {
 func (*UpdateMenuItemRequest) ProtoMessage() {}
 
 func (x *UpdateMenuItemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[28]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1675,7 +1674,7 @@ func (x *UpdateMenuItemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMenuItemRequest.ProtoReflect.Descriptor instead.
 func (*UpdateMenuItemRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{28}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *UpdateMenuItemRequest) GetId() *common.UUID {
@@ -1701,7 +1700,7 @@ type UpdateMenuItemResponse struct {
 
 func (x *UpdateMenuItemResponse) Reset() {
 	*x = UpdateMenuItemResponse{}
-	mi := &file_menu_service_proto_msgTypes[29]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1713,7 +1712,7 @@ func (x *UpdateMenuItemResponse) String() string {
 func (*UpdateMenuItemResponse) ProtoMessage() {}
 
 func (x *UpdateMenuItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[29]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1726,7 +1725,7 @@ func (x *UpdateMenuItemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMenuItemResponse.ProtoReflect.Descriptor instead.
 func (*UpdateMenuItemResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{29}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *UpdateMenuItemResponse) GetMenuItem() *MenuItem {
@@ -1746,7 +1745,7 @@ type DeleteMenuItemRequest struct {
 
 func (x *DeleteMenuItemRequest) Reset() {
 	*x = DeleteMenuItemRequest{}
-	mi := &file_menu_service_proto_msgTypes[30]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1758,7 +1757,7 @@ func (x *DeleteMenuItemRequest) String() string {
 func (*DeleteMenuItemRequest) ProtoMessage() {}
 
 func (x *DeleteMenuItemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[30]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1771,7 +1770,7 @@ func (x *DeleteMenuItemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteMenuItemRequest.ProtoReflect.Descriptor instead.
 func (*DeleteMenuItemRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{30}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *DeleteMenuItemRequest) GetId() *common.UUID {
@@ -1802,7 +1801,7 @@ type ListMenuItemsRequest struct {
 
 func (x *ListMenuItemsRequest) Reset() {
 	*x = ListMenuItemsRequest{}
-	mi := &file_menu_service_proto_msgTypes[31]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1814,7 +1813,7 @@ func (x *ListMenuItemsRequest) String() string {
 func (*ListMenuItemsRequest) ProtoMessage() {}
 
 func (x *ListMenuItemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[31]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1827,7 +1826,7 @@ func (x *ListMenuItemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMenuItemsRequest.ProtoReflect.Descriptor instead.
 func (*ListMenuItemsRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{31}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *ListMenuItemsRequest) GetCategoryId() *common.UUID {
@@ -1882,7 +1881,7 @@ type ListMenuItemsResponse struct {
 
 func (x *ListMenuItemsResponse) Reset() {
 	*x = ListMenuItemsResponse{}
-	mi := &file_menu_service_proto_msgTypes[32]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1894,7 +1893,7 @@ func (x *ListMenuItemsResponse) String() string {
 func (*ListMenuItemsResponse) ProtoMessage() {}
 
 func (x *ListMenuItemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[32]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1907,7 +1906,7 @@ func (x *ListMenuItemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMenuItemsResponse.ProtoReflect.Descriptor instead.
 func (*ListMenuItemsResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{32}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *ListMenuItemsResponse) GetMenuItems() []*MenuItem {
@@ -1937,7 +1936,7 @@ type SearchMenuItemsRequest struct {
 
 func (x *SearchMenuItemsRequest) Reset() {
 	*x = SearchMenuItemsRequest{}
-	mi := &file_menu_service_proto_msgTypes[33]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1949,7 +1948,7 @@ func (x *SearchMenuItemsRequest) String() string {
 func (*SearchMenuItemsRequest) ProtoMessage() {}
 
 func (x *SearchMenuItemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[33]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1962,7 +1961,7 @@ func (x *SearchMenuItemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchMenuItemsRequest.ProtoReflect.Descriptor instead.
 func (*SearchMenuItemsRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{33}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *SearchMenuItemsRequest) GetRestaurantId() *common.UUID {
@@ -2010,7 +2009,7 @@ type SearchMenuItemsResponse struct {
 
 func (x *SearchMenuItemsResponse) Reset() {
 	*x = SearchMenuItemsResponse{}
-	mi := &file_menu_service_proto_msgTypes[34]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2022,7 +2021,7 @@ func (x *SearchMenuItemsResponse) String() string {
 func (*SearchMenuItemsResponse) ProtoMessage() {}
 
 func (x *SearchMenuItemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[34]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2035,7 +2034,7 @@ func (x *SearchMenuItemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchMenuItemsResponse.ProtoReflect.Descriptor instead.
 func (*SearchMenuItemsResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{34}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *SearchMenuItemsResponse) GetMenuItems() []*MenuItem {
@@ -2063,7 +2062,7 @@ type UpdateMenuItemStatusRequest struct {
 
 func (x *UpdateMenuItemStatusRequest) Reset() {
 	*x = UpdateMenuItemStatusRequest{}
-	mi := &file_menu_service_proto_msgTypes[35]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2075,7 +2074,7 @@ func (x *UpdateMenuItemStatusRequest) String() string {
 func (*UpdateMenuItemStatusRequest) ProtoMessage() {}
 
 func (x *UpdateMenuItemStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[35]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2088,7 +2087,7 @@ func (x *UpdateMenuItemStatusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMenuItemStatusRequest.ProtoReflect.Descriptor instead.
 func (*UpdateMenuItemStatusRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{35}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *UpdateMenuItemStatusRequest) GetId() *common.UUID {
@@ -2121,7 +2120,7 @@ type UpdateMenuItemStatusResponse struct {
 
 func (x *UpdateMenuItemStatusResponse) Reset() {
 	*x = UpdateMenuItemStatusResponse{}
-	mi := &file_menu_service_proto_msgTypes[36]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2133,7 +2132,7 @@ func (x *UpdateMenuItemStatusResponse) String() string {
 func (*UpdateMenuItemStatusResponse) ProtoMessage() {}
 
 func (x *UpdateMenuItemStatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[36]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2146,7 +2145,7 @@ func (x *UpdateMenuItemStatusResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMenuItemStatusResponse.ProtoReflect.Descriptor instead.
 func (*UpdateMenuItemStatusResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{36}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *UpdateMenuItemStatusResponse) GetMenuItem() *MenuItem {
@@ -2167,7 +2166,7 @@ type ReorderMenuItemsRequest struct {
 
 func (x *ReorderMenuItemsRequest) Reset() {
 	*x = ReorderMenuItemsRequest{}
-	mi := &file_menu_service_proto_msgTypes[37]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2179,7 +2178,7 @@ func (x *ReorderMenuItemsRequest) String() string {
 func (*ReorderMenuItemsRequest) ProtoMessage() {}
 
 func (x *ReorderMenuItemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[37]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2192,7 +2191,7 @@ func (x *ReorderMenuItemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReorderMenuItemsRequest.ProtoReflect.Descriptor instead.
 func (*ReorderMenuItemsRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{37}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *ReorderMenuItemsRequest) GetCategoryId() *common.UUID {
@@ -2226,7 +2225,7 @@ type MenuItemOrder struct {
 
 func (x *MenuItemOrder) Reset() {
 	*x = MenuItemOrder{}
-	mi := &file_menu_service_proto_msgTypes[38]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2238,7 +2237,7 @@ func (x *MenuItemOrder) String() string {
 func (*MenuItemOrder) ProtoMessage() {}
 
 func (x *MenuItemOrder) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[38]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2251,7 +2250,7 @@ func (x *MenuItemOrder) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MenuItemOrder.ProtoReflect.Descriptor instead.
 func (*MenuItemOrder) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{38}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *MenuItemOrder) GetMenuItemId() *common.UUID {
@@ -2277,7 +2276,7 @@ type ReorderMenuItemsResponse struct {
 
 func (x *ReorderMenuItemsResponse) Reset() {
 	*x = ReorderMenuItemsResponse{}
-	mi := &file_menu_service_proto_msgTypes[39]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2289,7 +2288,7 @@ func (x *ReorderMenuItemsResponse) String() string {
 func (*ReorderMenuItemsResponse) ProtoMessage() {}
 
 func (x *ReorderMenuItemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[39]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2302,7 +2301,7 @@ func (x *ReorderMenuItemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReorderMenuItemsResponse.ProtoReflect.Descriptor instead.
 func (*ReorderMenuItemsResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{39}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *ReorderMenuItemsResponse) GetMenuItems() []*MenuItem {
@@ -2323,7 +2322,7 @@ type GetPopularMenuItemsRequest struct {
 
 func (x *GetPopularMenuItemsRequest) Reset() {
 	*x = GetPopularMenuItemsRequest{}
-	mi := &file_menu_service_proto_msgTypes[40]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2335,7 +2334,7 @@ func (x *GetPopularMenuItemsRequest) String() string {
 func (*GetPopularMenuItemsRequest) ProtoMessage() {}
 
 func (x *GetPopularMenuItemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[40]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2348,7 +2347,7 @@ func (x *GetPopularMenuItemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPopularMenuItemsRequest.ProtoReflect.Descriptor instead.
 func (*GetPopularMenuItemsRequest) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{40}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *GetPopularMenuItemsRequest) GetRestaurantId() *common.UUID {
@@ -2381,7 +2380,7 @@ type GetPopularMenuItemsResponse struct {
 
 func (x *GetPopularMenuItemsResponse) Reset() {
 	*x = GetPopularMenuItemsResponse{}
-	mi := &file_menu_service_proto_msgTypes[41]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2393,7 +2392,7 @@ func (x *GetPopularMenuItemsResponse) String() string {
 func (*GetPopularMenuItemsResponse) ProtoMessage() {}
 
 func (x *GetPopularMenuItemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_menu_service_proto_msgTypes[41]
+	mi := &file_com_gastroflow_menu_service_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2406,7 +2405,7 @@ func (x *GetPopularMenuItemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPopularMenuItemsResponse.ProtoReflect.Descriptor instead.
 func (*GetPopularMenuItemsResponse) Descriptor() ([]byte, []int) {
-	return file_menu_service_proto_rawDescGZIP(), []int{41}
+	return file_com_gastroflow_menu_service_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *GetPopularMenuItemsResponse) GetMenuItems() []*MenuItem {
@@ -2416,203 +2415,198 @@ func (x *GetPopularMenuItemsResponse) GetMenuItems() []*MenuItem {
 	return nil
 }
 
-var File_menu_service_proto protoreflect.FileDescriptor
+var File_com_gastroflow_menu_service_proto protoreflect.FileDescriptor
 
-const file_menu_service_proto_rawDesc = "" +
+const file_com_gastroflow_menu_service_proto_rawDesc = "" +
 	"\n" +
-	"\x12menu/service.proto\x12\x13com.gastroflow.menu\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x11menu/models.proto\"\xf7\x02\n" +
-	"\x11CreateMenuRequest\x12\x1e\n" +
-	"\x04name\x18\x01 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12*\n" +
-	"\vdescription\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xe8\aR\vdescription\x12H\n" +
-	"\rrestaurant_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12:\n" +
-	"\ttime_slot\x18\x04 \x01(\v2\x1d.com.gastroflow.menu.TimeSlotR\btimeSlot\x12I\n" +
-	"\vactive_days\x18\x05 \x03(\x0e2\x1e.com.gastroflow.common.WeekDayB\b\xbaH\x05\x92\x01\x02\x10\aR\n" +
-	"activeDays\x12E\n" +
-	"\blanguage\x18\x06 \x01(\x0e2\x1f.com.gastroflow.common.LanguageB\b\xbaH\x05\x82\x01\x02 \x00R\blanguage\"K\n" +
-	"\x12CreateMenuResponse\x125\n" +
-	"\x04menu\x18\x01 \x01(\v2\x19.com.gastroflow.menu.MenuB\x06\xbaH\x03\xc8\x01\x01R\x04menu\"\x8f\x01\n" +
-	"\x0eGetMenuRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"H\n" +
-	"\x0fGetMenuResponse\x125\n" +
-	"\x04menu\x18\x01 \x01(\v2\x19.com.gastroflow.menu.MenuB\x06\xbaH\x03\xc8\x01\x01R\x04menu\"\x7f\n" +
-	"\x11UpdateMenuRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x125\n" +
-	"\x04menu\x18\x02 \x01(\v2\x19.com.gastroflow.menu.MenuB\x06\xbaH\x03\xc8\x01\x01R\x04menu\"K\n" +
-	"\x12UpdateMenuResponse\x125\n" +
-	"\x04menu\x18\x01 \x01(\v2\x19.com.gastroflow.menu.MenuB\x06\xbaH\x03\xc8\x01\x01R\x04menu\"\x92\x01\n" +
-	"\x11DeleteMenuRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"\x8c\x02\n" +
-	"\x10ListMenusRequest\x12H\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12P\n" +
+	"!com/gastroflow/menu/service.proto\x12\x13com.gastroflow.menu\x1a!com/gastroflow/common/enums.proto\x1a!com/gastroflow/common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a com/gastroflow/menu/models.proto\"\xc5\x02\n" +
+	"\x11CreateMenuRequest\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x02 \x01(\tR\vdescription\x12@\n" +
+	"\rrestaurant_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12:\n" +
+	"\ttime_slot\x18\x04 \x01(\v2\x1d.com.gastroflow.menu.TimeSlotR\btimeSlot\x12?\n" +
+	"\vactive_days\x18\x05 \x03(\x0e2\x1e.com.gastroflow.common.WeekDayR\n" +
+	"activeDays\x12;\n" +
+	"\blanguage\x18\x06 \x01(\x0e2\x1f.com.gastroflow.common.LanguageR\blanguage\"C\n" +
+	"\x12CreateMenuResponse\x12-\n" +
+	"\x04menu\x18\x01 \x01(\v2\x19.com.gastroflow.menu.MenuR\x04menu\"\x7f\n" +
+	"\x0eGetMenuRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"@\n" +
+	"\x0fGetMenuResponse\x12-\n" +
+	"\x04menu\x18\x01 \x01(\v2\x19.com.gastroflow.menu.MenuR\x04menu\"o\n" +
+	"\x11UpdateMenuRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12-\n" +
+	"\x04menu\x18\x02 \x01(\v2\x19.com.gastroflow.menu.MenuR\x04menu\"C\n" +
+	"\x12UpdateMenuResponse\x12-\n" +
+	"\x04menu\x18\x01 \x01(\v2\x19.com.gastroflow.menu.MenuR\x04menu\"\x82\x01\n" +
+	"\x11DeleteMenuRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"\xfc\x01\n" +
+	"\x10ListMenusRequest\x12@\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12H\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestR\n" +
 	"pagination\x12\x1f\n" +
 	"\vactive_only\x18\x03 \x01(\bR\n" +
 	"activeOnly\x12;\n" +
-	"\blanguage\x18\x04 \x01(\x0e2\x1f.com.gastroflow.common.LanguageR\blanguage\"\x97\x01\n" +
+	"\blanguage\x18\x04 \x01(\x0e2\x1f.com.gastroflow.common.LanguageR\blanguage\"\x8f\x01\n" +
 	"\x11ListMenusResponse\x12/\n" +
-	"\x05menus\x18\x01 \x03(\v2\x19.com.gastroflow.menu.MenuR\x05menus\x12Q\n" +
+	"\x05menus\x18\x01 \x03(\v2\x19.com.gastroflow.menu.MenuR\x05menus\x12I\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"pagination\"\x9d\x01\n" +
-	"\x14GetActiveMenuRequest\x12H\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12;\n" +
-	"\blanguage\x18\x02 \x01(\x0e2\x1f.com.gastroflow.common.LanguageR\blanguage\"N\n" +
-	"\x15GetActiveMenuResponse\x125\n" +
-	"\x04menu\x18\x01 \x01(\v2\x19.com.gastroflow.menu.MenuB\x06\xbaH\x03\xc8\x01\x01R\x04menu\"\xa9\x02\n" +
-	"\x15CreateCategoryRequest\x12\x1d\n" +
-	"\x04name\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12*\n" +
-	"\vdescription\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\vdescription\x12<\n" +
-	"\amenu_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06menuId\x128\n" +
-	"\tparent_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDR\bparentId\x12%\n" +
-	"\timage_url\x18\x05 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\bimageUrl\x12&\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseR\n" +
+	"pagination\"\x95\x01\n" +
+	"\x14GetActiveMenuRequest\x12@\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12;\n" +
+	"\blanguage\x18\x02 \x01(\x0e2\x1f.com.gastroflow.common.LanguageR\blanguage\"F\n" +
+	"\x15GetActiveMenuResponse\x12-\n" +
+	"\x04menu\x18\x01 \x01(\v2\x19.com.gastroflow.menu.MenuR\x04menu\"\xf9\x01\n" +
+	"\x15CreateCategoryRequest\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x02 \x01(\tR\vdescription\x124\n" +
+	"\amenu_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x06menuId\x128\n" +
+	"\tparent_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDR\bparentId\x12\x1b\n" +
+	"\timage_url\x18\x05 \x01(\tR\bimageUrl\x12\x1d\n" +
 	"\n" +
-	"sort_order\x18\x06 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\tsortOrder\"[\n" +
-	"\x16CreateCategoryResponse\x12A\n" +
-	"\bcategory\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.CategoryB\x06\xbaH\x03\xc8\x01\x01R\bcategory\"\x93\x01\n" +
-	"\x12GetCategoryRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"X\n" +
-	"\x13GetCategoryResponse\x12A\n" +
-	"\bcategory\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.CategoryB\x06\xbaH\x03\xc8\x01\x01R\bcategory\"\x8f\x01\n" +
-	"\x15UpdateCategoryRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12A\n" +
-	"\bcategory\x18\x02 \x01(\v2\x1d.com.gastroflow.menu.CategoryB\x06\xbaH\x03\xc8\x01\x01R\bcategory\"[\n" +
-	"\x16UpdateCategoryResponse\x12A\n" +
-	"\bcategory\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.CategoryB\x06\xbaH\x03\xc8\x01\x01R\bcategory\"\x96\x01\n" +
-	"\x15DeleteCategoryRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"\xcc\x02\n" +
-	"\x15ListCategoriesRequest\x12<\n" +
-	"\amenu_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06menuId\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12P\n" +
+	"sort_order\x18\x06 \x01(\x05R\tsortOrder\"S\n" +
+	"\x16CreateCategoryResponse\x129\n" +
+	"\bcategory\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.CategoryR\bcategory\"\x83\x01\n" +
+	"\x12GetCategoryRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"P\n" +
+	"\x13GetCategoryResponse\x129\n" +
+	"\bcategory\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.CategoryR\bcategory\"\x7f\n" +
+	"\x15UpdateCategoryRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x129\n" +
+	"\bcategory\x18\x02 \x01(\v2\x1d.com.gastroflow.menu.CategoryR\bcategory\"S\n" +
+	"\x16UpdateCategoryResponse\x129\n" +
+	"\bcategory\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.CategoryR\bcategory\"\x86\x01\n" +
+	"\x15DeleteCategoryRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"\xb4\x02\n" +
+	"\x15ListCategoriesRequest\x124\n" +
+	"\amenu_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x06menuId\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12H\n" +
 	"\n" +
-	"pagination\x18\x03 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"pagination\x18\x03 \x01(\v2(.com.gastroflow.common.PaginationRequestR\n" +
 	"pagination\x12\x1f\n" +
 	"\vactive_only\x18\x04 \x01(\bR\n" +
 	"activeOnly\x128\n" +
-	"\tparent_id\x18\x05 \x01(\v2\x1b.com.gastroflow.common.UUIDR\bparentId\"\xaa\x01\n" +
+	"\tparent_id\x18\x05 \x01(\v2\x1b.com.gastroflow.common.UUIDR\bparentId\"\xa2\x01\n" +
 	"\x16ListCategoriesResponse\x12=\n" +
 	"\n" +
 	"categories\x18\x01 \x03(\v2\x1d.com.gastroflow.menu.CategoryR\n" +
-	"categories\x12Q\n" +
+	"categories\x12I\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"pagination\"\xfb\x01\n" +
-	"\x18ReorderCategoriesRequest\x12<\n" +
-	"\amenu_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x06menuId\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12W\n" +
-	"\x0fcategory_orders\x18\x03 \x03(\v2\".com.gastroflow.menu.CategoryOrderB\n" +
-	"\xbaH\a\x92\x01\x04\b\x01\x10dR\x0ecategoryOrders\"}\n" +
-	"\rCategoryOrder\x12D\n" +
-	"\vcategory_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"categoryId\x12&\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseR\n" +
+	"pagination\"\xdf\x01\n" +
+	"\x18ReorderCategoriesRequest\x124\n" +
+	"\amenu_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x06menuId\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12K\n" +
+	"\x0fcategory_orders\x18\x03 \x03(\v2\".com.gastroflow.menu.CategoryOrderR\x0ecategoryOrders\"l\n" +
+	"\rCategoryOrder\x12<\n" +
+	"\vcategory_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\n" +
+	"categoryId\x12\x1d\n" +
 	"\n" +
-	"sort_order\x18\x02 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\tsortOrder\"Z\n" +
+	"sort_order\x18\x02 \x01(\x05R\tsortOrder\"Z\n" +
 	"\x19ReorderCategoriesResponse\x12=\n" +
 	"\n" +
 	"categories\x18\x01 \x03(\v2\x1d.com.gastroflow.menu.CategoryR\n" +
-	"categories\"\xa0\x06\n" +
-	"\x15CreateMenuItemRequest\x12\x1e\n" +
-	"\x04name\x18\x01 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x01\x18\xc8\x01R\x04name\x12*\n" +
-	"\vdescription\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xe8\aR\vdescription\x12:\n" +
-	"\x05price\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\x05price\x12D\n" +
-	"\vcategory_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"categoryId\x12,\n" +
-	"\fcooking_time\x18\x05 \x01(\x05B\t\xbaH\x06\x1a\x04\x18x(\x01R\vcookingTime\x12I\n" +
-	"\x0enutrition_info\x18\x06 \x01(\v2\".com.gastroflow.menu.NutritionInfoR\rnutritionInfo\x12E\n" +
-	"\tallergens\x18\a \x03(\x0e2\x1d.com.gastroflow.menu.AllergenB\b\xbaH\x05\x92\x01\x02\x102R\tallergens\x12%\n" +
-	"\timage_url\x18\b \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\bimageUrl\x12<\n" +
-	"\x11additional_images\x18\t \x03(\tB\x0f\xbaH\f\x92\x01\t\x10\n" +
-	"\"\x05r\x03\x18\xf4\x03R\x10additionalImages\x12*\n" +
+	"categories\"\x9d\x05\n" +
+	"\x15CreateMenuItemRequest\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x02 \x01(\tR\vdescription\x122\n" +
+	"\x05price\x18\x03 \x01(\v2\x1c.com.gastroflow.common.MoneyR\x05price\x12<\n" +
+	"\vcategory_id\x18\x04 \x01(\v2\x1b.com.gastroflow.common.UUIDR\n" +
+	"categoryId\x12!\n" +
+	"\fcooking_time\x18\x05 \x01(\x05R\vcookingTime\x12I\n" +
+	"\x0enutrition_info\x18\x06 \x01(\v2\".com.gastroflow.menu.NutritionInfoR\rnutritionInfo\x12;\n" +
+	"\tallergens\x18\a \x03(\x0e2\x1d.com.gastroflow.menu.AllergenR\tallergens\x12\x1b\n" +
+	"\timage_url\x18\b \x01(\tR\bimageUrl\x12+\n" +
+	"\x11additional_images\x18\t \x03(\tR\x10additionalImages\x12!\n" +
 	"\fportion_size\x18\n" +
-	" \x01(\tB\a\xbaH\x04r\x02\x182R\vportionSize\x12]\n" +
-	"\x12dietary_properties\x18\v \x03(\x0e2$.com.gastroflow.menu.DietaryPropertyB\b\xbaH\x05\x92\x01\x02\x10\x14R\x11dietaryProperties\x120\n" +
-	"\vingredients\x18\f \x03(\tB\x0e\xbaH\v\x92\x01\b\x10d\"\x04r\x02\x18dR\vingredients\x12W\n" +
-	"\bvariants\x18\r \x03(\v21.com.gastroflow.menu.CreateMenuItemVariantRequestB\b\xbaH\x05\x92\x01\x02\x10dR\bvariants\"\xed\x02\n" +
-	"\x1cCreateMenuItemVariantRequest\x12\x1d\n" +
-	"\x04name\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12K\n" +
-	"\x0eprice_modifier\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyB\x06\xbaH\x03\xc8\x01\x01R\rpriceModifier\x12>\n" +
-	"\x04type\x18\x03 \x01(\x0e2 .com.gastroflow.menu.VariantTypeB\b\xbaH\x05\x82\x01\x02 \x00R\x04type\x12&\n" +
+	" \x01(\tR\vportionSize\x12S\n" +
+	"\x12dietary_properties\x18\v \x03(\x0e2$.com.gastroflow.menu.DietaryPropertyR\x11dietaryProperties\x12 \n" +
+	"\vingredients\x18\f \x03(\tR\vingredients\x12M\n" +
+	"\bvariants\x18\r \x03(\v21.com.gastroflow.menu.CreateMenuItemVariantRequestR\bvariants\"\xb3\x02\n" +
+	"\x1cCreateMenuItemVariantRequest\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12C\n" +
+	"\x0eprice_modifier\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyR\rpriceModifier\x124\n" +
+	"\x04type\x18\x03 \x01(\x0e2 .com.gastroflow.menu.VariantTypeR\x04type\x12\x1d\n" +
 	"\n" +
-	"group_name\x18\x04 \x01(\tB\a\xbaH\x04r\x02\x182R\tgroupName\x12\x1f\n" +
+	"group_name\x18\x04 \x01(\tR\tgroupName\x12\x1f\n" +
 	"\vis_required\x18\x05 \x01(\bR\n" +
-	"isRequired\x120\n" +
-	"\x0emax_selections\x18\x06 \x01(\x05B\t\xbaH\x06\x1a\x04\x18\x14(\x01R\rmaxSelections\x12&\n" +
+	"isRequired\x12%\n" +
+	"\x0emax_selections\x18\x06 \x01(\x05R\rmaxSelections\x12\x1d\n" +
 	"\n" +
-	"sort_order\x18\a \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\tsortOrder\"\\\n" +
-	"\x16CreateMenuItemResponse\x12B\n" +
-	"\tmenu_item\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.MenuItemB\x06\xbaH\x03\xc8\x01\x01R\bmenuItem\"\x93\x01\n" +
-	"\x12GetMenuItemRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"Y\n" +
-	"\x13GetMenuItemResponse\x12B\n" +
-	"\tmenu_item\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.MenuItemB\x06\xbaH\x03\xc8\x01\x01R\bmenuItem\"\x90\x01\n" +
-	"\x15UpdateMenuItemRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12B\n" +
-	"\tmenu_item\x18\x02 \x01(\v2\x1d.com.gastroflow.menu.MenuItemB\x06\xbaH\x03\xc8\x01\x01R\bmenuItem\"\\\n" +
-	"\x16UpdateMenuItemResponse\x12B\n" +
-	"\tmenu_item\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.MenuItemB\x06\xbaH\x03\xc8\x01\x01R\bmenuItem\"\x96\x01\n" +
-	"\x15DeleteMenuItemRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"\xcc\x03\n" +
-	"\x14ListMenuItemsRequest\x12D\n" +
-	"\vcategory_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"categoryId\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12P\n" +
+	"sort_order\x18\a \x01(\x05R\tsortOrder\"T\n" +
+	"\x16CreateMenuItemResponse\x12:\n" +
+	"\tmenu_item\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.MenuItemR\bmenuItem\"\x83\x01\n" +
+	"\x12GetMenuItemRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"Q\n" +
+	"\x13GetMenuItemResponse\x12:\n" +
+	"\tmenu_item\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.MenuItemR\bmenuItem\"\x80\x01\n" +
+	"\x15UpdateMenuItemRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12:\n" +
+	"\tmenu_item\x18\x02 \x01(\v2\x1d.com.gastroflow.menu.MenuItemR\bmenuItem\"T\n" +
+	"\x16UpdateMenuItemResponse\x12:\n" +
+	"\tmenu_item\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.MenuItemR\bmenuItem\"\x86\x01\n" +
+	"\x15DeleteMenuItemRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"\xa0\x03\n" +
+	"\x14ListMenuItemsRequest\x12<\n" +
+	"\vcategory_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\n" +
+	"categoryId\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12H\n" +
 	"\n" +
-	"pagination\x18\x03 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"pagination\x12T\n" +
-	"\rstatus_filter\x18\x04 \x03(\x0e2%.com.gastroflow.common.MenuItemStatusB\b\xbaH\x05\x92\x01\x02\x10\n" +
-	"R\fstatusFilter\x12U\n" +
-	"\x0edietary_filter\x18\x05 \x03(\x0e2$.com.gastroflow.menu.DietaryPropertyB\b\xbaH\x05\x92\x01\x02\x10\x14R\rdietaryFilter\x12%\n" +
-	"\x0eavailable_only\x18\x06 \x01(\bR\ravailableOnly\"\xa8\x01\n" +
-	"\x15ListMenuItemsResponse\x12<\n" +
-	"\n" +
-	"menu_items\x18\x01 \x03(\v2\x1d.com.gastroflow.menu.MenuItemR\tmenuItems\x12Q\n" +
-	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"pagination\"\xee\x02\n" +
-	"\x16SearchMenuItemsRequest\x12H\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12\x1f\n" +
-	"\x05query\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x05query\x12P\n" +
-	"\n" +
-	"pagination\x18\x03 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
+	"pagination\x18\x03 \x01(\v2(.com.gastroflow.common.PaginationRequestR\n" +
 	"pagination\x12J\n" +
 	"\rstatus_filter\x18\x04 \x03(\x0e2%.com.gastroflow.common.MenuItemStatusR\fstatusFilter\x12K\n" +
-	"\x0edietary_filter\x18\x05 \x03(\x0e2$.com.gastroflow.menu.DietaryPropertyR\rdietaryFilter\"\xaa\x01\n" +
+	"\x0edietary_filter\x18\x05 \x03(\x0e2$.com.gastroflow.menu.DietaryPropertyR\rdietaryFilter\x12%\n" +
+	"\x0eavailable_only\x18\x06 \x01(\bR\ravailableOnly\"\xa0\x01\n" +
+	"\x15ListMenuItemsResponse\x12<\n" +
+	"\n" +
+	"menu_items\x18\x01 \x03(\v2\x1d.com.gastroflow.menu.MenuItemR\tmenuItems\x12I\n" +
+	"\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseR\n" +
+	"pagination\"\xd3\x02\n" +
+	"\x16SearchMenuItemsRequest\x12@\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12\x14\n" +
+	"\x05query\x18\x02 \x01(\tR\x05query\x12H\n" +
+	"\n" +
+	"pagination\x18\x03 \x01(\v2(.com.gastroflow.common.PaginationRequestR\n" +
+	"pagination\x12J\n" +
+	"\rstatus_filter\x18\x04 \x03(\x0e2%.com.gastroflow.common.MenuItemStatusR\fstatusFilter\x12K\n" +
+	"\x0edietary_filter\x18\x05 \x03(\x0e2$.com.gastroflow.menu.DietaryPropertyR\rdietaryFilter\"\xa2\x01\n" +
 	"\x17SearchMenuItemsResponse\x12<\n" +
 	"\n" +
-	"menu_items\x18\x01 \x03(\v2\x1d.com.gastroflow.menu.MenuItemR\tmenuItems\x12Q\n" +
+	"menu_items\x18\x01 \x03(\v2\x1d.com.gastroflow.menu.MenuItemR\tmenuItems\x12I\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"pagination\"\xe5\x01\n" +
-	"\x1bUpdateMenuItemStatusRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12G\n" +
-	"\x06status\x18\x03 \x01(\x0e2%.com.gastroflow.common.MenuItemStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\"b\n" +
-	"\x1cUpdateMenuItemStatusResponse\x12B\n" +
-	"\tmenu_item\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.MenuItemB\x06\xbaH\x03\xc8\x01\x01R\bmenuItem\"\x84\x02\n" +
-	"\x17ReorderMenuItemsRequest\x12D\n" +
-	"\vcategory_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"categoryId\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12Y\n" +
-	"\x10menu_item_orders\x18\x03 \x03(\v2\".com.gastroflow.menu.MenuItemOrderB\v\xbaH\b\x92\x01\x05\b\x01\x10\xc8\x01R\x0emenuItemOrders\"~\n" +
-	"\rMenuItemOrder\x12E\n" +
-	"\fmenu_item_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"menuItemId\x12&\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseR\n" +
+	"pagination\"\xcb\x01\n" +
+	"\x1bUpdateMenuItemStatusRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12=\n" +
+	"\x06status\x18\x03 \x01(\x0e2%.com.gastroflow.common.MenuItemStatusR\x06status\"Z\n" +
+	"\x1cUpdateMenuItemStatusResponse\x12:\n" +
+	"\tmenu_item\x18\x01 \x01(\v2\x1d.com.gastroflow.menu.MenuItemR\bmenuItem\"\xe7\x01\n" +
+	"\x17ReorderMenuItemsRequest\x12<\n" +
+	"\vcategory_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\n" +
+	"categoryId\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12L\n" +
+	"\x10menu_item_orders\x18\x03 \x03(\v2\".com.gastroflow.menu.MenuItemOrderR\x0emenuItemOrders\"m\n" +
+	"\rMenuItemOrder\x12=\n" +
+	"\fmenu_item_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\n" +
+	"menuItemId\x12\x1d\n" +
 	"\n" +
-	"sort_order\x18\x02 \x01(\x05B\a\xbaH\x04\x1a\x02(\x00R\tsortOrder\"X\n" +
+	"sort_order\x18\x02 \x01(\x05R\tsortOrder\"X\n" +
 	"\x18ReorderMenuItemsResponse\x12<\n" +
 	"\n" +
-	"menu_items\x18\x01 \x03(\v2\x1d.com.gastroflow.menu.MenuItemR\tmenuItems\"\xc5\x01\n" +
-	"\x1aGetPopularMenuItemsRequest\x12H\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12\x1f\n" +
-	"\x05limit\x18\x02 \x01(\x05B\t\xbaH\x06\x1a\x04\x182(\x01R\x05limit\x12<\n" +
+	"menu_items\x18\x01 \x03(\v2\x1d.com.gastroflow.menu.MenuItemR\tmenuItems\"\xb2\x01\n" +
+	"\x1aGetPopularMenuItemsRequest\x12@\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12\x14\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\x12<\n" +
 	"\vcategory_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDR\n" +
 	"categoryId\"[\n" +
 	"\x1bGetPopularMenuItemsResponse\x12<\n" +
@@ -2648,19 +2642,19 @@ const file_menu_service_proto_rawDesc = "" +
 	"\x17com.com.gastroflow.menuB\fServiceProtoP\x01Z#github.com/gastroflow/proto-go/menu\xa2\x02\x03CGM\xaa\x02\x13Com.Gastroflow.Menu\xca\x02\x13Com\\Gastroflow\\Menu\xe2\x02\x1fCom\\Gastroflow\\Menu\\GPBMetadata\xea\x02\x15Com::Gastroflow::Menub\x06proto3"
 
 var (
-	file_menu_service_proto_rawDescOnce sync.Once
-	file_menu_service_proto_rawDescData []byte
+	file_com_gastroflow_menu_service_proto_rawDescOnce sync.Once
+	file_com_gastroflow_menu_service_proto_rawDescData []byte
 )
 
-func file_menu_service_proto_rawDescGZIP() []byte {
-	file_menu_service_proto_rawDescOnce.Do(func() {
-		file_menu_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_menu_service_proto_rawDesc), len(file_menu_service_proto_rawDesc)))
+func file_com_gastroflow_menu_service_proto_rawDescGZIP() []byte {
+	file_com_gastroflow_menu_service_proto_rawDescOnce.Do(func() {
+		file_com_gastroflow_menu_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_com_gastroflow_menu_service_proto_rawDesc), len(file_com_gastroflow_menu_service_proto_rawDesc)))
 	})
-	return file_menu_service_proto_rawDescData
+	return file_com_gastroflow_menu_service_proto_rawDescData
 }
 
-var file_menu_service_proto_msgTypes = make([]protoimpl.MessageInfo, 42)
-var file_menu_service_proto_goTypes = []any{
+var file_com_gastroflow_menu_service_proto_msgTypes = make([]protoimpl.MessageInfo, 42)
+var file_com_gastroflow_menu_service_proto_goTypes = []any{
 	(*CreateMenuRequest)(nil),            // 0: com.gastroflow.menu.CreateMenuRequest
 	(*CreateMenuResponse)(nil),           // 1: com.gastroflow.menu.CreateMenuResponse
 	(*GetMenuRequest)(nil),               // 2: com.gastroflow.menu.GetMenuRequest
@@ -2720,7 +2714,7 @@ var file_menu_service_proto_goTypes = []any{
 	(common.MenuItemStatus)(0),           // 56: com.gastroflow.common.MenuItemStatus
 	(*emptypb.Empty)(nil),                // 57: google.protobuf.Empty
 }
-var file_menu_service_proto_depIdxs = []int32{
+var file_com_gastroflow_menu_service_proto_depIdxs = []int32{
 	42,  // 0: com.gastroflow.menu.CreateMenuRequest.restaurant_id:type_name -> com.gastroflow.common.UUID
 	43,  // 1: com.gastroflow.menu.CreateMenuRequest.time_slot:type_name -> com.gastroflow.menu.TimeSlot
 	44,  // 2: com.gastroflow.menu.CreateMenuRequest.active_days:type_name -> com.gastroflow.common.WeekDay
@@ -2855,27 +2849,27 @@ var file_menu_service_proto_depIdxs = []int32{
 	0,   // [0:85] is the sub-list for field type_name
 }
 
-func init() { file_menu_service_proto_init() }
-func file_menu_service_proto_init() {
-	if File_menu_service_proto != nil {
+func init() { file_com_gastroflow_menu_service_proto_init() }
+func file_com_gastroflow_menu_service_proto_init() {
+	if File_com_gastroflow_menu_service_proto != nil {
 		return
 	}
-	file_menu_models_proto_init()
+	file_com_gastroflow_menu_models_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_menu_service_proto_rawDesc), len(file_menu_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_com_gastroflow_menu_service_proto_rawDesc), len(file_com_gastroflow_menu_service_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   42,
 			NumExtensions: 0,
 			NumServices:   3,
 		},
-		GoTypes:           file_menu_service_proto_goTypes,
-		DependencyIndexes: file_menu_service_proto_depIdxs,
-		MessageInfos:      file_menu_service_proto_msgTypes,
+		GoTypes:           file_com_gastroflow_menu_service_proto_goTypes,
+		DependencyIndexes: file_com_gastroflow_menu_service_proto_depIdxs,
+		MessageInfos:      file_com_gastroflow_menu_service_proto_msgTypes,
 	}.Build()
-	File_menu_service_proto = out.File
-	file_menu_service_proto_goTypes = nil
-	file_menu_service_proto_depIdxs = nil
+	File_com_gastroflow_menu_service_proto = out.File
+	file_com_gastroflow_menu_service_proto_goTypes = nil
+	file_com_gastroflow_menu_service_proto_depIdxs = nil
 }

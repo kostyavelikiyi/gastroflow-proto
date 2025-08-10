@@ -2,12 +2,11 @@
 // versions:
 // 	protoc-gen-go v1.36.7
 // 	protoc        (unknown)
-// source: orders/service.proto
+// source: com/gastroflow/orders/service.proto
 
 package orders
 
 import (
-	_ "buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate"
 	common "github.com/gastroflow/proto-go/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -55,7 +54,7 @@ type CreateOrderRequest struct {
 
 func (x *CreateOrderRequest) Reset() {
 	*x = CreateOrderRequest{}
-	mi := &file_orders_service_proto_msgTypes[0]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -67,7 +66,7 @@ func (x *CreateOrderRequest) String() string {
 func (*CreateOrderRequest) ProtoMessage() {}
 
 func (x *CreateOrderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[0]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -80,7 +79,7 @@ func (x *CreateOrderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateOrderRequest.ProtoReflect.Descriptor instead.
 func (*CreateOrderRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{0}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateOrderRequest) GetName() string {
@@ -178,7 +177,7 @@ type CreatePositionRequest struct {
 
 func (x *CreatePositionRequest) Reset() {
 	*x = CreatePositionRequest{}
-	mi := &file_orders_service_proto_msgTypes[1]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -190,7 +189,7 @@ func (x *CreatePositionRequest) String() string {
 func (*CreatePositionRequest) ProtoMessage() {}
 
 func (x *CreatePositionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[1]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -203,7 +202,7 @@ func (x *CreatePositionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePositionRequest.ProtoReflect.Descriptor instead.
 func (*CreatePositionRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{1}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreatePositionRequest) GetMenuItemId() *common.UUID {
@@ -252,7 +251,7 @@ type CreateOrderResponse struct {
 
 func (x *CreateOrderResponse) Reset() {
 	*x = CreateOrderResponse{}
-	mi := &file_orders_service_proto_msgTypes[2]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -264,7 +263,7 @@ func (x *CreateOrderResponse) String() string {
 func (*CreateOrderResponse) ProtoMessage() {}
 
 func (x *CreateOrderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[2]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -277,7 +276,7 @@ func (x *CreateOrderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateOrderResponse.ProtoReflect.Descriptor instead.
 func (*CreateOrderResponse) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{2}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateOrderResponse) GetOrder() *Order {
@@ -304,7 +303,7 @@ type GetOrderRequest struct {
 
 func (x *GetOrderRequest) Reset() {
 	*x = GetOrderRequest{}
-	mi := &file_orders_service_proto_msgTypes[3]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -316,7 +315,7 @@ func (x *GetOrderRequest) String() string {
 func (*GetOrderRequest) ProtoMessage() {}
 
 func (x *GetOrderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[3]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -329,7 +328,7 @@ func (x *GetOrderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetOrderRequest.ProtoReflect.Descriptor instead.
 func (*GetOrderRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{3}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetOrderRequest) GetId() *common.UUID {
@@ -355,7 +354,7 @@ type GetOrderResponse struct {
 
 func (x *GetOrderResponse) Reset() {
 	*x = GetOrderResponse{}
-	mi := &file_orders_service_proto_msgTypes[4]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -367,7 +366,7 @@ func (x *GetOrderResponse) String() string {
 func (*GetOrderResponse) ProtoMessage() {}
 
 func (x *GetOrderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[4]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -380,7 +379,7 @@ func (x *GetOrderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetOrderResponse.ProtoReflect.Descriptor instead.
 func (*GetOrderResponse) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{4}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetOrderResponse) GetOrder() *Order {
@@ -400,7 +399,7 @@ type UpdateOrderRequest struct {
 
 func (x *UpdateOrderRequest) Reset() {
 	*x = UpdateOrderRequest{}
-	mi := &file_orders_service_proto_msgTypes[5]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -412,7 +411,7 @@ func (x *UpdateOrderRequest) String() string {
 func (*UpdateOrderRequest) ProtoMessage() {}
 
 func (x *UpdateOrderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[5]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -425,7 +424,7 @@ func (x *UpdateOrderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateOrderRequest.ProtoReflect.Descriptor instead.
 func (*UpdateOrderRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{5}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateOrderRequest) GetId() *common.UUID {
@@ -451,7 +450,7 @@ type UpdateOrderResponse struct {
 
 func (x *UpdateOrderResponse) Reset() {
 	*x = UpdateOrderResponse{}
-	mi := &file_orders_service_proto_msgTypes[6]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -463,7 +462,7 @@ func (x *UpdateOrderResponse) String() string {
 func (*UpdateOrderResponse) ProtoMessage() {}
 
 func (x *UpdateOrderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[6]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -476,7 +475,7 @@ func (x *UpdateOrderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateOrderResponse.ProtoReflect.Descriptor instead.
 func (*UpdateOrderResponse) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{6}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UpdateOrderResponse) GetOrder() *Order {
@@ -496,7 +495,7 @@ type DeleteOrderRequest struct {
 
 func (x *DeleteOrderRequest) Reset() {
 	*x = DeleteOrderRequest{}
-	mi := &file_orders_service_proto_msgTypes[7]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -508,7 +507,7 @@ func (x *DeleteOrderRequest) String() string {
 func (*DeleteOrderRequest) ProtoMessage() {}
 
 func (x *DeleteOrderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[7]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -521,7 +520,7 @@ func (x *DeleteOrderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteOrderRequest.ProtoReflect.Descriptor instead.
 func (*DeleteOrderRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{7}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *DeleteOrderRequest) GetId() *common.UUID {
@@ -560,7 +559,7 @@ type ListOrdersRequest struct {
 
 func (x *ListOrdersRequest) Reset() {
 	*x = ListOrdersRequest{}
-	mi := &file_orders_service_proto_msgTypes[8]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -572,7 +571,7 @@ func (x *ListOrdersRequest) String() string {
 func (*ListOrdersRequest) ProtoMessage() {}
 
 func (x *ListOrdersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[8]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -585,7 +584,7 @@ func (x *ListOrdersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListOrdersRequest.ProtoReflect.Descriptor instead.
 func (*ListOrdersRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{8}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ListOrdersRequest) GetRestaurantId() *common.UUID {
@@ -647,7 +646,7 @@ type ListOrdersResponse struct {
 
 func (x *ListOrdersResponse) Reset() {
 	*x = ListOrdersResponse{}
-	mi := &file_orders_service_proto_msgTypes[9]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -659,7 +658,7 @@ func (x *ListOrdersResponse) String() string {
 func (*ListOrdersResponse) ProtoMessage() {}
 
 func (x *ListOrdersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[9]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -672,7 +671,7 @@ func (x *ListOrdersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListOrdersResponse.ProtoReflect.Descriptor instead.
 func (*ListOrdersResponse) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{9}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ListOrdersResponse) GetOrders() []*Order {
@@ -701,7 +700,7 @@ type UpdateOrderStatusRequest struct {
 
 func (x *UpdateOrderStatusRequest) Reset() {
 	*x = UpdateOrderStatusRequest{}
-	mi := &file_orders_service_proto_msgTypes[10]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -713,7 +712,7 @@ func (x *UpdateOrderStatusRequest) String() string {
 func (*UpdateOrderStatusRequest) ProtoMessage() {}
 
 func (x *UpdateOrderStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[10]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -726,7 +725,7 @@ func (x *UpdateOrderStatusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateOrderStatusRequest.ProtoReflect.Descriptor instead.
 func (*UpdateOrderStatusRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{10}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *UpdateOrderStatusRequest) GetId() *common.UUID {
@@ -766,7 +765,7 @@ type UpdateOrderStatusResponse struct {
 
 func (x *UpdateOrderStatusResponse) Reset() {
 	*x = UpdateOrderStatusResponse{}
-	mi := &file_orders_service_proto_msgTypes[11]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -778,7 +777,7 @@ func (x *UpdateOrderStatusResponse) String() string {
 func (*UpdateOrderStatusResponse) ProtoMessage() {}
 
 func (x *UpdateOrderStatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[11]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -791,7 +790,7 @@ func (x *UpdateOrderStatusResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateOrderStatusResponse.ProtoReflect.Descriptor instead.
 func (*UpdateOrderStatusResponse) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{11}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *UpdateOrderStatusResponse) GetOrder() *Order {
@@ -812,7 +811,7 @@ type MarkPositionReadyRequest struct {
 
 func (x *MarkPositionReadyRequest) Reset() {
 	*x = MarkPositionReadyRequest{}
-	mi := &file_orders_service_proto_msgTypes[12]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -824,7 +823,7 @@ func (x *MarkPositionReadyRequest) String() string {
 func (*MarkPositionReadyRequest) ProtoMessage() {}
 
 func (x *MarkPositionReadyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[12]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -837,7 +836,7 @@ func (x *MarkPositionReadyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MarkPositionReadyRequest.ProtoReflect.Descriptor instead.
 func (*MarkPositionReadyRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{12}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *MarkPositionReadyRequest) GetOrderId() *common.UUID {
@@ -871,7 +870,7 @@ type MarkPositionReadyResponse struct {
 
 func (x *MarkPositionReadyResponse) Reset() {
 	*x = MarkPositionReadyResponse{}
-	mi := &file_orders_service_proto_msgTypes[13]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -883,7 +882,7 @@ func (x *MarkPositionReadyResponse) String() string {
 func (*MarkPositionReadyResponse) ProtoMessage() {}
 
 func (x *MarkPositionReadyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[13]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -896,7 +895,7 @@ func (x *MarkPositionReadyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MarkPositionReadyResponse.ProtoReflect.Descriptor instead.
 func (*MarkPositionReadyResponse) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{13}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *MarkPositionReadyResponse) GetPosition() *Position {
@@ -923,7 +922,7 @@ type MarkOrderReadyRequest struct {
 
 func (x *MarkOrderReadyRequest) Reset() {
 	*x = MarkOrderReadyRequest{}
-	mi := &file_orders_service_proto_msgTypes[14]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -935,7 +934,7 @@ func (x *MarkOrderReadyRequest) String() string {
 func (*MarkOrderReadyRequest) ProtoMessage() {}
 
 func (x *MarkOrderReadyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[14]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -948,7 +947,7 @@ func (x *MarkOrderReadyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MarkOrderReadyRequest.ProtoReflect.Descriptor instead.
 func (*MarkOrderReadyRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{14}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *MarkOrderReadyRequest) GetId() *common.UUID {
@@ -975,7 +974,7 @@ type MarkOrderReadyResponse struct {
 
 func (x *MarkOrderReadyResponse) Reset() {
 	*x = MarkOrderReadyResponse{}
-	mi := &file_orders_service_proto_msgTypes[15]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -987,7 +986,7 @@ func (x *MarkOrderReadyResponse) String() string {
 func (*MarkOrderReadyResponse) ProtoMessage() {}
 
 func (x *MarkOrderReadyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[15]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1000,7 +999,7 @@ func (x *MarkOrderReadyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MarkOrderReadyResponse.ProtoReflect.Descriptor instead.
 func (*MarkOrderReadyResponse) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{15}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *MarkOrderReadyResponse) GetOrder() *Order {
@@ -1028,7 +1027,7 @@ type CancelOrderRequest struct {
 
 func (x *CancelOrderRequest) Reset() {
 	*x = CancelOrderRequest{}
-	mi := &file_orders_service_proto_msgTypes[16]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1040,7 +1039,7 @@ func (x *CancelOrderRequest) String() string {
 func (*CancelOrderRequest) ProtoMessage() {}
 
 func (x *CancelOrderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[16]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1053,7 +1052,7 @@ func (x *CancelOrderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CancelOrderRequest.ProtoReflect.Descriptor instead.
 func (*CancelOrderRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{16}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *CancelOrderRequest) GetId() *common.UUID {
@@ -1086,7 +1085,7 @@ type CancelOrderResponse struct {
 
 func (x *CancelOrderResponse) Reset() {
 	*x = CancelOrderResponse{}
-	mi := &file_orders_service_proto_msgTypes[17]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1098,7 +1097,7 @@ func (x *CancelOrderResponse) String() string {
 func (*CancelOrderResponse) ProtoMessage() {}
 
 func (x *CancelOrderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[17]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1111,7 +1110,7 @@ func (x *CancelOrderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CancelOrderResponse.ProtoReflect.Descriptor instead.
 func (*CancelOrderResponse) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{17}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *CancelOrderResponse) GetOrder() *Order {
@@ -1131,7 +1130,7 @@ type GetOrderHistoryRequest struct {
 
 func (x *GetOrderHistoryRequest) Reset() {
 	*x = GetOrderHistoryRequest{}
-	mi := &file_orders_service_proto_msgTypes[18]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1143,7 +1142,7 @@ func (x *GetOrderHistoryRequest) String() string {
 func (*GetOrderHistoryRequest) ProtoMessage() {}
 
 func (x *GetOrderHistoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[18]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1156,7 +1155,7 @@ func (x *GetOrderHistoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetOrderHistoryRequest.ProtoReflect.Descriptor instead.
 func (*GetOrderHistoryRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{18}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *GetOrderHistoryRequest) GetId() *common.UUID {
@@ -1182,7 +1181,7 @@ type GetOrderHistoryResponse struct {
 
 func (x *GetOrderHistoryResponse) Reset() {
 	*x = GetOrderHistoryResponse{}
-	mi := &file_orders_service_proto_msgTypes[19]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1194,7 +1193,7 @@ func (x *GetOrderHistoryResponse) String() string {
 func (*GetOrderHistoryResponse) ProtoMessage() {}
 
 func (x *GetOrderHistoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[19]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1207,7 +1206,7 @@ func (x *GetOrderHistoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetOrderHistoryResponse.ProtoReflect.Descriptor instead.
 func (*GetOrderHistoryResponse) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{19}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *GetOrderHistoryResponse) GetEvents() []*OrderHistoryEvent {
@@ -1231,7 +1230,7 @@ type OrderHistoryEvent struct {
 
 func (x *OrderHistoryEvent) Reset() {
 	*x = OrderHistoryEvent{}
-	mi := &file_orders_service_proto_msgTypes[20]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1243,7 +1242,7 @@ func (x *OrderHistoryEvent) String() string {
 func (*OrderHistoryEvent) ProtoMessage() {}
 
 func (x *OrderHistoryEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[20]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1256,7 +1255,7 @@ func (x *OrderHistoryEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OrderHistoryEvent.ProtoReflect.Descriptor instead.
 func (*OrderHistoryEvent) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{20}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *OrderHistoryEvent) GetTimestamp() *timestamppb.Timestamp {
@@ -1311,7 +1310,7 @@ type SubscribeToOrderUpdatesRequest struct {
 
 func (x *SubscribeToOrderUpdatesRequest) Reset() {
 	*x = SubscribeToOrderUpdatesRequest{}
-	mi := &file_orders_service_proto_msgTypes[21]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1323,7 +1322,7 @@ func (x *SubscribeToOrderUpdatesRequest) String() string {
 func (*SubscribeToOrderUpdatesRequest) ProtoMessage() {}
 
 func (x *SubscribeToOrderUpdatesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[21]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1336,7 +1335,7 @@ func (x *SubscribeToOrderUpdatesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubscribeToOrderUpdatesRequest.ProtoReflect.Descriptor instead.
 func (*SubscribeToOrderUpdatesRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{21}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *SubscribeToOrderUpdatesRequest) GetRestaurantId() *common.UUID {
@@ -1364,7 +1363,7 @@ type OrderUpdate struct {
 
 func (x *OrderUpdate) Reset() {
 	*x = OrderUpdate{}
-	mi := &file_orders_service_proto_msgTypes[22]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1376,7 +1375,7 @@ func (x *OrderUpdate) String() string {
 func (*OrderUpdate) ProtoMessage() {}
 
 func (x *OrderUpdate) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[22]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1389,7 +1388,7 @@ func (x *OrderUpdate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OrderUpdate.ProtoReflect.Descriptor instead.
 func (*OrderUpdate) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{22}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *OrderUpdate) GetOrder() *Order {
@@ -1424,7 +1423,7 @@ type GetOrdersAnalyticsRequest struct {
 
 func (x *GetOrdersAnalyticsRequest) Reset() {
 	*x = GetOrdersAnalyticsRequest{}
-	mi := &file_orders_service_proto_msgTypes[23]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1436,7 +1435,7 @@ func (x *GetOrdersAnalyticsRequest) String() string {
 func (*GetOrdersAnalyticsRequest) ProtoMessage() {}
 
 func (x *GetOrdersAnalyticsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[23]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1449,7 +1448,7 @@ func (x *GetOrdersAnalyticsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetOrdersAnalyticsRequest.ProtoReflect.Descriptor instead.
 func (*GetOrdersAnalyticsRequest) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{23}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *GetOrdersAnalyticsRequest) GetRestaurantId() *common.UUID {
@@ -1487,7 +1486,7 @@ type GetOrdersAnalyticsResponse struct {
 
 func (x *GetOrdersAnalyticsResponse) Reset() {
 	*x = GetOrdersAnalyticsResponse{}
-	mi := &file_orders_service_proto_msgTypes[24]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1499,7 +1498,7 @@ func (x *GetOrdersAnalyticsResponse) String() string {
 func (*GetOrdersAnalyticsResponse) ProtoMessage() {}
 
 func (x *GetOrdersAnalyticsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[24]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1512,7 +1511,7 @@ func (x *GetOrdersAnalyticsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetOrdersAnalyticsResponse.ProtoReflect.Descriptor instead.
 func (*GetOrdersAnalyticsResponse) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{24}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *GetOrdersAnalyticsResponse) GetTotalOrders() int64 {
@@ -1567,7 +1566,7 @@ type OrderStatusCount struct {
 
 func (x *OrderStatusCount) Reset() {
 	*x = OrderStatusCount{}
-	mi := &file_orders_service_proto_msgTypes[25]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1579,7 +1578,7 @@ func (x *OrderStatusCount) String() string {
 func (*OrderStatusCount) ProtoMessage() {}
 
 func (x *OrderStatusCount) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[25]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1592,7 +1591,7 @@ func (x *OrderStatusCount) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OrderStatusCount.ProtoReflect.Descriptor instead.
 func (*OrderStatusCount) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{25}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *OrderStatusCount) GetStatus() common.OrderStatus {
@@ -1619,7 +1618,7 @@ type PackingModeCount struct {
 
 func (x *PackingModeCount) Reset() {
 	*x = PackingModeCount{}
-	mi := &file_orders_service_proto_msgTypes[26]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1631,7 +1630,7 @@ func (x *PackingModeCount) String() string {
 func (*PackingModeCount) ProtoMessage() {}
 
 func (x *PackingModeCount) ProtoReflect() protoreflect.Message {
-	mi := &file_orders_service_proto_msgTypes[26]
+	mi := &file_com_gastroflow_orders_service_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1644,7 +1643,7 @@ func (x *PackingModeCount) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PackingModeCount.ProtoReflect.Descriptor instead.
 func (*PackingModeCount) Descriptor() ([]byte, []int) {
-	return file_orders_service_proto_rawDescGZIP(), []int{26}
+	return file_com_gastroflow_orders_service_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *PackingModeCount) GetPackingMode() common.PackingMode {
@@ -1661,120 +1660,116 @@ func (x *PackingModeCount) GetCount() int64 {
 	return 0
 }
 
-var File_orders_service_proto protoreflect.FileDescriptor
+var File_com_gastroflow_orders_service_proto protoreflect.FileDescriptor
 
-const file_orders_service_proto_rawDesc = "" +
+const file_com_gastroflow_orders_service_proto_rawDesc = "" +
 	"\n" +
-	"\x14orders/service.proto\x12\x15com.gastroflow.orders\x1a\x1bbuf/validate/validate.proto\x1a\x12common/enums.proto\x1a\x12common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x13orders/models.proto\"\x80\x06\n" +
-	"\x12CreateOrderRequest\x12\x1d\n" +
-	"\x04name\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\x04name\x12O\n" +
-	"\fpacking_mode\x18\x02 \x01(\x0e2\".com.gastroflow.common.PackingModeB\b\xbaH\x05\x82\x01\x02 \x00R\vpackingMode\x12V\n" +
-	"\tpositions\x18\x03 \x03(\v2,.com.gastroflow.orders.CreatePositionRequestB\n" +
-	"\xbaH\a\x92\x01\x04\b\x01\x10dR\tpositions\x12M\n" +
-	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoB\x06\xbaH\x03\xc8\x01\x01R\vcontactInfo\x128\n" +
-	"\aaddress\x18\x05 \x01(\v2\x1e.com.gastroflow.common.AddressR\aaddress\x12U\n" +
-	"\x0epayment_method\x18\x06 \x01(\x0e2$.com.gastroflow.common.PaymentMethodB\b\xbaH\x05\x82\x01\x02 \x00R\rpaymentMethod\x12b\n" +
-	"\x13preparing_time_mode\x18\a \x01(\x0e2(.com.gastroflow.common.PreparingTimeModeB\b\xbaH\x05\x82\x01\x02 \x00R\x11preparingTimeMode\x12H\n" +
-	"\x12desired_ready_time\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\x10desiredReadyTime\x12H\n" +
-	"\rrestaurant_id\x18\t \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12\"\n" +
+	"#com/gastroflow/orders/service.proto\x12\x15com.gastroflow.orders\x1a!com/gastroflow/common/enums.proto\x1a!com/gastroflow/common/types.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\"com/gastroflow/orders/models.proto\"\xa8\x05\n" +
+	"\x12CreateOrderRequest\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12E\n" +
+	"\fpacking_mode\x18\x02 \x01(\x0e2\".com.gastroflow.common.PackingModeR\vpackingMode\x12J\n" +
+	"\tpositions\x18\x03 \x03(\v2,.com.gastroflow.orders.CreatePositionRequestR\tpositions\x12E\n" +
+	"\fcontact_info\x18\x04 \x01(\v2\".com.gastroflow.common.ContactInfoR\vcontactInfo\x128\n" +
+	"\aaddress\x18\x05 \x01(\v2\x1e.com.gastroflow.common.AddressR\aaddress\x12K\n" +
+	"\x0epayment_method\x18\x06 \x01(\x0e2$.com.gastroflow.common.PaymentMethodR\rpaymentMethod\x12X\n" +
+	"\x13preparing_time_mode\x18\a \x01(\x0e2(.com.gastroflow.common.PreparingTimeModeR\x11preparingTimeMode\x12H\n" +
+	"\x12desired_ready_time\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\x10desiredReadyTime\x12@\n" +
+	"\rrestaurant_id\x18\t \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12\x18\n" +
 	"\acomment\x18\n" +
-	" \x01(\tB\b\xbaH\x05r\x03\x18\xe8\aR\acomment\x12&\n" +
+	" \x01(\tR\acomment\x12\x1d\n" +
 	"\n" +
-	"promo_code\x18\v \x01(\tB\a\xbaH\x04r\x02\x182R\tpromoCode\"\xbf\x02\n" +
-	"\x15CreatePositionRequest\x12E\n" +
-	"\fmenu_item_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"menuItemId\x12%\n" +
-	"\bquantity\x18\x02 \x01(\x05B\t\xbaH\x06\x1a\x04\x18d(\x01R\bquantity\x12W\n" +
-	"\x14selected_variant_ids\x18\x03 \x03(\v2\x1b.com.gastroflow.common.UUIDB\b\xbaH\x05\x92\x01\x02\x102R\x12selectedVariantIds\x12\"\n" +
-	"\acomment\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\acomment\x12;\n" +
-	"\x14cooking_instructions\x18\x05 \x01(\tB\b\xbaH\x05r\x03\x18\xac\x02R\x13cookingInstructions\"\x9f\x01\n" +
-	"\x13CreateOrderResponse\x12:\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\x12L\n" +
-	"\x14estimated_ready_time\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x12estimatedReadyTime\"\x90\x01\n" +
-	"\x0fGetOrderRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"N\n" +
-	"\x10GetOrderResponse\x12:\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\"\x85\x01\n" +
-	"\x12UpdateOrderRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12:\n" +
-	"\x05order\x18\x02 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\"Q\n" +
-	"\x13UpdateOrderResponse\x12:\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\"\x93\x01\n" +
-	"\x12DeleteOrderRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"\xfa\x03\n" +
-	"\x11ListOrdersRequest\x12H\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12P\n" +
+	"promo_code\x18\v \x01(\tR\tpromoCode\"\x8e\x02\n" +
+	"\x15CreatePositionRequest\x12=\n" +
+	"\fmenu_item_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\n" +
+	"menuItemId\x12\x1a\n" +
+	"\bquantity\x18\x02 \x01(\x05R\bquantity\x12M\n" +
+	"\x14selected_variant_ids\x18\x03 \x03(\v2\x1b.com.gastroflow.common.UUIDR\x12selectedVariantIds\x12\x18\n" +
+	"\acomment\x18\x04 \x01(\tR\acomment\x121\n" +
+	"\x14cooking_instructions\x18\x05 \x01(\tR\x13cookingInstructions\"\x97\x01\n" +
+	"\x13CreateOrderResponse\x122\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderR\x05order\x12L\n" +
+	"\x14estimated_ready_time\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x12estimatedReadyTime\"\x80\x01\n" +
+	"\x0fGetOrderRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"F\n" +
+	"\x10GetOrderResponse\x122\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderR\x05order\"u\n" +
+	"\x12UpdateOrderRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x122\n" +
+	"\x05order\x18\x02 \x01(\v2\x1c.com.gastroflow.orders.OrderR\x05order\"I\n" +
+	"\x13UpdateOrderResponse\x122\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderR\x05order\"\x83\x01\n" +
+	"\x12DeleteOrderRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"\xcd\x03\n" +
+	"\x11ListOrdersRequest\x12@\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12H\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"pagination\x12Q\n" +
-	"\rstatus_filter\x18\x03 \x03(\x0e2\".com.gastroflow.common.OrderStatusB\b\xbaH\x05\x92\x01\x02\x10\n" +
-	"R\fstatusFilter\x12\\\n" +
-	"\x13packing_mode_filter\x18\x04 \x03(\x0e2\".com.gastroflow.common.PackingModeB\b\xbaH\x05\x92\x01\x02\x10\n" +
-	"R\x11packingModeFilter\x127\n" +
+	"pagination\x18\x02 \x01(\v2(.com.gastroflow.common.PaginationRequestR\n" +
+	"pagination\x12G\n" +
+	"\rstatus_filter\x18\x03 \x03(\x0e2\".com.gastroflow.common.OrderStatusR\fstatusFilter\x12R\n" +
+	"\x13packing_mode_filter\x18\x04 \x03(\x0e2\".com.gastroflow.common.PackingModeR\x11packingModeFilter\x127\n" +
 	"\tdate_from\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\bdateFrom\x123\n" +
-	"\adate_to\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\x06dateTo\x12*\n" +
-	"\fsearch_query\x18\a \x01(\tB\a\xbaH\x04r\x02\x18dR\vsearchQuery\"\x9d\x01\n" +
+	"\adate_to\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\x06dateTo\x12!\n" +
+	"\fsearch_query\x18\a \x01(\tR\vsearchQuery\"\x95\x01\n" +
 	"\x12ListOrdersResponse\x124\n" +
-	"\x06orders\x18\x01 \x03(\v2\x1c.com.gastroflow.orders.OrderR\x06orders\x12Q\n" +
+	"\x06orders\x18\x01 \x03(\v2\x1c.com.gastroflow.orders.OrderR\x06orders\x12I\n" +
 	"\n" +
-	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"pagination\"\x83\x02\n" +
-	"\x18UpdateOrderStatusRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12D\n" +
-	"\x06status\x18\x03 \x01(\x0e2\".com.gastroflow.common.OrderStatusB\b\xbaH\x05\x82\x01\x02 \x00R\x06status\x12\"\n" +
-	"\acomment\x18\x04 \x01(\tB\b\xbaH\x05r\x03\x18\xf4\x03R\acomment\"W\n" +
-	"\x19UpdateOrderStatusResponse\x12:\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\"\xea\x01\n" +
-	"\x18MarkPositionReadyRequest\x12>\n" +
-	"\border_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\aorderId\x12D\n" +
-	"\vposition_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"positionId\x12H\n" +
-	"\rrestaurant_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"\x8c\x01\n" +
-	"\x19MarkPositionReadyResponse\x12C\n" +
-	"\bposition\x18\x01 \x01(\v2\x1f.com.gastroflow.orders.PositionB\x06\xbaH\x03\xc8\x01\x01R\bposition\x12*\n" +
-	"\x11order_fully_ready\x18\x02 \x01(\bR\x0forderFullyReady\"\x96\x01\n" +
-	"\x15MarkOrderReadyRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"\x8f\x01\n" +
-	"\x16MarkOrderReadyResponse\x12:\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\x129\n" +
+	"pagination\x18\x02 \x01(\v2).com.gastroflow.common.PaginationResponseR\n" +
+	"pagination\"\xdf\x01\n" +
+	"\x18UpdateOrderStatusRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12:\n" +
+	"\x06status\x18\x03 \x01(\x0e2\".com.gastroflow.common.OrderStatusR\x06status\x12\x18\n" +
+	"\acomment\x18\x04 \x01(\tR\acomment\"O\n" +
+	"\x19UpdateOrderStatusResponse\x122\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderR\x05order\"\xd2\x01\n" +
+	"\x18MarkPositionReadyRequest\x126\n" +
+	"\border_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\aorderId\x12<\n" +
+	"\vposition_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\n" +
+	"positionId\x12@\n" +
+	"\rrestaurant_id\x18\x03 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"\x84\x01\n" +
+	"\x19MarkPositionReadyResponse\x12;\n" +
+	"\bposition\x18\x01 \x01(\v2\x1f.com.gastroflow.orders.PositionR\bposition\x12*\n" +
+	"\x11order_fully_ready\x18\x02 \x01(\bR\x0forderFullyReady\"\x86\x01\n" +
+	"\x15MarkOrderReadyRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"\x87\x01\n" +
+	"\x16MarkOrderReadyResponse\x122\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderR\x05order\x129\n" +
 	"\n" +
-	"ready_time\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\treadyTime\"\xb7\x01\n" +
-	"\x12CancelOrderRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12\"\n" +
-	"\x06reason\x18\x03 \x01(\tB\n" +
-	"\xbaH\ar\x05\x10\x01\x18\xf4\x03R\x06reason\"Q\n" +
-	"\x13CancelOrderResponse\x12:\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\"\x97\x01\n" +
-	"\x16GetOrderHistoryRequest\x123\n" +
-	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\x02id\x12H\n" +
-	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\"[\n" +
+	"ready_time\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\treadyTime\"\x9b\x01\n" +
+	"\x12CancelOrderRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12\x16\n" +
+	"\x06reason\x18\x03 \x01(\tR\x06reason\"I\n" +
+	"\x13CancelOrderResponse\x122\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderR\x05order\"\x87\x01\n" +
+	"\x16GetOrderHistoryRequest\x12+\n" +
+	"\x02id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x02id\x12@\n" +
+	"\rrestaurant_id\x18\x02 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\"[\n" +
 	"\x17GetOrderHistoryResponse\x12@\n" +
-	"\x06events\x18\x01 \x03(\v2(.com.gastroflow.orders.OrderHistoryEventR\x06events\"\xc8\x02\n" +
-	"\x11OrderHistoryEvent\x12@\n" +
-	"\ttimestamp\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\ttimestamp\x12C\n" +
+	"\x06events\x18\x01 \x03(\v2(.com.gastroflow.orders.OrderHistoryEventR\x06events\"\xc0\x02\n" +
+	"\x11OrderHistoryEvent\x128\n" +
+	"\ttimestamp\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\x12C\n" +
 	"\vfrom_status\x18\x02 \x01(\x0e2\".com.gastroflow.common.OrderStatusR\n" +
 	"fromStatus\x12?\n" +
 	"\tto_status\x18\x03 \x01(\x0e2\".com.gastroflow.common.OrderStatusR\btoStatus\x12\x18\n" +
 	"\acomment\x18\x04 \x01(\tR\acomment\x124\n" +
 	"\auser_id\x18\x05 \x01(\v2\x1b.com.gastroflow.common.UUIDR\x06userId\x12\x1b\n" +
-	"\tuser_name\x18\x06 \x01(\tR\buserName\"\xb3\x01\n" +
-	"\x1eSubscribeToOrderUpdatesRequest\x12H\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12G\n" +
-	"\rstatus_filter\x18\x02 \x03(\x0e2\".com.gastroflow.common.OrderStatusR\fstatusFilter\"\xdb\x01\n" +
-	"\vOrderUpdate\x12:\n" +
-	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderB\x06\xbaH\x03\xc8\x01\x01R\x05order\x12K\n" +
-	"\x0fprevious_status\x18\x02 \x01(\x0e2\".com.gastroflow.common.OrderStatusR\x0epreviousStatus\x12C\n" +
-	"\vupdate_time\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\n" +
-	"updateTime\"\xe3\x01\n" +
-	"\x19GetOrdersAnalyticsRequest\x12H\n" +
-	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDB\x06\xbaH\x03\xc8\x01\x01R\frestaurantId\x12?\n" +
-	"\tdate_from\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\bdateFrom\x12;\n" +
-	"\adate_to\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x06\xbaH\x03\xc8\x01\x01R\x06dateTo\"\x9f\x03\n" +
+	"\tuser_name\x18\x06 \x01(\tR\buserName\"\xab\x01\n" +
+	"\x1eSubscribeToOrderUpdatesRequest\x12@\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x12G\n" +
+	"\rstatus_filter\x18\x02 \x03(\x0e2\".com.gastroflow.common.OrderStatusR\fstatusFilter\"\xcb\x01\n" +
+	"\vOrderUpdate\x122\n" +
+	"\x05order\x18\x01 \x01(\v2\x1c.com.gastroflow.orders.OrderR\x05order\x12K\n" +
+	"\x0fprevious_status\x18\x02 \x01(\x0e2\".com.gastroflow.common.OrderStatusR\x0epreviousStatus\x12;\n" +
+	"\vupdate_time\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"updateTime\"\xcb\x01\n" +
+	"\x19GetOrdersAnalyticsRequest\x12@\n" +
+	"\rrestaurant_id\x18\x01 \x01(\v2\x1b.com.gastroflow.common.UUIDR\frestaurantId\x127\n" +
+	"\tdate_from\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\bdateFrom\x123\n" +
+	"\adate_to\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\x06dateTo\"\x9f\x03\n" +
 	"\x1aGetOrdersAnalyticsResponse\x12!\n" +
 	"\ftotal_orders\x18\x01 \x01(\x03R\vtotalOrders\x12A\n" +
 	"\rtotal_revenue\x18\x02 \x01(\v2\x1c.com.gastroflow.common.MoneyR\ftotalRevenue\x12.\n" +
@@ -1806,19 +1801,19 @@ const file_orders_service_proto_rawDesc = "" +
 	"\x19com.com.gastroflow.ordersB\fServiceProtoP\x01Z%github.com/gastroflow/proto-go/orders\xa2\x02\x03CGO\xaa\x02\x15Com.Gastroflow.Orders\xca\x02\x15Com\\Gastroflow\\Orders\xe2\x02!Com\\Gastroflow\\Orders\\GPBMetadata\xea\x02\x17Com::Gastroflow::Ordersb\x06proto3"
 
 var (
-	file_orders_service_proto_rawDescOnce sync.Once
-	file_orders_service_proto_rawDescData []byte
+	file_com_gastroflow_orders_service_proto_rawDescOnce sync.Once
+	file_com_gastroflow_orders_service_proto_rawDescData []byte
 )
 
-func file_orders_service_proto_rawDescGZIP() []byte {
-	file_orders_service_proto_rawDescOnce.Do(func() {
-		file_orders_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_orders_service_proto_rawDesc), len(file_orders_service_proto_rawDesc)))
+func file_com_gastroflow_orders_service_proto_rawDescGZIP() []byte {
+	file_com_gastroflow_orders_service_proto_rawDescOnce.Do(func() {
+		file_com_gastroflow_orders_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_com_gastroflow_orders_service_proto_rawDesc), len(file_com_gastroflow_orders_service_proto_rawDesc)))
 	})
-	return file_orders_service_proto_rawDescData
+	return file_com_gastroflow_orders_service_proto_rawDescData
 }
 
-var file_orders_service_proto_msgTypes = make([]protoimpl.MessageInfo, 27)
-var file_orders_service_proto_goTypes = []any{
+var file_com_gastroflow_orders_service_proto_msgTypes = make([]protoimpl.MessageInfo, 27)
+var file_com_gastroflow_orders_service_proto_goTypes = []any{
 	(*CreateOrderRequest)(nil),             // 0: com.gastroflow.orders.CreateOrderRequest
 	(*CreatePositionRequest)(nil),          // 1: com.gastroflow.orders.CreatePositionRequest
 	(*CreateOrderResponse)(nil),            // 2: com.gastroflow.orders.CreateOrderResponse
@@ -1861,7 +1856,7 @@ var file_orders_service_proto_goTypes = []any{
 	(*common.Money)(nil),                   // 39: com.gastroflow.common.Money
 	(*emptypb.Empty)(nil),                  // 40: google.protobuf.Empty
 }
-var file_orders_service_proto_depIdxs = []int32{
+var file_com_gastroflow_orders_service_proto_depIdxs = []int32{
 	27, // 0: com.gastroflow.orders.CreateOrderRequest.packing_mode:type_name -> com.gastroflow.common.PackingMode
 	1,  // 1: com.gastroflow.orders.CreateOrderRequest.positions:type_name -> com.gastroflow.orders.CreatePositionRequest
 	28, // 2: com.gastroflow.orders.CreateOrderRequest.contact_info:type_name -> com.gastroflow.common.ContactInfo
@@ -1956,27 +1951,27 @@ var file_orders_service_proto_depIdxs = []int32{
 	0,  // [0:63] is the sub-list for field type_name
 }
 
-func init() { file_orders_service_proto_init() }
-func file_orders_service_proto_init() {
-	if File_orders_service_proto != nil {
+func init() { file_com_gastroflow_orders_service_proto_init() }
+func file_com_gastroflow_orders_service_proto_init() {
+	if File_com_gastroflow_orders_service_proto != nil {
 		return
 	}
-	file_orders_models_proto_init()
+	file_com_gastroflow_orders_models_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_orders_service_proto_rawDesc), len(file_orders_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_com_gastroflow_orders_service_proto_rawDesc), len(file_com_gastroflow_orders_service_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   27,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_orders_service_proto_goTypes,
-		DependencyIndexes: file_orders_service_proto_depIdxs,
-		MessageInfos:      file_orders_service_proto_msgTypes,
+		GoTypes:           file_com_gastroflow_orders_service_proto_goTypes,
+		DependencyIndexes: file_com_gastroflow_orders_service_proto_depIdxs,
+		MessageInfos:      file_com_gastroflow_orders_service_proto_msgTypes,
 	}.Build()
-	File_orders_service_proto = out.File
-	file_orders_service_proto_goTypes = nil
-	file_orders_service_proto_depIdxs = nil
+	File_com_gastroflow_orders_service_proto = out.File
+	file_com_gastroflow_orders_service_proto_goTypes = nil
+	file_com_gastroflow_orders_service_proto_depIdxs = nil
 }
