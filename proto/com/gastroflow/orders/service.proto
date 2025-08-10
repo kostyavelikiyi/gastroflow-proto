@@ -2,11 +2,11 @@ syntax = "proto3";
 
 package com.gastroflow.orders;
 
-import "common/enums.proto";
-import "common/types.proto";
+import "com/gastroflow/common/enums.proto";
+import "com/gastroflow/common/types.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
-import "orders/models.proto";
+import "com/gastroflow/orders/models.proto";
 
 option go_package = "github.com/gastroflow/proto-go/orders";
 

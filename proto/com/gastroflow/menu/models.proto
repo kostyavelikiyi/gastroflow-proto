@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package com.gastroflow.menu;
 
-import "common/enums.proto";
-import "common/types.proto";
+import "com/gastroflow/common/enums.proto";
+import "com/gastroflow/common/types.proto";
 
 option go_package = "github.com/gastroflow/proto-go/menu";
 
