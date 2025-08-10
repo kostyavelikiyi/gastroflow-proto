@@ -31,21 +31,10 @@ dev_dependencies:
   
   # Protocol Buffer code generation
   build_runner: ^2.4.12
-  protoc_builder: ^1.2.2
+  protoc_builder: ^0.4.1
 
 flutter:
   # No assets currently
-
-# Topics for pub.dev discovery
-topics:
-  - protobuf
-  - grpc
-  - restaurant
-  - gastroflow
-  - api
-  - client
-  - flutter
-  - dart
 
 # Screenshots would be added here for pub.dev publishing
 
