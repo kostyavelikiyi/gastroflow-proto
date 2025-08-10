@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package com.gastroflow.restaurants;
 
-import "buf/validate/validate.proto";
 import "common/enums.proto";
 import "common/types.proto";
 
@@ -11,59 +10,46 @@ option go_package = "github.com/gastroflow/proto-go/restaurants";
 // Restaurant - основная сущность ресторана
 message Restaurant {
   // Уникальный идентификатор ресторана
-  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID id = 1;
 
   // Название ресторана
-  string name = 2 [(buf.validate.field).string = {
-    min_len: 1
-    max_len: 200
-  }];
+  string name = 2 ;
 
   // Описание ресторана
-  string description = 3 [(buf.validate.field).string.max_len = 2000];
+  string description = 3;
 
   // Тип кухни
-  repeated CuisineType cuisine_types = 4 [(buf.validate.field).repeated.max_items = 10];
+  repeated CuisineType cuisine_types = 4;
 
   // Основная контактная информация
-  com.gastroflow.common.ContactInfo contact_info = 5 [(buf.validate.field).required = true];
+  com.gastroflow.common.ContactInfo contact_info = 5;
 
   // Основной адрес ресторана
-  com.gastroflow.common.Address address = 6 [(buf.validate.field).required = true];
+  com.gastroflow.common.Address address = 6;
 
   // Текущий статус работы
-  com.gastroflow.common.RestaurantStatus status = 7 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  com.gastroflow.common.RestaurantStatus status = 7;
 
   // Настройки ресторана
-  RestaurantSettings settings = 8 [(buf.validate.field).required = true];
+  RestaurantSettings settings = 8;
 
   // График работы
-  repeated WorkingHours working_hours = 9 [(buf.validate.field).repeated.max_items = 7];
+  repeated WorkingHours working_hours = 9;
 
   // Филиалы ресторана
-  repeated Branch branches = 10 [(buf.validate.field).repeated.max_items = 100];
+  repeated Branch branches = 10;
 
   // Логотип ресторана
-  string logo_url = 11 [(buf.validate.field).string.max_len = 500];
+  string logo_url = 11;
 
   // Фотографии ресторана
-  repeated string images = 12 [(buf.validate.field).repeated = {
-    max_items: 20
-    items: {
-      string: {max_len: 500}
-    }
-  }];
+  repeated string images = 12 ;
 
   // Рейтинг ресторана (1-5)
-  double rating = 13 [(buf.validate.field).double = {
-    gte: 1.0
-    lte: 5.0
-  }];
+  double rating = 13 ;
 
   // Количество отзывов
-  int32 review_count = 14 [(buf.validate.field).int32.gte = 0];
+  int32 review_count = 14;
 
   // Средняя стоимость заказа
   com.gastroflow.common.Money average_order_value = 15;
@@ -75,39 +61,34 @@ message Restaurant {
   DeliveryZone delivery_zone = 17;
 
   // Владелец ресторана
-  com.gastroflow.common.UUID owner_id = 18 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID owner_id = 18;
 
   // Активность ресторана
   bool is_active = 19;
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 20 [(buf.validate.field).required = true];
+  com.gastroflow.common.AuditInfo audit_info = 20;
 }
 
 // Branch - филиал ресторана
 message Branch {
   // Уникальный идентификатор филиала
-  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID id = 1;
 
   // Название филиала
-  string name = 2 [(buf.validate.field).string = {
-    min_len: 1
-    max_len: 200
-  }];
+  string name = 2 ;
 
   // Адрес филиала
-  com.gastroflow.common.Address address = 3 [(buf.validate.field).required = true];
+  com.gastroflow.common.Address address = 3;
 
   // Контактная информация филиала
-  com.gastroflow.common.ContactInfo contact_info = 4 [(buf.validate.field).required = true];
+  com.gastroflow.common.ContactInfo contact_info = 4;
 
   // Статус филиала
-  com.gastroflow.common.RestaurantStatus status = 5 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  com.gastroflow.common.RestaurantStatus status = 5;
 
   // График работы филиала
-  repeated WorkingHours working_hours = 6 [(buf.validate.field).repeated.max_items = 7];
+  repeated WorkingHours working_hours = 6;
 
   // Настройки филиала (могут переопределять настройки ресторана)
   RestaurantSettings settings = 7;
@@ -119,7 +100,7 @@ message Branch {
   bool is_active = 9;
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 10 [(buf.validate.field).required = true];
+  com.gastroflow.common.AuditInfo audit_info = 10;
 }
 
 // RestaurantSettings - настройки ресторана
@@ -149,131 +130,95 @@ message RestaurantSettings {
   com.gastroflow.common.Money free_delivery_threshold = 8;
 
   // Максимальное время приготовления (минуты)
-  int32 max_preparation_time = 9 [(buf.validate.field).int32 = {
-    gte: 1
-    lte: 480
-  }];
+  int32 max_preparation_time = 9 ;
 
   // Предварительное время приготовления по умолчанию
-  int32 default_preparation_time = 10 [(buf.validate.field).int32 = {
-    gte: 1
-    lte: 480
-  }];
+  int32 default_preparation_time = 10 ;
 
   // Принимаемые способы оплаты
-  repeated com.gastroflow.common.PaymentMethod accepted_payment_methods = 11 [(buf.validate.field).repeated.max_items = 10];
+  repeated com.gastroflow.common.PaymentMethod accepted_payment_methods = 11;
 
   // Настройки уведомлений
   NotificationSettings notification_settings = 12;
 
   // Временная зона ресторана
-  string timezone = 13 [(buf.validate.field).string.max_len = 50];
+  string timezone = 13;
 
   // Валюта ресторана
-  string currency = 14 [(buf.validate.field).string = {pattern: "^[A-Z]{3}$"}];
+  string currency = 14;
 
   // Язык по умолчанию
-  com.gastroflow.common.Language default_language = 15 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  com.gastroflow.common.Language default_language = 15;
 }
 
 // WorkingHours - график работы
 message WorkingHours {
   // День недели
-  com.gastroflow.common.WeekDay day = 1 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  com.gastroflow.common.WeekDay day = 1;
 
   // Работает ли в этот день
   bool is_working = 2;
 
   // Временные интервалы работы в течение дня
-  repeated TimeInterval intervals = 3 [(buf.validate.field).repeated.max_items = 5];
+  repeated TimeInterval intervals = 3;
 
   // Специальные часы (например, для праздников)
   bool is_special_hours = 4;
 
   // Комментарий к графику (например, "Сокращенный день")
-  string comment = 5 [(buf.validate.field).string.max_len = 200];
+  string comment = 5;
 }
 
 // TimeInterval - временной интервал
 message TimeInterval {
   // Время начала работы (HH:MM)
-  string start_time = 1 [(buf.validate.field).string = {pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"}];
+  string start_time = 1;
 
   // Время окончания работы (HH:MM)
-  string end_time = 2 [(buf.validate.field).string = {pattern: "^([01]?[0-9]|2[0-3]):[0-5][0-9]$"}];
+  string end_time = 2;
 
   // Тип интервала (основные часы, обеденный перерыв и т.д.)
-  IntervalType type = 3 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  IntervalType type = 3;
 }
 
 // DeliveryTimeRange - диапазон времени доставки
 message DeliveryTimeRange {
   // Минимальное время доставки (минуты)
-  int32 min_delivery_time = 1 [(buf.validate.field).int32 = {
-    gte: 5
-    lte: 300
-  }];
+  int32 min_delivery_time = 1 ;
 
   // Максимальное время доставки (минуты)
-  int32 max_delivery_time = 2 [(buf.validate.field).int32 = {
-    gte: 10
-    lte: 300
-  }];
+  int32 max_delivery_time = 2 ;
 }
 
 // DeliveryZone - зона доставки
 message DeliveryZone {
   // Центральные координаты (ресторан)
-  double center_latitude = 1 [(buf.validate.field).double = {
-    gte: -90.0
-    lte: 90.0
-  }];
-  double center_longitude = 2 [(buf.validate.field).double = {
-    gte: -180.0
-    lte: 180.0
-  }];
+  double center_latitude = 1 ;
+  double center_longitude = 2 ;
 
   // Радиус доставки в километрах
-  double radius_km = 3 [(buf.validate.field).double = {
-    gte: 0.5
-    lte: 50.0
-  }];
+  double radius_km = 3 ;
 
   // Полигональные зоны доставки (более точное определение)
-  repeated DeliveryPolygon polygons = 4 [(buf.validate.field).repeated.max_items = 10];
+  repeated DeliveryPolygon polygons = 4;
 }
 
 // DeliveryPolygon - полигональная зона доставки
 message DeliveryPolygon {
   // Точки полигона
-  repeated GeoPoint points = 1 [(buf.validate.field).repeated = {
-    min_items: 3
-    max_items: 100
-  }];
+  repeated GeoPoint points = 1 ;
 
   // Дополнительная стоимость доставки в этой зоне
   com.gastroflow.common.Money additional_fee = 2;
 
   // Название зоны
-  string name = 3 [(buf.validate.field).string.max_len = 100];
+  string name = 3;
 }
 
 // GeoPoint - географическая точка
 message GeoPoint {
-  double latitude = 1 [(buf.validate.field).double = {
-    gte: -90.0
-    lte: 90.0
-  }];
-  double longitude = 2 [(buf.validate.field).double = {
-    gte: -180.0
-    lte: 180.0
-  }];
+  double latitude = 1 ;
+  double longitude = 2 ;
 }
 
 // NotificationSettings - настройки уведомлений
@@ -291,13 +236,13 @@ message NotificationSettings {
   bool notify_payment_issues = 4;
 
   // Email для уведомлений
-  string notification_email = 5 [(buf.validate.field).string = {pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"}];
+  string notification_email = 5;
 
   // Телефон для SMS уведомлений
-  string notification_phone = 6 [(buf.validate.field).string = {pattern: "^\\+[1-9]\\d{10,14}$"}];
+  string notification_phone = 6;
 
   // Способы уведомлений
-  repeated NotificationChannel notification_channels = 7 [(buf.validate.field).repeated.max_items = 10];
+  repeated NotificationChannel notification_channels = 7;
 }
 
 // Енумы для домена Restaurants

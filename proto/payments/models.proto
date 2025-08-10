@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package com.gastroflow.payments;
 
-import "buf/validate/validate.proto";
 import "common/enums.proto";
 import "common/types.proto";
 import "google/protobuf/timestamp.proto";
@@ -12,43 +11,36 @@ option go_package = "github.com/gastroflow/proto-go/payments";
 // Payment - платеж в системе
 message Payment {
   // Уникальный идентификатор платежа
-  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID id = 1;
 
   // Идентификатор заказа
-  com.gastroflow.common.UUID order_id = 2 [(buf.validate.field).required = true];
 
   // Идентификатор плательщика
-  com.gastroflow.common.UUID payer_id = 3 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID payer_id = 3;
 
   // Идентификатор ресторана
-  com.gastroflow.common.UUID restaurant_id = 4 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID restaurant_id = 4;
 
   // Сумма платежа
-  com.gastroflow.common.Money amount = 5 [(buf.validate.field).required = true];
+  com.gastroflow.common.Money amount = 5;
 
   // Способ оплаты
-  com.gastroflow.common.PaymentMethod method = 6 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  com.gastroflow.common.PaymentMethod method = 6;
 
   // Статус платежа
-  PaymentStatus status = 7 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  PaymentStatus status = 7;
 
   // Поставщик платежей
-  PaymentProvider provider = 8 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  PaymentProvider provider = 8;
 
   // Внешний идентификатор платежа у поставщика
-  string external_payment_id = 9 [(buf.validate.field).string.max_len = 200];
+  string external_payment_id = 9;
 
   // Описание платежа
-  string description = 10 [(buf.validate.field).string.max_len = 500];
+  string description = 10;
 
   // Время создания платежа
-  google.protobuf.Timestamp created_at = 11 [(buf.validate.field).required = true];
+  google.protobuf.Timestamp created_at = 11;
 
   // Время обработки платежа
   google.protobuf.Timestamp processed_at = 12;
@@ -72,16 +64,16 @@ message Payment {
   PaymentError error = 18;
 
   // IP адрес клиента
-  string client_ip = 19 [(buf.validate.field).string.max_len = 45];
+  string client_ip = 19;
 
   // Информация об устройстве клиента
-  string user_agent = 20 [(buf.validate.field).string.max_len = 500];
+  string user_agent = 20;
 
   // Дополнительные метаданные
   map<string, string> metadata = 21;
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 22 [(buf.validate.field).required = true];
+  com.gastroflow.common.AuditInfo audit_info = 22;
 }
 
 // PaymentDetails - детали платежа
@@ -99,10 +91,10 @@ message PaymentDetails {
   CashDetails cash_details = 4;
 
   // URL для подтверждения платежа
-  string confirmation_url = 5 [(buf.validate.field).string.max_len = 500];
+  string confirmation_url = 5;
 
   // Токен для повторной оплаты
-  string recurring_token = 6 [(buf.validate.field).string.max_len = 200];
+  string recurring_token = 6;
 
   // 3D Secure данные
   ThreeDSecureDetails three_d_secure = 7;
@@ -111,83 +103,76 @@ message PaymentDetails {
 // CardDetails - детали карточной оплаты
 message CardDetails {
   // Замаскированный номер карты
-  string masked_pan = 1 [(buf.validate.field).string.max_len = 20];
+  string masked_pan = 1;
 
   // Тип карты
-  CardType card_type = 2 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  CardType card_type = 2;
 
   // Банк-эмитент
-  string issuer_bank = 3 [(buf.validate.field).string.max_len = 100];
+  string issuer_bank = 3;
 
   // Страна эмиссии
-  string issuer_country = 4 [(buf.validate.field).string = {pattern: "^[A-Z]{2}$"}];
+  string issuer_country = 4;
 
   // Последние 4 цифры карты
-  string last_four_digits = 5 [(buf.validate.field).string = {pattern: "^[0-9]{4}$"}];
+  string last_four_digits = 5;
 
   // Месяц истечения
-  int32 exp_month = 6 [(buf.validate.field).int32 = {
-    gte: 1
-    lte: 12
-  }];
+  int32 exp_month = 6 ;
 
   // Год истечения
-  int32 exp_year = 7 [(buf.validate.field).int32.gte = 2020];
+  int32 exp_year = 7;
 
   // Код авторизации
-  string auth_code = 8 [(buf.validate.field).string.max_len = 20];
+  string auth_code = 8;
 
   // RRN (Reference Retrieval Number)
-  string rrn = 9 [(buf.validate.field).string.max_len = 20];
+  string rrn = 9;
 }
 
 // BankTransferDetails - детали банковского перевода
 message BankTransferDetails {
   // Название банка
-  string bank_name = 1 [(buf.validate.field).string.max_len = 100];
+  string bank_name = 1;
 
   // БИК банка
-  string bik = 2 [(buf.validate.field).string.max_len = 20];
+  string bik = 2;
 
   // Номер счета получателя
-  string account_number = 3 [(buf.validate.field).string.max_len = 50];
+  string account_number = 3;
 
   // Номер перевода
-  string transfer_number = 4 [(buf.validate.field).string.max_len = 50];
+  string transfer_number = 4;
 
   // Назначение платежа
-  string purpose = 5 [(buf.validate.field).string.max_len = 200];
+  string purpose = 5;
 }
 
 // WalletDetails - детали электронного кошелька
 message WalletDetails {
   // Тип кошелька
-  WalletType wallet_type = 1 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  WalletType wallet_type = 1;
 
   // Идентификатор кошелька
-  string wallet_id = 2 [(buf.validate.field).string.max_len = 100];
+  string wallet_id = 2;
 
   // Замаскированный номер телефона/email кошелька
-  string masked_identifier = 3 [(buf.validate.field).string.max_len = 100];
+  string masked_identifier = 3;
 }
 
 // CashDetails - детали наличной оплаты
 message CashDetails {
   // Сумма полученная наличными
-  com.gastroflow.common.Money received_amount = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.Money received_amount = 1;
 
   // Сдача
-  com.gastroflow.common.Money change_amount = 2 [(buf.validate.field).required = true];
+  com.gastroflow.common.Money change_amount = 2;
 
   // Идентификатор кассира
-  com.gastroflow.common.UUID cashier_id = 3 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID cashier_id = 3;
 
   // Номер чека
-  string receipt_number = 4 [(buf.validate.field).string.max_len = 50];
+  string receipt_number = 4;
 }
 
 // ThreeDSecureDetails - детали 3D Secure
@@ -196,13 +181,13 @@ message ThreeDSecureDetails {
   bool applied = 1;
 
   // Статус аутентификации
-  string auth_status = 2 [(buf.validate.field).string.max_len = 20];
+  string auth_status = 2;
 
   // ECI (Electronic Commerce Indicator)
-  string eci = 3 [(buf.validate.field).string.max_len = 10];
+  string eci = 3;
 
   // XID транзакции
-  string xid = 4 [(buf.validate.field).string.max_len = 50];
+  string xid = 4;
 }
 
 // PaymentStatusHistory - история изменений статуса
@@ -211,33 +196,31 @@ message PaymentStatusHistory {
   PaymentStatus from_status = 1;
 
   // Новый статус
-  PaymentStatus to_status = 2 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  PaymentStatus to_status = 2;
 
   // Время изменения
-  google.protobuf.Timestamp changed_at = 3 [(buf.validate.field).required = true];
+  google.protobuf.Timestamp changed_at = 3;
 
   // Причина изменения
-  string reason = 4 [(buf.validate.field).string.max_len = 200];
+  string reason = 4;
 
   // Дополнительная информация
-  string details = 5 [(buf.validate.field).string.max_len = 500];
+  string details = 5;
 }
 
 // PaymentError - информация об ошибке платежа
 message PaymentError {
   // Код ошибки
-  string error_code = 1 [(buf.validate.field).string.max_len = 50];
+  string error_code = 1;
 
   // Описание ошибки
-  string error_message = 2 [(buf.validate.field).string.max_len = 500];
+  string error_message = 2;
 
   // Детали ошибки от поставщика
-  string provider_error_code = 3 [(buf.validate.field).string.max_len = 50];
+  string provider_error_code = 3;
 
   // Сообщение от поставщика
-  string provider_error_message = 4 [(buf.validate.field).string.max_len = 500];
+  string provider_error_message = 4;
 
   // Можно ли повторить попытку
   bool is_retryable = 5;
@@ -249,32 +232,28 @@ message PaymentError {
 // Refund - возврат средств
 message Refund {
   // Уникальный идентификатор возврата
-  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID id = 1;
 
   // Идентификатор исходного платежа
-  com.gastroflow.common.UUID payment_id = 2 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID payment_id = 2;
 
   // Сумма возврата
-  com.gastroflow.common.Money amount = 3 [(buf.validate.field).required = true];
+  com.gastroflow.common.Money amount = 3;
 
   // Причина возврата
-  RefundReason reason = 4 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  RefundReason reason = 4;
 
   // Статус возврата
-  RefundStatus status = 5 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  RefundStatus status = 5;
 
   // Описание возврата
-  string description = 6 [(buf.validate.field).string.max_len = 500];
+  string description = 6;
 
   // Внешний идентификатор возврата
-  string external_refund_id = 7 [(buf.validate.field).string.max_len = 200];
+  string external_refund_id = 7;
 
   // Время создания возврата
-  google.protobuf.Timestamp created_at = 8 [(buf.validate.field).required = true];
+  google.protobuf.Timestamp created_at = 8;
 
   // Время обработки возврата
   google.protobuf.Timestamp processed_at = 9;
@@ -286,30 +265,25 @@ message Refund {
   PaymentError error = 11;
 
   // Информация об аудите
-  com.gastroflow.common.AuditInfo audit_info = 12 [(buf.validate.field).required = true];
+  com.gastroflow.common.AuditInfo audit_info = 12;
 }
 
 // PaymentMethod - сохраненный способ оплаты
 message PaymentMethodInfo {
   // Уникальный идентификатор способа оплаты
-  com.gastroflow.common.UUID id = 1 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID id = 1;
 
   // Идентификатор пользователя
-  com.gastroflow.common.UUID user_id = 2 [(buf.validate.field).required = true];
+  com.gastroflow.common.UUID user_id = 2;
 
   // Тип способа оплаты
-  com.gastroflow.common.PaymentMethod type = 3 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  com.gastroflow.common.PaymentMethod type = 3;
 
   // Токен для повторного использования
-  string token = 4 [(buf.validate.field).string = {
-    min_len: 1
-    max_len: 200
-  }];
+  string token = 4 ;
 
   // Детали способа оплаты (замаскированные)
-  PaymentMethodDetails details = 5 [(buf.validate.field).required = true];
+  PaymentMethodDetails details = 5;
 
   // Способ оплаты по умолчанию
   bool is_default = 6;
@@ -318,7 +292,7 @@ message PaymentMethodInfo {
   bool is_active = 7;
 
   // Время создания
-  google.protobuf.Timestamp created_at = 8 [(buf.validate.field).required = true];
+  google.protobuf.Timestamp created_at = 8;
 
   // Время последнего использования
   google.protobuf.Timestamp last_used_at = 9;
@@ -336,35 +310,28 @@ message PaymentMethodDetails {
 // SavedCardDetails - сохраненные детали карты
 message SavedCardDetails {
   // Замаскированный номер карты
-  string masked_pan = 1 [(buf.validate.field).string.max_len = 20];
+  string masked_pan = 1;
 
   // Тип карты
-  CardType card_type = 2 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  CardType card_type = 2;
 
   // Месяц истечения
-  int32 exp_month = 3 [(buf.validate.field).int32 = {
-    gte: 1
-    lte: 12
-  }];
+  int32 exp_month = 3;
 
   // Год истечения
-  int32 exp_year = 4 [(buf.validate.field).int32.gte = 2020];
+  int32 exp_year = 4;
 
   // Банк-эмитент
-  string issuer_bank = 5 [(buf.validate.field).string.max_len = 100];
+  string issuer_bank = 5;
 }
 
 // SavedWalletDetails - сохраненные детали кошелька
 message SavedWalletDetails {
   // Тип кошелька
-  WalletType wallet_type = 1 [(buf.validate.field).enum = {
-    not_in: [0]
-  }];
+  WalletType wallet_type = 1;
 
   // Замаскированный идентификатор
-  string masked_identifier = 2 [(buf.validate.field).string.max_len = 100];
+  string masked_identifier = 2;
 }
 
 // Енумы для домена Payments
