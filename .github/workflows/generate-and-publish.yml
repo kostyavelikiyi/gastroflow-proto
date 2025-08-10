@@ -39,6 +39,13 @@ jobs:
       - name: Copy proto files to Flutter package
         run: cp -r proto/. packages/flutter_package/proto/
 
+      - name: Download Google Protobuf standard proto files
+        run: |
+            mkdir -p packages/flutter_package/proto/google/protobuf
+            curl -o packages/flutter_package/proto/google/protobuf/timestamp.proto https://raw.githubusercontent.com/protocolbuffers/protobuf/main/src/google/protobuf/timestamp.proto
+            curl -o packages/flutter_package/proto/google/protobuf/empty.proto https://raw.githubusercontent.com/protocolbuffers/protobuf/main/src/google/protobuf/empty.proto
+
+
       - name: Lint proto files
         run: buf lint
 
