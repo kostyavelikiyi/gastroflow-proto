@@ -19,8 +19,8 @@ dependencies:
   flutter:
     sdk: flutter
   
-  # Protocol Buffers
-  protobuf: ^3.1.0
+  # Protocol Buffers  
+  protobuf: ^2.1.0
   
   # gRPC support
   grpc: ^3.2.4
