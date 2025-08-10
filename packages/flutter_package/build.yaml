@@ -3,11 +3,11 @@ targets:
     sources:
       - $package$
       - lib/$lib$
-      - ../../proto/**/*.proto  # Proto files location
+      - proto/**/*.proto  # Proto files location
     builders:
       protoc_builder:
         options:
           grpc: true                    # Generate gRPC clients
           out: lib/generated           # Output directory
           include_paths:               # Include paths for imports
-            - ../../proto
+            - proto
