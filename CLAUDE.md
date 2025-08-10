@@ -11,16 +11,20 @@
 ```bash
 # ВСЕГДА тестировать локально перед коммитом:
 
-# 1. Go генерация и проверка
+# 1. Lint proto файлов
+buf lint
+
+# 2. Go генерация и проверка
 buf generate
 cd packages/go_module
+go mod tidy
 go build ./...
 cd ../..
 
-# 2. Dart генерация и проверка  
+# 3. Dart генерация и проверка  
 cd packages/flutter_package
 dart pub get
-dart run build_runner build
+dart run build_runner build --delete-conflicting-outputs
 dart analyze
 cd ../..
 ```

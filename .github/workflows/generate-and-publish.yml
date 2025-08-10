@@ -34,7 +34,7 @@ jobs:
           sdk: ${{ env.DART_VERSION }}
 
       - name: Lint proto files
-        run: buf lint proto
+        run: buf lint
 
       - name: Generate Go code
         run: buf generate
