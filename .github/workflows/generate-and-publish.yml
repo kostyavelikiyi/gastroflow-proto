@@ -45,6 +45,21 @@ jobs:
       - name: Generate Go code
         run: buf generate
 
+      - name: Install protoc-gen-dart
+        run: dart pub global activate protoc_plugin
+
+      - name: Generate Dart proto code manually
+        run: |
+                export PATH="$PATH":"$HOME/.pub-cache/bin"
+                cd packages/flutter_package
+                rm -rf lib/src/generated
+                mkdir -p lib/src/generated
+                protoc \
+                  --dart_out=grpc:lib/src/generated \
+                  --proto_path=proto \
+                  --proto_path=proto/google \
+                  $(find proto -name '*.proto')
+
       - name: Generate Flutter code
         run: |
           cd packages/flutter_package

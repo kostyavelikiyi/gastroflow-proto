@@ -2,7 +2,7 @@ name: gastroflow_proto
 description: >
   Generated Dart/Flutter code for GastroFlow Protocol Buffers.
   Provides strongly-typed models and gRPC clients for all GastroFlow domains:
-  orders, menu, restaurants, users, analytics, notifications, payments, and inventory.
+  orders, menu, restaurants.
 version: 1.0.0
 homepage: https://github.com/gastroflow/gastroflow-proto
 repository: https://github.com/gastroflow/gastroflow-proto

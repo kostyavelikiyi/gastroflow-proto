@@ -12,7 +12,7 @@ plugins:
     opt:
       - module=github.com/gastroflow/proto-go
   
-  # Go gRPC generation  
+  # Go gRPC generation
   - plugin: buf.build/grpc/go
     out: packages/go_module
     opt:
