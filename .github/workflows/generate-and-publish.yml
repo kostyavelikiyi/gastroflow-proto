@@ -33,6 +33,12 @@ jobs:
           channel: stable
           flutter-version: 3.29.0
 
+      - name: Clean old proto files in Flutter package
+        run: rm -rf packages/flutter_package/proto/*
+
+      - name: Copy proto files to Flutter package
+        run: cp -r proto/. packages/flutter_package/proto/
+
       - name: Lint proto files
         run: buf lint
 
