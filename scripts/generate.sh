@@ -103,6 +103,9 @@ post_process_dart() {
     # Копирование сгенерированного Dart кода в lib/generated
     cp -r "$GENERATED_DIR/dart/"* "$PACKAGES_DIR/flutter_package/lib/generated/"
     
+    # Создаем директорию src если она не существует
+    mkdir -p "$PACKAGES_DIR/flutter_package/lib/src"
+    
     # Создаем exports файл для удобного импорта
     cat > "$PACKAGES_DIR/flutter_package/lib/src/exports.dart" << EOF
 // Auto-generated exports for GastroFlow Protocol Buffers
