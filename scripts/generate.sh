@@ -103,6 +103,11 @@ post_process_dart() {
     # Копирование сгенерированного Dart кода в lib/generated
     cp -r "$GENERATED_DIR/dart/"* "$PACKAGES_DIR/flutter_package/lib/generated/"
     
+    # Исправление версии языка Dart в сгенерированных файлах для совместимости с SDK 3.1
+    log "Исправление версии языка Dart в сгенерированных файлах..."
+    find "$PACKAGES_DIR/flutter_package/lib/generated" -name "*.dart" -type f -exec sed -i.bak 's|// @dart = 3\.3|// @dart = 3.1|g' {} \;
+    find "$PACKAGES_DIR/flutter_package/lib/generated" -name "*.bak" -delete
+    
     # Создаем директорию src если она не существует
     mkdir -p "$PACKAGES_DIR/flutter_package/lib/src"
     
