@@ -94,33 +94,39 @@ post_process_dart() {
         return 0
     fi
     
-    # Создание pubspec.yaml для Dart пакета
-    cat > "$PACKAGES_DIR/flutter_package/pubspec.yaml" << EOF
-name: gastroflow_proto
-description: Generated Dart code for GastroFlow Protocol Buffers
-version: 1.0.0
-publish_to: 'none'
+    # Создаем директорию lib/generated если она не существует
+    mkdir -p "$PACKAGES_DIR/flutter_package/lib/generated"
+    
+    # Очищаем старые сгенерированные файлы
+    rm -rf "$PACKAGES_DIR/flutter_package/lib/generated/"*
+    
+    # Копирование сгенерированного Dart кода в lib/generated
+    cp -r "$GENERATED_DIR/dart/"* "$PACKAGES_DIR/flutter_package/lib/generated/"
+    
+    # Создаем exports файл для удобного импорта
+    cat > "$PACKAGES_DIR/flutter_package/lib/src/exports.dart" << EOF
+// Auto-generated exports for GastroFlow Protocol Buffers
 
-environment:
-  sdk: '>=2.17.0 <4.0.0'
-  flutter: ">=3.0.0"
+// Common types and enums
+export '../generated/common/types.pb.dart';
+export '../generated/common/enums.pb.dart';
 
-dependencies:
-  flutter:
-    sdk: flutter
-  protobuf: ^3.1.0
-  grpc: ^3.2.4
+// Domain models
+export '../generated/orders/models.pb.dart';
+export '../generated/menu/models.pb.dart';  
+export '../generated/restaurants/models.pb.dart';
+export '../generated/users/models.pb.dart';
+export '../generated/analytics/models.pb.dart';
+export '../generated/notifications/models.pb.dart';
+export '../generated/payments/models.pb.dart';
+export '../generated/inventory/models.pb.dart';
 
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^3.0.0
-
-flutter:
+// gRPC services
+export '../generated/orders/service.pbgrpc.dart';
+export '../generated/menu/service.pbgrpc.dart';
+export '../generated/restaurants/service.pbgrpc.dart'; 
+export '../generated/users/service.pbgrpc.dart';
 EOF
-
-    # Копирование сгенерированного Dart кода
-    cp -r "$GENERATED_DIR/dart/"* "$PACKAGES_DIR/flutter_package/lib/"
     
     log "✓ Dart пакет подготовлен"
 }
