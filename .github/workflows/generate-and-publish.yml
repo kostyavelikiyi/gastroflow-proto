@@ -57,6 +57,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Cache Flutter Pub Packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.pub-cache
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
@@ -86,6 +94,19 @@ jobs:
 
       - name: Install protoc-gen-dart
         run: dart pub global activate protoc_plugin
+
+      - name: Cache Flutter Build and Tooling
+        uses: actions/cache@v4
+        with:
+          path: |
+            packages/flutter_package/.dart_tool
+            packages/flutter_package/build
+            packages/flutter_package/.flutter-plugins
+            packages/flutter_package/.flutter-plugins-dependencies
+            packages/flutter_package/.packages
+          key: ${{ runner.os }}-flutter-build-${{ hashFiles('packages/flutter_package/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-build-
 
       - name: Generate Dart proto code manually
         run: |
