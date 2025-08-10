@@ -7,8 +7,7 @@ on:
     branches: [main]
 
 env:
-  GO_VERSION: '1.21'
-  DART_VERSION: '3.1.0'
+  GO_VERSION: '1.24'
 
 jobs:
   # Simple generation and testing
@@ -28,10 +27,10 @@ jobs:
         with:
           go-version: ${{ env.GO_VERSION }}
 
-      - name: Setup Dart
-        uses: dart-lang/setup-dart@v1
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          sdk: ${{ env.DART_VERSION }}
+          flutter-version: 'stable'
 
       - name: Lint proto files
         run: buf lint
@@ -39,11 +38,11 @@ jobs:
       - name: Generate Go code
         run: buf generate
 
-      - name: Generate Dart code
+      - name: Generate Flutter code
         run: |
           cd packages/flutter_package
-          dart pub get
-          dart run build_runner build --delete-conflicting-outputs
+          flutter pub get
+          flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Test Go package
         run: |
@@ -51,7 +50,7 @@ jobs:
           go mod tidy
           go build ./...
 
-      - name: Test Dart package
+      - name: Test Flutter package
         run: |
           cd packages/flutter_package
-          dart analyze
+          flutter analyze
