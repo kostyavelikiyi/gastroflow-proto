@@ -24,6 +24,8 @@ plugins:
     out: generated/dart
     opt:
       - grpc
+    include_imports: true
+    include_wkt: true
 
   # TypeScript generation
   - plugin: buf.build/bufbuild/es

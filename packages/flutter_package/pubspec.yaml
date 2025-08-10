@@ -22,8 +22,8 @@ dependencies:
   # Protocol Buffers  
   protobuf: ^2.1.0
   
-  # gRPC support
-  grpc: ^3.2.4
+  # gRPC support (using older version for compatibility)
+  grpc: ^3.1.0
   
   # Validation
   fixnum: ^1.1.0

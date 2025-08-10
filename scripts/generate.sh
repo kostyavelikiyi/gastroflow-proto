@@ -125,15 +125,21 @@ export '../generated/menu/models.pb.dart';
 export '../generated/restaurants/models.pb.dart';
 export '../generated/users/models.pb.dart';
 export '../generated/analytics/models.pb.dart';
-export '../generated/notifications/models.pb.dart';
 export '../generated/payments/models.pb.dart';
 export '../generated/inventory/models.pb.dart';
 
-// gRPC services
+// Notifications models with alias for conflicted types
+export '../generated/notifications/models.pb.dart' hide NotificationSettings;
+
+// gRPC services with aliases for conflicted types
 export '../generated/orders/service.pbgrpc.dart';
 export '../generated/menu/service.pbgrpc.dart';
-export '../generated/restaurants/service.pbgrpc.dart'; 
-export '../generated/users/service.pbgrpc.dart';
+export '../generated/restaurants/service.pbgrpc.dart' hide UpdateSettingsRequest; 
+export '../generated/users/service.pbgrpc.dart' hide UpdateSettingsRequest;
+
+// Google protobuf types (well-known types)
+export '../generated/google/protobuf/timestamp.pb.dart';
+export '../generated/google/protobuf/empty.pb.dart';
 EOF
     
     log "✓ Dart пакет подготовлен"
