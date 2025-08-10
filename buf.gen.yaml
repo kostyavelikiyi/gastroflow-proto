@@ -1,6 +1,6 @@
 version: v1
-# Buf code generation configuration
-# Настройка генерации кода для всех поддерживаемых языков
+# Simplified buf generation - only Go
+# Dart generation is handled by protoc_builder
 
 managed:
   enabled: true
@@ -8,33 +8,13 @@ managed:
 plugins:
   # Go generation
   - plugin: buf.build/protocolbuffers/go
-    out: generated/go
+    out: packages/go_module
     opt:
       - module=github.com/gastroflow/proto-go
   
   # Go gRPC generation  
   - plugin: buf.build/grpc/go
-    out: generated/go
+    out: packages/go_module
     opt:
       - paths=source_relative
       - require_unimplemented_servers=false
-
-  # Dart/Flutter generation with gRPC support (pinned version for compatibility)
-  - plugin: buf.build/protocolbuffers/dart:v21.1.1
-    out: generated/dart
-    opt:
-      - grpc
-    include_imports: true
-    include_wkt: true
-
-  # TypeScript generation
-  - plugin: buf.build/bufbuild/es
-    out: generated/typescript
-    opt:
-      - target=ts
-
-  # TypeScript gRPC generation  
-  - plugin: buf.build/connectrpc/es
-    out: generated/typescript
-    opt:
-      - target=ts

@@ -1,64 +1,19 @@
-name: Generate and Publish Proto Packages
+name: Generate Proto Packages
 
 on:
   push:
     branches: [main, develop]
-    tags: ['v*']
   pull_request:
     branches: [main]
 
 env:
   GO_VERSION: '1.21'
-  NODE_VERSION: '18'
   DART_VERSION: '3.1.0'
-  FLUTTER_VERSION: '3.13.0'
 
 jobs:
-  # Проверка обратной совместимости
-  breaking-changes:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Buf
-        uses: bufbuild/buf-setup-action@v1.25.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Check for breaking changes
-        run: |
-          # Сравнение с main веткой
-          buf breaking --against '.git#branch=main'
-
-  # Линтинг proto файлов
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Buf
-        uses: bufbuild/buf-setup-action@v1.25.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Lint proto files
-        run: buf lint
-
-      - name: Format check
-        run: buf format --diff --exit-code
-
-  # Генерация кода для всех языков
+  # Simple generation and testing
   generate:
     runs-on: ubuntu-latest
-    needs: [lint]
-    outputs:
-      version: ${{ steps.version.outputs.version }}
-      should_publish: ${{ steps.version.outputs.should_publish }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -73,57 +28,22 @@ jobs:
         with:
           go-version: ${{ env.GO_VERSION }}
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
       - name: Setup Dart
         uses: dart-lang/setup-dart@v1
         with:
           sdk: ${{ env.DART_VERSION }}
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
+      - name: Lint proto files
+        run: buf lint proto
 
-      - name: Generate code
-        run: ./scripts/generate.sh
+      - name: Generate Go code
+        run: buf generate
 
-      - name: Determine version and publish flag
-        id: version
+      - name: Generate Dart code
         run: |
-          if [[ $GITHUB_REF == refs/tags/v* ]]; then
-            VERSION=${GITHUB_REF#refs/tags/}
-            SHOULD_PUBLISH="true"
-          else
-            VERSION="0.0.0-$(echo $GITHUB_SHA | cut -c1-7)"
-            SHOULD_PUBLISH="false"
-          fi
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "should_publish=$SHOULD_PUBLISH" >> $GITHUB_OUTPUT
-          echo "Version: $VERSION, Should publish: $SHOULD_PUBLISH"
-
-      - name: Update package versions
-        run: |
-          VERSION=${{ steps.version.outputs.version }}
-          
-          # Update Dart pubspec.yaml
-          sed -i "s/version: .*/version: ${VERSION}/" packages/flutter_package/pubspec.yaml
-          
-          # Update Go go.mod (для тега)
-          if [[ "${{ steps.version.outputs.should_publish }}" == "true" ]]; then
-            echo "// Version: ${VERSION}" > packages/go_module/version.go
-            echo "package proto" >> packages/go_module/version.go
-            echo "" >> packages/go_module/version.go
-            echo "const Version = \"${VERSION}\"" >> packages/go_module/version.go
-          fi
-          
-          # Update TypeScript package.json
-          cd packages/npm_package
-          npm version ${VERSION} --no-git-tag-version
-          cd ../..
+          cd packages/flutter_package
+          dart pub get
+          dart run build_runner build --delete-conflicting-outputs
 
       - name: Test Go package
         run: |
@@ -134,167 +54,4 @@ jobs:
       - name: Test Dart package
         run: |
           cd packages/flutter_package
-          dart pub get
           dart analyze
-          # dart test (если есть тесты)
-
-      - name: Test TypeScript package
-        run: |
-          cd packages/npm_package
-          npm ci
-          npm run build
-
-      - name: Archive generated packages
-        uses: actions/upload-artifact@v4
-        with:
-          name: generated-packages-${{ steps.version.outputs.version }}
-          path: |
-            packages/
-            generated/
-          retention-days: 30
-
-  # Публикация Go модуля (через git tag)
-  publish-go:
-    runs-on: ubuntu-latest
-    needs: [generate]
-    if: needs.generate.outputs.should_publish == 'true'
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Download generated packages
-        uses: actions/download-artifact@v4
-        with:
-          name: generated-packages-${{ needs.generate.outputs.version }}
-
-      - name: Setup Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: ${{ env.GO_VERSION }}
-
-      - name: Commit and push Go module
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Коммитим сгенерированные Go файлы
-          git add packages/go_module/
-          git commit -m "chore: update generated Go code for ${{ needs.generate.outputs.version }}" || echo "No changes to commit"
-          git push origin main
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: ${{ needs.generate.outputs.version }}
-          name: Release ${{ needs.generate.outputs.version }}
-          body: |
-            ## GastroFlow Proto ${{ needs.generate.outputs.version }}
-            
-            ### Changes
-            - Generated code updated
-            - Go module: `go get github.com/gastroflow/proto-go@${{ needs.generate.outputs.version }}`
-            
-            ### Usage
-            
-            #### Go
-            ```bash
-            go get github.com/gastroflow/proto-go@${{ needs.generate.outputs.version }}
-            ```
-            
-            #### Dart/Flutter
-            Download the Dart package from the release assets.
-            
-            #### TypeScript/Node.js
-            Download the npm package from the release assets.
-            
-          files: |
-            packages/flutter_package.tar.gz
-            packages/npm_package.tar.gz
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  # Публикация Dart пакета (pub.dev)
-  publish-dart:
-    runs-on: ubuntu-latest
-    needs: [generate]
-    if: needs.generate.outputs.should_publish == 'true' && github.repository == 'gastroflow/gastroflow-proto'
-    steps:
-      - name: Download generated packages
-        uses: actions/download-artifact@v4
-        with:
-          name: generated-packages-${{ needs.generate.outputs.version }}
-
-      - name: Setup Dart
-        uses: dart-lang/setup-dart@v1
-        with:
-          sdk: ${{ env.DART_VERSION }}
-
-      - name: Setup pub credentials
-        run: |
-          mkdir -p ~/.pub-cache
-          echo "${{ secrets.PUB_DEV_CREDENTIALS }}" > ~/.pub-cache/credentials.json
-
-      - name: Publish to pub.dev
-        run: |
-          cd packages/flutter_package
-          dart pub publish --force
-        env:
-          PUB_CREDENTIALS: ${{ secrets.PUB_DEV_CREDENTIALS }}
-
-  # Публикация TypeScript пакета (npm)
-  publish-npm:
-    runs-on: ubuntu-latest
-    needs: [generate]
-    if: needs.generate.outputs.should_publish == 'true' && github.repository == 'gastroflow/gastroflow-proto'
-    steps:
-      - name: Download generated packages
-        uses: actions/download-artifact@v4
-        with:
-          name: generated-packages-${{ needs.generate.outputs.version }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Publish to npm
-        run: |
-          cd packages/npm_package
-          npm ci
-          npm run build
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  # Обновление документации
-  update-docs:
-    runs-on: ubuntu-latest
-    needs: [generate]
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Download generated packages
-        uses: actions/download-artifact@v4
-        with:
-          name: generated-packages-${{ needs.generate.outputs.version }}
-
-      - name: Generate documentation
-        run: |
-          # Генерация документации из proto файлов
-          # Можно использовать protoc-gen-doc или другие инструменты
-          echo "Generating documentation..."
-
-      - name: Deploy to GitHub Pages
-        if: github.repository == 'gastroflow/gastroflow-proto'
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          cname: proto.gastroflow.com

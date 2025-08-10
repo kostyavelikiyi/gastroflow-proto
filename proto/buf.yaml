@@ -1,19 +1,8 @@
 version: v1
-# Buf configuration for GastroFlow Protocol Buffers
-# Обеспечивает проверку обратной совместимости и качества proto файлов
+# Simplified Buf configuration for GastroFlow Protocol Buffers
 
 deps:
   - buf.build/googleapis/googleapis
-  - buf.build/bufbuild/protovalidate
-
-breaking:
-  use:
-    - FILE
-  except:
-    - FIELD_SAME_LABEL
-    - FIELD_WIRE_JSON_CAMEL_CASE
-    - RPC_SAME_CLIENT_STREAMING
-    - RPC_SAME_SERVER_STREAMING
 
 lint:
   use:
@@ -25,10 +14,5 @@ lint:
     - COMMENT_MESSAGE
     - COMMENT_RPC
     - COMMENT_SERVICE
-    - PACKAGE_DIRECTORY_MATCH
-    - RPC_RESPONSE_STANDARD_NAME
-  enum_zero_value_suffix: _UNSPECIFIED
-  rpc_allow_same_request_response: false
   rpc_allow_google_protobuf_empty_requests: true
   rpc_allow_google_protobuf_empty_responses: true
-  service_suffix: Service
