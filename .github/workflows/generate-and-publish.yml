@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+
 env:
   GO_VERSION: '1.24'
 
@@ -30,6 +33,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Buf
         uses: bufbuild/buf-setup-action@v1.25.1
@@ -53,8 +58,8 @@ jobs:
       - name: Configure Git (only on main push)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Commit and push Go changes (only on main push)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -73,6 +78,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cache Flutter Pub Packages
         uses: actions/cache@v4
@@ -151,8 +158,8 @@ jobs:
       - name: Configure Git (only on main push)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Commit and push Flutter changes (only on main push)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
