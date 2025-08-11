@@ -1,36 +1,38 @@
 # GastroFlow Proto Examples
 
-This directory contains usage examples for different languages and frameworks showing how to integrate GastroFlow Protocol Buffers in your projects.
+This directory contains conceptual usage examples showing how to integrate GastroFlow Protocol Buffers in your projects using Go and Flutter.
 
-## 📁 Directory Structure
+> **Note**: This directory contains documentation examples. For complete setup instructions, see the main [README.md](../README.md) in the project root.
+
+## 📁 Conceptual Structure
 
 ```
 examples/
-├── go/                 # Go examples
+├── go/                 # Go examples (conceptual)
 │   ├── client/         # gRPC client examples
 │   ├── server/         # gRPC server examples
 │   └── models/         # Working with models
-├── dart/               # Dart/Flutter examples
-│   ├── client/         # gRPC client examples
-│   ├── models/         # Model usage examples
-│   └── flutter_app/    # Complete Flutter app example
-├── typescript/         # TypeScript/Node.js examples
-│   ├── client/         # gRPC client examples
-│   ├── server/         # Express.js server examples
-│   ├── react/          # React web app example
-│   └── models/         # Model usage examples
-└── integration/        # Integration examples
-    ├── docker-compose/ # Multi-service setup
-    ├── kubernetes/     # K8s deployment examples
-    └── testing/        # Testing strategies
+└── flutter/            # Flutter examples (conceptual)
+    ├── client/         # gRPC client examples
+    ├── models/         # Model usage examples
+    └── widgets/        # Flutter widget examples
 ```
+
+## 🏢 Available Domains
+
+The examples work with our simplified domain structure:
+- **common** - Shared types and utilities
+- **orders** - Order management
+- **menu** - Menu and item management  
+- **restaurants** - Restaurant information
+- **payments** - Payment data models
 
 ## 🚀 Quick Start Examples
 
 ### Go gRPC Server
 
 ```go
-// examples/go/server/main.go
+// Conceptual Go server example
 package main
 
 import (
@@ -48,14 +50,16 @@ type orderServer struct {
 }
 
 func (s *orderServer) CreateOrder(ctx context.Context, req *orders.CreateOrderRequest) (*orders.CreateOrderResponse, error) {
-    // Business logic here
     log.Printf("Creating order for: %s", req.Name)
     
     order := &orders.Order{
         Id:   &common.UUID{Value: generateUUID()},
         Name: req.Name,
+        PackingMode: req.PackingMode,
+        RestaurantId: req.RestaurantId,
+        ContactInfo: req.ContactInfo,
+        PaymentMethod: req.PaymentMethod,
         Status: common.OrderStatus_ORDER_STATUS_PENDING,
-        // ... populate other fields
     }
     
     return &orders.CreateOrderResponse{
@@ -72,17 +76,17 @@ func main() {
     s := grpc.NewServer()
     orders.RegisterOrderServiceServer(s, &orderServer{})
 
-    log.Println("Server starting on :9090")
+    log.Println("Order service starting on :9090")
     if err := s.Serve(lis); err != nil {
         log.Fatalf("Failed to serve: %v", err)
     }
 }
 ```
 
-### Flutter App Integration
+### Flutter Integration
 
 ```dart
-// examples/dart/flutter_app/lib/services/order_service.dart
+// Conceptual Flutter service example
 import 'package:gastroflow_proto/gastroflow_proto.dart';
 import 'package:grpc/grpc.dart';
 
@@ -104,345 +108,246 @@ class OrderService {
     required String customerName,
     required String restaurantId,
     required PackingMode packingMode,
-    required List<Position> positions,
+    required List<CreatePositionRequest> positions,
   }) async {
     final request = CreateOrderRequest()
       ..name = customerName
       ..restaurantId = (UUID()..value = restaurantId)
       ..packingMode = packingMode
-      ..positions.addAll(positions);
+      ..positions.addAll(positions)
+      ..contactInfo = (ContactInfo()..phone = '+1234567890')
+      ..paymentMethod = PaymentMethod.PAYMENT_METHOD_CARD;
       
     final response = await _client.createOrder(request);
     return response.order;
   }
   
-  Stream<Order> subscribeToOrderUpdates(String restaurantId) {
-    final request = SubscribeToOrderUpdatesRequest()
-      ..restaurantId = (UUID()..value = restaurantId);
+  Future<List<Order>> getOrders(String restaurantId) async {
+    final request = ListOrdersRequest()
+      ..restaurantId = (UUID()..value = restaurantId)
+      ..pagination = (PaginationRequest()
+        ..page = 1
+        ..pageSize = 20);
       
-    return _client.subscribeToOrderUpdates(request)
-        .map((update) => update.order);
+    final response = await _client.listOrders(request);
+    return response.orders;
   }
 }
 ```
 
-### React TypeScript Component
+### Working with Menu (Go)
 
-```typescript
-// examples/typescript/react/src/components/OrderList.tsx
-import React, { useState, useEffect } from 'react';
-import {
-  Order,
-  OrderServiceClient,
-  ListOrdersRequest,
-  OrderStatus
-} from 'gastroflow-proto';
+```go
+// Conceptual Go menu client example
+package main
 
-interface OrderListProps {
-  restaurantId: string;
-}
+import (
+    "context"
+    "log"
+    
+    "github.com/gastroflow/proto-go/menu"
+    "github.com/gastroflow/proto-go/common"
+    "google.golang.org/grpc"
+)
 
-const OrderList: React.FC<OrderListProps> = ({ restaurantId }) => {
-  const [orders, setOrders] = useState<Order[]>([]);
-  const [loading, setLoading] = useState(true);
-  
-  useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        const client = new OrderServiceClient('http://localhost:8080');
-        const request: ListOrdersRequest = {
-          restaurantId: { value: restaurantId },
-          pagination: { page: 1, pageSize: 20 }
-        };
-        
-        const response = await client.listOrders(request);
-        setOrders(response.orders || []);
-      } catch (error) {
-        console.error('Failed to fetch orders:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchOrders();
-  }, [restaurantId]);
-
-  const getStatusColor = (status: OrderStatus): string => {
-    switch (status) {
-      case OrderStatus.ORDER_STATUS_PENDING:
-        return 'yellow';
-      case OrderStatus.ORDER_STATUS_PREPARING:
-        return 'blue';
-      case OrderStatus.ORDER_STATUS_READY:
-        return 'green';
-      default:
-        return 'gray';
+func main() {
+    conn, err := grpc.Dial("localhost:9090", grpc.WithInsecure())
+    if err != nil {
+        log.Fatal(err)
     }
-  };
+    defer conn.Close()
 
-  if (loading) return <div>Loading orders...</div>;
-
-  return (
-    <div className="order-list">
-      <h2>Orders</h2>
-      {orders.map((order) => (
-        <div key={order.id?.value} className="order-card">
-          <h3>{order.name}</h3>
-          <div className="order-status" style={{ color: getStatusColor(order.status) }}>
-            {order.status}
-          </div>
-          <div className="order-total">
-            {order.total?.amount} {order.total?.currency}
-          </div>
-          <div className="order-positions">
-            {order.positions?.map((position, index) => (
-              <div key={index} className="position">
-                {position.name} x {position.quantity}
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default OrderList;
+    menuClient := menu.NewMenuServiceClient(conn)
+    itemClient := menu.NewMenuItemServiceClient(conn)
+    
+    // Get active menu
+    activeMenu, err := menuClient.GetActiveMenu(context.Background(), &menu.GetActiveMenuRequest{
+        RestaurantId: &common.UUID{Value: "restaurant-1"},
+        Language: common.Language_LANGUAGE_RU,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    
+    log.Printf("Active menu: %s", activeMenu.Menu.Name)
+    
+    // Create new menu item
+    newItem := &menu.CreateMenuItemRequest{
+        Name: "Margherita Pizza",
+        Description: "Classic Italian pizza",
+        Price: &common.Money{Amount: 2500, Currency: "RUB"},
+        CategoryId: &common.UUID{Value: "pizza-category"},
+        CookingTime: 15,
+        DietaryProperties: []menu.DietaryProperty{
+            menu.DietaryProperty_DIETARY_PROPERTY_VEGETARIAN,
+        },
+    }
+    
+    item, err := itemClient.CreateMenuItem(context.Background(), newItem)
+    if err != nil {
+        log.Fatal(err)
+    }
+    
+    log.Printf("Created item: %s", item.MenuItem.Name)
+}
 ```
 
 ## 🔧 Development Setup
 
 ### Prerequisites
 
-Install the required tools for your language:
+Install the required tools for code generation:
 
 **For Go:**
 ```bash
-go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
-go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+# Install buf CLI
+curl -sSL "https://github.com/bufbuild/buf/releases/latest/download/buf-$(uname -s)-$(uname -m)" -o buf
+chmod +x buf && sudo mv buf /usr/local/bin/
+
+# Generate Go code
+buf generate
 ```
 
-**For Dart:**
+**For Flutter:**
 ```bash
-dart pub global activate protoc_plugin
+# Install Flutter dependencies
+cd packages/flutter_package
+dart pub get
+
+# Generate Dart code
+dart run build_runner build --delete-conflicting-outputs
 ```
 
-**For TypeScript:**
+### Code Generation
+
+Simple commands to generate client code:
+
 ```bash
-npm install -g grpc-tools
-npm install -g grpc_tools_node_protoc_ts
+# Generate Go protobuf and gRPC code
+buf generate
+
+# Generate Flutter protobuf and gRPC code
+cd packages/flutter_package
+dart run build_runner build --delete-conflicting-outputs
+
+# Test the generated code
+cd packages/go_module && go build ./...
+cd packages/flutter_package && dart analyze
 ```
-
-### Running Examples
-
-Each example directory contains its own README with specific setup instructions:
-
-1. **Go Examples**: `examples/go/README.md`
-2. **Dart Examples**: `examples/dart/README.md`  
-3. **TypeScript Examples**: `examples/typescript/README.md`
 
 ## 🧪 Testing Examples
 
 ### Go Unit Tests
 
 ```go
-// examples/go/testing/order_test.go
+// Conceptual Go test example
+package main
+
+import (
+    "testing"
+    "github.com/gastroflow/proto-go/orders"
+    "github.com/gastroflow/proto-go/common"
+)
+
 func TestOrderCreation(t *testing.T) {
     order := &orders.Order{
         Id:   &common.UUID{Value: "test-order"},
         Name: "Test Customer",
         PackingMode: common.PackingMode_PACKING_MODE_TAKEAWAY,
         RestaurantId: &common.UUID{Value: "restaurant-1"},
-        Total: &common.Money{Amount: 1500, Currency: "USD"},
+        Total: &common.Money{Amount: 1500, Currency: "RUB"},
+        Status: common.OrderStatus_ORDER_STATUS_PENDING,
     }
     
-    assert.Equal(t, "Test Customer", order.Name)
-    assert.Equal(t, int64(1500), order.Total.Amount)
+    if order.Name != "Test Customer" {
+        t.Errorf("Expected name 'Test Customer', got %s", order.Name)
+    }
+    if order.Total.Amount != 1500 {
+        t.Errorf("Expected amount 1500, got %d", order.Total.Amount)
+    }
 }
 ```
 
-### Dart Widget Tests
+### Flutter Widget Tests
 
 ```dart
-// examples/dart/testing/order_widget_test.dart
+// Conceptual Flutter test example
+import 'package:flutter_test/flutter_test.dart';
+import 'package:gastroflow_proto/gastroflow_proto.dart';
+
 void main() {
-  testWidgets('Order widget displays correctly', (WidgetTester tester) async {
+  test('Order model test', () {
     final order = Order()
       ..id = (UUID()..value = 'test-order')
       ..name = 'Test Customer'
-      ..total = (Money()..amount = Int64(2500)..currency = 'USD');
+      ..total = (Money()..amount = Int64(2500)..currency = 'RUB')
+      ..status = OrderStatus.ORDER_STATUS_PENDING;
 
-    await tester.pumpWidget(MaterialApp(
-      home: OrderWidget(order: order),
-    ));
-
-    expect(find.text('Test Customer'), findsOneWidget);
-    expect(find.text('\$25.00'), findsOneWidget);
+    expect(order.name, equals('Test Customer'));
+    expect(order.total.amount.toInt(), equals(2500));
+    expect(order.status, equals(OrderStatus.ORDER_STATUS_PENDING));
   });
 }
-```
-
-### TypeScript Jest Tests
-
-```typescript
-// examples/typescript/testing/order.test.ts
-import { Order, Money, UUID, PackingMode } from 'gastroflow-proto';
-
-describe('Order', () => {
-  it('should create a valid order', () => {
-    const order: Order = {
-      id: { value: 'test-order' },
-      name: 'Test Customer',
-      packingMode: PackingMode.PACKING_MODE_DELIVERY,
-      total: { amount: 2500, currency: 'USD' },
-      positions: [],
-      restaurantId: { value: 'restaurant-1' }
-    };
-
-    expect(order.name).toBe('Test Customer');
-    expect(order.total?.amount).toBe(2500);
-  });
-});
-```
-
-## 🐳 Docker Examples
-
-### Multi-Service Setup
-
-```yaml
-# examples/integration/docker-compose/docker-compose.yml
-version: '3.8'
-
-services:
-  order-service:
-    build: 
-      context: ../../go/server
-      dockerfile: Dockerfile
-    ports:
-      - "9090:9090"
-    environment:
-      - DATABASE_URL=postgres://user:pass@db:5432/gastroflow
-    depends_on:
-      - db
-      
-  web-app:
-    build:
-      context: ../../typescript/react
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    environment:
-      - REACT_APP_API_URL=http://localhost:9090
-    depends_on:
-      - order-service
-      
-  db:
-    image: postgres:15
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
-      POSTGRES_DB: gastroflow
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
-```
-
-## ☸️ Kubernetes Examples
-
-```yaml
-# examples/integration/kubernetes/order-service.yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: order-service
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: order-service
-  template:
-    metadata:
-      labels:
-        app: order-service
-    spec:
-      containers:
-      - name: order-service
-        image: gastroflow/order-service:latest
-        ports:
-        - containerPort: 9090
-        env:
-        - name: DATABASE_URL
-          valueFrom:
-            secretKeyRef:
-              name: db-secret
-              key: url
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: order-service
-spec:
-  selector:
-    app: order-service
-  ports:
-  - port: 9090
-    targetPort: 9090
-  type: LoadBalancer
 ```
 
 ## 🔗 Integration Patterns
 
-### Event-Driven Architecture
+### Simple gRPC Client Pool (Go)
 
 ```go
-// examples/integration/events/order_events.go
-type OrderEventHandler struct {
-    orderService orders.OrderServiceClient
-    eventBus     EventBus
+// Conceptual connection management example
+package main
+
+import (
+    "sync"
+    "google.golang.org/grpc"
+    "github.com/gastroflow/proto-go/orders"
+    "github.com/gastroflow/proto-go/menu"
+)
+
+type ClientPool struct {
+    mu      sync.RWMutex
+    clients map[string]interface{}
+    conn    *grpc.ClientConn
 }
 
-func (h *OrderEventHandler) HandleOrderCreated(event OrderCreatedEvent) error {
-    // Send notification
-    notification := &notifications.Notification{
-        Type: common.NotificationType_NOTIFICATION_TYPE_ORDER_CREATED,
-        RecipientId: event.Order.UserId,
-        Title: "Order Confirmed",
-        Message: fmt.Sprintf("Your order #%s has been confirmed", event.Order.Id.Value),
+func NewClientPool(serverAddr string) (*ClientPool, error) {
+    conn, err := grpc.Dial(serverAddr, grpc.WithInsecure())
+    if err != nil {
+        return nil, err
     }
     
-    return h.sendNotification(notification)
+    return &ClientPool{
+        clients: make(map[string]interface{}),
+        conn:    conn,
+    }, nil
 }
-```
 
-### API Gateway Integration
+func (p *ClientPool) OrderService() orders.OrderServiceClient {
+    p.mu.Lock()
+    defer p.mu.Unlock()
+    
+    if client, exists := p.clients["orders"]; exists {
+        return client.(orders.OrderServiceClient)
+    }
+    
+    client := orders.NewOrderServiceClient(p.conn)
+    p.clients["orders"] = client
+    return client
+}
 
-```typescript
-// examples/integration/gateway/routes.ts
-import { OrderServiceClient, MenuServiceClient } from 'gastroflow-proto';
-
-app.post('/api/orders', async (req, res) => {
-  try {
-    const orderClient = new OrderServiceClient(ORDER_SERVICE_URL);
-    const response = await orderClient.createOrder(req.body);
-    res.json(response);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-app.get('/api/menu/:restaurantId', async (req, res) => {
-  try {
-    const menuClient = new MenuServiceClient(MENU_SERVICE_URL);
-    const response = await menuClient.getActiveMenu({
-      restaurantId: { value: req.params.restaurantId }
-    });
-    res.json(response);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+func (p *ClientPool) MenuService() menu.MenuServiceClient {
+    p.mu.Lock()
+    defer p.mu.Unlock()
+    
+    if client, exists := p.clients["menu"]; exists {
+        return client.(menu.MenuServiceClient)
+    }
+    
+    client := menu.NewMenuServiceClient(p.conn)
+    p.clients["menu"] = client
+    return client
+}
 ```
 
 ## 📚 Best Practices
@@ -451,46 +356,54 @@ app.get('/api/menu/:restaurantId', async (req, res) => {
 
 ```go
 // Handle gRPC errors properly
+import (
+    "google.golang.org/grpc/status"
+    "google.golang.org/grpc/codes"
+)
+
 if err != nil {
-    if status, ok := status.FromError(err); ok {
-        switch status.Code() {
+    if st, ok := status.FromError(err); ok {
+        switch st.Code() {
         case codes.NotFound:
             return ErrOrderNotFound
         case codes.InvalidArgument:
             return ErrInvalidOrder
         default:
-            return fmt.Errorf("gRPC error: %v", status.Message())
+            return fmt.Errorf("gRPC error: %v", st.Message())
         }
     }
     return err
 }
 ```
 
-### Connection Management
-
-```typescript
-// Reuse gRPC connections
-class GrpcClientManager {
-  private static clients: Map<string, any> = new Map();
-  
-  static getOrderClient(): OrderServiceClient {
-    if (!this.clients.has('orders')) {
-      this.clients.set('orders', new OrderServiceClient(ORDER_SERVICE_URL));
-    }
-    return this.clients.get('orders');
-  }
-}
-```
-
-### Validation
+### Message Validation
 
 ```dart
-// Validate proto messages before sending
+// Simple validation in Flutter
 bool isValidOrder(Order order) {
   return order.hasId() && 
          order.name.isNotEmpty &&
          order.hasRestaurantId() &&
          order.positions.isNotEmpty;
+}
+```
+
+### Connection Reuse
+
+```go
+// Keep connections alive
+var (
+    orderClient orders.OrderServiceClient
+    menuClient  menu.MenuServiceClient
+    once       sync.Once
+)
+
+func initClients() {
+    once.Do(func() {
+        conn, _ := grpc.Dial("localhost:9090", grpc.WithInsecure())
+        orderClient = orders.NewOrderServiceClient(conn)
+        menuClient = menu.NewMenuServiceClient(conn)
+    })
 }
 ```
 
@@ -501,25 +414,24 @@ bool isValidOrder(Order order) {
 1. **gRPC Connection Errors**
    - Check service URLs and ports
    - Verify network connectivity
-   - Ensure proper TLS configuration
+   - Ensure proper credentials
 
-2. **Validation Failures**
-   - Check required fields are set
-   - Verify field constraints are met
-   - Use proper enum values
+2. **Code Generation Issues**
+   - Run `buf generate` for Go
+   - Run `dart run build_runner build` for Flutter
+   - Check for import errors
 
-3. **Serialization Issues**
-   - Ensure consistent proto versions
-   - Check for missing imports
-   - Verify field types match
+3. **Compilation Errors**
+   - Ensure proto files are up to date
+   - Verify field names match generated code
+   - Check enum value usage
 
-### Debugging Tips
+### Quick Fixes
 
-- Enable gRPC logging for connection issues
-- Use proto reflection for service discovery
-- Validate messages before sending
-- Check service health endpoints
+- **Go**: Run `go mod tidy` and `go build ./...`
+- **Flutter**: Run `dart pub get` and `dart analyze`  
+- **Linting**: Run `buf lint` for proto validation
 
 ---
 
-For more detailed examples and advanced usage patterns, explore the specific language directories in this examples folder.
+For complete documentation and setup instructions, see the main [README.md](../README.md) file.
