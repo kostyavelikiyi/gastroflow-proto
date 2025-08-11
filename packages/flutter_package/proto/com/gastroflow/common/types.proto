@@ -1,0 +1,128 @@
+syntax = "proto3";
+
+package com.gastroflow.common;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/gastroflow/proto-go/common";
+
+// UUID - универсальный уникальный идентификатор
+// Используется для всех основных сущностей в системе
+message UUID {
+  string value = 1;
+}
+
+// Money - представление денежных сумм с точностью до копеек
+message Money {
+  // Сумма в минимальных единицах (например, копейках)
+  int64 amount = 1 ;
+  // Код валюты ISO 4217 (по умолчанию RUB)
+  string currency = 2;
+}
+
+// Address - адрес для доставки
+message Address {
+  // Полный адрес в текстовом виде
+  string full_address = 1;
+
+  // Город
+  string city = 2;
+
+  // Улица
+  string street = 3;
+
+  // Номер дома
+  string house_number = 4;
+
+  // Квартира/офис (опционально)
+  string apartment = 5;
+
+  // Подъезд (опционально)
+  string entrance = 6;
+
+  // Этаж (опционально)
+  string floor = 7;
+
+  // Комментарий к адресу (опционально)
+  string comment = 8;
+
+  // Координаты (опционально)
+  double latitude = 9;
+  double longitude = 10;
+}
+
+// ContactInfo - контактная информация
+message ContactInfo {
+  // Номер телефона в международном формате
+  string phone = 1;
+
+  // Email адрес (опционально)
+  string email = 2;
+}
+
+// AuditInfo - информация для аудита изменений
+message AuditInfo {
+  // Время создания записи
+  google.protobuf.Timestamp created_at = 1;
+
+  // Время последнего обновления записи
+  google.protobuf.Timestamp updated_at = 2;
+
+  // Идентификатор пользователя, создавшего запись
+  UUID created_by = 3;
+
+  // Идентификатор пользователя, обновившего запись
+  UUID updated_by = 4;
+
+  // Время мягкого удаления (null если не удалено)
+  google.protobuf.Timestamp deleted_at = 5;
+
+  // Идентификатор пользователя, удалившего запись
+  UUID deleted_by = 6;
+
+  // Версия записи для оптимистичной блокировки
+  int64 version = 7;
+}
+
+// PaginationRequest - запрос с пагинацией
+message PaginationRequest {
+  // Номер страницы (начиная с 1)
+  int32 page = 1;
+
+  // Размер страницы (максимум 100)
+  int32 page_size = 2;
+
+  // Поле для сортировки
+  string sort_by = 3;
+
+  // Направление сортировки
+  SortOrder sort_order = 4;
+}
+
+// PaginationResponse - ответ с информацией о пагинации
+message PaginationResponse {
+  // Текущая страница
+  int32 current_page = 1;
+
+  // Размер страницы
+  int32 page_size = 2;
+
+  // Общее количество элементов
+  int64 total_items = 3;
+
+  // Общее количество страниц
+  int32 total_pages = 4;
+
+  // Есть ли следующая страница
+  bool has_next = 5;
+
+  // Есть ли предыдущая страница
+  bool has_prev = 6;
+}
+
+// SortOrder - направление сортировки
+enum SortOrder {
+  SORT_ORDER_UNSPECIFIED = 0;
+  SORT_ORDER_ASC = 1;
+  SORT_ORDER_DESC = 2;
+}

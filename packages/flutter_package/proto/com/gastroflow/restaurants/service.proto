@@ -1,0 +1,318 @@
+syntax = "proto3";
+
+package com.gastroflow.restaurants;
+
+import "com/gastroflow/common/enums.proto";
+import "com/gastroflow/common/types.proto";
+import "google/protobuf/empty.proto";
+import "com/gastroflow/restaurants/models.proto";
+
+option go_package = "github.com/gastroflow/proto-go/restaurants";
+
+// RestaurantService - gRPC сервис для управления ресторанами
+service RestaurantService {
+  // Создать новый ресторан
+  rpc CreateRestaurant(CreateRestaurantRequest) returns (CreateRestaurantResponse);
+
+  // Получить ресторан по ID
+  rpc GetRestaurant(GetRestaurantRequest) returns (GetRestaurantResponse);
+
+  // Обновить ресторан
+  rpc UpdateRestaurant(UpdateRestaurantRequest) returns (UpdateRestaurantResponse);
+
+  // Удалить ресторан (мягкое удаление)
+  rpc DeleteRestaurant(DeleteRestaurantRequest) returns (google.protobuf.Empty);
+
+  // Получить список ресторанов с фильтрацией
+  rpc ListRestaurants(ListRestaurantsRequest) returns (ListRestaurantsResponse);
+
+  // Поиск ресторанов
+  rpc SearchRestaurants(SearchRestaurantsRequest) returns (SearchRestaurantsResponse);
+
+  // Изменить статус ресторана
+  rpc UpdateRestaurantStatus(UpdateRestaurantStatusRequest) returns (UpdateRestaurantStatusResponse);
+
+  // Получить рестораны рядом с координатами
+  rpc GetNearbyRestaurants(GetNearbyRestaurantsRequest) returns (GetNearbyRestaurantsResponse);
+
+  // Проверить доставку по адресу
+  rpc CheckDeliveryAvailability(CheckDeliveryAvailabilityRequest) returns (CheckDeliveryAvailabilityResponse);
+}
+
+// BranchService - gRPC сервис для управления филиалами
+service BranchService {
+  // Создать новый филиал
+  rpc CreateBranch(CreateBranchRequest) returns (CreateBranchResponse);
+
+  // Получить филиал по ID
+  rpc GetBranch(GetBranchRequest) returns (GetBranchResponse);
+
+  // Обновить филиал
+  rpc UpdateBranch(UpdateBranchRequest) returns (UpdateBranchResponse);
+
+  // Удалить филиал (мягкое удаление)
+  rpc DeleteBranch(DeleteBranchRequest) returns (google.protobuf.Empty);
+
+  // Получить список филиалов ресторана
+  rpc ListBranches(ListBranchesRequest) returns (ListBranchesResponse);
+
+  // Изменить статус филиала
+  rpc UpdateBranchStatus(UpdateBranchStatusRequest) returns (UpdateBranchStatusResponse);
+}
+
+// RestaurantSettingsService - gRPC сервис для управления настройками
+service RestaurantSettingsService {
+  // Получить настройки ресторана
+  rpc GetSettings(GetSettingsRequest) returns (GetSettingsResponse);
+
+  // Обновить настройки ресторана
+  rpc UpdateSettings(UpdateSettingsRequest) returns (UpdateSettingsResponse);
+
+  // Получить график работы
+  rpc GetWorkingHours(GetWorkingHoursRequest) returns (GetWorkingHoursResponse);
+
+  // Обновить график работы
+  rpc UpdateWorkingHours(UpdateWorkingHoursRequest) returns (UpdateWorkingHoursResponse);
+
+  // Обновить зону доставки
+  rpc UpdateDeliveryZone(UpdateDeliveryZoneRequest) returns (UpdateDeliveryZoneResponse);
+}
+
+// Запросы и ответы для RestaurantService
+
+message CreateRestaurantRequest {
+  string name = 1;
+  string description = 2;
+  repeated CuisineType cuisine_types = 3;
+  com.gastroflow.common.ContactInfo contact_info = 4;
+  com.gastroflow.common.Address address = 5;
+  RestaurantSettings settings = 6;
+  repeated CreateWorkingHoursRequest working_hours = 7;
+  string logo_url = 8;
+  repeated string images = 9;
+  com.gastroflow.common.UUID owner_id = 10;
+}
+
+message CreateWorkingHoursRequest {
+  com.gastroflow.common.WeekDay day = 1;
+  bool is_working = 2;
+  repeated CreateTimeIntervalRequest intervals = 3;
+  string comment = 4;
+}
+
+message CreateTimeIntervalRequest {
+  string start_time = 1;
+  string end_time = 2;
+  IntervalType type = 3;
+}
+
+message CreateRestaurantResponse {
+  Restaurant restaurant = 1;
+}
+
+message GetRestaurantRequest {
+  com.gastroflow.common.UUID id = 1;
+}
+
+message GetRestaurantResponse {
+  Restaurant restaurant = 1;
+}
+
+message UpdateRestaurantRequest {
+  com.gastroflow.common.UUID id = 1;
+  Restaurant restaurant = 2;
+}
+
+message UpdateRestaurantResponse {
+  Restaurant restaurant = 1;
+}
+
+message DeleteRestaurantRequest {
+  com.gastroflow.common.UUID id = 1;
+}
+
+message ListRestaurantsRequest {
+  com.gastroflow.common.PaginationRequest pagination = 1;
+  repeated com.gastroflow.common.RestaurantStatus status_filter = 2;
+  repeated CuisineType cuisine_filter = 3;
+  com.gastroflow.common.UUID owner_id = 4;
+  bool active_only = 5;
+}
+
+message ListRestaurantsResponse {
+  repeated Restaurant restaurants = 1;
+  com.gastroflow.common.PaginationResponse pagination = 2;
+}
+
+message SearchRestaurantsRequest {
+  string query = 1;
+  com.gastroflow.common.PaginationRequest pagination = 2;
+  repeated CuisineType cuisine_filter = 3;
+  double latitude = 4;
+  double longitude = 5;
+  double max_distance_km = 6;
+}
+
+message SearchRestaurantsResponse {
+  repeated RestaurantSearchResult restaurants = 1;
+  com.gastroflow.common.PaginationResponse pagination = 2;
+}
+
+message RestaurantSearchResult {
+  Restaurant restaurant = 1;
+  double distance_km = 2;
+  double relevance_score = 3;
+}
+
+message UpdateRestaurantStatusRequest {
+  com.gastroflow.common.UUID id = 1;
+  com.gastroflow.common.RestaurantStatus status = 2;
+  string reason = 3;
+}
+
+message UpdateRestaurantStatusResponse {
+  Restaurant restaurant = 1;
+}
+
+message GetNearbyRestaurantsRequest {
+  double latitude = 1;
+  double longitude = 2;
+  double radius_km = 3;
+  com.gastroflow.common.PaginationRequest pagination = 4;
+  repeated CuisineType cuisine_filter = 5;
+  bool open_only = 6;
+  bool delivery_available = 7;
+}
+
+message GetNearbyRestaurantsResponse {
+  repeated RestaurantWithDistance restaurants = 1;
+  com.gastroflow.common.PaginationResponse pagination = 2;
+}
+
+message RestaurantWithDistance {
+  Restaurant restaurant = 1;
+  double distance_km = 2;
+  int32 estimated_delivery_time = 3;
+}
+
+message CheckDeliveryAvailabilityRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+  com.gastroflow.common.Address delivery_address = 2;
+}
+
+message CheckDeliveryAvailabilityResponse {
+  bool is_available = 1;
+  com.gastroflow.common.Money delivery_fee = 2;
+  int32 estimated_delivery_time = 3;
+  double distance_km = 4;
+  string unavailable_reason = 5;
+}
+
+// Запросы и ответы для BranchService
+
+message CreateBranchRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+  string name = 2;
+  com.gastroflow.common.Address address = 3;
+  com.gastroflow.common.ContactInfo contact_info = 4;
+  repeated CreateWorkingHoursRequest working_hours = 5;
+  RestaurantSettings settings = 6;
+  com.gastroflow.common.UUID manager_id = 7;
+}
+
+message CreateBranchResponse {
+  Branch branch = 1;
+}
+
+message GetBranchRequest {
+  com.gastroflow.common.UUID id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+}
+
+message GetBranchResponse {
+  Branch branch = 1;
+}
+
+message UpdateBranchRequest {
+  com.gastroflow.common.UUID id = 1;
+  Branch branch = 2;
+}
+
+message UpdateBranchResponse {
+  Branch branch = 1;
+}
+
+message DeleteBranchRequest {
+  com.gastroflow.common.UUID id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+}
+
+message ListBranchesRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+  com.gastroflow.common.PaginationRequest pagination = 2;
+  repeated com.gastroflow.common.RestaurantStatus status_filter = 3;
+  bool active_only = 4;
+}
+
+message ListBranchesResponse {
+  repeated Branch branches = 1;
+  com.gastroflow.common.PaginationResponse pagination = 2;
+}
+
+message UpdateBranchStatusRequest {
+  com.gastroflow.common.UUID id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+  com.gastroflow.common.RestaurantStatus status = 3;
+  string reason = 4;
+}
+
+message UpdateBranchStatusResponse {
+  Branch branch = 1;
+}
+
+// Запросы и ответы для RestaurantSettingsService
+
+message GetSettingsRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+}
+
+message GetSettingsResponse {
+  RestaurantSettings settings = 1;
+}
+
+message UpdateSettingsRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+  RestaurantSettings settings = 2;
+}
+
+message UpdateSettingsResponse {
+  RestaurantSettings settings = 1;
+}
+
+message GetWorkingHoursRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+  com.gastroflow.common.UUID branch_id = 2;
+}
+
+message GetWorkingHoursResponse {
+  repeated WorkingHours working_hours = 1;
+}
+
+message UpdateWorkingHoursRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+  com.gastroflow.common.UUID branch_id = 2;
+  repeated CreateWorkingHoursRequest working_hours = 3;
+}
+
+message UpdateWorkingHoursResponse {
+  repeated WorkingHours working_hours = 1;
+}
+
+message UpdateDeliveryZoneRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+  DeliveryZone delivery_zone = 2;
+}
+
+message UpdateDeliveryZoneResponse {
+  DeliveryZone delivery_zone = 1;
+}

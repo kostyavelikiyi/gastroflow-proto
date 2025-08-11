@@ -1,0 +1,18 @@
+version: v1
+# Simplified Buf configuration for GastroFlow Protocol Buffers
+
+deps:
+  - buf.build/googleapis/googleapis
+
+lint:
+  use:
+    - BASIC
+  except:
+    - PACKAGE_VERSION_SUFFIX
+    - COMMENT_ENUM_VALUE
+    - COMMENT_FIELD
+    - COMMENT_MESSAGE
+    - COMMENT_RPC
+    - COMMENT_SERVICE
+  rpc_allow_google_protobuf_empty_requests: true
+  rpc_allow_google_protobuf_empty_responses: true

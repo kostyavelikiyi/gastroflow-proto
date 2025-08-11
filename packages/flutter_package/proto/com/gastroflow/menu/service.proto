@@ -1,0 +1,324 @@
+syntax = "proto3";
+
+package com.gastroflow.menu;
+
+import "com/gastroflow/common/enums.proto";
+import "com/gastroflow/common/types.proto";
+import "google/protobuf/empty.proto";
+import "com/gastroflow/menu/models.proto";
+
+option go_package = "github.com/gastroflow/proto-go/menu";
+
+// MenuService - gRPC сервис для управления меню
+service MenuService {
+  // Создать новое меню
+  rpc CreateMenu(CreateMenuRequest) returns (CreateMenuResponse);
+
+  // Получить меню по ID
+  rpc GetMenu(GetMenuRequest) returns (GetMenuResponse);
+
+  // Обновить меню
+  rpc UpdateMenu(UpdateMenuRequest) returns (UpdateMenuResponse);
+
+  // Удалить меню (мягкое удаление)
+  rpc DeleteMenu(DeleteMenuRequest) returns (google.protobuf.Empty);
+
+  // Получить список меню ресторана
+  rpc ListMenus(ListMenusRequest) returns (ListMenusResponse);
+
+  // Получить активное меню ресторана
+  rpc GetActiveMenu(GetActiveMenuRequest) returns (GetActiveMenuResponse);
+}
+
+// CategoryService - gRPC сервис для управления категориями
+service CategoryService {
+  // Создать новую категорию
+  rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse);
+
+  // Получить категорию по ID
+  rpc GetCategory(GetCategoryRequest) returns (GetCategoryResponse);
+
+  // Обновить категорию
+  rpc UpdateCategory(UpdateCategoryRequest) returns (UpdateCategoryResponse);
+
+  // Удалить категорию (мягкое удаление)
+  rpc DeleteCategory(DeleteCategoryRequest) returns (google.protobuf.Empty);
+
+  // Получить список категорий меню
+  rpc ListCategories(ListCategoriesRequest) returns (ListCategoriesResponse);
+
+  // Изменить порядок категорий
+  rpc ReorderCategories(ReorderCategoriesRequest) returns (ReorderCategoriesResponse);
+}
+
+// MenuItemService - gRPC сервис для управления позициями меню
+service MenuItemService {
+  // Создать новую позицию меню
+  rpc CreateMenuItem(CreateMenuItemRequest) returns (CreateMenuItemResponse);
+
+  // Получить позицию меню по ID
+  rpc GetMenuItem(GetMenuItemRequest) returns (GetMenuItemResponse);
+
+  // Обновить позицию меню
+  rpc UpdateMenuItem(UpdateMenuItemRequest) returns (UpdateMenuItemResponse);
+
+  // Удалить позицию меню (мягкое удаление)
+  rpc DeleteMenuItem(DeleteMenuItemRequest) returns (google.protobuf.Empty);
+
+  // Получить список позиций категории
+  rpc ListMenuItems(ListMenuItemsRequest) returns (ListMenuItemsResponse);
+
+  // Поиск позиций меню
+  rpc SearchMenuItems(SearchMenuItemsRequest) returns (SearchMenuItemsResponse);
+
+  // Изменить статус позиции меню
+  rpc UpdateMenuItemStatus(UpdateMenuItemStatusRequest) returns (UpdateMenuItemStatusResponse);
+
+  // Изменить порядок позиций в категории
+  rpc ReorderMenuItems(ReorderMenuItemsRequest) returns (ReorderMenuItemsResponse);
+
+  // Получить популярные позиции
+  rpc GetPopularMenuItems(GetPopularMenuItemsRequest) returns (GetPopularMenuItemsResponse);
+}
+
+// Запросы и ответы для MenuService
+
+message CreateMenuRequest {
+  string name = 1;
+  string description = 2;
+  com.gastroflow.common.UUID restaurant_id = 3;
+  TimeSlot time_slot = 4;
+  repeated com.gastroflow.common.WeekDay active_days = 5;
+  com.gastroflow.common.Language language = 6;
+}
+
+message CreateMenuResponse {
+  Menu menu = 1;
+}
+
+message GetMenuRequest {
+  com.gastroflow.common.UUID id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+}
+
+message GetMenuResponse {
+  Menu menu = 1;
+}
+
+message UpdateMenuRequest {
+  com.gastroflow.common.UUID id = 1;
+  Menu menu = 2;
+}
+
+message UpdateMenuResponse {
+  Menu menu = 1;
+}
+
+message DeleteMenuRequest {
+  com.gastroflow.common.UUID id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+}
+
+message ListMenusRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+  com.gastroflow.common.PaginationRequest pagination = 2;
+  bool active_only = 3;
+  com.gastroflow.common.Language language = 4;
+}
+
+message ListMenusResponse {
+  repeated Menu menus = 1;
+  com.gastroflow.common.PaginationResponse pagination = 2;
+}
+
+message GetActiveMenuRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+  com.gastroflow.common.Language language = 2;
+}
+
+message GetActiveMenuResponse {
+  Menu menu = 1;
+}
+
+// Запросы и ответы для CategoryService
+
+message CreateCategoryRequest {
+  string name = 1;
+  string description = 2;
+  com.gastroflow.common.UUID menu_id = 3;
+  com.gastroflow.common.UUID parent_id = 4;
+  string image_url = 5;
+  int32 sort_order = 6;
+}
+
+message CreateCategoryResponse {
+  Category category = 1;
+}
+
+message GetCategoryRequest {
+  com.gastroflow.common.UUID id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+}
+
+message GetCategoryResponse {
+  Category category = 1;
+}
+
+message UpdateCategoryRequest {
+  com.gastroflow.common.UUID id = 1;
+  Category category = 2;
+}
+
+message UpdateCategoryResponse {
+  Category category = 1;
+}
+
+message DeleteCategoryRequest {
+  com.gastroflow.common.UUID id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+}
+
+message ListCategoriesRequest {
+  com.gastroflow.common.UUID menu_id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+  com.gastroflow.common.PaginationRequest pagination = 3;
+  bool active_only = 4;
+  com.gastroflow.common.UUID parent_id = 5;
+}
+
+message ListCategoriesResponse {
+  repeated Category categories = 1;
+  com.gastroflow.common.PaginationResponse pagination = 2;
+}
+
+message ReorderCategoriesRequest {
+  com.gastroflow.common.UUID menu_id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+  repeated CategoryOrder category_orders = 3;
+}
+
+message CategoryOrder {
+  com.gastroflow.common.UUID category_id = 1;
+  int32 sort_order = 2;
+}
+
+message ReorderCategoriesResponse {
+  repeated Category categories = 1;
+}
+
+// Запросы и ответы для MenuItemService
+
+message CreateMenuItemRequest {
+  string name = 1;
+  string description = 2;
+  com.gastroflow.common.Money price = 3;
+  com.gastroflow.common.UUID category_id = 4;
+  int32 cooking_time = 5;
+  NutritionInfo nutrition_info = 6;
+  repeated Allergen allergens = 7;
+  string image_url = 8;
+  repeated string additional_images = 9;
+  string portion_size = 10;
+  repeated DietaryProperty dietary_properties = 11;
+  repeated string ingredients = 12;
+  repeated CreateMenuItemVariantRequest variants = 13;
+}
+
+message CreateMenuItemVariantRequest {
+  string name = 1;
+  com.gastroflow.common.Money price_modifier = 2;
+  VariantType type = 3;
+  string group_name = 4;
+  bool is_required = 5;
+  int32 max_selections = 6;
+  int32 sort_order = 7;
+}
+
+message CreateMenuItemResponse {
+  MenuItem menu_item = 1;
+}
+
+message GetMenuItemRequest {
+  com.gastroflow.common.UUID id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+}
+
+message GetMenuItemResponse {
+  MenuItem menu_item = 1;
+}
+
+message UpdateMenuItemRequest {
+  com.gastroflow.common.UUID id = 1;
+  MenuItem menu_item = 2;
+}
+
+message UpdateMenuItemResponse {
+  MenuItem menu_item = 1;
+}
+
+message DeleteMenuItemRequest {
+  com.gastroflow.common.UUID id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+}
+
+message ListMenuItemsRequest {
+  com.gastroflow.common.UUID category_id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+  com.gastroflow.common.PaginationRequest pagination = 3;
+  repeated com.gastroflow.common.MenuItemStatus status_filter = 4;
+  repeated DietaryProperty dietary_filter = 5;
+  bool available_only = 6;
+}
+
+message ListMenuItemsResponse {
+  repeated MenuItem menu_items = 1;
+  com.gastroflow.common.PaginationResponse pagination = 2;
+}
+
+message SearchMenuItemsRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+  string query = 2;
+  com.gastroflow.common.PaginationRequest pagination = 3;
+  repeated com.gastroflow.common.MenuItemStatus status_filter = 4;
+  repeated DietaryProperty dietary_filter = 5;
+}
+
+message SearchMenuItemsResponse {
+  repeated MenuItem menu_items = 1;
+  com.gastroflow.common.PaginationResponse pagination = 2;
+}
+
+message UpdateMenuItemStatusRequest {
+  com.gastroflow.common.UUID id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+  com.gastroflow.common.MenuItemStatus status = 3;
+}
+
+message UpdateMenuItemStatusResponse {
+  MenuItem menu_item = 1;
+}
+
+message ReorderMenuItemsRequest {
+  com.gastroflow.common.UUID category_id = 1;
+  com.gastroflow.common.UUID restaurant_id = 2;
+  repeated MenuItemOrder menu_item_orders = 3;
+}
+
+message MenuItemOrder {
+  com.gastroflow.common.UUID menu_item_id = 1;
+  int32 sort_order = 2;
+}
+
+message ReorderMenuItemsResponse {
+  repeated MenuItem menu_items = 1;
+}
+
+message GetPopularMenuItemsRequest {
+  com.gastroflow.common.UUID restaurant_id = 1;
+  int32 limit = 2;
+  com.gastroflow.common.UUID category_id = 3;
+}
+
+message GetPopularMenuItemsResponse {
+  repeated MenuItem menu_items = 1;
+}

@@ -1,0 +1,412 @@
+syntax = "proto3";
+
+package com.gastroflow.payments;
+
+import "com/gastroflow/common/enums.proto";
+import "com/gastroflow/common/types.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/gastroflow/proto-go/payments";
+
+// Payment - платеж в системе
+message Payment {
+  // Уникальный идентификатор платежа
+  com.gastroflow.common.UUID id = 1;
+
+  // Идентификатор заказа
+
+  // Идентификатор плательщика
+  com.gastroflow.common.UUID payer_id = 3;
+
+  // Идентификатор ресторана
+  com.gastroflow.common.UUID restaurant_id = 4;
+
+  // Сумма платежа
+  com.gastroflow.common.Money amount = 5;
+
+  // Способ оплаты
+  com.gastroflow.common.PaymentMethod method = 6;
+
+  // Статус платежа
+  PaymentStatus status = 7;
+
+  // Поставщик платежей
+  PaymentProvider provider = 8;
+
+  // Внешний идентификатор платежа у поставщика
+  string external_payment_id = 9;
+
+  // Описание платежа
+  string description = 10;
+
+  // Время создания платежа
+  google.protobuf.Timestamp created_at = 11;
+
+  // Время обработки платежа
+  google.protobuf.Timestamp processed_at = 12;
+
+  // Время истечения платежа
+  google.protobuf.Timestamp expires_at = 13;
+
+  // Детали платежа
+  PaymentDetails details = 14;
+
+  // История изменений статуса
+  repeated PaymentStatusHistory status_history = 15;
+
+  // Комиссия за платеж
+  com.gastroflow.common.Money fee = 16;
+
+  // Чистая сумма (после вычета комиссии)
+  com.gastroflow.common.Money net_amount = 17;
+
+  // Детали ошибки (если есть)
+  PaymentError error = 18;
+
+  // IP адрес клиента
+  string client_ip = 19;
+
+  // Информация об устройстве клиента
+  string user_agent = 20;
+
+  // Дополнительные метаданные
+  map<string, string> metadata = 21;
+
+  // Информация об аудите
+  com.gastroflow.common.AuditInfo audit_info = 22;
+}
+
+// PaymentDetails - детали платежа
+message PaymentDetails {
+  // Детали карточной оплаты
+  CardDetails card_details = 1;
+
+  // Детали банковского перевода
+  BankTransferDetails bank_transfer_details = 2;
+
+  // Детали электронного кошелька
+  WalletDetails wallet_details = 3;
+
+  // Детали наличной оплаты
+  CashDetails cash_details = 4;
+
+  // URL для подтверждения платежа
+  string confirmation_url = 5;
+
+  // Токен для повторной оплаты
+  string recurring_token = 6;
+
+  // 3D Secure данные
+  ThreeDSecureDetails three_d_secure = 7;
+}
+
+// CardDetails - детали карточной оплаты
+message CardDetails {
+  // Замаскированный номер карты
+  string masked_pan = 1;
+
+  // Тип карты
+  CardType card_type = 2;
+
+  // Банк-эмитент
+  string issuer_bank = 3;
+
+  // Страна эмиссии
+  string issuer_country = 4;
+
+  // Последние 4 цифры карты
+  string last_four_digits = 5;
+
+  // Месяц истечения
+  int32 exp_month = 6 ;
+
+  // Год истечения
+  int32 exp_year = 7;
+
+  // Код авторизации
+  string auth_code = 8;
+
+  // RRN (Reference Retrieval Number)
+  string rrn = 9;
+}
+
+// BankTransferDetails - детали банковского перевода
+message BankTransferDetails {
+  // Название банка
+  string bank_name = 1;
+
+  // БИК банка
+  string bik = 2;
+
+  // Номер счета получателя
+  string account_number = 3;
+
+  // Номер перевода
+  string transfer_number = 4;
+
+  // Назначение платежа
+  string purpose = 5;
+}
+
+// WalletDetails - детали электронного кошелька
+message WalletDetails {
+  // Тип кошелька
+  WalletType wallet_type = 1;
+
+  // Идентификатор кошелька
+  string wallet_id = 2;
+
+  // Замаскированный номер телефона/email кошелька
+  string masked_identifier = 3;
+}
+
+// CashDetails - детали наличной оплаты
+message CashDetails {
+  // Сумма полученная наличными
+  com.gastroflow.common.Money received_amount = 1;
+
+  // Сдача
+  com.gastroflow.common.Money change_amount = 2;
+
+  // Идентификатор кассира
+  com.gastroflow.common.UUID cashier_id = 3;
+
+  // Номер чека
+  string receipt_number = 4;
+}
+
+// ThreeDSecureDetails - детали 3D Secure
+message ThreeDSecureDetails {
+  // Применялся ли 3D Secure
+  bool applied = 1;
+
+  // Статус аутентификации
+  string auth_status = 2;
+
+  // ECI (Electronic Commerce Indicator)
+  string eci = 3;
+
+  // XID транзакции
+  string xid = 4;
+}
+
+// PaymentStatusHistory - история изменений статуса
+message PaymentStatusHistory {
+  // Предыдущий статус
+  PaymentStatus from_status = 1;
+
+  // Новый статус
+  PaymentStatus to_status = 2;
+
+  // Время изменения
+  google.protobuf.Timestamp changed_at = 3;
+
+  // Причина изменения
+  string reason = 4;
+
+  // Дополнительная информация
+  string details = 5;
+}
+
+// PaymentError - информация об ошибке платежа
+message PaymentError {
+  // Код ошибки
+  string error_code = 1;
+
+  // Описание ошибки
+  string error_message = 2;
+
+  // Детали ошибки от поставщика
+  string provider_error_code = 3;
+
+  // Сообщение от поставщика
+  string provider_error_message = 4;
+
+  // Можно ли повторить попытку
+  bool is_retryable = 5;
+
+  // Рекомендуемое время следующей попытки
+  google.protobuf.Timestamp retry_after = 6;
+}
+
+// Refund - возврат средств
+message Refund {
+  // Уникальный идентификатор возврата
+  com.gastroflow.common.UUID id = 1;
+
+  // Идентификатор исходного платежа
+  com.gastroflow.common.UUID payment_id = 2;
+
+  // Сумма возврата
+  com.gastroflow.common.Money amount = 3;
+
+  // Причина возврата
+  RefundReason reason = 4;
+
+  // Статус возврата
+  RefundStatus status = 5;
+
+  // Описание возврата
+  string description = 6;
+
+  // Внешний идентификатор возврата
+  string external_refund_id = 7;
+
+  // Время создания возврата
+  google.protobuf.Timestamp created_at = 8;
+
+  // Время обработки возврата
+  google.protobuf.Timestamp processed_at = 9;
+
+  // Комиссия за возврат
+  com.gastroflow.common.Money fee = 10;
+
+  // Детали ошибки (если есть)
+  PaymentError error = 11;
+
+  // Информация об аудите
+  com.gastroflow.common.AuditInfo audit_info = 12;
+}
+
+// PaymentMethod - сохраненный способ оплаты
+message PaymentMethodInfo {
+  // Уникальный идентификатор способа оплаты
+  com.gastroflow.common.UUID id = 1;
+
+  // Идентификатор пользователя
+  com.gastroflow.common.UUID user_id = 2;
+
+  // Тип способа оплаты
+  com.gastroflow.common.PaymentMethod type = 3;
+
+  // Токен для повторного использования
+  string token = 4 ;
+
+  // Детали способа оплаты (замаскированные)
+  PaymentMethodDetails details = 5;
+
+  // Способ оплаты по умолчанию
+  bool is_default = 6;
+
+  // Активность способа оплаты
+  bool is_active = 7;
+
+  // Время создания
+  google.protobuf.Timestamp created_at = 8;
+
+  // Время последнего использования
+  google.protobuf.Timestamp last_used_at = 9;
+}
+
+// PaymentMethodDetails - детали сохраненного способа оплаты
+message PaymentMethodDetails {
+  // Детали карты
+  SavedCardDetails card = 1;
+
+  // Детали кошелька
+  SavedWalletDetails wallet = 2;
+}
+
+// SavedCardDetails - сохраненные детали карты
+message SavedCardDetails {
+  // Замаскированный номер карты
+  string masked_pan = 1;
+
+  // Тип карты
+  CardType card_type = 2;
+
+  // Месяц истечения
+  int32 exp_month = 3;
+
+  // Год истечения
+  int32 exp_year = 4;
+
+  // Банк-эмитент
+  string issuer_bank = 5;
+}
+
+// SavedWalletDetails - сохраненные детали кошелька
+message SavedWalletDetails {
+  // Тип кошелька
+  WalletType wallet_type = 1;
+
+  // Замаскированный идентификатор
+  string masked_identifier = 2;
+}
+
+// Енумы для домена Payments
+
+// PaymentStatus - статус платежа
+enum PaymentStatus {
+  PAYMENT_STATUS_UNSPECIFIED = 0;
+  PAYMENT_STATUS_PENDING = 1; // Ожидает обработки
+  PAYMENT_STATUS_PROCESSING = 2; // Обрабатывается
+  PAYMENT_STATUS_REQUIRES_ACTION = 3; // Требует действий (3D Secure и т.д.)
+  PAYMENT_STATUS_SUCCEEDED = 4; // Успешно завершен
+  PAYMENT_STATUS_FAILED = 5; // Не удался
+  PAYMENT_STATUS_CANCELLED = 6; // Отменен
+  PAYMENT_STATUS_EXPIRED = 7; // Истек срок
+  PAYMENT_STATUS_REFUNDED = 8; // Возвращен
+  PAYMENT_STATUS_PARTIALLY_REFUNDED = 9; // Частично возвращен
+}
+
+// PaymentProvider - поставщик платежных услуг
+enum PaymentProvider {
+  PAYMENT_PROVIDER_UNSPECIFIED = 0;
+  PAYMENT_PROVIDER_STRIPE = 1; // Stripe
+  PAYMENT_PROVIDER_YANDEX_CHECKOUT = 2; // ЮKassa (Яндекс.Касса)
+  PAYMENT_PROVIDER_TINKOFF = 3; // Тинькофф
+  PAYMENT_PROVIDER_SBERBANK = 4; // Сбербанк
+  PAYMENT_PROVIDER_PAYPAL = 5; // PayPal
+  PAYMENT_PROVIDER_ROBOKASSA = 6; // Robokassa
+  PAYMENT_PROVIDER_CLOUDPAYMENTS = 7; // CloudPayments
+  PAYMENT_PROVIDER_ACQUIRING = 8; // Банковский эквайринг
+  PAYMENT_PROVIDER_CASH = 9; // Наличные
+}
+
+// CardType - тип банковской карты
+enum CardType {
+  CARD_TYPE_UNSPECIFIED = 0;
+  CARD_TYPE_VISA = 1; // Visa
+  CARD_TYPE_MASTERCARD = 2; // Mastercard
+  CARD_TYPE_MIR = 3; // МИР
+  CARD_TYPE_AMEX = 4; // American Express
+  CARD_TYPE_DISCOVER = 5; // Discover
+  CARD_TYPE_UNIONPAY = 6; // UnionPay
+  CARD_TYPE_JCB = 7; // JCB
+  CARD_TYPE_DINERS = 8; // Diners Club
+}
+
+// WalletType - тип электронного кошелька
+enum WalletType {
+  WALLET_TYPE_UNSPECIFIED = 0;
+  WALLET_TYPE_YANDEX_MONEY = 1; // Яндекс.Деньги
+  WALLET_TYPE_QIWI = 2; // QIWI
+  WALLET_TYPE_WEBMONEY = 3; // WebMoney
+  WALLET_TYPE_APPLE_PAY = 4; // Apple Pay
+  WALLET_TYPE_GOOGLE_PAY = 5; // Google Pay
+  WALLET_TYPE_SAMSUNG_PAY = 6; // Samsung Pay
+  WALLET_TYPE_SBP = 7; // Система быстрых платежей
+}
+
+// RefundReason - причина возврата
+enum RefundReason {
+  REFUND_REASON_UNSPECIFIED = 0;
+  REFUND_REASON_CUSTOMER_REQUEST = 1; // По запросу клиента
+  REFUND_REASON_ORDER_CANCELLED = 2; // Заказ отменен
+  REFUND_REASON_DUPLICATE_PAYMENT = 3; // Дублирующий платеж
+  REFUND_REASON_FRAUDULENT = 4; // Мошенничество
+  REFUND_REASON_SYSTEM_ERROR = 5; // Системная ошибка
+  REFUND_REASON_QUALITY_ISSUES = 6; // Проблемы с качеством
+  REFUND_REASON_OTHER = 7; // Другая причина
+}
+
+// RefundStatus - статус возврата
+enum RefundStatus {
+  REFUND_STATUS_UNSPECIFIED = 0;
+  REFUND_STATUS_PENDING = 1; // Ожидает обработки
+  REFUND_STATUS_PROCESSING = 2; // Обрабатывается
+  REFUND_STATUS_SUCCEEDED = 3; // Успешно завершен
+  REFUND_STATUS_FAILED = 4; // Не удался
+  REFUND_STATUS_CANCELLED = 5; // Отменен
+}
