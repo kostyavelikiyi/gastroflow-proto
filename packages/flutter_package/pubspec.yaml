@@ -23,6 +23,9 @@ dependencies:
   protobuf: ^4.1.1
   grpc: ^4.1.0
   fixnum: ^1.1.0
+  
+  # Google common protobuf types
+  googleapis_common_protos: ^2.0.0
 
 dev_dependencies:
   flutter_test:

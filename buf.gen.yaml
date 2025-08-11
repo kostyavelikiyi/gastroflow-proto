@@ -19,7 +19,7 @@ plugins:
       - module=github.com/gastroflow/proto-go
       - require_unimplemented_servers=false
 
-    # Dart generation
+  # Dart generation
   - plugin: dart
     out: packages/flutter_package/lib/src/generated
     opt:

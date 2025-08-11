@@ -4,6 +4,10 @@
 /// This package provides strongly-typed models and gRPC clients for all GastroFlow domains.
 library gastroflow_proto;
 
+// Re-export Google common protobuf types
+export 'package:googleapis_common_protos/google/protobuf/timestamp.pb.dart';
+export 'package:googleapis_common_protos/google/protobuf/empty.pb.dart';
+
 // Common types and enums
 export 'src/generated/com/gastroflow/common/enums.pb.dart';
 export 'src/generated/com/gastroflow/common/types.pb.dart';
