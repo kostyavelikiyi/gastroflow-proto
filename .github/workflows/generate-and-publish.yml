@@ -20,9 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Buf
-        uses: bufbuild/buf-setup-action@v1.25.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        uses: bufbuild/buf-setup-action@v1.50.0
 
       - name: Lint proto files
         run: buf lint
@@ -37,7 +35,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Buf
-        uses: bufbuild/buf-setup-action@v1.25.1
+        uses: bufbuild/buf-setup-action@v1.50.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -81,6 +79,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup Buf
+        uses: bufbuild/buf-setup-action@v1.50.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Cache Flutter Pub Packages
         uses: actions/cache@v4
         with:
@@ -95,29 +98,11 @@ jobs:
           channel: stable
           flutter-version: 3.29.0
 
-      - name: Clean old proto files in Flutter package
-        run: rm -rf packages/flutter_package/proto/*
-
-      - name: Copy proto files to Flutter package
-        run: cp -r proto/. packages/flutter_package/proto/
-
-      - name: Download Google Protobuf standard proto files
-        run: |
-            mkdir -p packages/flutter_package/proto/google/protobuf
-            curl -o packages/flutter_package/proto/google/protobuf/timestamp.proto https://raw.githubusercontent.com/protocolbuffers/protobuf/main/src/google/protobuf/timestamp.proto
-            curl -o packages/flutter_package/proto/google/protobuf/empty.proto https://raw.githubusercontent.com/protocolbuffers/protobuf/main/src/google/protobuf/empty.proto
-
-      - name: Install protoc
-        run: |
-            PROTOC_VERSION=23.3
-            wget https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip
-            unzip protoc-${PROTOC_VERSION}-linux-x86_64.zip -d protoc3
-            sudo mv protoc3/bin/* /usr/local/bin/
-            sudo mv protoc3/include/* /usr/local/include/
-            rm -rf protoc3 protoc-${PROTOC_VERSION}-linux-x86_64.zip
-
-      - name: Install protoc-gen-dart
+      - name: Setup Dart protoc plugin
         run: dart pub global activate protoc_plugin
+
+      - name: Generate Dart code
+        run: buf generate
 
       - name: Cache Flutter Build and Tooling
         uses: actions/cache@v4

@@ -28,13 +28,11 @@ curl -sSL "https://github.com/bufbuild/buf/releases/latest/download/buf-$(uname 
 chmod +x buf
 sudo mv buf /usr/local/bin/
 
-# Generate Go code
+# Generate Go and Flutter code
 buf generate
 
-# Generate Flutter code
-cd packages/flutter_package
-dart pub get
-dart run build_runner build --delete-conflicting-outputs
+# Generate Go and Flutter code (one command)
+buf generate
 ```
 
 ## 📋 Table of Contents
@@ -303,13 +301,8 @@ gastroflow-proto/
 ### Available Commands
 
 ```bash
-# Generate Go code
+# Generate Go and Flutter code
 buf generate
-
-# Generate Flutter code
-cd packages/flutter_package
-dart pub get
-dart run build_runner build --delete-conflicting-outputs
 
 # Lint proto files
 buf lint
@@ -326,7 +319,7 @@ cd packages/flutter_package && dart analyze
 
 1. **Define Proto Messages**: Add your messages to the appropriate domain
 2. **Update Services**: Add gRPC service methods if needed
-3. **Generate Code**: Run `buf generate` for Go and `dart run build_runner build` for Flutter
+3. **Generate Code**: Run `buf generate` (generates both Go and Flutter)
 4. **Test**: Verify generated code compiles and works with `go build ./...` and `dart analyze`
 5. **Document**: Update relevant documentation
 
@@ -338,14 +331,12 @@ Always test locally before committing:
 # Check proto files
 buf lint
 
-# Generate and test Go
+# Generate Go and Flutter code
 buf generate
-cd packages/go_module && go build ./...
 
-# Generate and test Flutter  
-cd packages/flutter_package
-dart run build_runner build --delete-conflicting-outputs
-dart analyze
+# Test generated code  
+cd packages/go_module && go build ./...
+cd packages/flutter_package && dart analyze
 ```
 
 ## 🤝 Contributing
@@ -357,7 +348,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 1. **Fork** the repository
 2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
 3. **Make** your changes to proto files
-4. **Generate** code (`buf generate` and Flutter generation)
+4. **Generate** code (`buf generate` for both platforms)
 5. **Test** that everything compiles (`buf lint`, `go build ./...`, `dart analyze`)
 6. **Commit** your changes (`git commit -m 'Add amazing feature'`)
 7. **Push** to the branch (`git push origin feature/amazing-feature`)
@@ -376,8 +367,7 @@ Releases are automated through GitHub Actions:
 
 1. **Push to Main**: Changes are automatically generated and committed back
 2. **Automation**:
-   - Generate Go code via buf generate
-   - Generate Flutter code via protoc_builder
+   - Generate Go and Flutter code via buf generate
    - Run tests and validation
    - Commit generated packages back to repository
    - Go module is available via git tag
@@ -405,7 +395,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - [Buf](https://buf.build) for excellent Protocol Buffer tooling
-- [protoc_builder](https://pub.dev/packages/protoc_builder) for Flutter generation
+- [Buf Dart plugin](https://buf.build/plugins/dart) for Flutter generation
 - The gRPC and Protocol Buffers communities
 
 ---
