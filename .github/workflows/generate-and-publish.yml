@@ -24,8 +24,8 @@ jobs:
 
       - name: Lint proto files
         run: buf lint
-  # Simple generation and testing
-  generate-go:
+
+  generate-and-test:
     runs-on: ubuntu-latest
     needs: check-proto
     steps:
@@ -44,46 +44,6 @@ jobs:
         with:
           go-version: ${{ env.GO_VERSION }}
 
-      - name: Generate Go code
-        run: buf generate
-
-      - name: Test Go package
-        run: |
-          cd packages/go_module
-          go mod tidy
-          go build ./...
-
-      - name: Configure Git (only on main push)
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Commit and push Go changes (only on main push)
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: |
-          git add packages/go_module/
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "chore: update generated Go protobuf code"
-            git push
-          fi
-
-  generate-flutter:
-    runs-on: ubuntu-latest
-    needs: check-proto
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Buf
-        uses: bufbuild/buf-setup-action@v1.50.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Cache Flutter Pub Packages
         uses: actions/cache@v4
         with:
@@ -101,44 +61,20 @@ jobs:
       - name: Setup Dart protoc plugin
         run: dart pub global activate protoc_plugin
 
-      - name: Generate Dart code
+      - name: Generate Go and Flutter code
         run: buf generate
 
-      - name: Cache Flutter Build and Tooling
-        uses: actions/cache@v4
-        with:
-          path: |
-            packages/flutter_package/.dart_tool
-            packages/flutter_package/build
-            packages/flutter_package/.flutter-plugins
-            packages/flutter_package/.flutter-plugins-dependencies
-            packages/flutter_package/.packages
-          key: ${{ runner.os }}-flutter-build-${{ hashFiles('packages/flutter_package/pubspec.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-flutter-build-
-
-      - name: Generate Dart proto code manually
+      - name: Test Go package
         run: |
-                export PATH="$PATH":"$HOME/.pub-cache/bin"
-                cd packages/flutter_package
-                rm -rf lib/src/generated
-                mkdir -p lib/src/generated
-                protoc \
-                  --dart_out=grpc:lib/src/generated \
-                  --proto_path=proto \
-                  --proto_path=proto/google \
-                  $(find proto -name '*.proto')
+          cd packages/go_module
+          go mod tidy
+          go build ./...
 
-      - name: Generate Flutter code
+      - name: Install Flutter dependencies and test
         run: |
           cd packages/flutter_package
-          flutter pub get
-          flutter pub run build_runner build --delete-conflicting-outputs
-
-      - name: Test Flutter package
-        run: |
-          cd packages/flutter_package
-          flutter analyze
+          dart pub get
+          dart analyze
 
       - name: Configure Git (only on main push)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -146,13 +82,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit and push Flutter changes (only on main push)
+      - name: Commit and push generated code (only on main push)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
-          git add packages/flutter_package/
+          git add packages/
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: update generated Flutter protobuf code"
+            git commit -m "chore: update generated protobuf code"
             git push
           fi
