@@ -50,6 +50,23 @@ jobs:
           go mod tidy
           go build ./...
 
+      - name: Configure Git (only on main push)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Commit and push Go changes (only on main push)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git add packages/go_module/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update generated Go protobuf code"
+            git push
+          fi
+
   generate-flutter:
     runs-on: ubuntu-latest
     needs: check-proto
@@ -130,3 +147,20 @@ jobs:
         run: |
           cd packages/flutter_package
           flutter analyze
+
+      - name: Configure Git (only on main push)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Commit and push Flutter changes (only on main push)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git add packages/flutter_package/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update generated Flutter protobuf code"
+            git push
+          fi
