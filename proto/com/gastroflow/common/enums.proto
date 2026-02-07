@@ -21,6 +21,7 @@ enum PaymentMethod {
   PAYMENT_METHOD_TRANSFER = 3; // Банковский перевод
   PAYMENT_METHOD_DEPOSIT = 4; // Депозит/предоплата
   PAYMENT_METHOD_LATER = 5; // Оплата потом
+  PAYMENT_METHOD_ZEN = 6; // Дзен
 }
 
 // OrderStatus - статус заказа в системе

@@ -42,6 +42,7 @@ const PaymentMethod$json = {
     {'1': 'PAYMENT_METHOD_TRANSFER', '2': 3},
     {'1': 'PAYMENT_METHOD_DEPOSIT', '2': 4},
     {'1': 'PAYMENT_METHOD_LATER', '2': 5},
+    {'1': 'PAYMENT_METHOD_ZEN', '2': 6},
   ],
 };
 
@@ -50,7 +51,7 @@ final $typed_data.Uint8List paymentMethodDescriptor = $convert.base64Decode(
     'Cg1QYXltZW50TWV0aG9kEh4KGlBBWU1FTlRfTUVUSE9EX1VOU1BFQ0lGSUVEEAASFwoTUEFZTU'
     'VOVF9NRVRIT0RfQ0FSRBABEhcKE1BBWU1FTlRfTUVUSE9EX0NBU0gQAhIbChdQQVlNRU5UX01F'
     'VEhPRF9UUkFOU0ZFUhADEhoKFlBBWU1FTlRfTUVUSE9EX0RFUE9TSVQQBBIYChRQQVlNRU5UX0'
-    '1FVEhPRF9MQVRFUhAF');
+    '1FVEhPRF9MQVRFUhAFEhYKElBBWU1FTlRfTUVUSE9EX1pFThAG');
 
 @$core.Deprecated('Use orderStatusDescriptor instead')
 const OrderStatus$json = {

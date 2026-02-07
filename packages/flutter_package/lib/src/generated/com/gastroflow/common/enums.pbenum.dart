@@ -57,6 +57,8 @@ class PaymentMethod extends $pb.ProtobufEnum {
       PaymentMethod._(4, _omitEnumNames ? '' : 'PAYMENT_METHOD_DEPOSIT');
   static const PaymentMethod PAYMENT_METHOD_LATER =
       PaymentMethod._(5, _omitEnumNames ? '' : 'PAYMENT_METHOD_LATER');
+  static const PaymentMethod PAYMENT_METHOD_ZEN =
+      PaymentMethod._(6, _omitEnumNames ? '' : 'PAYMENT_METHOD_ZEN');
 
   static const $core.List<PaymentMethod> values = <PaymentMethod>[
     PAYMENT_METHOD_UNSPECIFIED,
@@ -65,10 +67,11 @@ class PaymentMethod extends $pb.ProtobufEnum {
     PAYMENT_METHOD_TRANSFER,
     PAYMENT_METHOD_DEPOSIT,
     PAYMENT_METHOD_LATER,
+    PAYMENT_METHOD_ZEN,
   ];
 
   static final $core.List<PaymentMethod?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 5);
+      $pb.ProtobufEnum.$_initByValueList(values, 6);
   static PaymentMethod? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 
